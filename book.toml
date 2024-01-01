@@ -1,0 +1,6 @@
+[book]
+authors = ["Biao Jiang"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Swedish Learning"
