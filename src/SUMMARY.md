@@ -16,5 +16,7 @@
   - [2024-03](./svt/2024/svt_2024-03.md)
   - [2024-04](./svt/2024/svt_2024-04.md)
   - [2024-05](./svt/2024/svt_2024-05.md)
+  - [2024-06](./svt/2024/svt_2024-06.md)
 - [Netflix](./netflix/netflix.md)
   - [Bonus Family](./netflix/bonus_family.md)
+- [Andra](./andra/andra_kallor.md)
