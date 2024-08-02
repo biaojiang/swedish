@@ -33,8 +33,17 @@ Svensk från andra källor.
 | förskansning | [fœrˈskansˌnɪŋ] | En försvarsanordning eller befästning, ofta med vall eller mur | A defensive structure or fortification, often with a rampart or wall; entrenchment | 防御工事或设防，通常有防护墙或围墙 | Soldaterna byggde en förskansning för att skydda sig mot fienden. |
 | bålverk | [ˈboːlvɛrk] | En stark försvarsanläggning eller befästning; en skyddande barriär | A strong defensive fortification or bulwark; a protective barrier | 强大的防御工事或堡垒；防护屏障 | Stadens bålverk skyddade invånarna från angriparna. |
 | utåtagerande | [ˈʉːtɔːtˌaːɡeˌrande] | Som visar sina känslor eller sitt missnöje på ett aggressivt sätt | Showing emotions or dissatisfaction aggressively | 表现出情感或不满的攻击性行为 | Hans utåtagerande beteende skapade problem i skolan. |
-
-
+| bekymrad | [bɛˈɕʏmˌrɑːd] | Känna oro eller ängslan över något | Feeling worried or anxious about something | 感到担忧或焦虑 | Hon var bekymrad över sin sons hälsa. |
+| uppnå | [ˈɵpˌnoː] | Att nå eller komma fram till ett mål eller resultat | To reach or achieve a goal or result | 达到或实现目标或结果 | Han arbetade hårt för att uppnå sina drömmar. |
+| hånfullt | [ˈhoːnˌfʏlt] | Som uttrycker förakt eller spydighet | Expressing contempt or sarcasm | 表达蔑视或讽刺的 | Han log hånfullt åt sina kritiker. |
+| bortkollrad | [ˈbɔrtˌkɔlːrad] | Förvirrad, lurad eller vilseledd | Confused, deceived, or misled | 困惑、受骗或被误导 | Han blev helt bortkollrad av de motsägelsefulla instruktionerna. |
+| tvångsinlöser | [ˈtvɔŋːsˌɪnˌløːsər] | Tar över egendom genom tvång, ofta genom statlig intervention | Takes over property by force, often through government intervention | 通过强制手段接管财产，通常通过政府干预 | Regeringen tvångsinlöser marken för att bygga en ny motorväg. |
+| planbesked | [ˈplɑːnˌbeːɧɛd] | Officiellt meddelande om framtida planering eller utveckling | Official announcement about future planning or development | 关于未来规划或发展的官方通知 | Kommunen gav ett planbesked om det nya bostadsområdet. |
+| tidsåtgången | [ˈtiːdsˌoːtˌɡɔŋːɛn] | Den tid som behövs för att slutföra en uppgift eller aktivitet | The time required to complete a task or activity | 完成任务或活动所需的时间 | Tidsåtgången för projektet blev längre än förväntat. |
+| hemställan | [ˈhɛmˌʂtɛlan] | Formell begäran eller förslag | Formal request or proposal | 正式请求或提议 | Föreningen lämnade in en hemställan om ekonomiskt stöd. |
+| tillgodose | [tɪlˈɡuːdɔˌseː] | Att uppfylla eller tillfredsställa någons behov eller önskemål | To fulfill or satisfy someone's needs or desires | 满足或满足某人的需求或愿望 | Skolan strävar efter att tillgodose alla elevers behov. |
+| hävdar | [ˈhɛvdar] | Att påstå eller insistera på något som sant eller giltigt | To assert or claim something as true or valid | 主张或声明某事为真或有效 | Han hävdar att han inte var på plats vid brottstillfället. |
+| skisser | [ˈsɪsːɛr] | En enkel eller preliminär teckning eller ritning | Simple or preliminary drawings or sketches | 简单或初步的图纸或草图 | Konstnären visade sina skisser för det nya konstverket. |
 
 ## Meningar
 | Swedish              | English                   |
@@ -42,3 +51,10 @@ Svensk från andra källor.
 | sade upp             | terminated/resigned       |
 | rör upp | stir up |
 | Det går inte att säga något säkert om det | It is not possible to say anything certain about it |
+| utgav sig | pretended to be / claimed to be |
+| Öppnar inte längre ytterdörren om hon inte väntar någon | Doesn't open the front door anymore unless she's expecting someone |
+| präglad av | characterized by|
+| från farstutrappan | from the front porch |
+| sätta emot | oppose / resist |
+| sett från vänster | seen from the left |
+| att begära ersättning| to request compensation |
