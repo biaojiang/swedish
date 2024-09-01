@@ -8,6 +8,7 @@ Exported from Dropbox Paper:
 ## 2024 Version
 1. [SVT 2024](./svt/svt.md)
 1. [Netflix](./netflix/netflix.md)
+1. [Andra Resurser](./andra/andra.md)
 
 [mdBook]:https://github.com/rust-lang/mdBook
 [oldSphinxSwedish]:https://plotsignal.com/vocab-sv
