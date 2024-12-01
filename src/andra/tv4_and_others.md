@@ -18,5 +18,5 @@ Svensk från [TV4](https://www.tv4.se/) och andra källor.
 | synnerligen | [ˈsʏnːɛrˌlɪɡɛn] | I högsta grad; väldigt mycket. | Extremely; to a very high degree. | 极其；非常。 | Han är en synnerligen begåvad musiker. |
 | inbördeskrig | [ˈɪnˌbœrːdɛsˌkriːg] | En konflikt eller ett krig mellan grupper inom samma land eller stat. | Civil war; a conflict or war between groups within the same country or state. | 内战；同一国家或地区内部群体之间的冲突或战争。 | Landet har lidit av ett långt och blodigt inbördeskrig. |
 | välgörenhet | [ˈvɛlˌjøːrɛnˌheːt] | Att hjälpa andra genom donationer eller välvilliga handlingar. | Charity; helping others through donations or benevolent actions. | 慈善；通过捐赠或善意的行动帮助他人。 | Företaget donerade pengar till välgörenhet för att stödja behövande. |
-
+| världsettan | [ˈvæːrldsˌɛtːan] | Den person eller det lag som är rankad som nummer ett i världen. | The person or team ranked as number one in the world. | 世界排名第一的人或队伍。 | Hon är nu världsettan i damtennis efter sin senaste seger. |
 
