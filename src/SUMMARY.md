@@ -34,3 +34,11 @@
   - [DN-2024-12](./andra/dn-2024-12.md)
   - [Andra medier](./andra/tv4_and_others.md)
   - [Aftonbladet](./andra/aftonbladet_2024-11.md)
+
+---
+
+# 2025 Version
+- [SVT 2025](./svt/svt.md)
+  - [2025-01](./svt/2025/svt_2025-01.md)
+- [DN 2025](./dn/dn.md)
+  - [2025-01](./dn/2025/dn-2025-01.md)
