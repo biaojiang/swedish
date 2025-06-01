@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>2025-02 - Swedish Learning</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Swedish Learning</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="dn-2025-02"><a class="header" href="#dn-2025-02">DN 2025-02</a></h1>
+<p>Svensk från Dagens Nyheter, februari, 2025.</p>
+<h2 id="ord"><a class="header" href="#ord">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>avbröts</td><td>[ˈɑːvˌbrøːts]</td><td>Något stoppades plötsligt eller avbröts i förtid.</td><td>Was interrupted; something was suddenly stopped or ended prematurely.</td><td>被打断；某事突然停止或提前终止。</td><td>Mötesdiskussionen avbröts av ett oväntat telefonsamtal.</td></tr>
+<tr><td>sekretessbelagd</td><td>[sɛkrɛˈtɛsːbɛˌlaɡd]</td><td>Något som är hemligt och inte får delas med obehöriga.</td><td>Classified; something that is confidential and must not be shared with unauthorized persons.</td><td>机密的；不得与未经授权的人分享的信息。</td><td>Dokumentet är sekretessbelagt och får endast läsas av behöriga personer.</td></tr>
+<tr><td>omhändertagits</td><td>[ʊmˈhɛnːdɛrˌtɑːɡɪts]</td><td>Har blivit vårdad, skyddad eller hanterad på ett ansvarsfullt sätt.</td><td>Has been taken care of, protected, or handled responsibly.</td><td>被照顾；被妥善处理或保护。</td><td>De övergivna djuren har omhändertagits av en djurskyddsorganisation.</td></tr>
+<tr><td>avrådan</td><td>[ˈɑːvˌroːdan]</td><td>En varning eller rekommendation att inte göra något.</td><td>Advice against; a warning or recommendation not to do something.</td><td>劝阻；建议不要做某事。</td><td>Läkaren gav en stark avrådan från att fortsätta med den farliga behandlingen.</td></tr>
+<tr><td>förhållandet</td><td>[fœrˈhålːandɛt]</td><td>Samband mellan saker eller personer; situation eller tillstånd.</td><td>The relationship between things or people; a situation or condition.</td><td>关系；情况或状态。</td><td>Förhållandet mellan de två länderna har förbättrats avsevärt.</td></tr>
+<tr><td>fosterländska</td><td>[ˈfʊstɛrˌlɛndːska]</td><td>Som har med kärlek till sitt land att göra; patriotisk.</td><td>Related to love for one's country; patriotic.</td><td>爱国的，与祖国有关的。</td><td>Han sjöng fosterländska sånger med stolthet.</td></tr>
+<tr><td>alltjämt</td><td>[ˈalːtˌjɛmt]</td><td>Fortfarande, ännu; utan avbrott eller förändring.</td><td>Still, yet; continuously, unchanged.</td><td>仍然，依旧；持续不变。</td><td>Han bor alltjämt i sitt barndomshem.</td></tr>
+<tr><td>utplåna</td><td>[ˈʉːtploːna]</td><td>Förstöra fullständigt; få något att försvinna helt.</td><td>To destroy completely; to obliterate.</td><td>消灭，彻底毁灭，使消失。</td><td>Naturkatastrofen utplånade hela byn.</td></tr>
+<tr><td>förhärliga</td><td>[fœrˈhæːrlɪga]</td><td>Prisa eller framställa något som bättre än det är.</td><td>To glorify or exalt something.</td><td>美化，颂扬，使崇高。</td><td>Filmen förhärligade krigets hjältedåd.</td></tr>
+<tr><td>förinta</td><td>[fœˈrɪnta]</td><td>Fullständigt förstöra eller utplåna något.</td><td>To annihilate or completely destroy.</td><td>消灭，毁灭，彻底摧毁。</td><td>Målet var att förinta fiendens styrkor.</td></tr>
+<tr><td>utformades</td><td>[ˈʉːtfɔrmaːdɛs]</td><td>Blev designad eller skapad på ett visst sätt.</td><td>Was designed or formed in a certain way.</td><td>被设计，被制定。</td><td>Planen utformades för att maximera effektiviteten.</td></tr>
+<tr><td>återgå</td><td>[ˈoːtɛrɡoː]</td><td>Gå tillbaka till ett tidigare tillstånd eller plats.</td><td>To return to a previous state or place.</td><td>回归，恢复，返回。</td><td>Efter semestern var det dags att återgå till arbetet.</td></tr>
+</tbody></table>
+</div>
+<h2 id="fraser-och-meningar"><a class="header" href="#fraser-och-meningar">Fraser och Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>Bidragande skäl</td><td>Contributing reason</td></tr>
+</tbody></table>
+</div>
+<h2 id="regler"><a class="header" href="#regler">Regler</a></h2>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../dn/2025/dn-2025-01.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../dn/2025/dn-2025-03.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../dn/2025/dn-2025-01.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../dn/2025/dn-2025-03.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

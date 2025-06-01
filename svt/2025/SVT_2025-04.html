@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>2025-04 - Swedish Learning</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Swedish Learning</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="svt-2025-04"><a class="header" href="#svt-2025-04">SVT 2025-04</a></h1>
+<p>Svensk språk från SVT, april 2025</p>
+<h2 id="ord"><a class="header" href="#ord">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk解释</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>riktlinjer</td><td>[ˈrɪkːˌlɪnjɛr]</td><td>Anvisningar eller principer som visar hur något bör göras eller hanteras.</td><td>Guidelines or directives on how to act or proceed.</td><td>指导方针，准则，指导原则。</td><td>Regeringen har infört nya riktlinjer för distansarbete.</td></tr>
+<tr><td>mångfald</td><td>[ˈmɔŋːfald]</td><td>Stor variation eller rikedom av olika typer, ofta av människor eller idéer.</td><td>Diversity; a wide variety, often of people or ideas.</td><td>多样性，多元化。</td><td>Företaget strävar efter ökad mångfald på arbetsplatsen.</td></tr>
+<tr><td>inkludering</td><td>[ɪnklʉˈdeːrɪŋ]</td><td>Att aktivt ta med och ge plats åt alla, oavsett bakgrund eller förutsättningar.</td><td>Inclusion; actively involving and giving space to everyone regardless of background or conditions.</td><td>包容，包容性，接纳。</td><td>Skolan arbetar för ökad inkludering av elever med olika behov.</td></tr>
+<tr><td>präglas</td><td>[ˈprɛːɡlas]</td><td>Att ha en tydlig karaktär eller påverkan från något; vara färgad av.</td><td>To be characterized or influenced strongly by something.</td><td>受…影响，具有…的特点。</td><td>Samhället präglas av snabb teknologisk utveckling.</td></tr>
+<tr><td>påtryckningar</td><td>[ˈpoːˌtrʏkːɪŋar]</td><td>Försök att påverka någon att agera på ett visst sätt, ofta genom makt eller hot.</td><td>Pressure or coercion to influence someone’s actions.</td><td>施压，压力，强制手段。</td><td>Regeringen utsattes för kraftiga påtryckningar från oppositionen.</td></tr>
+<tr><td>aprilskämt</td><td>[aˈprɪlːˌɧɛmːt]</td><td>Ett skämt som görs den 1 april för att lura någon på ett skojigt sätt.</td><td>April Fool's joke or prank.</td><td>愚人节玩笑，四月一日的恶作剧。</td><td>Nyhetsartikeln om flygande bilar visade sig vara ett aprilskämt.</td></tr>
+<tr><td>löper</td><td>[ˈløːpɛr]</td><td>Rör sig snabbt till fots; pågår under viss tid; riskerar något.</td><td>Runs; is ongoing; is at risk.</td><td>奔跑；持续；冒险承担（风险）。</td><td>Försäkringen löper ut vid årets slut. / Han löper varje morgon i parken.</td></tr>
+<tr><td>motsvarande</td><td>[ˈmuːtsˌvɑːrandɛ]</td><td>Som är likvärdig eller har samma funktion, betydelse eller värde.</td><td>Equivalent; corresponding in value or function.</td><td>相当的，对应的，等值的。</td><td>Hon fick en tjänst med motsvarande lön i det nya företaget.</td></tr>
+<tr><td>väsentligt</td><td>[ˈveːsɛn(t)slɪkt]</td><td>Något som är mycket viktigt eller betydelsefullt.</td><td>Essentially; significantly; something of great importance.</td><td>重要的，实质性的，本质上。</td><td>Det är väsentligt att följa säkerhetsföreskrifterna på arbetsplatsen.</td></tr>
+<tr><td>krympt</td><td>[krʏmpt]</td><td>Minskat i storlek eller omfattning; blivit mindre.</td><td>Shrunk; reduced in size or scope.</td><td>缩小了，缩水了，减少了。</td><td>Tröjan har krympt i tvätten.</td></tr>
+<tr><td>återförena</td><td>[ˈoːtɛrˌføːrena]</td><td>Att samla personer som varit åtskilda, ofta familjemedlemmar.</td><td>To reunite; to bring together again.</td><td>重聚，使团圆。</td><td>De lyckades återförena familjen efter flera års separation.</td></tr>
+<tr><td>förföljt</td><td>[fœrˈfœljt]</td><td>Utsatt någon för upprepad och ofta hotfull eller orättvis behandling.</td><td>Persecuted; harassed repeatedly and unfairly.</td><td>迫害，骚扰，跟踪。</td><td>Han har förföljt henne i flera månader trots kontaktförbudet.</td></tr>
+<tr><td>inneburit</td><td>[ˈɪnɛˌbʉrɪt]</td><td>Har haft som resultat eller betydelse; medfört något.</td><td>Meant; implied; resulted in something.</td><td>意味着，导致，带来了。</td><td>Förändringen har inneburit stora fördelar för företaget.</td></tr>
+<tr><td>fruktansvärt</td><td>[ˈfrɵkːtanˌsvæːrt]</td><td>Något mycket hemskt, obehagligt eller skrämmande.</td><td>Terrible; horrible; extremely unpleasant or frightening.</td><td>可怕的，极其糟糕的。</td><td>Det var en fruktansvärt olycka med många skadade.</td></tr>
+<tr><td>sjöjungfrun</td><td>[ˈɧøːˌjɵŋːfrʉn]</td><td>Ett mytologiskt väsen med överkropp som en kvinna och underkropp som en fisk.</td><td>The mermaid; a mythical creature with the upper body of a woman and the tail of a fish.</td><td>美人鱼；人鱼传说中的生物。</td><td>Barnen fascinerades av sagan om sjöjungfrun i havet.</td></tr>
+<tr><td>framför allt</td><td>[ˈframnˌfœr ˈalt]</td><td>Det som är viktigast eller mest betydelsefullt; särskilt.</td><td>Above all; most importantly; especially.</td><td>首先，最重要的是；尤其。</td><td>Framför allt måste vi tänka på säkerheten när vi bygger bron.</td></tr>
+<tr><td>otåliga</td><td>[ʊˈtoːlɪɡa]</td><td>Som har svårt att vänta; blir lätt irriterade när något dröjer.</td><td>Impatient; having difficulty waiting.</td><td>不耐烦的，急躁的。</td><td>Barnen blev otåliga när bussen var försenad.</td></tr>
+<tr><td>avrådde</td><td>[ˈɑːvˌrɔdːɛ]</td><td>Rekommenderade att inte göra något; avråda.</td><td>Dissuaded; advised against doing something.</td><td>劝阻，劝告不要做某事。</td><td>Läkaren avrådde honom från att träna för hårt efter operationen.</td></tr>
+<tr><td>livsstilen</td><td>[ˈlɪvˌstɪːlɛn]</td><td>Sättet att leva på; vanor och beteenden som formar ens liv.</td><td>Lifestyle; the way of living; habits and behaviors that shape one’s life.</td><td>生活方式，生活习惯。</td><td>Hennes livsstil har förändrats efter att hon började träna regelbundet.</td></tr>
+<tr><td>förordnande</td><td>[ˈfœːrˌɔrdnɛndɛ]</td><td>En officiell rekommendation eller beslut om något; en order or decree.</td><td>命令，法令，指示。</td><td>Läkaren gav ett förordnande om att ta medicinen varje dag.</td><td></td></tr>
+<tr><td>elbilstillverkaren</td><td>[ˈɛlˌbiːlstɪlˌvɛrkarɛn]</td><td>Företag som tillverkar elbilar; biltillverkare med fokus på eldrift.</td><td>Electric car manufacturer; a company that produces electric cars.</td><td>电动汽车制造商；专注于电动汽车的汽车制造商。</td><td>Elbilstillverkaren lanserade sin nya modell med stor pompa och ståt.</td></tr>
+<tr><td>uppskrivna</td><td>[ˈʊpˌskrɪvːna]</td><td>Något som har ökat i värde eller betydelse; något som har blivit mer värt.</td><td>Written up; something that has increased in value or significance.</td><td>上调，增加。</td><td>Aktierna har blivit uppskrivna efter den positiva utvecklingen på marknaden.</td></tr>
+<tr><td>dundrade</td><td>[ˈdʊnːdradɛ]</td><td>Att göra ett kraftigt ljud; att klaga eller protestera</td><td>loudly; to complain or protest.</td><td>隆隆作响，轰鸣。</td><td>Tåget dundrade fram genom tunneln med ett högt ljud.</td></tr>
+<tr><td>åderförkalkning</td><td>[ˈoːdɛrˌfœrˌkɑlknɪŋ]</td><td>En medicinsk term för avlagringar i blodkärlen som kan leda till åderförkalkning.</td><td>A medical term for deposits in blood vessels that can lead to arteriosclerosis.</td><td>动脉硬化，动脉粥样硬化。</td><td>Åderförkalkning kan orsaka hjärtproblem och cirkulationsstörningar.</td></tr>
+<tr><td>vejpande</td><td>[ˈveɪpˌande]</td><td>Att röka eller använda e-cigaretter</td><td>to smoke or use e-cigarettes.</td><td>吸电子烟，抽电子烟。</td><td>Många ungdomar har börjat vejpande istället för att röka traditionella cigaretter.</td></tr>
+<tr><td>befogenhet</td><td>[bɛˈfoːɡɛnˌhɛt]</td><td>Rätt eller makt att fatta beslut eller agera på authority; the right or power to make decisions or act.</td><td>权力，权威。</td><td>Läraren har befogenhet att ge disciplinära åtgärder till eleverna.</td><td></td></tr>
+<tr><td>mutbrott</td><td>[ˈmʉːtˌbrɔt]</td><td>En olaglig handling där någon tar emot eller ger a bribe; corruption.</td><td>贿赂，腐败。</td><td>Företagets ledning åtalades för mutbrott efter att ha betalat stora summor till politiker.</td><td></td></tr>
+<tr><td>utsetts</td><td>[ˈʉːtˌsɛts]</td><td>Att bli vald eller utsedd till en viss position</td><td>Appointed; to be chosen or selected for a certain position.</td><td>被任命，被选中。</td><td>Hon har utsetts till ny chef för avdelningen efter en lång rekryteringsprocess.</td></tr>
+<tr><td>farväl</td><td>[farˈvɛlː]</td><td>Avskedshälsning; att säga adjö vid en avskedssituation.</td><td>Farewell; saying goodbye at parting.</td><td>告别，告辞，分别。</td><td>Hon vinkade ett sista farväl innan tåget avgick.</td></tr>
+<tr><td>tystnadspliketen</td><td>[ˈtʏstˌnɑːdsˌplɪkɛtɛn]</td><td>En laglig skyldighet att inte avslöja viss information.</td><td>Confidentiality; a legal obligation not to disclose certain information.</td><td>保密义务，保密责任。</td><td>Läkaren har tystnadsplikt och får inte berätta om patientens hälsotillstånd.</td></tr>
+<tr><td>villkorlig</td><td>[ˈvɪlːˌkɔrːlɪɡ]</td><td>Villkorlig; med vissa begränsningar</td><td>conditions; a sentence or punishment that is conditional on certain terms.</td><td>有条件的，附带条件的。</td><td>Han fick en villkorlig dom efter att ha erkänt sitt brott.</td></tr>
+<tr><td>felaktig</td><td>[ˈfeːlˌaktɪɡ]</td><td>Något som är fel eller inte korrekt; inte sant.</td><td>Incorrect; something that is wrong or not accurate.</td><td>错误的，不正确的。</td><td>Det var en felaktig uppgift som ledde till missförståndet.</td></tr>
+<tr><td>sällsynta</td><td>[ˈsɛlːˌsynta]</td><td>Förekommer mycket sällan; ovanliga.</td><td>Rare; occurring very infrequently.</td><td>罕见的，稀有的。</td><td>Vissa sällsynta fågelarter kan bara ses på avlägsna öar.</td></tr>
+<tr><td>etiketter</td><td>[ɛtɪˈkɛtːɛr]</td><td>Små skyltar eller lappar som anger information om innehåll eller egenskaper.</td><td>Labels; tags that describe contents or properties.</td><td>标签，标识，标牌。</td><td>Etiketterna på produkterna visar tydligt ingredienserna och priset.</td></tr>
+</tbody></table>
+</div>
+<h2 id="frasermeningar"><a class="header" href="#frasermeningar">Fraser/Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>har åter aktualiserat frågan om</td><td>has once again raised the issue of</td></tr>
+<tr><td>emot införandet av</td><td>against the introduction of</td></tr>
+<tr><td>Går det att ...</td><td>Is it possible to ...</td></tr>
+<tr><td>bär på</td><td>carries / harbors</td></tr>
+<tr><td>Vad är det senaste?</td><td>What is the latest?</td></tr>
+<tr><td>ta nåt slags ansvar</td><td>take some kind of responsibility</td></tr>
+<tr><td>löper ut</td><td>expires</td></tr>
+<tr><td>förhandla om</td><td>negotiate about</td></tr>
+<tr><td>har brutit mot lagen</td><td>has broken the law</td></tr>
+</tbody></table>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../svt/2025/SVT_2025-03.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../svt/2025/SVT_2025-05.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../svt/2025/SVT_2025-03.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../svt/2025/SVT_2025-05.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

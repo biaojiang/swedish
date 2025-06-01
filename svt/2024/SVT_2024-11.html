@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>2024-11 - Swedish Learning</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Swedish Learning</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="svt-2024-11"><a class="header" href="#svt-2024-11">SVT 2024-11</a></h1>
+<p>Svensk språk från SVT, oktober 2024</p>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>oroväckande</td><td>[ˈuːrʊˌvɛkːandɛ]</td><td>Något som orsakar oro eller bekymmer.</td><td>Worrying or alarming.</td><td>令人担忧或令人不安的。</td><td>De senaste nyheterna är oroväckande för många invånare.</td></tr>
+<tr><td>källmedvetenhet</td><td>[ˈɕɛlːmɛdˌveːtɛnˌheːt]</td><td>Förmågan att kritiskt granska och förstå källors trovärdighet och ursprung.</td><td>Source awareness; the ability to critically evaluate the credibility and origin of sources.</td><td>对来源的批判性评估和理解其可信度及来源的能力。</td><td>Det är viktigt att ha källmedvetenhet när man läser nyheter online.</td></tr>
+<tr><td>knepigt</td><td>[ˈkneːpɪkt]</td><td>Något som är svårt att hantera eller förstå; komplicerat.</td><td>Tricky or difficult to handle or understand; complicated.</td><td>棘手的、难以处理或理解的；复杂的。</td><td>Det var knepigt att lösa problemet utan hjälp.</td></tr>
+<tr><td>ändamålsenligt</td><td>[ˈɛndaˌmoːlsˌɛnlɪkt]</td><td>Något som är anpassat eller lämpligt för ett visst ändamål eller syfte.</td><td>Appropriate or suitable for a specific purpose or goal.</td><td>适合或符合特定目的或目标的。</td><td>Utrustningen var ändamålsenligt utformad för arbetet i laboratoriet.</td></tr>
+<tr><td>betydelse</td><td>[bɛˈtyːdɛlsɛ]</td><td>Det värde eller den innebörd som något har.</td><td>Importance or meaning of something.</td><td>意义或重要性。</td><td>Orden hade stor betydelse för hennes beslut.</td></tr>
+<tr><td>skugg</td><td>[skʉɡː]</td><td>Mörkare område som bildas när något blockerar ljuset.</td><td>Shadow or a dark area caused by an object blocking light.</td><td>阴影，因物体阻挡光线而形成的暗区。</td><td>Trädet gav en behaglig skugg under den varma sommardagen.</td></tr>
+<tr><td>ofredanden</td><td>[ˈuːˌfreːdandɛn]</td><td>Handlingar som innebär att någon utsätts för obehag eller trakasserier.</td><td>Harassment or acts that cause discomfort or disturbance to someone.</td><td>骚扰或使人感到不适的行为。</td><td>Personen dömdes för flera ofredanden under det gångna året.</td></tr>
+<tr><td>misskötte</td><td>[ˈmɪsˌɧøtːɛ]</td><td>Att sköta något dåligt eller på ett olämpligt sätt.</td><td>Mismanaged or failed to take proper care of something.</td><td>处理不当或未妥善照顾某事。</td><td>Han misskötte sina arbetsuppgifter och fick därför en varning.</td></tr>
+<tr><td>villkorligt</td><td>[ˈvɪlːˌkoːrlɪkt]</td><td>Något som är beroende av uppfyllda villkor eller förutsättningar.</td><td>Conditionally; dependent on certain terms or conditions.</td><td>有条件的，取决于某些条件或前提。</td><td>Han blev dömd till ett villkorligt fängelsestraff.</td></tr>
+<tr><td>beklagligt</td><td>[bɛˈklɑːɡlɪkt]</td><td>Något som är sorgligt eller beklagansvärt.</td><td>Regrettable or unfortunate.</td><td>遗憾的或不幸的。</td><td>Det är beklagligt att mötet måste ställas in på grund av vädret.</td></tr>
+<tr><td>skyndsamt</td><td>[ˈɧʏnːdsamt]</td><td>Något som görs snabbt eller utan dröjsmål.</td><td>Promptly or urgently.</td><td>迅速地、紧急地。</td><td>Hon behövde skicka in ansökan skyndsamt för att hinna med i tid.</td></tr>
+<tr><td>infördes</td><td>[ˈɪnˌføːrdes]</td><td>Blev infört eller implementerat.</td><td>Was introduced or implemented.</td><td>被引入或实施。</td><td>Den nya lagen infördes för att förbättra trafiksäkerheten.</td></tr>
+<tr><td>angående</td><td>[ˈanːˌɡøːndɛ]</td><td>Som rör eller handlar om något.</td><td>Regarding or concerning.</td><td>关于，涉及。</td><td>De hade en diskussion angående de nya reglerna.</td></tr>
+<tr><td>väcktes</td><td>[ˈvɛkːtɛs]</td><td>Att ha blivit väckt eller att en fråga eller ett intresse blev påbörjat.</td><td>Was awakened or initiated.</td><td>被唤醒或被引发。</td><td>En debatt väcktes efter den nya rapportens publicering.</td></tr>
+<tr><td>frikänns</td><td>[ˈfriːˌɕɛnːs]</td><td>Att förklaras oskyldig i en rättegång eller rättsprocess.</td><td>To be acquitted or declared not guilty.</td><td>在审判中被宣告无罪。</td><td>Efter en lång rättegång frikänns den anklagade av domstolen.</td></tr>
+<tr><td>kvarlämnade</td><td>[ˈkvaːrˌlɛmnadɛ]</td><td>Något som lämnades kvar på en plats.</td><td>Left behind or remained.</td><td>留下或遗留。</td><td>Han kvarlämnade sina tillhörigheter i lägenheten.</td></tr>
+<tr><td>jämförbara</td><td>[ˈjɛmːˌføːrˌbɑːra]</td><td>Som kan jämföras med varandra.</td><td>Comparable or able to be compared.</td><td>可比较的。</td><td>Resultaten från de två studierna är jämförbara.</td></tr>
+<tr><td>att avge</td><td>[ˈɑːvˌɡeː]</td><td>Att lämna eller ge ifrån sig något, t.ex. ett löfte eller ett svar.</td><td>To submit or deliver, such as a statement.</td><td>递交、发出（如声明或承诺）。</td><td>Han ska avge sitt svar till domstolen nästa vecka.</td></tr>
+<tr><td>förstört</td><td>[fœrˈʃœʈ]</td><td>Något som har blivit skadat så att det inte längre fungerar eller är användbart.</td><td>Destroyed or ruined.</td><td>被破坏、毁坏。</td><td>Stormen har förstört många hus i området.</td></tr>
+<tr><td>bedrövligt</td><td>[bɛˈdrøːvlɪkt]</td><td>Något som orsakar sorg, besvikelse eller nedstämdhet.</td><td>Deplorable or very sad.</td><td>悲惨的、令人失望的。</td><td>Det är bedrövligt att se hur staden har förfallit.</td></tr>
+<tr><td>beslagtagna</td><td>[bɛˈslaːɡˌtɑːɡna]</td><td>Något som har tagits i beslag, ofta av myndigheter som bevismaterial.</td><td>Confiscated or seized, often by authorities.</td><td>被没收或被扣押。</td><td>De beslagtagna föremålen användes som bevis i rättegången.</td></tr>
+<tr><td>smidig</td><td>[ˈsmiːdɪɡ]</td><td>Någon eller något som är flexibel, lätt att hantera eller rör sig mjukt.</td><td>Flexible, smooth, or easy to handle.</td><td>灵活的、顺畅的、易于处理的。</td><td>Han löste problemet på ett smidigt sätt.</td></tr>
+<tr><td>undernärd</td><td>[ˈɵnːdɛrˌnæːrd]</td><td>En person eller ett djur som lider av brist på näring.</td><td>Malnourished; lacking sufficient nutrition.</td><td>营养不良的。</td><td>Barnet var undernärd och behövde omedelbar vård.</td></tr>
+<tr><td>analfabeter</td><td>[ˈanːalfaˌbeːtɛr]</td><td>Personer som inte kan läsa eller skriva.</td><td>Illiterate people; individuals who cannot read or write.</td><td>文盲；不能读写的人。</td><td>Många analfabeter får hjälp att lära sig läsa och skriva i vuxen ålder.</td></tr>
+<tr><td>framförallt</td><td>[ˈframːˌfœrˌalt]</td><td>I första hand eller särskilt; det som är viktigast.</td><td>Above all; primarily; especially.</td><td>首先；特别是。</td><td>Hon är känd som en skicklig musiker, framförallt som violinist.</td></tr>
+<tr><td>angelägenhet</td><td>[ˈanːɡɛˌleːɡɛnˌheːt]</td><td>Något som är viktigt eller betydelsefullt, eller ett ärende.</td><td>Matter of importance or concern.</td><td>重要的事情；关注点。</td><td>Klimatförändringar är en global angelägenhet.</td></tr>
+<tr><td>ingående</td><td>[ˈɪŋˌɡoːɛnde]</td><td>Noggrant eller detaljerat; som rör sig in i något.</td><td>Thorough or detailed; incoming.</td><td>详细的；深入的；进入的。</td><td>Rapporten innehåller en ingående analys av ekonomin.</td></tr>
+<tr><td>disponibel</td><td>[dɪsˈpɔːnɪbɛl]</td><td>Något som är tillgängligt för användning eller till förfogande.</td><td>Available; at one's disposal.</td><td>可用的；可支配的。</td><td>Hon har en disponibel inkomst på 25 000 kronor per månad.</td></tr>
+<tr><td>eniga</td><td>[ˈeːnɪɡa]</td><td>Som har samma åsikt eller är överens.</td><td>In agreement; unanimous.</td><td>意见一致的；达成共识的。</td><td>Alla i gruppen var eniga om beslutet.</td></tr>
+<tr><td>enats</td><td>[ˈeːnats]</td><td>Kommit överens om något; nått en överenskommelse.</td><td>Agreed upon; reached an agreement.</td><td>达成一致；同意。</td><td>Parterna har enats om ett nytt avtal.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar"><a class="header" href="#meningar">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>att sålla bland information</td><td>to sift through information</td></tr>
+<tr><td>ställer frågor</td><td>asks questions</td></tr>
+<tr><td>...har tagit det här på allvar</td><td>...have taken this seriously</td></tr>
+<tr><td>Av en slump</td><td>By chance</td></tr>
+</tbody></table>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../svt/2024/SVT_2024-10.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../svt/2024/SVT_2024-12.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../svt/2024/SVT_2024-10.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../svt/2024/SVT_2024-12.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

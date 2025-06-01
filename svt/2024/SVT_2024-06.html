@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>2024-06 - Swedish Learning</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Swedish Learning</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="svt-2024-06"><a class="header" href="#svt-2024-06">SVT 2024-06</a></h1>
+<p>Svensk språk från SVT, Jun 2024</p>
+<h2 id="ord"><a class="header" href="#ord">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>uttråkad</td><td>[ʉːtˈroːkad]</td><td>Känna sig trött och ointresserad på grund av brist på stimulans eller variation</td><td>Feeling tired and uninterested due to lack of stimulation or variety</td><td>因缺乏刺激或变化而感到厌倦和无聊</td><td>Jag känner mig uttråkad efter att ha gjort samma sak hela dagen.</td></tr>
+<tr><td>beroendeframkallande</td><td>[bɛˈruːˌɛnːdɛˌframˈkalːandɛ]</td><td>Något som orsakar ett starkt behov eller begär efter upprepad användning eller konsumtion</td><td>Something that causes a strong need or craving for repeated use or consumption</td><td>使人产生强烈需求或渴望反复使用或消费的事物</td><td>Vissa videospel kan vara mycket beroendeframkallande.</td></tr>
+<tr><td>ofattbart</td><td>[uːˈfatːbaːrt]</td><td>Något som är mycket svårt att förstå eller greppa</td><td>Something that is very difficult to understand or grasp</td><td>非常难以理解或掌握的事物</td><td>Det är ofattbart hur snabbt teknologin utvecklas.</td></tr>
+<tr><td>granskning</td><td>[ˈɡranːsknɪŋ]</td><td>Noggrann undersökning eller genomgång av något för att bedöma dess korrekthet eller kvalitet</td><td>Thorough examination or review of something to assess its accuracy or quality</td><td>对某事物进行彻底检查或审查以评估其准确性或质量</td><td>Dokumenten är under granskning för att säkerställa att all information är korrekt.</td></tr>
+<tr><td>inrättas</td><td>[ɪnˈratːas]</td><td>Att etablera eller skapa något, särskilt en organisation eller system</td><td>To establish or set up something, especially an organization or system</td><td>建立或设立某物，特别是组织或系统</td><td>En ny kommitté ska inrättas för att förbättra arbetsmiljön.</td></tr>
+<tr><td>slukar</td><td>[ˈsluːkar]</td><td>Att svälja något snabbt och girigt; att ta in stora mängder av något, till exempel information</td><td>To swallow something quickly and greedily; to consume large amounts of something, such as information</td><td>快速且贪婪地吞下某物；大量吸收某物，例如信息</td><td>Han slukar böcker på en vecka.</td></tr>
+<tr><td>överväger</td><td>[ˈøːvɛrˌvɛːɡɛr]</td><td>Att noggrant tänka igenom något innan man fattar ett beslut</td><td>To carefully consider something before making a decision</td><td>在做决定之前仔细考虑某事</td><td>Hon överväger att byta jobb för att få bättre arbetsvillkor.</td></tr>
+<tr><td>översköljer</td><td>[ˈøːvɛrˌɧœlːjɛr]</td><td>Att täcka eller överväldiga något eller någon med en stor mängd av något</td><td>To cover or overwhelm something or someone with a large amount of something</td><td>用大量的某物覆盖或压倒某物或某人</td><td>Känslor av lättnad översköljer henne när hon får nyheterna.</td></tr>
+<tr><td>otaliga</td><td>[ʊˈtɑːlɪga]</td><td>Så många att de inte kan räknas; mycket stora mängder</td><td>So many that they cannot be counted; innumerable</td><td>数不清的；无数的</td><td>Det finns otaliga stjärnor på himlen.</td></tr>
+<tr><td>försiktighetsåtgärder</td><td>[fœrˈsɪktɪɡˌheːtsˌoːtˌjærdər]</td><td>Åtgärder som vidtas för att förhindra olyckor eller skador; säkerhetsåtgärder</td><td>Measures taken to prevent accidents or harm; precautions</td><td>为防止事故或伤害而采取的措施；预防措施</td><td>Vi måste vidta alla försiktighetsåtgärder för att säkerställa säkerheten.</td></tr>
+<tr><td>outgrundlig</td><td>[ˈuːtˌɡrʉndˌliː]</td><td>Som inte kan förstås eller förklaras; mystisk</td><td>Impossible to understand or explain; mysterious</td><td>无法理解或解释的；神秘的</td><td>Hans outgrundliga leende gjorde alla förvirrade.</td></tr>
+<tr><td>avskräckning</td><td>[ˈɑːvskrɛkːnɪŋ]</td><td>Åtgärder eller strategier som syftar till att avskräcka någon från att utföra en oönskad handling</td><td>Measures or strategies aimed at deterring someone from performing an undesirable action</td><td>旨在阻止某人进行不良行为的措施或策略</td><td>Landet har stärkt sin militära avskräckning för att förhindra attacker.</td></tr>
+<tr><td>stör</td><td>[støːr]</td><td>Att avbryta eller orsaka problem för någon eller något</td><td>To interrupt or cause trouble for someone or something</td><td>打断或给某人或某事带来麻烦</td><td>Musik på hög volym stör grannarna.</td></tr>
+<tr><td>riktvärdet</td><td>[ˈrɪktˌvæːrdɛt]</td><td>Ett rekommenderat värde som bör användas som referenspunkt</td><td>A recommended value that should be used as a reference point</td><td>应作为参考点的推荐值</td><td>Vattenkvaliteten ligger inom riktvärdet för dricksvatten.</td></tr>
+<tr><td>överskrider</td><td>[ˈøːvərˌskrɪːdɛr]</td><td>Att gå utöver en gräns eller nivå; att överträffa något</td><td>To exceed a limit or level; to surpass something</td><td>超过某个限度或水平；超越某物</td><td>Hastigheten överskrider det tillåtna gränsen.</td></tr>
+<tr><td>osmos</td><td>[ɔsˈmuːs]</td><td>Process där lösningsmedel passerar genom ett semipermeabelt membran från en mindre koncentrerad lösning till en mer koncentrerad lösning</td><td>Process where solvent passes through a semipermeable membrane from a less concentrated solution to a more concentrated solution</td><td>溶剂通过半透膜从低浓度溶液向高浓度溶液传递的过程</td><td>Osmos är viktigt för cellernas näringsupptag.</td></tr>
+<tr><td>åtgärda</td><td>[ˈoːtˌjærda]</td><td>Att vidta åtgärder för att rätta till ett problem eller förbättra en situation</td><td>To take measures to correct a problem or improve a situation</td><td>采取措施纠正问题或改善情况</td><td>Vi måste åtgärda de tekniska problemen innan vi kan fortsätta.</td></tr>
+<tr><td>svalka</td><td>[ˈsvalˌka]</td><td>En känsla av kyla eller friskhet, särskilt under varma förhållanden</td><td>A feeling of coolness or freshness, especially in warm conditions</td><td>在温暖的环境中感到凉爽或清新</td><td>Vi satt i skuggan för att få lite svalka under den heta dagen.</td></tr>
+<tr><td>slumpmässigt</td><td>[ˈslɵmpˌmɛsːɪkt]</td><td>Något som sker utan någon specifik ordning eller plan; av en händelse</td><td>Something that happens without any specific order or plan; by chance</td><td>没有特定顺序或计划的发生；偶然的</td><td>Urvalet av deltagare gjordes slumpmässigt för att säkerställa rättvisa.</td></tr>
+<tr><td>bestyckas</td><td>[bɛsˈtʏkːas]</td><td>Att utrusta med vapen eller annan militär utrustning</td><td>To equip with weapons or other military equipment</td><td>装备武器或其他军事装备</td><td>Fartyget bestyckas med de senaste missilsystemen för att öka dess försvarsförmåga.</td></tr>
+<tr><td>sammanfattar</td><td>[ˈsamːanˌfatːar]</td><td>Att kortfattat beskriva huvudpunkterna eller kärnan i något</td><td>To briefly describe the main points or essence</td><td>简要描述某事的要点或精髓</td><td>Hon sammanfattar mötet i en kort rapport.</td></tr>
+<tr><td>avsevärt</td><td>[ˈɑːvseˌvæːrt]</td><td>Betydligt; i stor utsträckning</td><td>Significantly; to a great extent</td><td>显著地；在很大程度上</td><td>Kostnaderna har ökat avsevärt under det senaste året.</td></tr>
+<tr><td>utmaning</td><td>[ˈʉːtˌmɑːnɪŋ]</td><td>En svårighet eller något som kräver ansträngning och skicklighet</td><td>A difficulty or something that requires effort and skill</td><td>挑战或需要努力和技巧的事情</td><td>Att lära sig ett nytt språk kan vara en stor utmaning.</td></tr>
+<tr><td>oenigheten</td><td>[ˈuːˌeːnɪˌheːtɛn]</td><td>Tillståndet av att inte vara överens; konflikt eller tvist</td><td>The state of disagreement; conflict or dispute</td><td>不同意的状态；冲突或争执</td><td>Oenigheten mellan parterna gjorde förhandlingarna svåra.</td></tr>
+<tr><td>återstår</td><td>[ˈoːtɛrˌstoːr]</td><td>Fortsätter att finnas eller vara kvar</td><td>Remains or continues to exist</td><td>继续存在或仍然存在</td><td>Det återstår bara några dagar innan projektet är klart.</td></tr>
+<tr><td>hävdat</td><td>[ˈhɛvdat]</td><td>Påstått eller framfört med bestämdhet</td><td>Claimed or asserted with confidence</td><td>坚定地声称或断言</td><td>Han har hävdat sin oskuld från början.</td></tr>
+<tr><td>belägen</td><td>[bɛˈleːɡɛn]</td><td>Som ligger på en viss plats eller befinner sig någonstans</td><td>Located or situated in a particular place</td><td>位于某个地方</td><td>Huset är beläget vid sjön med en vacker utsikt.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar"><a class="header" href="#meningar">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td> består av</td><td>consists of</td></tr>
+<tr><td>verkar det i all fall</td><td>it seems in any case</td></tr>
+<tr><td>till sist</td><td>finally</td></tr>
+<tr><td>framgår av</td><td>is evident from</td></tr>
+<tr><td>alldeles inför</td><td>just before</td></tr>
+<tr><td>som helhet</td><td>as a whole</td></tr>
+<tr><td>allra mest</td><td>most of all</td></tr>
+<tr><td>till och med</td><td>even / up to and including</td></tr>
+</tbody></table>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../svt/2024/SVT_2024-05.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../svt/2024/SVT_2024-07.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../svt/2024/SVT_2024-05.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../svt/2024/SVT_2024-07.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

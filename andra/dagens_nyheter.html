@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Dagens Nyheter - Swedish Learning</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Swedish Learning</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>Svensk från andra källor.</p>
+<h2 id="ord"><a class="header" href="#ord">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>deltog</td><td>[ˈdɛlˌtʊɡ]</td><td>Var med i en aktivitet eller ett evenemang</td><td>Took part in an activity or event</td><td>参加一个活动或事件</td><td>Många elever deltog i skolans idrottsdag.</td></tr>
+<tr><td>anlitats</td><td>[ˈanˌliːtats]</td><td>Har blivit anställd eller engagerad för en tjänst eller uppgift</td><td>Has been employed or engaged for a service or task</td><td>被雇用或被聘用来完成某项服务或任务</td><td>En expert har anlitats för att lösa problemet.</td></tr>
+<tr><td>äventyrades</td><td>[ˈɛːvɛnˌtyːradɛs]</td><td>Att något utsattes för risk eller fara</td><td>That something was put at risk or in danger</td><td>某事被置于风险或危险中</td><td>Säkerheten äventyrades på grund av bristande underhåll.</td></tr>
+<tr><td>ombedd</td><td>[ˈɔmˌbɛd]</td><td>Att ha blivit tillfrågad eller uppmanad att göra något</td><td>Having been asked or requested to do something</td><td>被要求或被请求做某事</td><td>Hon blev ombedd att hålla ett tal på konferensen.</td></tr>
+<tr><td>upplägg</td><td>[ˈɵpˌlɛɡː]</td><td>Plan eller struktur för hur något ska genomföras</td><td>Plan or structure for how something is to be carried out</td><td>如何实施某事的计划或结构</td><td>Vi diskuterade upplägget för det nya projektet under mötet.</td></tr>
+<tr><td>påstådda</td><td>[ˈpʰoːˌstɔdːa]</td><td>Som någon har sagt eller hävdat, ofta utan bevis</td><td>Alleged or claimed by someone, often without proof</td><td>某人声称的，通常没有证据</td><td>De påstådda brotten undersöks fortfarande av polisen.</td></tr>
+<tr><td>fruktansvärt</td><td>[ˈfrʉkːtanˌsvæʈː]</td><td>Mycket dåligt eller hemskt; extremt obehagligt</td><td>Very bad or terrible; extremely unpleasant</td><td>非常糟糕或可怕；极其令人不快的</td><td>Det var en fruktansvärt olycka på motorvägen.</td></tr>
+<tr><td>trivdes</td><td>[ˈtrɪvːdɛs]</td><td>Kände sig väl till mods och nöjd i en viss miljö eller situation</td><td>Felt comfortable and satisfied in a certain environment or situation</td><td>在某个环境或情况下感到舒适和满意</td><td>Hon trivdes mycket bra på sitt nya jobb.</td></tr>
+<tr><td>föreställa</td><td>[ˈfœːrɛˌstɛlːa]</td><td>Att avbilda eller ge en bild av något; att föreställa sig något mentalt</td><td>To depict or give an image of something; to imagine something mentally</td><td>描绘或呈现某物；在脑海中想象某事</td><td>Tavlan föreställer en vacker landskapsscen.</td></tr>
+<tr><td>omger</td><td>[ˈɔmˌjeːr]</td><td>Att befinna sig runt omkring något eller någon</td><td>To surround something or someone</td><td>围绕某物或某人</td><td>Trädgården omger huset med vackra blommor och buskar.</td></tr>
+<tr><td>skingrades</td><td>[ˈɧɪŋˌɡraːdɛs]</td><td>Att spridas eller försvinna i olika riktningar</td><td>To scatter or disappear in different directions</td><td>向不同方向散开或消失</td><td>Molnen skingrades och solen kom fram.</td></tr>
+<tr><td>vidrig</td><td>[ˈviːdrɪɡ]</td><td>Extremt obehaglig eller motbjudande</td><td>Extremely unpleasant or disgusting</td><td>极其令人不快或令人厌恶的</td><td>Lukten från soptippen var vidrig.</td></tr>
+<tr><td>avskyvärd</td><td>[ˈɑːvˌskʏvæːrd]</td><td>Mycket obehaglig och motbjudande</td><td>Very unpleasant and repulsive</td><td>非常令人不快和令人厌恶的</td><td>Hans beteende var avskyvärd och oacceptabelt.</td></tr>
+<tr><td>smäda</td><td>[ˈsmɛːda]</td><td>Att tala illa om eller förlöjliga någon; att förolämpa</td><td>To speak ill of or ridicule someone; to insult</td><td>说坏话或嘲笑某人；侮辱</td><td>Han blev smädad för sina ovanliga åsikter.</td></tr>
+<tr><td>skymfa</td><td>[ˈɧʏmːfa]</td><td>Att förolämpa eller förödmjuka någon</td><td>To insult or humiliate someone</td><td>侮辱或羞辱某人</td><td>Han skymfade henne med sina elaka kommentarer.</td></tr>
+<tr><td>yttrande</td><td>[ˈʏtˌrandɛ]</td><td>En formell eller informell uttryckning av tankar, åsikter eller känslor; en kommentar eller åsikt</td><td>An expression of thoughts, opinions, or feelings, formal or informal; a comment or opinion</td><td>表达思想、观点或感情的正式或非正式方式；评论或意见</td><td>Yttrandefrihet är viktigt i en demokrati.</td></tr>
+<tr><td>utsaga</td><td>[²ɵtːsaˌɡa]</td><td>Ett uttryck av tankar, åsikter eller information; en officiell eller formell deklaration</td><td>An expression of thoughts, opinions, or information; an official or formal statement</td><td>表达思想、观点或信息的方式；正式或官方声明</td><td>Polisens utsaga bekräftade misstankarna om bedrägeri.</td></tr>
+<tr><td>chimär</td><td>[ɕɪˈmɛːr]</td><td>En illusionär eller orealistisk idé eller koncept; något som är svårt att förverkliga eller förstå</td><td>An illusory or unrealistic idea or concept; something that is difficult to achieve or understand</td><td>一种虚幻或不现实的想法或概念；难以实现或理解的东西</td><td>Att uppnå fullständig världsfred är ofta betraktat som en chimär.</td></tr>
+<tr><td>illusion</td><td>[ɪlɵˈɧuːn]</td><td>En falsk uppfattning eller felaktig bild av verkligheten; något som verkar vara verkligt men inte är det</td><td>A false perception or misleading image of reality; something that appears real but is not</td><td>对现实的错误看法或误导性图像；看似真实但实际并非如此的东西</td><td>Hans uppfattning om lycka var en illusion.</td></tr>
+<tr><td>böla</td><td>[ˈbøːla]</td><td>Att gråta högljutt och oavbrutet, särskilt med klagande eller jämmerliga ljud</td><td>To cry loudly and continuously, especially with whining or plaintive sounds</td><td>大声哭泣，尤指带有哀号或哀怨的声音</td><td>Barnet började böla när det tappade sitt favoritleksak.</td></tr>
+<tr><td>skraj</td><td>[skraj]</td><td>Mycket rädd eller nervös; i stor rädsla eller ångest</td><td>Very scared or nervous; in great fear or anxiety</td><td>非常害怕或紧张；极度恐惧或焦虑</td><td>Han blev skraj när han hörde ett oväntat ljud på natten.</td></tr>
+<tr><td>onekligen</td><td>[ʊnɛkˈlɪːɡən]</td><td>Utan tvivel; används för att uttrycka överensstämmelse</td><td>Without doubt; used to express agreement or assent</td><td>毫无疑问；用于表示同意或赞同</td><td>Det är onekligen en vacker dag idag.</td></tr>
+<tr><td>obestridligen</td><td>[uːbɛˈstriːdlɪɡən]</td><td>Utan tvivel; som inte kan ifrågasättas eller motsägas</td><td>Without doubt; that which cannot be questioned or disputed</td><td>毫无疑问；不能质疑或反驳的</td><td>Hans talanger är obestridligen imponerande.</td></tr>
+<tr><td>stroppy</td><td>[ˈstrɒpi]</td><td>Som är irriterad, lättretad eller bråkig</td><td>Easily annoyed, irritable or argumentative</td><td>易怒的，易激动的或好争吵的</td><td>Han var lite stroppy efter att ha väntat i kö i över en timme.</td></tr>
+<tr><td>kväda</td><td>[ˈkvɛːda]</td><td>Att recitera eller sjunga poesi eller sånger</td><td>To recite or sing poetry or songs</td><td>朗诵或唱诗歌或歌曲</td><td>Skalden började kväda en gammal saga vid elden.</td></tr>
+<tr><td>frimodig</td><td>[ˈfriːˌmuːdɪɡ]</td><td>Orädd och öppen i sitt sätt att tala och agera</td><td>Fearless and open in speech and behavior</td><td>无所畏惧且坦率的</td><td>Hon var frimodig och vågade säga vad hon tyckte.</td></tr>
+<tr><td>charlatan</td><td>[ɧɑrlaˈtɑn]</td><td>En person som falskeligen påstår sig ha vissa kunskaper eller förmågor; bedragare</td><td>A person who falsely claims to have certain knowledge or skills; a fraud or impostor</td><td>冒充有某种知识或技能的人；骗子</td><td>Han avslöjades som en charlatan när hans lögner kom fram.</td></tr>
+<tr><td>förskansning</td><td>[fœrˈskansˌnɪŋ]</td><td>En försvarsanordning eller befästning, ofta med vall eller mur</td><td>A defensive structure or fortification, often with a rampart or wall; entrenchment</td><td>防御工事或设防，通常有防护墙或围墙</td><td>Soldaterna byggde en förskansning för att skydda sig mot fienden.</td></tr>
+<tr><td>bålverk</td><td>[ˈboːlvɛrk]</td><td>En stark försvarsanläggning eller befästning; en skyddande barriär</td><td>A strong defensive fortification or bulwark; a protective barrier</td><td>强大的防御工事或堡垒；防护屏障</td><td>Stadens bålverk skyddade invånarna från angriparna.</td></tr>
+<tr><td>utåtagerande</td><td>[ˈʉːtɔːtˌaːɡeˌrande]</td><td>Som visar sina känslor eller sitt missnöje på ett aggressivt sätt</td><td>Showing emotions or dissatisfaction aggressively</td><td>表现出情感或不满的攻击性行为</td><td>Hans utåtagerande beteende skapade problem i skolan.</td></tr>
+<tr><td>bekymrad</td><td>[bɛˈɕʏmˌrɑːd]</td><td>Känna oro eller ängslan över något</td><td>Feeling worried or anxious about something</td><td>感到担忧或焦虑</td><td>Hon var bekymrad över sin sons hälsa.</td></tr>
+<tr><td>uppnå</td><td>[ˈɵpˌnoː]</td><td>Att nå eller komma fram till ett mål eller resultat</td><td>To reach or achieve a goal or result</td><td>达到或实现目标或结果</td><td>Han arbetade hårt för att uppnå sina drömmar.</td></tr>
+<tr><td>hånfullt</td><td>[ˈhoːnˌfʏlt]</td><td>Som uttrycker förakt eller spydighet</td><td>Expressing contempt or sarcasm</td><td>表达蔑视或讽刺的</td><td>Han log hånfullt åt sina kritiker.</td></tr>
+<tr><td>bortkollrad</td><td>[ˈbɔrtˌkɔlːrad]</td><td>Förvirrad, lurad eller vilseledd</td><td>Confused, deceived, or misled</td><td>困惑、受骗或被误导</td><td>Han blev helt bortkollrad av de motsägelsefulla instruktionerna.</td></tr>
+<tr><td>tvångsinlöser</td><td>[ˈtvɔŋːsˌɪnˌløːsər]</td><td>Tar över egendom genom tvång, ofta genom statlig intervention</td><td>Takes over property by force, often through government intervention</td><td>通过强制手段接管财产，通常通过政府干预</td><td>Regeringen tvångsinlöser marken för att bygga en ny motorväg.</td></tr>
+<tr><td>planbesked</td><td>[ˈplɑːnˌbeːɧɛd]</td><td>Officiellt meddelande om framtida planering eller utveckling</td><td>Official announcement about future planning or development</td><td>关于未来规划或发展的官方通知</td><td>Kommunen gav ett planbesked om det nya bostadsområdet.</td></tr>
+<tr><td>tidsåtgången</td><td>[ˈtiːdsˌoːtˌɡɔŋːɛn]</td><td>Den tid som behövs för att slutföra en uppgift eller aktivitet</td><td>The time required to complete a task or activity</td><td>完成任务或活动所需的时间</td><td>Tidsåtgången för projektet blev längre än förväntat.</td></tr>
+<tr><td>hemställan</td><td>[ˈhɛmˌʂtɛlan]</td><td>Formell begäran eller förslag</td><td>Formal request or proposal</td><td>正式请求或提议</td><td>Föreningen lämnade in en hemställan om ekonomiskt stöd.</td></tr>
+<tr><td>tillgodose</td><td>[tɪlˈɡuːdɔˌseː]</td><td>Att uppfylla eller tillfredsställa någons behov eller önskemål</td><td>To fulfill or satisfy someone's needs or desires</td><td>满足或满足某人的需求或愿望</td><td>Skolan strävar efter att tillgodose alla elevers behov.</td></tr>
+<tr><td>hävdar</td><td>[ˈhɛvdar]</td><td>Att påstå eller insistera på något som sant eller giltigt</td><td>To assert or claim something as true or valid</td><td>主张或声明某事为真或有效</td><td>Han hävdar att han inte var på plats vid brottstillfället.</td></tr>
+<tr><td>skisser</td><td>[ˈsɪsːɛr]</td><td>En enkel eller preliminär teckning eller ritning</td><td>Simple or preliminary drawings or sketches</td><td>简单或初步的图纸或草图</td><td>Konstnären visade sina skisser för det nya konstverket.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar"><a class="header" href="#meningar">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>sade upp</td><td>terminated/resigned</td></tr>
+<tr><td>rör upp</td><td>stir up</td></tr>
+<tr><td>Det går inte att säga något säkert om det</td><td>It is not possible to say anything certain about it</td></tr>
+<tr><td>utgav sig</td><td>pretended to be / claimed to be</td></tr>
+<tr><td>Öppnar inte längre ytterdörren om hon inte väntar någon</td><td>Doesn't open the front door anymore unless she's expecting someone</td></tr>
+<tr><td>präglad av</td><td>characterized by</td></tr>
+<tr><td>från farstutrappan</td><td>from the front porch</td></tr>
+<tr><td>sätta emot</td><td>oppose / resist</td></tr>
+<tr><td>sett från vänster</td><td>seen from the left</td></tr>
+<tr><td>att begära ersättning</td><td>to request compensation</td></tr>
+</tbody></table>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../andra/andra.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../andra/dn-2024-08.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../andra/andra.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../andra/dn-2024-08.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

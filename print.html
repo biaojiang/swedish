@@ -1,0 +1,1516 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Swedish Learning</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Swedish Learning</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>This is a new Swedish learning online book compiled with <a href="https://github.com/rust-lang/mdBook">mdBook</a>: a utility to create modern online books from Markdown files with the modern high-performance language <strong>Rust</strong>. The <a href="https://plotsignal.com/vocab-sv">previous book</a> made with Python <a href="https://www.sphinx-doc.org/">Sphinx</a> will be archived.</p>
+<h1 id="outline"><a class="header" href="#outline">Outline</a></h1>
+<h2 id="2023-version"><a class="header" href="#2023-version">2023 Version</a></h2>
+<p>Exported from Dropbox Paper:</p>
+<ol>
+<li><a href="./dropbox/SVT.html">SVT 2023</a></li>
+</ol>
+<h2 id="2024-version"><a class="header" href="#2024-version">2024 Version</a></h2>
+<ol>
+<li><a href="./svt/svt.html">SVT 2024</a></li>
+<li><a href="./netflix/netflix.html">Netflix</a></li>
+<li><a href="./andra/andra.html">Andra Resurser</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="svenska-på-svt"><a class="header" href="#svenska-på-svt">Svenska på SVT</a></h1>
+<p>Notes of Svenska från SVT</p>
+<h2 id="ord"><a class="header" href="#ord">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Svenska</th><th>Svenska förklaring</th><th>Engelska</th><th>Kinesiska</th></tr></thead><tbody>
+<tr><td>ofredar</td><td></td><td>harass</td><td>骚扰</td></tr>
+<tr><td>gåtfulla</td><td></td><td>enigmatic</td><td>神秘的</td></tr>
+<tr><td>varelse</td><td></td><td>creature</td><td></td></tr>
+<tr><td>utrotas</td><td></td><td>become extinct</td><td></td></tr>
+<tr><td>upptagen</td><td></td><td>occupied</td><td></td></tr>
+<tr><td>skolkar</td><td></td><td>truant</td><td>逃学</td></tr>
+<tr><td>modig</td><td></td><td>brave</td><td></td></tr>
+<tr><td>dräller</td><td></td><td>ramble</td><td>漫步</td></tr>
+<tr><td>orsaka</td><td></td><td>cause</td><td>原因</td></tr>
+<tr><td>bedriver</td><td></td><td>conduct</td><td></td></tr>
+<tr><td>stämning</td><td></td><td>atmosphere</td><td>气氛</td></tr>
+<tr><td>avböjer</td><td></td><td>declines</td><td></td></tr>
+<tr><td>slets(sliter, att slita, slet, har slitit, är sliten, slit!)</td><td></td><td>torn</td><td></td></tr>
+<tr><td>försenar</td><td></td><td>delays</td><td></td></tr>
+<tr><td>blixtnedslag</td><td></td><td>lightning strike</td><td>雷击</td></tr>
+<tr><td>nedblåsta</td><td></td><td>blown down</td><td>吹倒</td></tr>
+<tr><td>underrättar</td><td>talar om för, meddelar</td><td>announce, notify</td><td></td></tr>
+<tr><td><strong>skrämmande</strong></td><td>som skrämmer, oroande</td><td>scary</td><td></td></tr>
+<tr><td>förundersökningen</td><td></td><td>preliminary</td><td></td></tr>
+<tr><td>skenprocess</td><td></td><td>sham process</td><td>虚假过程</td></tr>
+<tr><td>biverkningar</td><td></td><td>side effects</td><td></td></tr>
+<tr><td>försämring</td><td></td><td>deterioration</td><td></td></tr>
+<tr><td>uppstår</td><td></td><td>occurs</td><td></td></tr>
+<tr><td>lagstiftning</td><td></td><td>legislation</td><td>立法</td></tr>
+<tr><td><strong>obekväma</strong></td><td></td><td>uncomfortable</td><td></td></tr>
+<tr><td>oduglighet</td><td></td><td>incompetence</td><td></td></tr>
+<tr><td>Huruvida</td><td></td><td>Whether</td><td></td></tr>
+<tr><td>förhoppningsvis</td><td></td><td>hopefully</td><td></td></tr>
+<tr><td>utvärdera</td><td></td><td>evaluate</td><td></td></tr>
+<tr><td><strong>skämt</strong></td><td></td><td>joke</td><td></td></tr>
+<tr><td><strong>utrotningshotad</strong></td><td></td><td>endangered</td><td>濒危的</td></tr>
+<tr><td><strong>svunnen</strong></td><td></td><td>bygone</td><td>过去的</td></tr>
+<tr><td>ägnas åt</td><td></td><td>devoted to</td><td></td></tr>
+<tr><td>knappa</td><td>otillräcklig, begränsad, liten</td><td>scarce</td><td></td></tr>
+<tr><td>grundvattenmagasin</td><td></td><td>aquifer</td><td><strong>含水层</strong></td></tr>
+<tr><td>kloakvatten</td><td>sewage water</td><td></td><td></td></tr>
+<tr><td><strong>bedöms (bedömer)</strong></td><td>is assessed</td><td></td><td></td></tr>
+<tr><td>befäl</td><td>command</td><td></td><td></td></tr>
+<tr><td>verktyg</td><td>tool</td><td></td><td></td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar"><a class="header" href="#meningar">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Svenska</th><th>Engelska</th></tr></thead><tbody>
+<tr><td>Har du sovit gott?</td><td>Did you sleep well?</td></tr>
+<tr><td>hade ni fest?</td><td>did you have a party</td></tr>
+<tr><td>Bre en macka!</td><td>Make a sandwich!</td></tr>
+<tr><td>ställts in</td><td>has been cancelled</td></tr>
+<tr><td>han fördes till sjukhus</td><td>was sent to the hospital</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="svenska-på-svt-2024"><a class="header" href="#svenska-på-svt-2024">Svenska på <a href="https://www.svt.se">SVT-2024</a></a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2024-01"><a class="header" href="#svt-2024-01">SVT 2024-01</a></h1>
+<p>Svensk språk från SVT, Jan 2024</p>
+<h2 id="ord-1"><a class="header" href="#ord-1">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Svenska</th><th>Svenska förklaring</th><th>Engelska</th><th>Kinesiska</th></tr></thead><tbody>
+<tr><td>omfattande</td><td></td><td>extensive</td><td></td></tr>
+<tr><td>tufft</td><td></td><td>tough</td><td></td></tr>
+<tr><td>Inrikes</td><td></td><td>Domestic</td><td>国内的</td></tr>
+<tr><td>uppmärksamma</td><td></td><td>pay attention to</td><td></td></tr>
+<tr><td>förekomsten</td><td></td><td>the occurrence</td><td>事件发生</td></tr>
+<tr><td>hjärtinfarkter</td><td></td><td>heart attacks</td><td>心脏病</td></tr>
+<tr><td>undanträngningseffekterna</td><td></td><td>the displacement effects</td><td>位移效应</td></tr>
+<tr><td>hack</td><td></td><td>notch</td><td>缺口</td></tr>
+<tr><td>utsträckning</td><td></td><td>extent</td><td></td></tr>
+<tr><td>dystert</td><td></td><td>gloomy</td><td>阴沉</td></tr>
+<tr><td>slutgiltig</td><td></td><td>definitive</td><td></td></tr>
+<tr><td>befäl</td><td></td><td>command</td><td></td></tr>
+<tr><td>ett fåtal</td><td></td><td>few</td><td></td></tr>
+<tr><td>växelvis</td><td></td><td>alternately</td><td></td></tr>
+<tr><td>vräkning</td><td></td><td>eviction</td><td></td></tr>
+<tr><td>fullständigt</td><td></td><td>completely</td><td></td></tr>
+<tr><td><strong>gränsvärdet</strong></td><td></td><td>the limit value</td><td></td></tr>
+<tr><td>tillåtna</td><td></td><td>permitted</td><td></td></tr>
+<tr><td>bråttom</td><td></td><td>in a hurry</td><td></td></tr>
+<tr><td>takt</td><td></td><td>rate</td><td></td></tr>
+<tr><td><strong>rusta upp</strong></td><td></td><td>gear up</td><td></td></tr>
+<tr><td>avvägningar</td><td></td><td>trade-offs</td><td>权衡</td></tr>
+<tr><td>företräder</td><td></td><td>represents</td><td></td></tr>
+<tr><td>trakasserier</td><td></td><td>harassment</td><td></td></tr>
+<tr><td>avgörande</td><td></td><td>crucial</td><td></td></tr>
+<tr><td>inställning</td><td></td><td>attitude</td><td></td></tr>
+<tr><td>mistro</td><td></td><td>distrust</td><td></td></tr>
+<tr><td>fantasifulla</td><td></td><td>imaginative</td><td>富有想象力的</td></tr>
+<tr><td><strong>anstormning</strong></td><td></td><td>onslaught</td><td>猛攻</td></tr>
+<tr><td>framåtrörelse</td><td></td><td>forward motion</td><td>向前运动</td></tr>
+<tr><td>inställt</td><td></td><td>canceled</td><td></td></tr>
+<tr><td>uppgörelse</td><td></td><td>settlement</td><td></td></tr>
+<tr><td>förmodligen</td><td></td><td>probably</td><td></td></tr>
+<tr><td>smidigheten</td><td></td><td>the agility</td><td>敏捷性</td></tr>
+<tr><td>stöldvåg</td><td></td><td>wave of theft</td><td>盗窃浪潮</td></tr>
+<tr><td>kvarvarande</td><td></td><td>remaining</td><td></td></tr>
+<tr><td>överlägsen</td><td></td><td>superior</td><td></td></tr>
+<tr><td>oerfarna</td><td></td><td>inexperienced</td><td></td></tr>
+<tr><td>gällande</td><td></td><td>current</td><td></td></tr>
+<tr><td>villkorat</td><td></td><td>conditionally</td><td></td></tr>
+<tr><td>rykte</td><td></td><td>reputation</td><td></td></tr>
+<tr><td>motvarande nästan</td><td></td><td>equivalent almost</td><td></td></tr>
+<tr><td><strong>besked</strong></td><td>svar, upplysning</td><td>message</td><td></td></tr>
+<tr><td>naturligvis</td><td></td><td>of course</td><td></td></tr>
+<tr><td>åtminstone</td><td></td><td>at least</td><td></td></tr>
+<tr><td>tillfällena</td><td></td><td>occasions</td><td></td></tr>
+<tr><td>ödeläggelse</td><td></td><td>devastation</td><td>破坏</td></tr>
+<tr><td>pellets</td><td></td><td>pellets</td><td>颗粒</td></tr>
+<tr><td><strong>vållande</strong></td><td></td><td>causing</td><td></td></tr>
+<tr><td>sjätte</td><td></td><td>sixth</td><td></td></tr>
+<tr><td>bedömning</td><td></td><td>assessment</td><td></td></tr>
+<tr><td>icke-demokratiska</td><td></td><td>non-democratic</td><td></td></tr>
+<tr><td>sekretess</td><td></td><td>secrecy</td><td>保密</td></tr>
+<tr><td><strong>kryphålen</strong></td><td></td><td>the loopholes</td><td>漏洞</td></tr>
+<tr><td><strong>brottsförebyggande</strong></td><td></td><td>crime prevention</td><td></td></tr>
+<tr><td>motverka</td><td></td><td>counteract</td><td></td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-1"><a class="header" href="#meningar-1">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Svenska</th><th>Engelska</th></tr></thead><tbody>
+<tr><td>Det  är  inte  nåt <em>som</em> man  ser  i  alla  länder</td><td>It is not something that you see in all countries</td></tr>
+<tr><td>ser släta och fina ut</td><td>looks smooth and nice</td></tr>
+</tbody></table>
+</div>
+<h2 id="videoklipp"><a class="header" href="#videoklipp">Videoklipp</a></h2>
+<ol>
+<li><a href="https://www.svt.se/nyheter/inrikes/emma-frans-tre-positiva-trender-for-sverige">tre-positiva-trender-for-sverige</a></li>
+</ol>
+<p><strong>Transcript</strong></p>
+<p>Jag  tror  att  det  är  jätteviktigt  att  uppmärksamma  de  hemska  sakerna  som  händer.  Vi  ska  inte  ignorera  dem,  men  vi  måste  också  påminna  oss  om  att  det  händer  positiva  saker  i  världen.  Och  att  det  finns  en  möjlighet  att  dända  sådana  här  negativa  trender.</p>
+<p>Att  det  finns  möjlighet  att  göra  världen  bättre.  Här  ser  vi  till  exempel  utvecklingen  när  det  kommer  till  förekomsten  av  <strong>hjärtinfarkter</strong>  och  så  dödligheten  i  hjärtinfarkter.</p>
+<p>hjärtinfarkter.  Man  ser  också  den  här  tydligt  sjunkande  trenden.  Jag  vet  inte  om  ni  kan  se  en  liten  hack  i  den  här  kurvan.  -Ungfär  under  9  åren.  -Just  det,  ungefär  2021.</p>
+<p>Vi  pratade  mycket  om  det,  <strong>undanträngningseffekterna</strong> -  -och  att  det  här  under  pandemin  inte  sökte  vårdsamma  <strong>utsträckning</strong>.  Vi  såg  en  liten  pandemi -effekt.  Det  som  jag  tycker  är  positivt  här  är  att  efter  det  här  pandemin...</p>
+<p>–så  fortsätter  de  här  förekomsten  att  sjunka  igen.  När  det  gäller  klimatet  känns  det  dystert  för  många.</p>
+<p>Man  kanske  blir  uppgiven  och  tänker  att  det  är  kört.  För  att  kunna  bromsa  den  här  utvecklingen  måste  ekonomin  kollapsa  helt.  Man  använder  nästan  som  ett  <strong>motargument</strong> (counter argument)  till  att  få  till  de  här  förändringarna.</p>
+<p>förändringarna.  Men  i  vissa  länder  kan  man  säga  att  kopplingen  som  man  tidigare  såg -  -mellan  ökad  ekonomisk  tillväxt  och  nära  kopplad  till  ökad  utsläpp  av  koldioxid.</p>
+<p>-Det  handlar  om  Sverige?  -Det  är  inte  nåt  som  man  ser  i  alla  länder.  Men  i  vissa  länder,  vilket  är  en  påminnel  som  att  det  går  att  få  förändringen -  -utan  att  ekonomin  helt  måste  gå.</p>
+<p>kollapsa.  I  <strong>sistone</strong>  har  vi  hört  mycket  negativt  om  Sverige,  utomlands.  Det  kan  vara  viktigt  att  påminna  oss  om  att  det  finns  också  de  som  <strong>uppmärksammar</strong> (draws attention) Sverige -  -på  ett  lite  mer  positivt.</p>
+<p>Man  listade  Sverige  som  det  landet  där  vi  hade  bäst  livskvalitet  i  världen.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2024-02"><a class="header" href="#svt-2024-02">SVT 2024-02</a></h1>
+<p>Svensk språk från SVT, Feb 2024</p>
+<h2 id="ord-2"><a class="header" href="#ord-2">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Svenska</th><th>Svenska förklaring</th><th>Engelska</th><th>Kinesiska</th></tr></thead><tbody>
+<tr><td>orkan</td><td></td><td>the hurricane</td><td></td></tr>
+<tr><td>vindbyar</td><td></td><td>gusts of wind</td><td></td></tr>
+<tr><td><strong>Deltävling</strong></td><td></td><td>Sub-competition</td><td></td></tr>
+<tr><td>inträffar</td><td></td><td>occurs</td><td></td></tr>
+<tr><td>anslutning</td><td></td><td>connection</td><td></td></tr>
+<tr><td><strong>avdelningarna</strong></td><td></td><td>the departments</td><td></td></tr>
+<tr><td><strong>lindrigt</strong></td><td></td><td>mildly</td><td></td></tr>
+<tr><td><strong>källor</strong></td><td></td><td>sources</td><td></td></tr>
+<tr><td>insats till</td><td></td><td>contribution to</td><td></td></tr>
+<tr><td>genomsnitt</td><td></td><td>average</td><td></td></tr>
+<tr><td>seklet</td><td></td><td>the century</td><td></td></tr>
+<tr><td>växtspurt</td><td></td><td>growth spurt</td><td>突增</td></tr>
+<tr><td>BRIGAD</td><td>ett krigsförband på omkring 5000 personer,</td><td>BRIGADE</td><td>旅</td></tr>
+<tr><td>motståndare</td><td></td><td>opponents</td><td></td></tr>
+<tr><td>utökas</td><td></td><td>be expanded</td><td></td></tr>
+<tr><td>att <strong>ticka upp</strong></td><td></td><td>tick up</td><td>上升；上涨</td></tr>
+<tr><td>bedömare</td><td></td><td>assessor</td><td>评估员</td></tr>
+<tr><td><strong>redovisar</strong></td><td></td><td>report</td><td></td></tr>
+<tr><td>satsning</td><td></td><td>investment</td><td></td></tr>
+<tr><td>omfattande</td><td>stor, betydande</td><td>extensive</td><td></td></tr>
+<tr><td>har hamnat</td><td>kommer (händelsevis), blir placerad</td><td>have ended up</td><td></td></tr>
+<tr><td>arv</td><td></td><td>heritage</td><td></td></tr>
+<tr><td>avviker</td><td></td><td>deviate</td><td></td></tr>
+<tr><td>inledningsvis</td><td></td><td>initially</td><td></td></tr>
+<tr><td>perrongerna</td><td></td><td>the platforms</td><td></td></tr>
+<tr><td><strong>förväntas</strong></td><td></td><td>is expected</td><td></td></tr>
+<tr><td>Utöver</td><td></td><td>beyond</td><td></td></tr>
+<tr><td>anpassningar</td><td></td><td>adaptations</td><td></td></tr>
+<tr><td>förmodligen</td><td></td><td>probably</td><td></td></tr>
+<tr><td>omorganisera</td><td></td><td>reorganize</td><td></td></tr>
+<tr><td><strong>långsiktiga</strong></td><td></td><td>long-term</td><td></td></tr>
+<tr><td>banbrytande</td><td></td><td>pioneering</td><td>开拓</td></tr>
+<tr><td>produktionsverksamheten</td><td></td><td>production operations</td><td></td></tr>
+<tr><td>förtroendet</td><td></td><td>the trust</td><td></td></tr>
+<tr><td>berörs</td><td></td><td>if affected</td><td></td></tr>
+<tr><td><strong>fördelar</strong></td><td>delar upp, sprider</td><td>divides, spreads</td><td></td></tr>
+<tr><td><strong>vraket</strong></td><td></td><td>the wreck</td><td></td></tr>
+<tr><td>Skredet</td><td></td><td>the landslide</td><td></td></tr>
+<tr><td><strong>avgörande</strong></td><td></td><td>crucial</td><td></td></tr>
+<tr><td><strong>felaktig</strong></td><td></td><td>inaccurate</td><td></td></tr>
+<tr><td>slänt</td><td></td><td>slope</td><td></td></tr>
+<tr><td>förtegen</td><td></td><td>reticent</td><td>reticent</td></tr>
+<tr><td>formellt</td><td></td><td>formally</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-2"><a class="header" href="#meningar-2">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Svenska</th><th>Engelska</th></tr></thead><tbody>
+<tr><td><strong>gränsen är nådd</strong></td><td>the limit has been reached</td></tr>
+<tr><td>på väg nedåt</td><td>on the way down</td></tr>
+<tr><td>ett par timmar</td><td>a couple of hours</td></tr>
+<tr><td>har det börjat bildats köer på platsen</td><td>queues have started to form at the site</td></tr>
+<tr><td>väpnad styrka</td><td>armed force</td></tr>
+<tr><td>ett tag</td><td>awhile</td></tr>
+</tbody></table>
+</div>
+<h2 id="videoklipp-1"><a class="header" href="#videoklipp-1">Videoklipp</a></h2>
+<ol>
+<li></li>
+</ol>
+<p><strong>Transcript</strong></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2024-03"><a class="header" href="#svt-2024-03">SVT 2024-03</a></h1>
+<p>Svensk språk från SVT, Mar 2024</p>
+<h2 id="ord-3"><a class="header" href="#ord-3">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Svenska</th><th>Svenska förklaring</th><th>Engelska</th><th>Kinesiska</th></tr></thead><tbody>
+<tr><td>varsla</td><td></td><td>notify</td><td></td></tr>
+<tr><td>troligtvis</td><td></td><td>belike</td><td>或许</td></tr>
+<tr><td><strong>undvikas</strong></td><td></td><td>be avoided</td><td></td></tr>
+<tr><td><strong>uppmuntras</strong></td><td></td><td>be encouraged</td><td></td></tr>
+<tr><td>att <strong>uppnå</strong></td><td>&lt;att uppnå, uppnådde, har uppnått, är uppnådd, uppnå!&gt; når upp till; åstadkommer</td><td>to achieve</td><td></td></tr>
+<tr><td>åtal</td><td></td><td>prosecution</td><td></td></tr>
+<tr><td>ansågs</td><td>anser〈att anse, ansåg, har ansett, är ansedd, anse!〉</td><td>is considered</td><td></td></tr>
+<tr><td>skälig</td><td></td><td>reasonable</td><td></td></tr>
+<tr><td>samförstånd</td><td></td><td>consensus</td><td></td></tr>
+<tr><td>krigsförbrytelse</td><td></td><td>war crime</td><td></td></tr>
+<tr><td>har bedrivits</td><td><strong>bedriver</strong>〈att bedriva, bedrev, har bedrivit, är bedriven, bedriv!〉</td><td>has been conducted</td><td></td></tr>
+<tr><td><strong>slutändan</strong></td><td></td><td>ultimately</td><td></td></tr>
+<tr><td>förmås</td><td><strong>förmår</strong> <br>〈att förmå, förmådde, har förmått, är förmådd, förmå!〉</td><td>is forced to</td><td></td></tr>
+<tr><td>Sammanfattningsvis</td><td></td><td>In summary</td><td></td></tr>
+<tr><td>tornet</td><td></td><td>the tower</td><td></td></tr>
+<tr><td>bevittnade</td><td></td><td>witnessed</td><td></td></tr>
+<tr><td>släpas bort</td><td></td><td>being dragged away</td><td></td></tr>
+<tr><td>anmärkningsvärd</td><td></td><td>remarkable</td><td></td></tr>
+<tr><td>ström</td><td></td><td>power</td><td></td></tr>
+<tr><td>vulkanutbrott</td><td></td><td>volcano eruption</td><td></td></tr>
+<tr><td>vattentät</td><td></td><td>waterproof</td><td></td></tr>
+<tr><td>hittills</td><td></td><td>to date</td><td></td></tr>
+<tr><td>synpunkt</td><td></td><td>Point of view</td><td></td></tr>
+<tr><td>fördelarna</td><td></td><td>the benefits</td><td></td></tr>
+<tr><td><strong>varierande</strong></td><td></td><td>varying</td><td></td></tr>
+<tr><td>frivillighet</td><td></td><td>voluntariness</td><td>自愿性</td></tr>
+<tr><td><strong>jämnårig</strong></td><td></td><td>same age</td><td></td></tr>
+<tr><td>inleddes</td><td></td><td>was initiated</td><td></td></tr>
+<tr><td>inifrån</td><td></td><td>from within</td><td></td></tr>
+<tr><td>häktade</td><td></td><td>detained</td><td></td></tr>
+<tr><td>drygt</td><td></td><td>roughly</td><td></td></tr>
+<tr><td>har ombetts</td><td></td><td>has been requested</td><td></td></tr>
+<tr><td>agerande</td><td></td><td>acting</td><td></td></tr>
+<tr><td>störtar ner</td><td></td><td>plunging down</td><td></td></tr>
+<tr><td>livsförhållanden</td><td></td><td>living conditions</td><td></td></tr>
+<tr><td>noggrannhet</td><td></td><td>accuracy</td><td></td></tr>
+<tr><td>föranleder</td><td></td><td>causes</td><td></td></tr>
+<tr><td><strong>föroreningar</strong></td><td></td><td>pollution</td><td></td></tr>
+<tr><td><strong>bakomliggande</strong></td><td></td><td>underlying</td><td></td></tr>
+<tr><td>slutligen</td><td></td><td>finally</td><td></td></tr>
+<tr><td>haveriet</td><td></td><td>the breakdown</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-3"><a class="header" href="#meningar-3">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Svenska</th><th>Engelska</th></tr></thead><tbody>
+<tr><td><strong>bad han om en tjänst</strong></td><td>he asked for a favor</td></tr>
+<tr><td><strong>fick henne fälld för brott</strong></td><td>got her convicted of crimes</td></tr>
+<tr><td>står i lågor</td><td>is in flames</td></tr>
+<tr><td>slår av och på</td><td>turns on and off</td></tr>
+<tr><td>allt högre</td><td>increasely higher</td></tr>
+<tr><td>När det var dags att</td><td>When it was time to</td></tr>
+<tr><td>vad som ser ut</td><td>what looks like</td></tr>
+<tr><td>inledde sitt besök</td><td>began his visit</td></tr>
+<tr><td><strong>att tillbringa ledigheten</strong></td><td>to spend the holiday</td></tr>
+</tbody></table>
+</div>
+<h2 id="videoklipp-2"><a class="header" href="#videoklipp-2">Videoklipp</a></h2>
+<ol>
+<li><a href="https://www.svt.se/nyheter/inrikes/besked-vantas-om-brottsutredningen-kring-mats-lofvings-dod">besked-vantas-om-brottsutredningen-kring-mats-lofvings-dod</a></li>
+<li><a href="https://www.svt.se/nyheter/inrikes/sant-eller-falsk-tre-myter-om-elforbrukning">sant-eller-falsk-tre-myter-om-elforbrukning</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2024-04"><a class="header" href="#svt-2024-04">SVT 2024-04</a></h1>
+<p>Svensk språk från SVT, Apr 2024</p>
+<h2 id="ord-4"><a class="header" href="#ord-4">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Svenska</th><th>Svenska förklaring</th><th>Engelska</th><th>Kinesiska</th></tr></thead><tbody>
+<tr><td>jordskalv</td><td></td><td>earthquake</td><td></td></tr>
+<tr><td><strong>utfärdades</strong></td><td></td><td>is issued</td><td></td></tr>
+<tr><td>sniskan</td><td></td><td>the snitch</td><td>告密者</td></tr>
+<tr><td>uttala</td><td></td><td>express</td><td></td></tr>
+<tr><td><strong>antyder</strong></td><td></td><td>implies</td><td></td></tr>
+<tr><td>korrigeras</td><td></td><td>be corrected</td><td></td></tr>
+<tr><td><strong>ordförståelse</strong></td><td></td><td>word comprehension</td><td></td></tr>
+<tr><td>har <strong>bedrivit</strong></td><td></td><td>has conducted</td><td></td></tr>
+<tr><td>omhändertogs</td><td></td><td>was taken care of</td><td></td></tr>
+<tr><td>tillförlitlig</td><td></td><td>reliable</td><td></td></tr>
+<tr><td>diasporamedier</td><td></td><td>diaspora media</td><td>侨民媒体</td></tr>
+<tr><td>ha knivhuggit</td><td></td><td>has stabbed</td><td></td></tr>
+<tr><td>raseri</td><td></td><td>fury</td><td></td></tr>
+<tr><td>tumult</td><td></td><td>riot</td><td>骚乱</td></tr>
+<tr><td>resonemang</td><td></td><td>reasoning</td><td></td></tr>
+<tr><td>snattaren</td><td></td><td>the shoplifter</td><td>商店扒手</td></tr>
+<tr><td>konstnären</td><td></td><td>the artist</td><td></td></tr>
+<tr><td>sliter</td><td></td><td>struggling</td><td></td></tr>
+<tr><td>respektlöst</td><td></td><td>disrespectful</td><td>无礼的</td></tr>
+<tr><td>skolväsendet</td><td></td><td>the school system</td><td></td></tr>
+<tr><td><strong>förstörelse</strong></td><td></td><td>destruction</td><td></td></tr>
+<tr><td>säkerligen</td><td></td><td>certainly</td><td></td></tr>
+<tr><td>betydligt</td><td></td><td>considerably</td><td></td></tr>
+<tr><td><strong>kvantdatorer</strong></td><td></td><td>quantum computers</td><td></td></tr>
+<tr><td>Släpet</td><td></td><td>the trailer</td><td></td></tr>
+<tr><td><strong>rädsla</strong></td><td></td><td>fear</td><td></td></tr>
+<tr><td><strong>oroväckande</strong></td><td></td><td>alarming</td><td></td></tr>
+<tr><td>deltagande</td><td></td><td>participation</td><td></td></tr>
+<tr><td>fredliga</td><td></td><td>peaceful</td><td></td></tr>
+<tr><td>försiktighetsåtgärder</td><td></td><td>precautions</td><td></td></tr>
+<tr><td>bedömningen</td><td></td><td>the assessment</td><td></td></tr>
+<tr><td>värnpliktiga</td><td></td><td>conscripts</td><td>义务兵</td></tr>
+<tr><td>ordförande</td><td></td><td>president/chairman</td><td></td></tr>
+<tr><td>ultimatum</td><td></td><td></td><td>最后通牒</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-4"><a class="header" href="#meningar-4">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Svenska</th><th>Engelska</th></tr></thead><tbody>
+<tr><td>slits itu</td><td>torn apart</td></tr>
+<tr><td>har fått avveckla hela sin verksamhet.</td><td>has had to wind down its entire business.</td></tr>
+<tr><td>ljuger om</td><td>lying about</td></tr>
+<tr><td>uttryckt oro för att</td><td>expressed concern that…</td></tr>
+<tr><td>vare sig … eller…</td><td>neither…nor…</td></tr>
+<tr><td>menar dock att</td><td>means however that…</td></tr>
+</tbody></table>
+</div>
+<h2 id="videoklipp-3"><a class="header" href="#videoklipp-3">Videoklipp</a></h2>
+<ol>
+<li>https://www.svt.se/nyheter/vetenskap/folj-med-pa-en-tidsresa-11-miljarder-ar-bakat-i-tiden</li>
+</ol>
+<p>Är  du  redo  för  en  tidsresa  genom  universum?  Vi  börjar  här  vid  KITPIC  Natural  Observatory  i  Arizona  för  att  bli  tusentals  galaxer  och  11  miljarder  ljusor  bort  i  universum.</p>
+<p>Det  är  den  mest  detaljede  3D -kartan  över  vårt  universum  som  nånsin  skapats.  Ett  stort  vetenskapligt  framsteg.  Det  som  är  lite  magiskt  skulle  jag  säga  själv  med  den  här  typen  av  vetenskap  är  att  universum  är  ju  som  en  tidsmaskina  också,
+så  när  man  åker...  åker  ut  i  kartläggningar  som  den  här  filmen  så  åker  man  också  tillbaka  i  tiden.  Det  är  det  här  instrumentet  som  består  av  5  000  robotar  som  fångar  upp  ljuset  från  miljontalsgalaxer  och  hittar  deras  exakta  koordinater.</p>
+<p>Tittar  man  på  kartan  ovanifrån  så  ser  man  att  galaxerna  inte  ligger  jämt  utspridda.  Det  är  ju  en  strax  vävstruktur  som  galaxerar.</p>
+<p>ligger  utspridda,  så  man  kan  se  att  det  finns  trådar [<strong>threads</strong>]  och  lite  glesare [<strong>sparser</strong>],  tomma  områden  emellan.  Och  exakta  mätningar  av  hur  de  här  strukturerna  har  förändrat  sedan  universums  barndom  kan  hjälpa  kosmologen  att  förstå  vilka  krafter  som  styr.</p>
+<p>Universum  består  till  70 %  av  något  som  kallas  mörk  energi.  Men  vad  är  mörk  energi?  Ja,  det  är  ju...  den  stora  frågan  vad  den  är.</p>
+<p>Och  det  vet  vi  ju  inte.  Men  det  är  ju  någonting  som  också  är  ett  stort  mål  med  kartläggningar.  Att  titta  på  hur  den  här  strukturen  växer  fram  med  de  här  olika  trådformationerna.  Och  när  man  väl  gör  det  så  kommer  man  att  kunna  säga  också  mycket  mer  om  den  här  mörka  enligt  min  serienskapen.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2024-05"><a class="header" href="#svt-2024-05">SVT 2024-05</a></h1>
+<p>Svensk språk från SVT, Maj 2024</p>
+<h2 id="ord-5"><a class="header" href="#ord-5">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Svensk Definition</th><th>Synonymer</th><th>Antonymer</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th></tr></thead><tbody>
+<tr><td>Bil</td><td>Ett fordon med fyra hjul som vanligtvis drivs av en förbränningsmotor</td><td>Bil, Personbil</td><td>Cykel, Gå</td><td>A vehicle with four wheels typically powered by an internal combustion engine</td><td>通常由内燃机驱动的四轮车辆</td></tr>
+<tr><td>olämpligt</td><td>Inte lämpligt eller passande</td><td>Opassande, Opasslig</td><td>Lämpligt, Passande</td><td>Not suitable or appropriate</td><td>不合适或不恰当</td></tr>
+<tr><td>förhalningar</td><td>Handlingar eller beteenden som försenar eller fördröjer något</td><td>Dröjsmål, Fördröjningar</td><td>Framåtskridande, Snabbhet</td><td>Actions or behaviors that delay or postpone something</td><td>延迟或推迟某事的行动或行为</td></tr>
+<tr><td>förorenade</td><td>Som har blivit smutsad eller förorenad</td><td>Smutsad, Förorenad</td><td>Ren, Oren</td><td>Contaminated or polluted</td><td>受到污染或污染</td></tr>
+<tr><td>bestyckning</td><td>Processen eller resultatet av att utrusta eller tillhandahålla något med vapen eller ammunition</td><td>Utrustning, Beväpning</td><td>Avväpning, Utrustningslös</td><td>The process or result of equipping or supplying something with weapons or ammunition</td><td>装备或为某物提供武器或弹药的过程或结果</td></tr>
+<tr><td>förskjutits</td><td>När något har blivit flyttat eller förflyttat från dess tidigare position</td><td>Flyttats, Förflyttats</td><td>Stagnerat, Stillastående</td><td>When something has been moved or displaced from its previous position</td><td>当某物从其先前位置移动或被移动时</td></tr>
+<tr><td>påskynda</td><td>Att göra något snabbare eller accelerera processen</td><td>Skynda, Öka</td><td>Bromsa, Fördröja</td><td>To make something faster or accelerate the process</td><td>加快某事或加速过程</td></tr>
+<tr><td>förser</td><td>Att ge eller tillhandahålla något, vanligtvis för att möta behov eller krav</td><td>Tillhandahåller, Utrustar</td><td>Tar bort, Hindrar</td><td>To provide or supply something, usually to meet needs or requirements</td><td>提供或供应某物，通常是为了满足需要或要求</td></tr>
+<tr><td>ursprungligen</td><td>Från början eller från det första</td><td>Från början, Först</td><td>Senare, Slutligen</td><td>Originally or from the beginning</td><td>最初或从一开始</td></tr>
+<tr><td>målmedvetenhet</td><td>Att ha starka avsikter eller bestämmelse för att uppnå ett mål</td><td>Entreprenörskap, Ambition</td><td>Slentrian, Slöhet</td><td>Having strong intentions or determination to achieve a goal</td><td>具有强烈意图或决心实现目标</td></tr>
+<tr><td>förutsägbar</td><td>Som kan förutsägas eller förutses, inte överraskande</td><td>Förutsebar, Förutbestämd</td><td>Oförutsägbar, Överraskande</td><td>Able to be predicted or anticipated, not surprising</td><td>能够预测或预料到，不令人惊讶</td></tr>
+<tr><td>förskräckligt</td><td>Mycket obehagligt eller skrämmande</td><td>Skrämmande, Skräckinjagande</td><td>Lugnande, Uppmuntrande</td><td>Very unpleasant or frightening</td><td>非常令人不愉快或令人恐惧</td></tr>
+<tr><td>rycker ut</td><td>Att snabbt svara på ett akut behov eller en nödsituation, särskilt inom räddningstjänsten eller militären</td><td>Ingriper, Agerar</td><td>Avstår, Stannar</td><td>To respond quickly to an urgent need or emergency, especially within emergency services or the military</td><td>迅速应对紧急需求或紧急情况，特别是在紧急服务或军队内</td></tr>
+<tr><td>mutbrott</td><td>Att ge eller ta emot mutor, ofta i utbyte mot tjänster, förmåner eller fördelar</td><td>Bestickning, Korruption</td><td>Ärlighet, Rättvisa</td><td>Giving or receiving bribes, often in exchange for services, favors, or advantages</td><td>给予或接受贿赂，通常是为了换取服务、好处或优势</td></tr>
+<tr><td>trolöshet</td><td>Att agera på ett oärligt eller bedrägligt sätt, särskilt genom att bryta löften eller förtroenden</td><td>Bedrägeri, Förräderi</td><td>Lojalitet, Ärlighet</td><td>Acting in a dishonest or deceitful manner, especially by breaking promises or trusts</td><td>以不诚实或欺骗的方式行事，特别是通过违背承诺或信任</td></tr>
+<tr><td>imponerande</td><td>Som väcker beundran eller respekt på grund av sin imponerande karaktär eller prestation</td><td>Imponerande, Impressive</td><td>Oimponerande, Vardaglig</td><td>Evoking admiration or respect due to its impressive character or achievement</td><td>因其令人印象深刻的特性或成就而引起钦佩或尊重</td></tr>
+<tr><td>sårbarheter</td><td>Tillstånd eller egenskaper som gör något känsligt för skada, skada eller attack</td><td>Svagheter, Känsligheter</td><td>Styrkor, Odödlighet</td><td>Conditions or characteristics that make something susceptible to harm, damage, or attack</td><td>使某物易受伤害、损坏或攻击的条件或特征</td></tr>
+<tr><td>härvan</td><td>En röra eller komplicerad situation, ofta med många inblandade faktorer eller människor</td><td>Röra, Knipa</td><td>Ordning, Enkelhet</td><td>A mess or complicated situation, often involving many factors or people</td><td>一团混乱或复杂的局面，通常涉及许多因素或人员</td></tr>
+<tr><td>förtegen</td><td>Att vara tyst eller återhållsam när det gäller att dela information eller känslor</td><td>Tystlåten, Reserverad</td><td>Öppen, Uttrycksfull</td><td>Being silent or reserved when it comes to sharing information or feelings</td><td>在分享信息或感情时保持沉默或保留</td></tr>
+<tr><td>kirurgi</td><td>Medicinsk behandling som innebär operationer för att behandla sjukdomar eller skador</td><td>Operation, Kirurgisk ingrepp</td><td>N/A</td><td>Medical treatment involving operations to treat diseases or injuries</td><td>涉及手术治疗疾病或伤害的医学治疗</td></tr>
+<tr><td>troligtvis</td><td>Med stor sannolikhet, förmodligen</td><td>Antagligen, Sannolikt</td><td>Otroligt, Osannolikt</td><td>Most likely, probably</td><td>很可能，大概</td></tr>
+<tr><td>verkar</td><td>Att ge intryck av att vara på ett visst sätt; att fungera eller ha en effekt</td><td>Framstår, Tycks</td><td>N/A</td><td>To appear to be in a certain way; to function or have an effect</td><td>看起来像某种方式；起作用或有影响</td></tr>
+<tr><td>hållbara</td><td>Som kan upprätthållas över tid utan att skada miljön eller samhället; varaktiga och stabila</td><td>Beständiga, Långvariga</td><td>Ohållbara, Förgängliga</td><td>Sustainable or able to be maintained over time without harming the environment or society; durable and stable</td><td>可持续的，能够长时间维持而不损害环境或社会的；持久和稳定的</td></tr>
+<tr><td>inblandning</td><td>Handling av att involvera sig i något eller påverka en situation</td><td>Medverkan, Intervention</td><td>Opartiskhet, Neutralitet</td><td>The act of involving oneself in something or influencing a situation</td><td>介入某事或影响某种情况的行为</td></tr>
+<tr><td>tålamodet</td><td>Förmågan att vara lugn och uthållig i väntan eller under svåra omständigheter</td><td>Uthållighet, Tålighet</td><td>Otålighet, Omedelbarhet</td><td>The ability to remain calm and persistent while waiting or in difficult situations</td><td>在等待或困难情况下保持冷静和坚持的能力</td></tr>
+<tr><td>klandervärt</td><td>Något som är förkastligt eller moraliskt fel och förtjänar kritik</td><td>Förkastligt, Utskällbart</td><td>Berömvärt, Godtagbart</td><td>Something that is reprehensible or morally wrong and deserving of criticism</td><td>应受谴责或在道德上错误并应受批评的行为</td></tr>
+<tr><td>tålamod</td><td>Förmågan att vara lugn och uthållig i väntan eller under svåra omständigheter</td><td>Uthållighet, Tålighet</td><td>Otålighet, Omedelbarhet</td><td>The ability to remain calm and persistent while waiting or in difficult situations</td><td>在等待或困难情况下保持冷静和坚持的能力</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-5"><a class="header" href="#meningar-5">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>löser jag min uppgift helt själv</td><td>Am I solving my task entirely by myself?</td></tr>
+<tr><td>kort därpå</td><td>shortly thereafter</td></tr>
+</tbody></table>
+</div>
+<h1 id="videoklipp-4"><a class="header" href="#videoklipp-4">Videoklipp</a></h1>
+<ol>
+<li></li>
+</ol>
+<p><a href="https://www.svt.se/nyheter/inrikes/tidigare-elever-larmade-om-nakengympa-skolans-ansvariga-blundade">Tidigare elever larmade om ”nakengympa” – skolans ansvariga blundade</a></p>
+<p>Vi  trodde  att  han  lekte  med  oss.  Alltid  när  det  var  idrott  hade  man  som  en  klump  i  magen.  Det  var  ingen  som  riktigt  lyssnade  på  oss.</p>
+<p>Vi  kallade  det  för  Naken  Jumpa  efter  den  ordnade  idrottslektionen  och  efter  vi  hade  gått  duscha.  Både  med  handduk  och  utan  handduk  och  sen  så  lyfte  han  in  oss  i  idrottsalen  och  så  brann  vi  runt.</p>
+<p>Och  vi  kunde  åka  i  såna  här  ringar  och  klättra  upp  och  de  satt  ju  då,  ska  hängt  upp  vid  låren  och  han  puttade  på  rumpan  bakifrån.</p>
+<p>När  tjejerna  hade  nått.  stod  killarna  och  bankade  på  dörren.  De  ville  också  in  och  leka  och  fortsätta  hoppa  runt  med  bollar.  Men  de  fick  aldrig  komma  in.  Han  var  väldigt  noga  med  kroppslig  hygien  och  skulle  säga -  -att  hur  man  skulle  tvätta  sig  eller  så.</p>
+<p>Han  kunde  komma  in  och  visa  på...  på  oss  att  ta  oss  under  dem  hålland  eller  byömsken.  Man  kände  sig  väldigt  utsatt.  Och  vid  vissa  tillfällen  kunde  han  då  bär  upp  oss  nakna  och  få  vissa  av  mina  klasskompisar -  -och  att  sätta  sig  nakna  i  hans  knä.</p>
+<p>Jag  minns  att  jag  alltid  tog  första  kroken  längst  in  i  höger.  för  att  man  ville  vara  så  långt  bort  som  möjligt.  Jag  tänkte  inte  kunna  komma  åten.</p>
+<p>Eftersom  att  vi  flertal  gånger  gick  direkt  om  och  berättade  vad  vi  upplevde  och  var  egentligen  hans  beteende  till  slut  blev  det  som  att  det  var  fel  på  oss,</p>
+<p>att  det  var  ett  normalt  beteende.  från  hans  sida.  Eftersom  det  var  ingen  som  lyssnade  och  det  var  ingen  som  tog  det  vidare.  Jag  tycker  att  det  är  ett  svek  mot  alla  banen  när  det  här  har  pågått  vad  jag  vet  sedan  2003,
+och  det  var  det  enda  20  år.  Och  vi  sa  till,  men  det  var  ingen  som  lyssnade  då.  Jag  känner  mig  äcklad  och  jag  känner  hat  för  honom.</p>
+<p>Jag  har  ju  gått  och  tänkt  väldigt  länge.  Sen  jag  var  liten,  sen  jag  var  lilla  Sara  i  6 -7  års  åldern.  Och  tänkt  att  någon  gång  kanske  han  faktiskt  blir  död  eller  råtalad  för  det  han  har  gjort  och  för  det  han  har  orsakat.</p>
+<p>För  det  här  sitter  i  mig  än  idag.  idag.</p>
+<ol start="2">
+<li><a href="https://www.svt.se/nyheter/vetenskap/har-fangas-14-miljoner-ton-plast-pa-en-eftermiddag">Här fångas 1,4 miljoner ton plast – på en eftermiddag</a></li>
+<li><a href="https://www.svt.se/nyheter/inrikes/har-bevakar-sverige-gransen-under-ytan-kan-sanka-det-mesta">Här bevakar Sverige gränsen under ytan: ”Kan sänka det mesta”</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2024-06"><a class="header" href="#svt-2024-06">SVT 2024-06</a></h1>
+<p>Svensk språk från SVT, Jun 2024</p>
+<h2 id="ord-6"><a class="header" href="#ord-6">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>uttråkad</td><td>[ʉːtˈroːkad]</td><td>Känna sig trött och ointresserad på grund av brist på stimulans eller variation</td><td>Feeling tired and uninterested due to lack of stimulation or variety</td><td>因缺乏刺激或变化而感到厌倦和无聊</td><td>Jag känner mig uttråkad efter att ha gjort samma sak hela dagen.</td></tr>
+<tr><td>beroendeframkallande</td><td>[bɛˈruːˌɛnːdɛˌframˈkalːandɛ]</td><td>Något som orsakar ett starkt behov eller begär efter upprepad användning eller konsumtion</td><td>Something that causes a strong need or craving for repeated use or consumption</td><td>使人产生强烈需求或渴望反复使用或消费的事物</td><td>Vissa videospel kan vara mycket beroendeframkallande.</td></tr>
+<tr><td>ofattbart</td><td>[uːˈfatːbaːrt]</td><td>Något som är mycket svårt att förstå eller greppa</td><td>Something that is very difficult to understand or grasp</td><td>非常难以理解或掌握的事物</td><td>Det är ofattbart hur snabbt teknologin utvecklas.</td></tr>
+<tr><td>granskning</td><td>[ˈɡranːsknɪŋ]</td><td>Noggrann undersökning eller genomgång av något för att bedöma dess korrekthet eller kvalitet</td><td>Thorough examination or review of something to assess its accuracy or quality</td><td>对某事物进行彻底检查或审查以评估其准确性或质量</td><td>Dokumenten är under granskning för att säkerställa att all information är korrekt.</td></tr>
+<tr><td>inrättas</td><td>[ɪnˈratːas]</td><td>Att etablera eller skapa något, särskilt en organisation eller system</td><td>To establish or set up something, especially an organization or system</td><td>建立或设立某物，特别是组织或系统</td><td>En ny kommitté ska inrättas för att förbättra arbetsmiljön.</td></tr>
+<tr><td>slukar</td><td>[ˈsluːkar]</td><td>Att svälja något snabbt och girigt; att ta in stora mängder av något, till exempel information</td><td>To swallow something quickly and greedily; to consume large amounts of something, such as information</td><td>快速且贪婪地吞下某物；大量吸收某物，例如信息</td><td>Han slukar böcker på en vecka.</td></tr>
+<tr><td>överväger</td><td>[ˈøːvɛrˌvɛːɡɛr]</td><td>Att noggrant tänka igenom något innan man fattar ett beslut</td><td>To carefully consider something before making a decision</td><td>在做决定之前仔细考虑某事</td><td>Hon överväger att byta jobb för att få bättre arbetsvillkor.</td></tr>
+<tr><td>översköljer</td><td>[ˈøːvɛrˌɧœlːjɛr]</td><td>Att täcka eller överväldiga något eller någon med en stor mängd av något</td><td>To cover or overwhelm something or someone with a large amount of something</td><td>用大量的某物覆盖或压倒某物或某人</td><td>Känslor av lättnad översköljer henne när hon får nyheterna.</td></tr>
+<tr><td>otaliga</td><td>[ʊˈtɑːlɪga]</td><td>Så många att de inte kan räknas; mycket stora mängder</td><td>So many that they cannot be counted; innumerable</td><td>数不清的；无数的</td><td>Det finns otaliga stjärnor på himlen.</td></tr>
+<tr><td>försiktighetsåtgärder</td><td>[fœrˈsɪktɪɡˌheːtsˌoːtˌjærdər]</td><td>Åtgärder som vidtas för att förhindra olyckor eller skador; säkerhetsåtgärder</td><td>Measures taken to prevent accidents or harm; precautions</td><td>为防止事故或伤害而采取的措施；预防措施</td><td>Vi måste vidta alla försiktighetsåtgärder för att säkerställa säkerheten.</td></tr>
+<tr><td>outgrundlig</td><td>[ˈuːtˌɡrʉndˌliː]</td><td>Som inte kan förstås eller förklaras; mystisk</td><td>Impossible to understand or explain; mysterious</td><td>无法理解或解释的；神秘的</td><td>Hans outgrundliga leende gjorde alla förvirrade.</td></tr>
+<tr><td>avskräckning</td><td>[ˈɑːvskrɛkːnɪŋ]</td><td>Åtgärder eller strategier som syftar till att avskräcka någon från att utföra en oönskad handling</td><td>Measures or strategies aimed at deterring someone from performing an undesirable action</td><td>旨在阻止某人进行不良行为的措施或策略</td><td>Landet har stärkt sin militära avskräckning för att förhindra attacker.</td></tr>
+<tr><td>stör</td><td>[støːr]</td><td>Att avbryta eller orsaka problem för någon eller något</td><td>To interrupt or cause trouble for someone or something</td><td>打断或给某人或某事带来麻烦</td><td>Musik på hög volym stör grannarna.</td></tr>
+<tr><td>riktvärdet</td><td>[ˈrɪktˌvæːrdɛt]</td><td>Ett rekommenderat värde som bör användas som referenspunkt</td><td>A recommended value that should be used as a reference point</td><td>应作为参考点的推荐值</td><td>Vattenkvaliteten ligger inom riktvärdet för dricksvatten.</td></tr>
+<tr><td>överskrider</td><td>[ˈøːvərˌskrɪːdɛr]</td><td>Att gå utöver en gräns eller nivå; att överträffa något</td><td>To exceed a limit or level; to surpass something</td><td>超过某个限度或水平；超越某物</td><td>Hastigheten överskrider det tillåtna gränsen.</td></tr>
+<tr><td>osmos</td><td>[ɔsˈmuːs]</td><td>Process där lösningsmedel passerar genom ett semipermeabelt membran från en mindre koncentrerad lösning till en mer koncentrerad lösning</td><td>Process where solvent passes through a semipermeable membrane from a less concentrated solution to a more concentrated solution</td><td>溶剂通过半透膜从低浓度溶液向高浓度溶液传递的过程</td><td>Osmos är viktigt för cellernas näringsupptag.</td></tr>
+<tr><td>åtgärda</td><td>[ˈoːtˌjærda]</td><td>Att vidta åtgärder för att rätta till ett problem eller förbättra en situation</td><td>To take measures to correct a problem or improve a situation</td><td>采取措施纠正问题或改善情况</td><td>Vi måste åtgärda de tekniska problemen innan vi kan fortsätta.</td></tr>
+<tr><td>svalka</td><td>[ˈsvalˌka]</td><td>En känsla av kyla eller friskhet, särskilt under varma förhållanden</td><td>A feeling of coolness or freshness, especially in warm conditions</td><td>在温暖的环境中感到凉爽或清新</td><td>Vi satt i skuggan för att få lite svalka under den heta dagen.</td></tr>
+<tr><td>slumpmässigt</td><td>[ˈslɵmpˌmɛsːɪkt]</td><td>Något som sker utan någon specifik ordning eller plan; av en händelse</td><td>Something that happens without any specific order or plan; by chance</td><td>没有特定顺序或计划的发生；偶然的</td><td>Urvalet av deltagare gjordes slumpmässigt för att säkerställa rättvisa.</td></tr>
+<tr><td>bestyckas</td><td>[bɛsˈtʏkːas]</td><td>Att utrusta med vapen eller annan militär utrustning</td><td>To equip with weapons or other military equipment</td><td>装备武器或其他军事装备</td><td>Fartyget bestyckas med de senaste missilsystemen för att öka dess försvarsförmåga.</td></tr>
+<tr><td>sammanfattar</td><td>[ˈsamːanˌfatːar]</td><td>Att kortfattat beskriva huvudpunkterna eller kärnan i något</td><td>To briefly describe the main points or essence</td><td>简要描述某事的要点或精髓</td><td>Hon sammanfattar mötet i en kort rapport.</td></tr>
+<tr><td>avsevärt</td><td>[ˈɑːvseˌvæːrt]</td><td>Betydligt; i stor utsträckning</td><td>Significantly; to a great extent</td><td>显著地；在很大程度上</td><td>Kostnaderna har ökat avsevärt under det senaste året.</td></tr>
+<tr><td>utmaning</td><td>[ˈʉːtˌmɑːnɪŋ]</td><td>En svårighet eller något som kräver ansträngning och skicklighet</td><td>A difficulty or something that requires effort and skill</td><td>挑战或需要努力和技巧的事情</td><td>Att lära sig ett nytt språk kan vara en stor utmaning.</td></tr>
+<tr><td>oenigheten</td><td>[ˈuːˌeːnɪˌheːtɛn]</td><td>Tillståndet av att inte vara överens; konflikt eller tvist</td><td>The state of disagreement; conflict or dispute</td><td>不同意的状态；冲突或争执</td><td>Oenigheten mellan parterna gjorde förhandlingarna svåra.</td></tr>
+<tr><td>återstår</td><td>[ˈoːtɛrˌstoːr]</td><td>Fortsätter att finnas eller vara kvar</td><td>Remains or continues to exist</td><td>继续存在或仍然存在</td><td>Det återstår bara några dagar innan projektet är klart.</td></tr>
+<tr><td>hävdat</td><td>[ˈhɛvdat]</td><td>Påstått eller framfört med bestämdhet</td><td>Claimed or asserted with confidence</td><td>坚定地声称或断言</td><td>Han har hävdat sin oskuld från början.</td></tr>
+<tr><td>belägen</td><td>[bɛˈleːɡɛn]</td><td>Som ligger på en viss plats eller befinner sig någonstans</td><td>Located or situated in a particular place</td><td>位于某个地方</td><td>Huset är beläget vid sjön med en vacker utsikt.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-6"><a class="header" href="#meningar-6">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td> består av</td><td>consists of</td></tr>
+<tr><td>verkar det i all fall</td><td>it seems in any case</td></tr>
+<tr><td>till sist</td><td>finally</td></tr>
+<tr><td>framgår av</td><td>is evident from</td></tr>
+<tr><td>alldeles inför</td><td>just before</td></tr>
+<tr><td>som helhet</td><td>as a whole</td></tr>
+<tr><td>allra mest</td><td>most of all</td></tr>
+<tr><td>till och med</td><td>even / up to and including</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2024-07"><a class="header" href="#svt-2024-07">SVT 2024-07</a></h1>
+<p>Svensk språk från SVT, Juli 2024</p>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>omtalade</td><td>[ˈɔmˌtɑːladɛ]</td><td>Något som det pratas mycket om; välkänt</td><td>Something widely talked about; well-known</td><td>被广泛讨论的；众所周知的</td><td>Den omtalade boken fick mycket uppmärksamhet i media.</td></tr>
+<tr><td>besegrade</td><td>[bɛˈseːɡradɛ]</td><td>Övervann eller vann över någon i en tävling eller konflikt</td><td>Overcame or defeated someone in a competition or conflict</td><td>战胜或击败某人在比赛或冲突中</td><td>De besegrade sina motståndare i finalen.</td></tr>
+<tr><td>hejdlöst</td><td>[ˈhɛjdˌløːst]</td><td>Utan kontroll; otyglat</td><td>Without control; unrestrained</td><td>失控的；无拘无束的</td><td>Barnen skrattade hejdlöst åt den roliga filmen.</td></tr>
+<tr><td>löpningar</td><td>[ˈløːpˌnɪŋar]</td><td>Flera gånger av att springa eller löpa; en serie av löprundor</td><td>Multiple instances of running; a series of runs</td><td>多次跑步；一系列跑步</td><td>Han deltog i flera löpningar för att träna inför maratonet.</td></tr>
+<tr><td>stökigt</td><td>[ˈstøːkɪɡt]</td><td>Oordnat, rörigt eller kaotiskt</td><td>Messy, disorganized, or chaotic</td><td>混乱的；无序的</td><td>Det var väldigt stökigt hemma efter festen.</td></tr>
+<tr><td>avfärdar</td><td>[ˈɑːvˌfæːrˌdar]</td><td>Att avvisa eller inte ta hänsyn till något</td><td>To dismiss or disregard something</td><td>驳回或不考虑某事</td><td>Han avfärdar kritiken som ogrundad.</td></tr>
+<tr><td>motvilja</td><td>[ˈmuːtˌvɪlja]</td><td>En känsla av ogillande eller ovilja</td><td>A feeling of dislike or reluctance</td><td>厌恶或不情愿的感觉</td><td>Hon kände en stark motvilja mot att gå till jobbet idag.</td></tr>
+<tr><td>förvandlat</td><td>[fœrˈvandlat]</td><td>Att ha ändrat eller omformat något helt och hållet</td><td>Transformed or changed something completely</td><td>完全改变或转变某事</td><td>Trädgården har förvandlats till en vacker park.</td></tr>
+<tr><td>avföring</td><td>[ˈɑːvˌføːrɪŋ]</td><td>Det som lämnar kroppen som avfall via tarmarna</td><td>Feces or stool</td><td>粪便</td><td>Veterinären undersökte hundens avföring för att hitta orsaken till dess sjukdom.</td></tr>
+<tr><td>vederbörande</td><td>[ˈveːdɛrbøːrande]</td><td>Den person som avses eller berörs av något</td><td>The person concerned or referred to</td><td>有关人员</td><td>Vederbörande ombeds kontakta receptionen vid ankomst.</td></tr>
+<tr><td>hemmahörande</td><td>[ˈhɛmːaˌhøːrande]</td><td>Som har sitt hem eller ursprung på en viss plats</td><td>Belonging or originating from a specific place</td><td>属于或起源于某个特定地方</td><td>Fåglarna är hemmahörande i norra Europa.</td></tr>
+<tr><td>välter</td><td>[ˈvɛlˌtɛr]</td><td>Får något att falla eller tippa över</td><td>Causes something to fall or tip over</td><td>使某物倒下或翻倒</td><td>Barnen välter ofta sina leksaker när de leker.</td></tr>
+<tr><td>befäl</td><td>[bɛˈfɛl]</td><td>Person med ledningsansvar, särskilt inom militären</td><td>Person in a leadership position, especially in the military</td><td>领导者，特别是军事中的领导</td><td>Kaptenen hade befäl över truppen under övningen.</td></tr>
+<tr><td>trogen</td><td>[ˈtruːɡɛn]</td><td>Någon som är lojal och pålitlig</td><td>Someone who is loyal and reliable</td><td>忠诚和可靠的人</td><td>Han har varit en trogen vän i många år.</td></tr>
+<tr><td>avsevärd</td><td>[ˈɑːvˌseːˌvæːrd]</td><td>Betydande, stor</td><td>Significant, considerable</td><td>显著的，相当大的</td><td>Projektet har krävt avsevärda resurser.</td></tr>
+<tr><td>stjäla</td><td>[ˈɧɛːla]</td><td>Att ta något som tillhör någon annan utan tillåtelse</td><td>To take something that belongs to someone else without permission</td><td>偷窃，偷走</td><td>Han försökte stjäla en cykel från gården.</td></tr>
+<tr><td>frihetsberövanden</td><td>[ˈfriːhɛtsbɛˌrøːvandɛn]</td><td>Handling där någon fråntas sin frihet, ofta genom arrestering</td><td>Actions where someone is deprived of their freedom, often through arrest</td><td>剥夺自由，通常是通过逮捕</td><td>De oskyldiga frihetsberövandena kritiserades av många.</td></tr>
+<tr><td>bekymmersam</td><td>[bɛˈɕʏmːɛrˌsam]</td><td>Något som orsakar oro eller bekymmer</td><td>Something that causes worry or concern</td><td>令人担忧的，令人困扰的</td><td>Den ekonomiska situationen är mycket bekymmersam.</td></tr>
+<tr><td>lamslagit</td><td>[ˈlamːslaˌɡɪt]</td><td>Gjort någon helt orörlig eller oförmögen att agera</td><td>Rendered someone completely immobile or unable to act</td><td>使某人完全不能动或行动</td><td>Nyheten om olyckan hade lamslagit hela samhället.</td></tr>
+<tr><td>orimligt</td><td>[uːˈrɪmːlɪkt]</td><td>Något som inte är rimligt eller logiskt, överdrivet eller osannolikt</td><td>Something that is not reasonable or logical, exaggerated or unlikely</td><td>不合理或不合逻辑的事物</td><td>Priset på produkten är helt orimligt högt.</td></tr>
+<tr><td>medvetna</td><td>[ˈmeːdvɛtna]</td><td>Att vara fullt medveten om något, ha kunskap om eller förståelse för något</td><td>To be fully aware of something, having knowledge or understanding of something</td><td>意识到某事，具有知识或理解力</td><td>De är medvetna om riskerna med att investera i aktiemarknaden.</td></tr>
+<tr><td>sårbart</td><td>[ˈsoːrbɑrt]</td><td>Något som lätt kan skadas eller påverkas negativt</td><td>Something that can be easily harmed or negatively affected</td><td>容易受伤害或受到负面影响的事物</td><td>Systemet visade sig vara sårbart för hackerattacker.</td></tr>
+<tr><td>icke-akuta</td><td>[ˈɪkːɛ-aˌkʉːta]</td><td>Något som inte är akut eller kräver omedelbar uppmärksamhet</td><td>Something that is not acute or does not require immediate attention</td><td>非紧急的事物</td><td>Vårdcentralen hanterar många icke-akuta fall dagligen.</td></tr>
+<tr><td>föras</td><td>[ˈfœːras]</td><td>Att flyttas eller transporteras från en plats till en annan</td><td>To be moved or transported from one place to another</td><td>被移动或运输</td><td>Patienten måste föras till sjukhuset omedelbart.</td></tr>
+<tr><td>inneburit</td><td>[ˈɪnːɛˌbʉːrɪt]</td><td>Att ha medfört eller orsakat något</td><td>To have resulted in or caused something</td><td>导致或引起某事</td><td>Förändringarna har inneburit stora förbättringar för företaget.</td></tr>
+<tr><td>bedrövligt</td><td>[bɛˈdrøːvlɪkt]</td><td>Något som är mycket dåligt eller sorgligt</td><td>Something that is very bad or sad</td><td>非常糟糕或悲伤的事物</td><td>Vädret var bedrövligt hela semestern.</td></tr>
+<tr><td>bedrivs</td><td>[bɛˈdrɪvs]</td><td>Att något genomförs eller utförs, oftast om verksamhet</td><td>To be conducted or carried out, usually regarding an activity</td><td>进行或执行（通常指活动）</td><td>Forskningen bedrivs av ett internationellt team av experter.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-7"><a class="header" href="#meningar-7">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>enskilt fall</td><td>individual case</td></tr>
+<tr><td>har av oklar anledning avlidit</td><td>has died for an unclear reason</td></tr>
+<tr><td>avlossat skott</td><td>fired a shot</td></tr>
+<tr><td>Det kan aldrig vara förlåtet att</td><td>It can never be forgiven to</td></tr>
+<tr><td>en regel än undantag</td><td>a rule rather than an exception</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2024-08"><a class="header" href="#svt-2024-08">SVT 2024-08</a></h1>
+<p>Svensk språk från SVT, Augusti 2024</p>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>överlägsen</td><td>[ˈøːvɛˌlɛːɡsɛn]</td><td>Att vara bättre eller starkare än någon annan</td><td>To be better or stronger than someone else</td><td>比别人更好或更强</td><td>Han visade sig vara överlägsen i alla sporter han deltog i.</td></tr>
+<tr><td>avslagen</td><td>[ˈɑːvˌslɑːɡɛn]</td><td>Något som har förlorat sin ursprungliga kvalitet eller kraft, särskilt om kolsyrade drycker</td><td>Something that has lost its original quality or strength, especially carbonated drinks</td><td>失去原有品质或强度的事物（特别是碳酸饮料）</td><td>Läskedrycken var avslagen efter att ha stått öppnad hela natten.</td></tr>
+<tr><td>villakvarter</td><td>[ˈvɪlːaˌkvarˈteːr]</td><td>Ett bostadsområde bestående främst av villor och småhus</td><td>A residential area mainly consisting of detached houses</td><td>主要由独立房屋组成的住宅区</td><td>De bor i ett lugnt villakvarter nära stadens centrum.</td></tr>
+<tr><td>knepiga</td><td>[ˈkneːpɪɡa]</td><td>Svår eller komplicerad att förstå eller lösa</td><td>Difficult or complicated to understand or solve</td><td>难以理解或解决的</td><td>De ställdes inför några knepiga frågor under intervjun.</td></tr>
+<tr><td>knappt</td><td>[ˈknapːt]</td><td>Nästan inte, eller mindre än förväntat</td><td>Barely, or less than expected</td><td>几乎不，少于预期</td><td>Det var knappt med tid innan tåget skulle gå.</td></tr>
+<tr><td>obekväma</td><td>[ˈuːbɛˌkvɛːma]</td><td>Något som inte är bekvämt, som orsakar obehag eller olust</td><td>Something that is uncomfortable or causes discomfort</td><td>不舒服的，不适的</td><td>De nya skorna var obekväma och gav honom skavsår.</td></tr>
+<tr><td>välkänd</td><td>[ˈvɛlˌɕɛnd]</td><td>Något eller någon som är allmänt känd eller erkänd</td><td>Something or someone that is widely known or recognized</td><td>广为人知的，著名的</td><td>Han är en välkänd författare med många bästsäljare.</td></tr>
+<tr><td>lanserades</td><td>[lɑnˈseːˌraːdɛs]</td><td>Att introduceras eller släppas på marknaden</td><td>To be launched or introduced to the market</td><td>推出，发布</td><td>Den nya produkten lanserades internationellt förra veckan.</td></tr>
+<tr><td>anmärkningsvärt</td><td>[ˈanˌmɛːrkˌnɪŋsˌvæʈ]</td><td>Något som är särskilt uppseendeväckande eller ovanligt</td><td>Something particularly noteworthy or unusual</td><td>值得注意的, 引人注目的</td><td>Hans prestation var anmärkningsvärt bra för en nybörjare.</td></tr>
+<tr><td>slagfältet</td><td>[ˈslɑːɡˌfæltɛt]</td><td>Ett område där en strid eller ett slag äger rum</td><td>A battlefield where a battle takes place</td><td>战场</td><td>Soldaterna kämpade modigt på slagfältet.</td></tr>
+<tr><td>skälet</td><td>[ˈɧɛːlɛt]</td><td>Orsak eller anledning till något</td><td>The reason or cause for something</td><td>原因, 理由</td><td>Skälet till förseningarna var det dåliga vädret.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-8"><a class="header" href="#meningar-8">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>blev det dock inget</td><td>however, it came to nothing</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2024-09"><a class="header" href="#svt-2024-09">SVT 2024-09</a></h1>
+<p>Svensk språk från SVT, september 2024</p>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>berörts</td><td>[bɛˈrœʈːs]</td><td>Att ha nämnts eller tagits upp i ett sammanhang</td><td>To have been mentioned or brought up in a context</td><td>提及，被提到</td><td>Frågan har redan berörts i tidigare möten.</td></tr>
+<tr><td>skadeståndskrav</td><td>[ˈskɑːdɛˌstɔndˌskrɑːv]</td><td>Ett krav på ersättning för skador som har uppstått</td><td>A claim for compensation for damages</td><td>赔偿要求</td><td>Företaget ställdes inför ett skadeståndskrav efter olyckan.</td></tr>
+<tr><td>lindriga</td><td>[ˈlɪndrɪɡa]</td><td>Som är milda eller mindre allvarliga</td><td>Mild or less serious</td><td>轻微的，不严重的</td><td>Skadorna var lindriga och krävde ingen sjukhusvård.</td></tr>
+<tr><td>omvälvande</td><td>[ɔmˈvɛlvande]</td><td>Som förändrar något grundligt, omvälvande</td><td>Revolutionary or transformative</td><td>革命性的，变革性的</td><td>Den nya teknologin har en omvälvande effekt på industrin.</td></tr>
+<tr><td>överskattar</td><td>[ˈøːvɛrˌskatar]</td><td>Att bedöma något som mer betydelsefullt eller viktigt än det är</td><td>To overestimate</td><td>过高估计</td><td>Många överskattar vikten av att ha en perfekt plan.</td></tr>
+<tr><td>förknippas</td><td>[fœrˈkɪpːas]</td><td>Att associeras med något, att knytas till</td><td>To be associated with</td><td>与...相关</td><td>Det här ämnet förknippas ofta med miljöfrågor.</td></tr>
+<tr><td>bestridit</td><td>[bɛˈstriːdɪt]</td><td>Att neka eller motsätta sig något</td><td>To deny or oppose something</td><td>否认, 反对</td><td>Han har bestridit alla anklagelser mot honom.</td></tr>
+<tr><td>befästa</td><td>[bɛˈfɛsta]</td><td>Att stärka eller göra något fast och varaktigt</td><td>To strengthen or secure</td><td>巩固, 加强</td><td>Ledaren vill befästa sin makt genom nya reformer.</td></tr>
+<tr><td>slussats</td><td>[ˈslɵsˌats]</td><td>En öppning eller passage där flöden eller personer kan styras</td><td>A gate or passage for controlling flows or people</td><td>闸门, 控制通道</td><td>Vattnet slussades genom slussatsen för att reglera flödet.</td></tr>
+<tr><td>utpressning</td><td>[ˈʉːtˌprɛsːnɪŋ]</td><td>När någon tvingar någon annan att göra något genom hot</td><td>The act of forcing someone to do something through threats</td><td>敲诈勒索</td><td>Han blev utsatt för utpressning och tvingades betala en stor summa pengar.</td></tr>
+<tr><td>målsägande</td><td>[ˈmoːlsˌɛːɡandɛ]</td><td>Personen som blivit utsatt för ett brott och deltar i rättegången</td><td>The victim of a crime who participates in a trial</td><td>被害人</td><td>Målsäganden vittnade i rättegången för att berätta vad som hänt.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-9"><a class="header" href="#meningar-9">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>Här är det störst risk</td><td>Here, there is the greatest risk</td></tr>
+<tr><td>Om---är det ju något som är fel</td><td>If---then something is wrong <sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></td></tr>
+<tr><td>rören är täckta</td><td>the pipes are covered <sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup></td></tr>
+<tr><td>leta efter</td><td>to look for</td></tr>
+</tbody></table>
+</div><hr>
+<ol class="footnote-definition"><li id="footnote-1">
+<p>"är det ju" emphasizes an expectation ("then it is"). "något som är fel" acts as the object of the sentence. <a href="#fr-1-1">↩</a></p>
+</li>
+<li id="footnote-2">
+<p>"täckta" is not an infinitive but the plural form of the participle used to match the plural noun "rören." <a href="#fr-2-1">↩</a></p>
+</li>
+</ol><div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2024-10"><a class="header" href="#svt-2024-10">SVT 2024-10</a></h1>
+<p>Svensk språk från SVT, oktober 2024</p>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>spänt</td><td>[ˈspɛnt]</td><td>Känsla av oro eller förväntan, ofta med nervositet.</td><td>Tense or strained feeling, often with nervousness or anticipation.</td><td>紧张或期待的感觉，通常伴有紧张情绪。</td><td>Situationen i rummet var mycket spänt efter diskussionen.</td></tr>
+<tr><td>ifrågasätter</td><td>[ɪˈfrɔːɡaˌsɛtːɛr]</td><td>Att uttrycka tvivel eller ställa frågor om något; undra över giltigheten eller riktigheten av något.</td><td>To question or challenge something; to express doubt about the validity or correctness of something.</td><td>质疑某事；对某事的有效性或正确性表示怀疑。</td><td>Hon ifrågasätter alltid beslut som fattas utan tillräcklig information.</td></tr>
+<tr><td>avrått</td><td>[ˈɑːvˌroːt]</td><td>Att ha gett råd om att inte göra något; att avråda någon från att genomföra en viss handling.</td><td>To have advised against something; to dissuade someone from doing a particular action.</td><td>劝阻某人做某事；建议不要做某事。</td><td>Läkaren har avrått honom från att fortsätta med den intensiva träningen.</td></tr>
+<tr><td>överhuvudtaget</td><td>[øːvɛrˈhʉːvʊdˌtɑːɡɛt]</td><td>Generellt sett; i allmänhet, eller överhuvud taget i någon situation.</td><td>At all; in general or in any situation whatsoever.</td><td>根本；在任何情况下都适用。</td><td>Han har inte överhuvudtaget några planer på att åka utomlands i år.</td></tr>
+<tr><td>tvivel</td><td>[ˈtviːvɛl]</td><td>Osäkerhet eller tvekan kring något; brist på tro eller förtroende.</td><td>Doubt or uncertainty about something; lack of belief or trust.</td><td>对某事的怀疑或不确定；缺乏信任或信念。</td><td>Han uttryckte tvivel om beslutet som fattades.</td></tr>
+<tr><td>nyss</td><td>[nʏsː]</td><td>För en kort stund sedan; något som just hände.</td><td>A short while ago; something that just happened.</td><td>刚刚，片刻之前；刚发生的事情。</td><td>Han gick nyss ut genom dörren, så du kanske hinner ikapp honom.</td></tr>
+<tr><td>anlänt</td><td>[ˈanˌlænt]</td><td>Att ha kommit fram till en plats; att ha anlänt till en destination.</td><td>To have arrived at a place or destination.</td><td>到达某地；抵达目的地。</td><td>Tåget har precis anlänt till stationen efter en lång resa.</td></tr>
+<tr><td>rikssvenska</td><td>[ˈrɪksˌsvɛnska]</td><td>Den standardsvenska dialekten som talas utan regionala särdrag.</td><td>The standard Swedish dialect spoken without regional features.</td><td>标准瑞典语，没有地区方言特征。</td><td>Hon talar rikssvenska, utan några märkbara dialektala inslag.</td></tr>
+<tr><td>uppfinningar</td><td>[ˈɵpˌfɪnːɪŋar]</td><td>Nya idéer eller saker som skapats för första gången; innovationer.</td><td>Inventions or new ideas, creations.</td><td>发明；新的想法或创造。</td><td>Många av de viktigaste uppfinningarna har förändrat världen.</td></tr>
+<tr><td>belöna</td><td>[bɛˈløːna]</td><td>Att ge någon en belöning för något de har gjort bra eller åstadkommit.</td><td>To reward someone for something they have done well or achieved.</td><td>奖励某人因为他们做得好的事或成就。</td><td>Läraren bestämde sig för att belöna eleverna för deras hårda arbete.</td></tr>
+<tr><td>bildigenkänning</td><td>[ˈbɪldˌɪɡɛnˌɕɛnːɪŋ]</td><td>Teknik som används för att identifiera eller analysera bilder.</td><td>Image recognition technology used to identify or analyze images.</td><td>图像识别技术，用于识别或分析图像。</td><td>Bildigenkänning används i många appar för att känna igen objekt eller ansikten.</td></tr>
+<tr><td>klockren</td><td>[ˈklɔkˌreːn]</td><td>Något som är perfekt, helt rätt eller utan fel; mycket tydligt och klart.</td><td>Something that is perfect, spot-on, or flawless; very clear or obvious.</td><td>完美的；非常清晰或正确的。</td><td>Hans presentation var klockren, utan några fel eller tveksamheter.</td></tr>
+<tr><td>uppsatt</td><td>[ˈɵpˌsat]</td><td>Något som har blivit placerat eller monterat på en viss plats.</td><td>Something that has been set up or installed in a particular place.</td><td>安装或设置在某个地方的东西。</td><td>Affischen är uppsatt på väggen i korridoren.</td></tr>
+<tr><td>ombud</td><td>[ˈɔmˌbʉːd]</td><td>En person som representerar någon annan, särskilt i juridiska eller formella sammanhang.</td><td>Representative or agent, especially in legal or formal matters.</td><td>代理人，代表，特别是在法律或正式场合中。</td><td>Advokaten agerade som hennes ombud under rättegången.</td></tr>
+<tr><td>tillfört</td><td>[ˈtɪlˌføːr]</td><td>Att ha lagt till eller tillfört något, ofta resurser eller information.</td><td>Added or contributed something, often resources or information.</td><td>添加或贡献某物，通常是资源或信息。</td><td>De nya idéerna har tillfört mycket värde till projektet.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-10"><a class="header" href="#meningar-10">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>Detta säger något om</td><td>This says something about</td></tr>
+<tr><td>särskilt bra</td><td>particularly good</td></tr>
+<tr><td>oumbärligt redskap</td><td>indispensable tool</td></tr>
+<tr><td>vilket gör att ...</td><td>which means that ...</td></tr>
+<tr><td>rycktes ... upp</td><td>was torn up / was pulled up</td></tr>
+<tr><td>Sedan dess</td><td>Since then</td></tr>
+<tr><td>Vem som helst</td><td>anyone</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2024-11"><a class="header" href="#svt-2024-11">SVT 2024-11</a></h1>
+<p>Svensk språk från SVT, oktober 2024</p>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>oroväckande</td><td>[ˈuːrʊˌvɛkːandɛ]</td><td>Något som orsakar oro eller bekymmer.</td><td>Worrying or alarming.</td><td>令人担忧或令人不安的。</td><td>De senaste nyheterna är oroväckande för många invånare.</td></tr>
+<tr><td>källmedvetenhet</td><td>[ˈɕɛlːmɛdˌveːtɛnˌheːt]</td><td>Förmågan att kritiskt granska och förstå källors trovärdighet och ursprung.</td><td>Source awareness; the ability to critically evaluate the credibility and origin of sources.</td><td>对来源的批判性评估和理解其可信度及来源的能力。</td><td>Det är viktigt att ha källmedvetenhet när man läser nyheter online.</td></tr>
+<tr><td>knepigt</td><td>[ˈkneːpɪkt]</td><td>Något som är svårt att hantera eller förstå; komplicerat.</td><td>Tricky or difficult to handle or understand; complicated.</td><td>棘手的、难以处理或理解的；复杂的。</td><td>Det var knepigt att lösa problemet utan hjälp.</td></tr>
+<tr><td>ändamålsenligt</td><td>[ˈɛndaˌmoːlsˌɛnlɪkt]</td><td>Något som är anpassat eller lämpligt för ett visst ändamål eller syfte.</td><td>Appropriate or suitable for a specific purpose or goal.</td><td>适合或符合特定目的或目标的。</td><td>Utrustningen var ändamålsenligt utformad för arbetet i laboratoriet.</td></tr>
+<tr><td>betydelse</td><td>[bɛˈtyːdɛlsɛ]</td><td>Det värde eller den innebörd som något har.</td><td>Importance or meaning of something.</td><td>意义或重要性。</td><td>Orden hade stor betydelse för hennes beslut.</td></tr>
+<tr><td>skugg</td><td>[skʉɡː]</td><td>Mörkare område som bildas när något blockerar ljuset.</td><td>Shadow or a dark area caused by an object blocking light.</td><td>阴影，因物体阻挡光线而形成的暗区。</td><td>Trädet gav en behaglig skugg under den varma sommardagen.</td></tr>
+<tr><td>ofredanden</td><td>[ˈuːˌfreːdandɛn]</td><td>Handlingar som innebär att någon utsätts för obehag eller trakasserier.</td><td>Harassment or acts that cause discomfort or disturbance to someone.</td><td>骚扰或使人感到不适的行为。</td><td>Personen dömdes för flera ofredanden under det gångna året.</td></tr>
+<tr><td>misskötte</td><td>[ˈmɪsˌɧøtːɛ]</td><td>Att sköta något dåligt eller på ett olämpligt sätt.</td><td>Mismanaged or failed to take proper care of something.</td><td>处理不当或未妥善照顾某事。</td><td>Han misskötte sina arbetsuppgifter och fick därför en varning.</td></tr>
+<tr><td>villkorligt</td><td>[ˈvɪlːˌkoːrlɪkt]</td><td>Något som är beroende av uppfyllda villkor eller förutsättningar.</td><td>Conditionally; dependent on certain terms or conditions.</td><td>有条件的，取决于某些条件或前提。</td><td>Han blev dömd till ett villkorligt fängelsestraff.</td></tr>
+<tr><td>beklagligt</td><td>[bɛˈklɑːɡlɪkt]</td><td>Något som är sorgligt eller beklagansvärt.</td><td>Regrettable or unfortunate.</td><td>遗憾的或不幸的。</td><td>Det är beklagligt att mötet måste ställas in på grund av vädret.</td></tr>
+<tr><td>skyndsamt</td><td>[ˈɧʏnːdsamt]</td><td>Något som görs snabbt eller utan dröjsmål.</td><td>Promptly or urgently.</td><td>迅速地、紧急地。</td><td>Hon behövde skicka in ansökan skyndsamt för att hinna med i tid.</td></tr>
+<tr><td>infördes</td><td>[ˈɪnˌføːrdes]</td><td>Blev infört eller implementerat.</td><td>Was introduced or implemented.</td><td>被引入或实施。</td><td>Den nya lagen infördes för att förbättra trafiksäkerheten.</td></tr>
+<tr><td>angående</td><td>[ˈanːˌɡøːndɛ]</td><td>Som rör eller handlar om något.</td><td>Regarding or concerning.</td><td>关于，涉及。</td><td>De hade en diskussion angående de nya reglerna.</td></tr>
+<tr><td>väcktes</td><td>[ˈvɛkːtɛs]</td><td>Att ha blivit väckt eller att en fråga eller ett intresse blev påbörjat.</td><td>Was awakened or initiated.</td><td>被唤醒或被引发。</td><td>En debatt väcktes efter den nya rapportens publicering.</td></tr>
+<tr><td>frikänns</td><td>[ˈfriːˌɕɛnːs]</td><td>Att förklaras oskyldig i en rättegång eller rättsprocess.</td><td>To be acquitted or declared not guilty.</td><td>在审判中被宣告无罪。</td><td>Efter en lång rättegång frikänns den anklagade av domstolen.</td></tr>
+<tr><td>kvarlämnade</td><td>[ˈkvaːrˌlɛmnadɛ]</td><td>Något som lämnades kvar på en plats.</td><td>Left behind or remained.</td><td>留下或遗留。</td><td>Han kvarlämnade sina tillhörigheter i lägenheten.</td></tr>
+<tr><td>jämförbara</td><td>[ˈjɛmːˌføːrˌbɑːra]</td><td>Som kan jämföras med varandra.</td><td>Comparable or able to be compared.</td><td>可比较的。</td><td>Resultaten från de två studierna är jämförbara.</td></tr>
+<tr><td>att avge</td><td>[ˈɑːvˌɡeː]</td><td>Att lämna eller ge ifrån sig något, t.ex. ett löfte eller ett svar.</td><td>To submit or deliver, such as a statement.</td><td>递交、发出（如声明或承诺）。</td><td>Han ska avge sitt svar till domstolen nästa vecka.</td></tr>
+<tr><td>förstört</td><td>[fœrˈʃœʈ]</td><td>Något som har blivit skadat så att det inte längre fungerar eller är användbart.</td><td>Destroyed or ruined.</td><td>被破坏、毁坏。</td><td>Stormen har förstört många hus i området.</td></tr>
+<tr><td>bedrövligt</td><td>[bɛˈdrøːvlɪkt]</td><td>Något som orsakar sorg, besvikelse eller nedstämdhet.</td><td>Deplorable or very sad.</td><td>悲惨的、令人失望的。</td><td>Det är bedrövligt att se hur staden har förfallit.</td></tr>
+<tr><td>beslagtagna</td><td>[bɛˈslaːɡˌtɑːɡna]</td><td>Något som har tagits i beslag, ofta av myndigheter som bevismaterial.</td><td>Confiscated or seized, often by authorities.</td><td>被没收或被扣押。</td><td>De beslagtagna föremålen användes som bevis i rättegången.</td></tr>
+<tr><td>smidig</td><td>[ˈsmiːdɪɡ]</td><td>Någon eller något som är flexibel, lätt att hantera eller rör sig mjukt.</td><td>Flexible, smooth, or easy to handle.</td><td>灵活的、顺畅的、易于处理的。</td><td>Han löste problemet på ett smidigt sätt.</td></tr>
+<tr><td>undernärd</td><td>[ˈɵnːdɛrˌnæːrd]</td><td>En person eller ett djur som lider av brist på näring.</td><td>Malnourished; lacking sufficient nutrition.</td><td>营养不良的。</td><td>Barnet var undernärd och behövde omedelbar vård.</td></tr>
+<tr><td>analfabeter</td><td>[ˈanːalfaˌbeːtɛr]</td><td>Personer som inte kan läsa eller skriva.</td><td>Illiterate people; individuals who cannot read or write.</td><td>文盲；不能读写的人。</td><td>Många analfabeter får hjälp att lära sig läsa och skriva i vuxen ålder.</td></tr>
+<tr><td>framförallt</td><td>[ˈframːˌfœrˌalt]</td><td>I första hand eller särskilt; det som är viktigast.</td><td>Above all; primarily; especially.</td><td>首先；特别是。</td><td>Hon är känd som en skicklig musiker, framförallt som violinist.</td></tr>
+<tr><td>angelägenhet</td><td>[ˈanːɡɛˌleːɡɛnˌheːt]</td><td>Något som är viktigt eller betydelsefullt, eller ett ärende.</td><td>Matter of importance or concern.</td><td>重要的事情；关注点。</td><td>Klimatförändringar är en global angelägenhet.</td></tr>
+<tr><td>ingående</td><td>[ˈɪŋˌɡoːɛnde]</td><td>Noggrant eller detaljerat; som rör sig in i något.</td><td>Thorough or detailed; incoming.</td><td>详细的；深入的；进入的。</td><td>Rapporten innehåller en ingående analys av ekonomin.</td></tr>
+<tr><td>disponibel</td><td>[dɪsˈpɔːnɪbɛl]</td><td>Något som är tillgängligt för användning eller till förfogande.</td><td>Available; at one's disposal.</td><td>可用的；可支配的。</td><td>Hon har en disponibel inkomst på 25 000 kronor per månad.</td></tr>
+<tr><td>eniga</td><td>[ˈeːnɪɡa]</td><td>Som har samma åsikt eller är överens.</td><td>In agreement; unanimous.</td><td>意见一致的；达成共识的。</td><td>Alla i gruppen var eniga om beslutet.</td></tr>
+<tr><td>enats</td><td>[ˈeːnats]</td><td>Kommit överens om något; nått en överenskommelse.</td><td>Agreed upon; reached an agreement.</td><td>达成一致；同意。</td><td>Parterna har enats om ett nytt avtal.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-11"><a class="header" href="#meningar-11">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>att sålla bland information</td><td>to sift through information</td></tr>
+<tr><td>ställer frågor</td><td>asks questions</td></tr>
+<tr><td>...har tagit det här på allvar</td><td>...have taken this seriously</td></tr>
+<tr><td>Av en slump</td><td>By chance</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2024-12"><a class="header" href="#svt-2024-12">SVT 2024-12</a></h1>
+<p>Svensk språk från SVT, Dec 2024</p>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>benådning</td><td>[bɛˈnoːdnɪŋ]</td><td>Ett beslut att frigöra någon från ett straff, oftast av en myndighet eller statschef.</td><td>Pardon; act of granting clemency or mercy.</td><td>赦免；特赦。</td><td>Presidenten beviljade en benådning till fången.</td></tr>
+<tr><td>dubbelmoral</td><td>[ˈdɵbːɛlmuˌrɑːl]</td><td>När man har olika moraliska regler för sig själv och andra.</td><td>Double standards; hypocrisy.</td><td>双重标准；伪善。</td><td>Politikerna anklagades för dubbelmoral när de bröt sina egna regler.</td></tr>
+<tr><td>raderas</td><td>[raˈdeːras]</td><td>Att tas bort eller suddas ut, exempelvis digitalt eller från ett dokument.</td><td>To be erased; to be deleted.</td><td>被删除；被抹去。</td><td>Alla gamla filer raderas automatiskt efter en månad.</td></tr>
+<tr><td>traumatiserade</td><td>[traʊˌmaːtɪsɛˈraːdɛ]</td><td>Att ha utsatts för eller påverkats starkt av ett trauma.</td><td>Traumatized; severely affected by trauma.</td><td>受到创伤的；经历心理创伤的。</td><td>De överlevande från olyckan var svårt traumatiserade.</td></tr>
+<tr><td>omhändertog</td><td>[ɔmˈhɛnːdɛˌtuːɡ]</td><td>Tog hand om något eller någon, ofta i syfte att ge skydd eller vård.</td><td>Took care of; looked after.</td><td>照顾；接管。</td><td>Socialtjänsten omhändertog barnet för att ge det en trygg miljö.</td></tr>
+<tr><td>vanvårdade</td><td>[ˈvanˌvoːɖadɛ]</td><td>Behandlade något eller någon på ett vårdslöst eller bristfälligt sätt.</td><td>Neglected; poorly cared for.</td><td>疏于照顾；虐待。</td><td>Djuren på gården var svårt vanvårdade och behövde omhändertas.</td></tr>
+<tr><td>tidvis</td><td>[ˈtiːdˌvɪs]</td><td>Under vissa perioder eller ibland.</td><td>Occasionally; at times.</td><td>有时；间或。</td><td>Det har varit tidvis soligt men också regnigt under veckan.</td></tr>
+<tr><td>överväga</td><td>[ˈøːvɛrˌvɛːɡa]</td><td>Att noggrant tänka igenom eller fundera på något innan ett beslut fattas.</td><td>To consider; to deliberate.</td><td>考虑；权衡。</td><td>Jag måste överväga för- och nackdelar innan jag bestämmer mig.</td></tr>
+<tr><td>umgänge</td><td>[ˈɵmˌɡɛŋːɛ]</td><td>Social kontakt eller samvaro med andra människor.</td><td>Social interaction; companionship.</td><td>交往；社交。</td><td>Hon värdesätter sitt umgänge med vänner och familj.</td></tr>
+<tr><td>perrongen</td><td>[pɛˈrɔŋːɛn]</td><td>En plattform vid en järnvägsstation där passagerare väntar på tåg.</td><td>The platform at a train station.</td><td>火车站月台。</td><td>Vi väntade på tåget på perrongen.</td></tr>
+<tr><td>övertygade</td><td>[ˈøːvɛrˌtyːɡadɛ]</td><td>Påverkade någon att tro eller acceptera något som sant eller korrekt.</td><td>Convinced; persuaded someone to believe or accept something as true or correct.</td><td>说服；使某人相信或接受某事是真实的或正确的。</td><td>Hon övertygade honom att följa med på resan.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-12"><a class="header" href="#meningar-12">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>Städningen höll inte måttet</td><td>The cleaning didn't meet the standard</td></tr>
+<tr><td>bemannat av</td><td>staffed by</td></tr>
+<tr><td>det är både vi och kunderna rätt så vana vid</td><td>both we and the customers are quite used to it [^1]</td></tr>
+<tr><td>inför rätta</td><td>brought to justice</td></tr>
+<tr><td>de påstådda bedrägerierna</td><td>the alleged frauds</td></tr>
+<tr><td>så kallad</td><td>so called</td></tr>
+<tr><td>som ser ut att komma från ...</td><td>that appears to come from ...</td></tr>
+</tbody></table>
+</div>
+<p>[^1]</p>
+<ul>
+<li><strong>"rätt så"</strong> = "quite" or "fairly."</li>
+<li><strong>"vana vid"</strong> = "used to" or "accustomed to."</li>
+</ul>
+<p>So, <strong>"rätt så vana vid"</strong> means <strong>"quite used to"</strong> or <strong>"fairly accustomed to."</strong></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="netflix-svenska-tv-serier"><a class="header" href="#netflix-svenska-tv-serier">Netflix Svenska TV-serier</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="svenska-på-tv-serier"><a class="header" href="#svenska-på-tv-serier">Svenska på TV-Serier</a></h1>
+<p>Svensk språk från Netflix TV Series</p>
+<ol>
+<li>Bonus Family
+<img src="https://paper-attachments.dropboxusercontent.com/s_2E140D287422C48A122364C36F078A64095BD45DA30556403B901A5C192AE5D9_1706771903314_Screenshot+2024-02-01+at+08.17.48.png" alt="Rollista (cast)" /></li>
+</ol>
+<h2 id="ord-7"><a class="header" href="#ord-7">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Svenska</th><th>Svenska förklaring</th><th>Engelska</th><th>Kinesiska</th></tr></thead><tbody>
+<tr><td>härligt</td><td></td><td>lovely</td><td></td></tr>
+<tr><td>äkligt</td><td></td><td>disgusting</td><td></td></tr>
+<tr><td>önskelista</td><td></td><td>wishlist</td><td></td></tr>
+<tr><td>attityden</td><td></td><td>the attitude</td><td></td></tr>
+<tr><td>knäppt</td><td></td><td>crazy</td><td></td></tr>
+<tr><td>låtsades</td><td></td><td>pretended</td><td></td></tr>
+<tr><td>lovade</td><td></td><td>promised</td><td></td></tr>
+<tr><td>hinner</td><td></td><td>have time to</td><td></td></tr>
+<tr><td>beräknad</td><td></td><td>estimated</td><td></td></tr>
+<tr><td>nedkomst</td><td></td><td>parturition</td><td>分娩</td></tr>
+<tr><td>anmärkning</td><td></td><td>mark</td><td></td></tr>
+<tr><td>borgensman</td><td></td><td>guarantor</td><td>担保人</td></tr>
+<tr><td>tristess</td><td></td><td>boredom</td><td>无聊</td></tr>
+<tr><td>struntar</td><td></td><td>ignore</td><td></td></tr>
+<tr><td>vernissage</td><td></td><td>vernissage</td><td>开幕式</td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-13"><a class="header" href="#meningar-13">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Svenska</th><th>Engelska</th></tr></thead><tbody>
+<tr><td>skynda lite</td><td>hurry up a bit</td></tr>
+<tr><td>hur känns det att fylla år snart</td><td>how does it feel to have a birthday soon</td></tr>
+<tr><td>har du med dig allting?</td><td>do you have everything with you?</td></tr>
+<tr><td>för helvete</td><td>god damnit</td></tr>
+<tr><td>för din skull</td><td>for your sake</td></tr>
+<tr><td>Hur har det gått till?</td><td>How did it happen?</td></tr>
+<tr><td>Stör vi, eller?</td><td>Do we disturb, or?</td></tr>
+<tr><td>lägg av</td><td>stop it</td></tr>
+<tr><td>Är du beredd på det?</td><td>Are you ready for it?</td></tr>
+<tr><td>Tur är du inte är …</td><td>Lucky you aren’t …</td></tr>
+<tr><td>Var menar du med det?</td><td>Where do you mean by that?</td></tr>
+<tr><td>Är du besviken på mig?</td><td>Are you disappointed in me?</td></tr>
+<tr><td>att avbryta varandra</td><td>interrupt each other</td></tr>
+<tr><td>Han lät uppriven</td><td>He sounded upset</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><p>Andra resurser från</p>
+<ol>
+<li><a href="https://www.dn.se/">Dagens Nyheter</a></li>
+<li><a href="https://www.tv4.se/">TV4</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><p>Svensk från andra källor.</p>
+<h2 id="ord-8"><a class="header" href="#ord-8">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>deltog</td><td>[ˈdɛlˌtʊɡ]</td><td>Var med i en aktivitet eller ett evenemang</td><td>Took part in an activity or event</td><td>参加一个活动或事件</td><td>Många elever deltog i skolans idrottsdag.</td></tr>
+<tr><td>anlitats</td><td>[ˈanˌliːtats]</td><td>Har blivit anställd eller engagerad för en tjänst eller uppgift</td><td>Has been employed or engaged for a service or task</td><td>被雇用或被聘用来完成某项服务或任务</td><td>En expert har anlitats för att lösa problemet.</td></tr>
+<tr><td>äventyrades</td><td>[ˈɛːvɛnˌtyːradɛs]</td><td>Att något utsattes för risk eller fara</td><td>That something was put at risk or in danger</td><td>某事被置于风险或危险中</td><td>Säkerheten äventyrades på grund av bristande underhåll.</td></tr>
+<tr><td>ombedd</td><td>[ˈɔmˌbɛd]</td><td>Att ha blivit tillfrågad eller uppmanad att göra något</td><td>Having been asked or requested to do something</td><td>被要求或被请求做某事</td><td>Hon blev ombedd att hålla ett tal på konferensen.</td></tr>
+<tr><td>upplägg</td><td>[ˈɵpˌlɛɡː]</td><td>Plan eller struktur för hur något ska genomföras</td><td>Plan or structure for how something is to be carried out</td><td>如何实施某事的计划或结构</td><td>Vi diskuterade upplägget för det nya projektet under mötet.</td></tr>
+<tr><td>påstådda</td><td>[ˈpʰoːˌstɔdːa]</td><td>Som någon har sagt eller hävdat, ofta utan bevis</td><td>Alleged or claimed by someone, often without proof</td><td>某人声称的，通常没有证据</td><td>De påstådda brotten undersöks fortfarande av polisen.</td></tr>
+<tr><td>fruktansvärt</td><td>[ˈfrʉkːtanˌsvæʈː]</td><td>Mycket dåligt eller hemskt; extremt obehagligt</td><td>Very bad or terrible; extremely unpleasant</td><td>非常糟糕或可怕；极其令人不快的</td><td>Det var en fruktansvärt olycka på motorvägen.</td></tr>
+<tr><td>trivdes</td><td>[ˈtrɪvːdɛs]</td><td>Kände sig väl till mods och nöjd i en viss miljö eller situation</td><td>Felt comfortable and satisfied in a certain environment or situation</td><td>在某个环境或情况下感到舒适和满意</td><td>Hon trivdes mycket bra på sitt nya jobb.</td></tr>
+<tr><td>föreställa</td><td>[ˈfœːrɛˌstɛlːa]</td><td>Att avbilda eller ge en bild av något; att föreställa sig något mentalt</td><td>To depict or give an image of something; to imagine something mentally</td><td>描绘或呈现某物；在脑海中想象某事</td><td>Tavlan föreställer en vacker landskapsscen.</td></tr>
+<tr><td>omger</td><td>[ˈɔmˌjeːr]</td><td>Att befinna sig runt omkring något eller någon</td><td>To surround something or someone</td><td>围绕某物或某人</td><td>Trädgården omger huset med vackra blommor och buskar.</td></tr>
+<tr><td>skingrades</td><td>[ˈɧɪŋˌɡraːdɛs]</td><td>Att spridas eller försvinna i olika riktningar</td><td>To scatter or disappear in different directions</td><td>向不同方向散开或消失</td><td>Molnen skingrades och solen kom fram.</td></tr>
+<tr><td>vidrig</td><td>[ˈviːdrɪɡ]</td><td>Extremt obehaglig eller motbjudande</td><td>Extremely unpleasant or disgusting</td><td>极其令人不快或令人厌恶的</td><td>Lukten från soptippen var vidrig.</td></tr>
+<tr><td>avskyvärd</td><td>[ˈɑːvˌskʏvæːrd]</td><td>Mycket obehaglig och motbjudande</td><td>Very unpleasant and repulsive</td><td>非常令人不快和令人厌恶的</td><td>Hans beteende var avskyvärd och oacceptabelt.</td></tr>
+<tr><td>smäda</td><td>[ˈsmɛːda]</td><td>Att tala illa om eller förlöjliga någon; att förolämpa</td><td>To speak ill of or ridicule someone; to insult</td><td>说坏话或嘲笑某人；侮辱</td><td>Han blev smädad för sina ovanliga åsikter.</td></tr>
+<tr><td>skymfa</td><td>[ˈɧʏmːfa]</td><td>Att förolämpa eller förödmjuka någon</td><td>To insult or humiliate someone</td><td>侮辱或羞辱某人</td><td>Han skymfade henne med sina elaka kommentarer.</td></tr>
+<tr><td>yttrande</td><td>[ˈʏtˌrandɛ]</td><td>En formell eller informell uttryckning av tankar, åsikter eller känslor; en kommentar eller åsikt</td><td>An expression of thoughts, opinions, or feelings, formal or informal; a comment or opinion</td><td>表达思想、观点或感情的正式或非正式方式；评论或意见</td><td>Yttrandefrihet är viktigt i en demokrati.</td></tr>
+<tr><td>utsaga</td><td>[²ɵtːsaˌɡa]</td><td>Ett uttryck av tankar, åsikter eller information; en officiell eller formell deklaration</td><td>An expression of thoughts, opinions, or information; an official or formal statement</td><td>表达思想、观点或信息的方式；正式或官方声明</td><td>Polisens utsaga bekräftade misstankarna om bedrägeri.</td></tr>
+<tr><td>chimär</td><td>[ɕɪˈmɛːr]</td><td>En illusionär eller orealistisk idé eller koncept; något som är svårt att förverkliga eller förstå</td><td>An illusory or unrealistic idea or concept; something that is difficult to achieve or understand</td><td>一种虚幻或不现实的想法或概念；难以实现或理解的东西</td><td>Att uppnå fullständig världsfred är ofta betraktat som en chimär.</td></tr>
+<tr><td>illusion</td><td>[ɪlɵˈɧuːn]</td><td>En falsk uppfattning eller felaktig bild av verkligheten; något som verkar vara verkligt men inte är det</td><td>A false perception or misleading image of reality; something that appears real but is not</td><td>对现实的错误看法或误导性图像；看似真实但实际并非如此的东西</td><td>Hans uppfattning om lycka var en illusion.</td></tr>
+<tr><td>böla</td><td>[ˈbøːla]</td><td>Att gråta högljutt och oavbrutet, särskilt med klagande eller jämmerliga ljud</td><td>To cry loudly and continuously, especially with whining or plaintive sounds</td><td>大声哭泣，尤指带有哀号或哀怨的声音</td><td>Barnet började böla när det tappade sitt favoritleksak.</td></tr>
+<tr><td>skraj</td><td>[skraj]</td><td>Mycket rädd eller nervös; i stor rädsla eller ångest</td><td>Very scared or nervous; in great fear or anxiety</td><td>非常害怕或紧张；极度恐惧或焦虑</td><td>Han blev skraj när han hörde ett oväntat ljud på natten.</td></tr>
+<tr><td>onekligen</td><td>[ʊnɛkˈlɪːɡən]</td><td>Utan tvivel; används för att uttrycka överensstämmelse</td><td>Without doubt; used to express agreement or assent</td><td>毫无疑问；用于表示同意或赞同</td><td>Det är onekligen en vacker dag idag.</td></tr>
+<tr><td>obestridligen</td><td>[uːbɛˈstriːdlɪɡən]</td><td>Utan tvivel; som inte kan ifrågasättas eller motsägas</td><td>Without doubt; that which cannot be questioned or disputed</td><td>毫无疑问；不能质疑或反驳的</td><td>Hans talanger är obestridligen imponerande.</td></tr>
+<tr><td>stroppy</td><td>[ˈstrɒpi]</td><td>Som är irriterad, lättretad eller bråkig</td><td>Easily annoyed, irritable or argumentative</td><td>易怒的，易激动的或好争吵的</td><td>Han var lite stroppy efter att ha väntat i kö i över en timme.</td></tr>
+<tr><td>kväda</td><td>[ˈkvɛːda]</td><td>Att recitera eller sjunga poesi eller sånger</td><td>To recite or sing poetry or songs</td><td>朗诵或唱诗歌或歌曲</td><td>Skalden började kväda en gammal saga vid elden.</td></tr>
+<tr><td>frimodig</td><td>[ˈfriːˌmuːdɪɡ]</td><td>Orädd och öppen i sitt sätt att tala och agera</td><td>Fearless and open in speech and behavior</td><td>无所畏惧且坦率的</td><td>Hon var frimodig och vågade säga vad hon tyckte.</td></tr>
+<tr><td>charlatan</td><td>[ɧɑrlaˈtɑn]</td><td>En person som falskeligen påstår sig ha vissa kunskaper eller förmågor; bedragare</td><td>A person who falsely claims to have certain knowledge or skills; a fraud or impostor</td><td>冒充有某种知识或技能的人；骗子</td><td>Han avslöjades som en charlatan när hans lögner kom fram.</td></tr>
+<tr><td>förskansning</td><td>[fœrˈskansˌnɪŋ]</td><td>En försvarsanordning eller befästning, ofta med vall eller mur</td><td>A defensive structure or fortification, often with a rampart or wall; entrenchment</td><td>防御工事或设防，通常有防护墙或围墙</td><td>Soldaterna byggde en förskansning för att skydda sig mot fienden.</td></tr>
+<tr><td>bålverk</td><td>[ˈboːlvɛrk]</td><td>En stark försvarsanläggning eller befästning; en skyddande barriär</td><td>A strong defensive fortification or bulwark; a protective barrier</td><td>强大的防御工事或堡垒；防护屏障</td><td>Stadens bålverk skyddade invånarna från angriparna.</td></tr>
+<tr><td>utåtagerande</td><td>[ˈʉːtɔːtˌaːɡeˌrande]</td><td>Som visar sina känslor eller sitt missnöje på ett aggressivt sätt</td><td>Showing emotions or dissatisfaction aggressively</td><td>表现出情感或不满的攻击性行为</td><td>Hans utåtagerande beteende skapade problem i skolan.</td></tr>
+<tr><td>bekymrad</td><td>[bɛˈɕʏmˌrɑːd]</td><td>Känna oro eller ängslan över något</td><td>Feeling worried or anxious about something</td><td>感到担忧或焦虑</td><td>Hon var bekymrad över sin sons hälsa.</td></tr>
+<tr><td>uppnå</td><td>[ˈɵpˌnoː]</td><td>Att nå eller komma fram till ett mål eller resultat</td><td>To reach or achieve a goal or result</td><td>达到或实现目标或结果</td><td>Han arbetade hårt för att uppnå sina drömmar.</td></tr>
+<tr><td>hånfullt</td><td>[ˈhoːnˌfʏlt]</td><td>Som uttrycker förakt eller spydighet</td><td>Expressing contempt or sarcasm</td><td>表达蔑视或讽刺的</td><td>Han log hånfullt åt sina kritiker.</td></tr>
+<tr><td>bortkollrad</td><td>[ˈbɔrtˌkɔlːrad]</td><td>Förvirrad, lurad eller vilseledd</td><td>Confused, deceived, or misled</td><td>困惑、受骗或被误导</td><td>Han blev helt bortkollrad av de motsägelsefulla instruktionerna.</td></tr>
+<tr><td>tvångsinlöser</td><td>[ˈtvɔŋːsˌɪnˌløːsər]</td><td>Tar över egendom genom tvång, ofta genom statlig intervention</td><td>Takes over property by force, often through government intervention</td><td>通过强制手段接管财产，通常通过政府干预</td><td>Regeringen tvångsinlöser marken för att bygga en ny motorväg.</td></tr>
+<tr><td>planbesked</td><td>[ˈplɑːnˌbeːɧɛd]</td><td>Officiellt meddelande om framtida planering eller utveckling</td><td>Official announcement about future planning or development</td><td>关于未来规划或发展的官方通知</td><td>Kommunen gav ett planbesked om det nya bostadsområdet.</td></tr>
+<tr><td>tidsåtgången</td><td>[ˈtiːdsˌoːtˌɡɔŋːɛn]</td><td>Den tid som behövs för att slutföra en uppgift eller aktivitet</td><td>The time required to complete a task or activity</td><td>完成任务或活动所需的时间</td><td>Tidsåtgången för projektet blev längre än förväntat.</td></tr>
+<tr><td>hemställan</td><td>[ˈhɛmˌʂtɛlan]</td><td>Formell begäran eller förslag</td><td>Formal request or proposal</td><td>正式请求或提议</td><td>Föreningen lämnade in en hemställan om ekonomiskt stöd.</td></tr>
+<tr><td>tillgodose</td><td>[tɪlˈɡuːdɔˌseː]</td><td>Att uppfylla eller tillfredsställa någons behov eller önskemål</td><td>To fulfill or satisfy someone's needs or desires</td><td>满足或满足某人的需求或愿望</td><td>Skolan strävar efter att tillgodose alla elevers behov.</td></tr>
+<tr><td>hävdar</td><td>[ˈhɛvdar]</td><td>Att påstå eller insistera på något som sant eller giltigt</td><td>To assert or claim something as true or valid</td><td>主张或声明某事为真或有效</td><td>Han hävdar att han inte var på plats vid brottstillfället.</td></tr>
+<tr><td>skisser</td><td>[ˈsɪsːɛr]</td><td>En enkel eller preliminär teckning eller ritning</td><td>Simple or preliminary drawings or sketches</td><td>简单或初步的图纸或草图</td><td>Konstnären visade sina skisser för det nya konstverket.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-14"><a class="header" href="#meningar-14">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>sade upp</td><td>terminated/resigned</td></tr>
+<tr><td>rör upp</td><td>stir up</td></tr>
+<tr><td>Det går inte att säga något säkert om det</td><td>It is not possible to say anything certain about it</td></tr>
+<tr><td>utgav sig</td><td>pretended to be / claimed to be</td></tr>
+<tr><td>Öppnar inte längre ytterdörren om hon inte väntar någon</td><td>Doesn't open the front door anymore unless she's expecting someone</td></tr>
+<tr><td>präglad av</td><td>characterized by</td></tr>
+<tr><td>från farstutrappan</td><td>from the front porch</td></tr>
+<tr><td>sätta emot</td><td>oppose / resist</td></tr>
+<tr><td>sett från vänster</td><td>seen from the left</td></tr>
+<tr><td>att begära ersättning</td><td>to request compensation</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="dn-2024-08"><a class="header" href="#dn-2024-08">DN 2024-08</a></h1>
+<p>Svensk från Dagens Nyheter, augusti, 2024.</p>
+<h2 id="ord-9"><a class="header" href="#ord-9">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>insåg</td><td>[ˈɪnˌsoːɡ]</td><td>Att förstå eller bli medveten om något</td><td>To realize or become aware of something</td><td>领悟到或意识到</td><td>Hon insåg att hon hade glömt sina nycklar hemma.</td></tr>
+<tr><td>låtsades</td><td>[ˈloːtsadɛs]</td><td>Att ge sken av något som inte är sant; att låtsas</td><td>To pretend or feign something</td><td>假装或伪装</td><td>Han låtsades vara sjuk för att slippa gå till skolan.</td></tr>
+<tr><td>hövlig</td><td>[ˈhøːvlɪ]</td><td>Artig och respektfull i sitt uppträdande</td><td>Polite and respectful in behavior</td><td>礼貌和尊重</td><td>Han var alltid hövlig mot sina grannar.</td></tr>
+<tr><td>plingade</td><td>[ˈplɪŋːadɛ]</td><td>Att ge ifrån sig ett litet, klingande ljud, ofta från en klocka</td><td>To emit a small, ringing sound, often from a bell</td><td>发出叮当声</td><td>Cykelns ringklocka plingade när han cyklade förbi.</td></tr>
+<tr><td>bakhåll</td><td>[ˈbɑːkˌhɔlː]</td><td>En plötslig attack från ett gömställe, vanligtvis i krig</td><td>An ambush or sudden attack from a hidden position</td><td>伏击, 突袭</td><td>Soldaterna blev överraskade av ett bakhåll i skogen.</td></tr>
+<tr><td>oråd</td><td>[ˈuːˌroːd]</td><td>Något skumt eller misstänkt, en föraning om att något är fel</td><td>Something suspicious or a sense that something is wrong</td><td>可疑或不对劲的感觉</td><td>Han anade oråd när han såg den öppna dörren mitt i natten.</td></tr>
+<tr><td>ertappades</td><td>[ærˈtapːadɛs]</td><td>Bli tagen på bar gärning när man gör något fel</td><td>To be caught red-handed doing something wrong</td><td>被当场抓到</td><td>Han ertappades när han försökte smyga ut utan att betala.</td></tr>
+<tr><td>påstridig</td><td>[ˈpoːˌstriːdɪg]</td><td>Någon som envist insisterar på sin åsikt eller vilja</td><td>Someone who stubbornly insists on their opinion or will</td><td>固执己见的</td><td>Han var mycket påstridig i sin argumentation om saken.</td></tr>
+<tr><td>ihärdiga</td><td>[ˈiːˌhæːdɪga]</td><td>Någon som är envis och inte ger upp lätt</td><td>Someone who is persistent and does not give up easily</td><td>坚持不懈的</td><td>Trots motgångar var de ihärdiga i sina ansträngningar.</td></tr>
+<tr><td>innerligt</td><td>[ˈɪnːɛrˌlɪkt]</td><td>Med djup känsla och uppriktighet</td><td>With deep feeling and sincerity</td><td>真诚地，深切地</td><td>Hon tackade honom innerligt för all hjälp hon fått.</td></tr>
+<tr><td>mejerivaror</td><td>[ˈmɛjɛˌriˌvaːrɔr]</td><td>Livsmedel som är tillverkade av mjölk</td><td>Dairy products made from milk</td><td>乳制品</td><td>I affären köpte hon flera mejerivaror, som mjölk och ost.</td></tr>
+<tr><td>störtdök</td><td>[ˈstœːrˌtːœk]</td><td>Att falla eller sjunka snabbt och kraftigt</td><td>To fall or sink rapidly and drastically</td><td>迅速而剧烈地坠落</td><td>Flygplanet störtdök i havet efter motorhaveriet.</td></tr>
+<tr><td>frugala</td><td>[fruˈɡɑːla]</td><td>Sparsam och ekonomisk, som inte slösar med resurser</td><td>Thrifty and economical, not wasteful</td><td>节俭的，节约的</td><td>Deras frugala livsstil gjorde att de kunde spara mycket pengar.</td></tr>
+<tr><td>omfattas</td><td>[ˈɔmˌfatːas]</td><td>Att inkluderas eller täckas av något</td><td>To be included or covered by something</td><td>包括在内，被涵盖</td><td>Reglerna omfattas av den nya lagstiftningen.</td></tr>
+</tbody></table>
+</div>
+<h2 id="fraser-och-meningar"><a class="header" href="#fraser-och-meningar">Fraser och Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>Lyckosamt nog</td><td>Fortunately</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="dn-2024-09"><a class="header" href="#dn-2024-09">DN 2024-09</a></h1>
+<p>Svensk från Dagens Nyheter, september, 2024.</p>
+<h2 id="ord-10"><a class="header" href="#ord-10">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>påstod</td><td>[ˈpɔːˌstuːd]</td><td>Att hävda eller säga något som kanske inte är sant</td><td>Claimed or stated something</td><td>声称，断言</td><td>Han påstod att han hade sett något märkligt i skogen.</td></tr>
+<tr><td>intäkter</td><td>[ˈɪnˌtɛkːtɛr]</td><td>Pengar som ett företag eller en person tjänar</td><td>Revenue or income</td><td>收入，收益</td><td>Företagets intäkter ökade med 20 % under det senaste året.</td></tr>
+<tr><td>innebära</td><td>[ˈɪnːɛˌbæːra]</td><td>Att betyda eller leda till något</td><td>To mean or result in something</td><td>意味着，导致</td><td>Förändringen kan innebära stora kostnader för företaget.</td></tr>
+<tr><td>sammanlagt</td><td>[ˈsamːanˌlaɡt]</td><td>Totalt eller i sin helhet</td><td>In total or altogether</td><td>总共，总计</td><td>De tjänade sammanlagt 50 000 kronor under månaden.</td></tr>
+<tr><td>avsätter</td><td>[ˈɑːvˌsɛtːɛr]</td><td>Att reservera eller ta bort någon från en position</td><td>To allocate or remove from a position</td><td>分配，罢免</td><td>Regeringen avsätter pengar för nya projekt.</td></tr>
+<tr><td>angeläget</td><td>[ˈanɡɛˌlɛːɡɛt]</td><td>Något som är viktigt och brådskande</td><td>Something urgent or important</td><td>迫切，重要的</td><td>Det är angeläget att vi tar itu med problemet omedelbart.</td></tr>
+<tr><td>näring</td><td>[ˈnæːrɪŋ]</td><td>Ämnen som behövs för att kroppen ska fungera och växa</td><td>Nutrition or nourishment</td><td>营养，养分</td><td>Frukt och grönsaker ger viktig näring för kroppen.</td></tr>
+<tr><td>svajig</td><td>[ˈsvɑːjɪɡ]</td><td>Något som är osäkert eller vacklar</td><td>Wobbly or unsteady</td><td>摇摆的，不稳定的</td><td>Den gamla stolen känns svajig när man sitter på den.</td></tr>
+<tr><td>svårigheter</td><td>[ˈsvɔːrɪˌheːtɛr]</td><td>Problem eller hinder som gör något svårt</td><td>Difficulties or challenges</td><td>困难，挑战</td><td>Hon har haft många svårigheter under sin utbildning.</td></tr>
+<tr><td>inblick</td><td>[ˈɪnˌblɪk]</td><td>Förståelse eller insikt i något</td><td>Insight or understanding</td><td>见解，洞察</td><td>Hon fick en inblick i företagets verksamhet under praktikperioden.</td></tr>
+<tr><td>utmäta</td><td>[ˈʉːtˌmɛːta]</td><td>Att beslagta egendom genom rättslig åtgärd</td><td>To seize assets legally</td><td>查封，扣押</td><td>Kronofogden kan utmäta egendom om skulden inte betalas i tid.</td></tr>
+<tr><td>belägen</td><td>[bɛˈleːɡɛn]</td><td>Som ligger på en viss plats, lokaliserad</td><td>Located or situated</td><td>位于，坐落于</td><td>Huset är beläget vid stranden med utsikt över havet.</td></tr>
+<tr><td>undantas</td><td>[ˈɵndɑnˌtɑːs]</td><td>Att inte inkluderas i något, att vara undantagen</td><td>To be excluded or exempted</td><td>排除，豁免</td><td>Vissa regler undantas för särskilda fall.</td></tr>
+<tr><td>underkänner</td><td>[ˈɵndɛrˌɕɛnːɛr]</td><td>Att inte godkänna något, att förkasta</td><td>To reject or disapprove</td><td>不通过，否决</td><td>Domaren underkände målet på grund av offside.</td></tr>
+<tr><td>tillvarata</td><td>[tɪlˈvɑːrɑˌtɑː]</td><td>Att ta hand om något eller någon, skydda och vårda</td><td>To take care of or utilize</td><td>保护，利用</td><td>Vi måste tillvarata resurserna för framtida generationer.</td></tr>
+<tr><td>ombetts</td><td>[ˈɔmˌbɛts]</td><td>Att ha blivit ombedd att göra något, tillfrågad om hjälp</td><td>To have been asked to do something</td><td>被要求，受邀</td><td>Han har ombetts att delta i mötet nästa vecka.</td></tr>
+<tr><td>öser</td><td>[ˈøːsɛr]</td><td>Att hälla något i stora mängder</td><td>To pour in large quantities</td><td>倾倒</td><td>Det öser ner regn just nu.</td></tr>
+<tr><td>stökar</td><td>[ˈstøːkar]</td><td>Att skapa oordning eller att röja</td><td>To make a mess or tidy up</td><td>造成混乱或打扫</td><td>Barnen stökar runt i vardagsrummet.</td></tr>
+<tr><td>behärskar</td><td>[bɛˈhæːʂkar]</td><td>Att ha kontroll över något, att vara skicklig på något</td><td>To master or have control</td><td>掌握, 控制</td><td>Hon behärskar flera språk flytande.</td></tr>
+<tr><td>koncern</td><td>[kɔnˈsæːrn]</td><td>En grupp företag som fungerar som en enhet</td><td>A group of companies acting as one unit</td><td>企业集团</td><td>Koncernen består av flera dotterbolag inom olika branscher.</td></tr>
+</tbody></table>
+</div>
+<h2 id="fraser-och-meningar-1"><a class="header" href="#fraser-och-meningar-1">Fraser och Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>på sammanlagt</td><td>in total</td></tr>
+<tr><td>ställer sig frågan</td><td>raises the question</td></tr>
+<tr><td>Det beror på</td><td>It depends on</td></tr>
+<tr><td>skrinlagda fabrikssatsningar</td><td>abandoned factory ventures</td></tr>
+<tr><td>i synnerhet</td><td>in particular / especially</td></tr>
+<tr><td>ställa upp</td><td>to participate / to assist</td></tr>
+<tr><td>tonar upp</td><td>building up/rising gradually</td></tr>
+<tr><td>över huvud taget</td><td>at all</td></tr>
+<tr><td>Lägg sedan till</td><td>Then add</td></tr>
+<tr><td>Var tredje person</td><td>Every third person</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="dn-2024-10"><a class="header" href="#dn-2024-10">DN 2024-10</a></h1>
+<p>Svensk från Dagens Nyheter, oktober, 2024.</p>
+<h2 id="ord-11"><a class="header" href="#ord-11">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>trevande</td><td>[ˈtreːvandɛ]</td><td>Osäkert eller tveksamt; när något sker långsamt och försiktigt.</td><td>Hesitant or uncertain; when something is done slowly and cautiously.</td><td>犹豫的；缓慢而小心地进行。</td><td>Hans svar var trevande, som om han inte var säker på vad han skulle säga.</td></tr>
+<tr><td>driftig</td><td>[ˈdrɪftɪg]</td><td>Handlingskraftig och initiativrik; någon som är duktig på att få saker gjorda.</td><td>Energetic, resourceful, and efficient; someone who gets things done.</td><td>积极进取，有行动力；擅长完成任务的人。</td><td>Hon är en mycket driftig person som alltid hittar lösningar på problem.</td></tr>
+<tr><td>beskyllde</td><td>[bɛˈɕʏl:dɛ]</td><td>Att anklaga eller tilldela skuld för något; att påstå att någon är skyldig till något.</td><td>To accuse or assign blame for something; to assert that someone is guilty of something.</td><td>指责或归咎于某事；声称某人有罪。</td><td>Hon beskyllde honom för att ha förstört hennes arbete.</td></tr>
+<tr><td>småningom</td><td>[ˈsmɔːnɪŋʊm]</td><td>Gradvis; över tid, något som händer långsamt eller successivt.</td><td>Gradually; over time, something that happens slowly or progressively.</td><td>逐渐地；随着时间的推移，某事慢慢发生。</td><td>Småningom kommer vi att se resultatet av vårt arbete.</td></tr>
+<tr><td>synnerligen</td><td>[ˈsʏnːeʁlɪŋ]</td><td>I hög grad; särskilt eller mycket; används för att betona något.</td><td>To a great extent; particularly or very much; used to emphasize something.</td><td>在很大程度上；尤其是；用于强调某事。</td><td>Hon var synnerligen glad över att ha fått jobbet.</td></tr>
+<tr><td>intygande</td><td>[ɪnˈtyːɡandɛ]</td><td>Som bekräftar eller ger intyg om något; ett officiellt uttalande.</td><td>Confirming or certifying something; an official statement.</td><td>确认或证明某事；正式声明。</td><td>Det intygande brevet bekräftade hans kvalifikationer.</td></tr>
+<tr><td>omhändertar</td><td>[ʊmˈhɛndɛˌtɑːr]</td><td>Att ta hand om eller ta ansvar för något; att vårda eller skydda.</td><td>To take care of or take responsibility for something; to nurture or protect.</td><td>照顾或负责某事；抚养或保护。</td><td>Socialtjänsten omhändertar barn som behöver skydd och stöd.</td></tr>
+<tr><td>tillgodose</td><td>[tɪlˈɡʊːdəˌse]</td><td>Att tillfredsställa eller uppfylla behov; att möta krav eller önskemål.</td><td>To satisfy or fulfill needs; to meet demands or requests.</td><td>满足或实现需求；满足要求或请求。</td><td>Företaget strävar efter att tillgodose sina kunders behov.</td></tr>
+<tr><td>varslar</td><td>[ˈvarˌslar]</td><td>Att informera eller ge en varning om något; att meddela om en förestående händelse.</td><td>To inform or give a warning about something; to notify about an impending event.</td><td>通知或警告某事；告知即将发生的事件。</td><td>Företaget varslar sina anställda om eventuella uppsägningar.</td></tr>
+<tr><td>skäligen</td><td>[ˈɧɛːlɪɡɛn]</td><td>På ett rimligt eller rättvist sätt; baserat på goda grunder.</td><td>Reasonably or justifiably; based on good reasons.</td><td>合理地；有正当理由的。</td><td>Han ansågs skäligen misstänkt för brottet.</td></tr>
+<tr><td>entourage</td><td>[ɑ̃tuʁaːʃ]</td><td>En grupp av personer som följer och stödjer en viktig person.</td><td>A group of people surrounding and supporting an important person.</td><td>随行人员；支持重要人物的一群人。</td><td>Kungen anlände med sitt entourage av rådgivare och livvakter.</td></tr>
+<tr><td>rykte</td><td>[ˈrʏktɛ]</td><td>Allmän uppfattning eller spridning av information om någon eller något, ofta utan bekräftelse.</td><td>Reputation or rumor; public perception or spread of information, often unverified.</td><td>名声；传闻；通常未经证实的公共看法。</td><td>Företaget har ett gott rykte i branschen.</td></tr>
+<tr><td>ärekränk</td><td>[ˈæːrɛˌkrɛŋk]</td><td>Att kränka eller skada någons ära eller anseende genom förtal eller nedsättande uttalanden.</td><td>Defamation; to damage someone's reputation or honor through slander or derogatory statements.</td><td>诽谤；通过诋毁性言论损害某人的名誉或荣誉。</td><td>Tidningen blev stämd för ärekränk efter publiceringen av falska påståenden.</td></tr>
+<tr><td>inneburit</td><td>[ˈɪnːɛˌbʉːrɪt]</td><td>Att ha resulterat i något eller fört med sig en viss konsekvens.</td><td>To have resulted in something or led to a certain consequence.</td><td>意味着或导致某个结果。</td><td>Förändringen har inneburit stora förbättringar för företaget.</td></tr>
+<tr><td>berör</td><td>[bɛˈrøːr]</td><td>Att vidröra eller påverka något, både fysiskt och känslomässigt.</td><td>To touch or affect something, both physically and emotionally.</td><td>触碰或影响某事物，既可以是身体上的也可以是情感上的。</td><td>Nyheterna berörde många människor djupt.</td></tr>
+<tr><td>hävda</td><td>[ˈhɛvːda]</td><td>Att påstå något bestämt eller försvara en rättighet.</td><td>To assert something firmly or defend a right.</td><td>断言某事或捍卫权利。</td><td>Han hävdade sin oskuld inför domstolen.</td></tr>
+<tr><td>utnyttjat</td><td>[ˈʉːtˌnʏtːjat]</td><td>Att ha använt något till sin fördel, ibland på ett negativt sätt.</td><td>Utilized or taken advantage of something, sometimes in a negative way.</td><td>利用某物为己所用，有时带有负面意义。</td><td>Han utnyttjade sina kontakter för att få jobbet.</td></tr>
+<tr><td>lönsamhetsomdömet</td><td>[ˈløːnˌsamˌheːtsɔmˌdøːmɛt]</td><td>En bedömning av hur lönsamt något är, ofta i affärsmässiga sammanhang.</td><td>An assessment of profitability, often in business contexts.</td><td>盈利能力的评估，通常在商业背景下使用。</td><td>Lönsamhetsomdömet visade att projektet var ekonomiskt hållbart.</td></tr>
+<tr><td>trilskas</td><td>[ˈtrɪlˌskas]</td><td>Att vara envis eller motsträvig, ofta på ett irriterande sätt.</td><td>To be stubborn or uncooperative, often in an annoying way.</td><td>顽固或不合作，通常令人恼火。</td><td>Barnet trilskas och vägrar ta på sig skorna.</td></tr>
+<tr><td>illvilja</td><td>[ˈɪlːˌvɪlja]</td><td>En känsla av fientlighet eller ondska mot någon.</td><td>Malice or hostility towards someone.</td><td>恶意或敌意。</td><td>Hans handlingar visade tydlig illvilja mot kollegorna.</td></tr>
+<tr><td>beteendeberoende</td><td>[bɛˈteːəndɛbəˌruːɛndɛ]</td><td>Ett beroende av specifika beteenden som spel, shopping eller sociala medier.</td><td>Addiction to specific behaviors, such as gambling, shopping, or social media.</td><td>行为依赖，如赌博、购物或社交媒体。</td><td>Många unga drabbas av beteendeberoende kopplat till spel.</td></tr>
+<tr><td>framträda</td><td>[ˈframˌtrɛːda]</td><td>Att synas eller visa sig offentligt, ofta i en uppträdande roll.</td><td>To appear or perform publicly, often in a presenting or performing role.</td><td>出现或公开表演，通常是以展示或表演的身份。</td><td>Han ska framträda som talare på konferensen.</td></tr>
+<tr><td>missförhållanden</td><td>[ˈmɪsːfœrˌhɔlːandɛn]</td><td>Förhållanden som är dåliga, olämpliga eller problematiska.</td><td>Conditions that are bad, unsuitable, or problematic.</td><td>不良、不适或有问题的情况。</td><td>Det rapporterades om missförhållanden på arbetsplatsen.</td></tr>
+<tr><td>opartiskt</td><td>[ʊˈpɑːrˌtɪskt]</td><td>Att agera eller bedöma utan att vara partisk; neutralt och rättvist.</td><td>Acting or judging without bias; neutral and fair.</td><td>公正地、不偏不倚地行事或评判。</td><td>Domaren förväntas döma opartiskt i varje fall.</td></tr>
+</tbody></table>
+</div>
+<h2 id="fraser-och-meningar-2"><a class="header" href="#fraser-och-meningar-2">Fraser och Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>tack vare</td><td>Thanks to / Due to (in a positive context)</td></tr>
+<tr><td>De verkar ta honom på allvar.</td><td>They seem to take him seriously.</td></tr>
+<tr><td>förrän långt efteråt</td><td>until long afterward</td></tr>
+<tr><td>vältra över</td><td>shift over / transfer</td></tr>
+</tbody></table>
+</div>
+<h2 id="regler"><a class="header" href="#regler">Regler</a></h2>
+<h3 id="regel-för-att-bilda-presens-particip-rule-for-forming-the-present-participle"><a class="header" href="#regel-för-att-bilda-presens-particip-rule-for-forming-the-present-participle">Regel för att bilda presens particip (Rule for forming the present participle)</a></h3>
+<ul>
+<li><strong>Ta infinitivformen</strong> av verbet.</li>
+<li><strong>Ta bort "a"-ändelsen</strong> från infinitivformen.</li>
+</ul>
+<ol>
+<li><strong>Take the infinitive form</strong> of the verb.
+<ul>
+<li>Example: <em>treva</em> (to grope, to feel one's way)</li>
+</ul>
+</li>
+<li><strong>Remove the "a" ending</strong> from the infinitive.
+<ul>
+<li><em>treva</em> → <em>trev</em></li>
+</ul>
+</li>
+<li><strong>Add "-ande"</strong> to the stem.
+<ul>
+<li><em>trev</em> + <em>-ande</em> = <em>trevande</em> (groping, hesitating)</li>
+</ul>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dn-2024-11"><a class="header" href="#dn-2024-11">DN 2024-11</a></h1>
+<p>Svensk från Dagens Nyheter, november, 2024.</p>
+<h2 id="ord-12"><a class="header" href="#ord-12">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>tvärtom</td><td>[ˈtvæʈːˌɔm]</td><td>Att vara motsatsen eller på ett helt annat sätt än något annat.</td><td>On the contrary; in a completely opposite way.</td><td>相反；以完全相反的方式。</td><td>Han sa inte ja, tvärtom, han vägrade helt.</td></tr>
+<tr><td>rådgivning</td><td>[ˈroːdˌjiːvnɪŋ]</td><td>Professionell vägledning och hjälp i form av råd.</td><td>Counseling or professional advice.</td><td>咨询或专业建议。</td><td>Företaget erbjuder juridisk rådgivning till sina kunder.</td></tr>
+<tr><td>nedsatt</td><td>[ˈneːdˌsatː]</td><td>Minskad i omfattning, funktion eller kapacitet.</td><td>Reduced in extent, function, or capacity.</td><td>减少的，功能或能力受损的。</td><td>Efter sjukdomen har han haft nedsatt hörsel.</td></tr>
+<tr><td>invigdes</td><td>[ˈɪnˌviːɡdɛs]</td><td>Att formellt öppnas eller tas i bruk, ofta med en ceremoni.</td><td>Was inaugurated or officially opened, often with a ceremony.</td><td>正式启用或开幕，通常伴随仪式。</td><td>Den nya bron invigdes av kungafamiljen.</td></tr>
+<tr><td>tyder</td><td>[ˈtyːdɛr]</td><td>Att tolka eller ge en möjlig förklaring till något.</td><td>Indicates or suggests; to interpret or explain something.</td><td>解释或暗示某事。</td><td>Allt tyder på att vädret blir bättre imorgon.</td></tr>
+<tr><td>tillskott</td><td>[ˈtɪlˌskɔtː]</td><td>Något som läggs till för att förstärka eller komplettera något annat.</td><td>Contribution or addition to strengthen or supplement something.</td><td>补充或添加，用于加强或补充某物。</td><td>Föreningen fick ett ekonomiskt tillskott för sin verksamhet.</td></tr>
+<tr><td>ångest</td><td>[ˈɔŋːɛst]</td><td>En stark känsla av oro, rädsla eller obehag.</td><td>Anxiety; a strong feeling of worry or fear.</td><td>焦虑；强烈的担忧或害怕感。</td><td>Hon kände stor ångest inför tentan.</td></tr>
+<tr><td>skäms</td><td>[ʃɛms]</td><td>Att känna sig generad eller skyldig över något man gjort eller inte gjort.</td><td>Feels ashamed or embarrassed.</td><td>感到羞愧或尴尬。</td><td>Han skäms över att han glömde hennes födelsedag.</td></tr>
+<tr><td>utnyttjar</td><td>[ˈɵtˌnʏtːjar]</td><td>Att använda något eller någon för ett visst syfte, ofta effektivt eller ibland själviskt.</td><td>To utilize or exploit.</td><td>利用；有时指剥削。</td><td>Han utnyttjar alla möjligheter att förbättra sina kunskaper.</td></tr>
+<tr><td>tillåtit</td><td>[ˈtɪlˌoːtɪt]</td><td>Har givit tillstånd eller accepterat något.</td><td>Allowed or permitted something.</td><td>已允许；已许可。</td><td>Han har tillåtit barnen att stanna uppe sent ikväll.</td></tr>
+<tr><td>medverkar</td><td>[ˈmeːdˌvɛrkar]</td><td>Att delta eller bidra i en aktivitet eller ett sammanhang.</td><td>Participates or contributes.</td><td>参与；贡献。</td><td>Hon medverkar i organisationens nya projekt.</td></tr>
+<tr><td>påtagligt</td><td>[ˈpɔːˌtɑːɡlɪkt]</td><td>Något som är tydligt märkbart eller uppenbart.</td><td>Noticeably; significantly; evidently.</td><td>明显地；显著地。</td><td>Effekten av de nya reglerna är påtagligt positiv.</td></tr>
+</tbody></table>
+</div>
+<h2 id="fraser-och-meningar-3"><a class="header" href="#fraser-och-meningar-3">Fraser och Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>hur lurade de hade blivit</td><td>how deceived they had been</td></tr>
+</tbody></table>
+</div>
+<h2 id="regler-1"><a class="header" href="#regler-1">Regler</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dn-2024-12"><a class="header" href="#dn-2024-12">DN 2024-12</a></h1>
+<p>Svensk från Dagens Nyheter, Dec, 2024.</p>
+<h2 id="ord-13"><a class="header" href="#ord-13">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>miste</td><td>[ˈmɪstɛ]</td><td>Förlorade något, ofta på grund av en olycka eller sorglig händelse.</td><td>Lost; was deprived of something.</td><td>失去；丧失。</td><td>Han miste sin plånbok under resan.</td></tr>
+<tr><td>jämställdhet</td><td>[ˈjɛmˌʂtɛlˌdheːt]</td><td>Tillstånd där människor har lika rättigheter, möjligheter och skyldigheter oavsett kön.</td><td>Equality; the state of having equal rights and opportunities regardless of gender.</td><td>平等；性别不影响权利和机会的状态。</td><td>Sverige arbetar för jämställdhet mellan kvinnor och män.</td></tr>
+<tr><td>förskräcker</td><td>[fœrˈskrɛkːɛr]</td><td>Skrämmer eller chockerar någon starkt.</td><td>Frightens or shocks someone strongly.</td><td>吓唬；使震惊。</td><td>Det höga ljudet förskräckte barnen i rummet.</td></tr>
+<tr><td>utvärderingen</td><td>[ˈʉːtˌvæːrdɛrɪŋɛn]</td><td>Processen att bedöma eller analysera något för att avgöra dess kvalitet eller resultat.</td><td>The process of assessing or analyzing something to determine its quality or outcome.</td><td>评估；分析某事以确定其质量或结果的过程。</td><td>Utvärderingen av projektet visade på flera förbättringsmöjligheter.</td></tr>
+<tr><td>förutsätta</td><td>[ˈføːrʉˌtsɛtːa]</td><td>Att anta något som givet eller nödvändigt för att något annat ska gälla.</td><td>To assume something as given or necessary for something else to apply.</td><td>假定；以...为前提。</td><td>Vi måste förutsätta att alla följer reglerna.</td></tr>
+<tr><td>gradvis</td><td>[ˈɡrɑːdˌviːs]</td><td>Som sker eller utvecklas steg för steg, successivt över tid.</td><td>Gradually; happening or developing step by step over time.</td><td>逐渐地；一步一步地发展或发生。</td><td>Förändringen skedde gradvis under flera år.</td></tr>
+<tr><td>flutit</td><td>[ˈflʉːtɪt]</td><td>Dåtid av "flyta", att ha rört sig på eller i vätska utan att sjunka.</td><td>Past tense of "float"; to have moved on or in a liquid without sinking.</td><td>漂浮；在液体上移动而未下沉的过去式。</td><td>Löven hade flutit bort med strömmen.</td></tr>
+<tr><td>framgick</td><td>[ˈframˌɡɪkː]</td><td>Blev tydligt eller klart från något, som en text, ett uttalande eller en händelse.</td><td>Became clear or evident from something, such as a text, statement, or event.</td><td>显示；从文本、陈述或事件中变得清楚。</td><td>Det framgick av rapporten att projektet var framgångsrikt.</td></tr>
+<tr><td>mungipan</td><td>[ˈmɵŋˌjiːpan]</td><td>Yttersta hörnet av munnen.</td><td>The outer corner of the mouth.</td><td>嘴角。</td><td>Han log bara svagt i ena mungipan.</td></tr>
+<tr><td>andning</td><td>[ˈandˌnɪŋ]</td><td>Processen att ta in luft i lungorna och släppa ut den igen för att få syre.</td><td>Breathing; the process of taking air into the lungs and releasing it to obtain oxygen.</td><td>呼吸；吸入空气并排出以获取氧气的过程。</td><td>Hennes andning var lugn och rytmisk när hon sov.</td></tr>
+<tr><td>bärare</td><td>[ˈbæːˌrarɛ]</td><td>En person eller sak som transporterar eller håller upp något.</td><td>Carrier; a person or thing that transports or holds something.</td><td>搬运者；承载或运输某物的人或物体。</td><td>Han arbetade som bärare på flygplatsen.</td></tr>
+<tr><td>sinsemellan</td><td>[ˌsɪnːsɛˈmɛlːan]</td><td>Mellan varandra; används för att beskriva relationer eller interaktioner inom en grupp.</td><td>Among themselves; used to describe relations or interactions within a group.</td><td>彼此之间；描述群体内关系或互动。</td><td>De löste konflikten sinsemellan utan inblandning utifrån.</td></tr>
+<tr><td>händelseförloppet</td><td>[ˈhɛnːdɛlsɛfœˌlɔpːɛt]</td><td>Sekvensen av händelser som utspelar sig under en viss tidsperiod eller situation.</td><td>The sequence of events that unfolds over a period or situation.</td><td>事件的进程；某段时间或情境中的事件序列。</td><td>Händelseförloppet under kvällen var både dramatiskt och överraskande.</td></tr>
+<tr><td>lydig</td><td>[ˈlyːdɪɡ]</td><td>Som följer regler, instruktioner eller någon annans vilja utan att protestera.</td><td>Obedient; someone who follows rules, instructions, or another's will without protest.</td><td>听话的；遵守规则或指令的人。</td><td>Barnet var ovanligt lydigt och gjorde som föräldrarna sa.</td></tr>
+<tr><td>ljuvligt</td><td>[ˈjʉːvˌlɪkt]</td><td>Något som är mycket behagligt, njutbart eller vackert.</td><td>Delightful; something that is very pleasant, enjoyable, or beautiful.</td><td>美妙的；非常令人愉悦或美丽的事物。</td><td>Det var en ljuvlig sommardag med klarblå himmel.</td></tr>
+<tr><td>motgång</td><td>[ˈmuːtˌɡoːŋ]</td><td>En svårighet eller problem som hindrar framgång eller utveckling.</td><td>Setback; a difficulty or problem that hinders success or progress.</td><td>挫折；阻碍成功或进展的问题或困难。</td><td>Trots motgången gav hon aldrig upp sina mål.</td></tr>
+<tr><td>maskot</td><td>[ˈmasˌkɔt]</td><td>En figur, person eller sak som används som symbol för tur eller identitet.</td><td>Mascot; a figure, person, or object used as a symbol of luck or identity.</td><td>吉祥物；作为运气或身份象征的形象或物体。</td><td>Lagets maskot var en tiger klädd i lagets färger.</td></tr>
+</tbody></table>
+</div>
+<h2 id="fraser-och-meningar-4"><a class="header" href="#fraser-och-meningar-4">Fraser och Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>har av många framförts</td><td>has been expressed by many</td></tr>
+<tr><td>försöker alltid motivera dem att ...</td><td>always try to motivate them to ...</td></tr>
+<tr><td>Det som finns fakta på är att ...</td><td>What there is evidence for is that ...</td></tr>
+<tr><td>För drygt fem år sedan</td><td>Just over five years ago</td></tr>
+</tbody></table>
+</div>
+<h2 id="regler-2"><a class="header" href="#regler-2">Regler</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="andra-medier"><a class="header" href="#andra-medier">Andra Medier</a></h1>
+<p>Svensk från <a href="https://www.tv4.se/">TV4</a> och andra källor.</p>
+<h2 id="ord-14"><a class="header" href="#ord-14">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>årsskiftet</td><td>[ˈoːʂˌʂɪftɛt]</td><td>Tidpunkten då ett kalenderår slutar och ett nytt börjar</td><td>The point in time when one calendar year ends and a new one begins</td><td>新旧年交替时刻</td><td>Vi planerar att flytta till den nya lägenheten vid årsskiftet.</td></tr>
+<tr><td>förenligt</td><td>[fœˈreːnlɪkt]</td><td>Något som är kompatibelt eller i överensstämmelse med något annat</td><td>Something that is compatible or in agreement with something else</td><td>与其他事物兼容或一致的事物</td><td>Hans idéer var inte förenliga med företagets värderingar.</td></tr>
+<tr><td>stämt</td><td>[stɛmːt]</td><td>Att ha väckt talan i domstol mot någon</td><td>To sue or take legal action</td><td>起诉，诉讼</td><td>Han har stämt företaget för kontraktsbrott.</td></tr>
+<tr><td>upphäver</td><td>[ˈɵpːˌhɛːvɛr]</td><td>Att annullera eller göra något ogiltigt; att avskaffa en lag eller ett beslut.</td><td>To annul or invalidate something; to revoke a law or a decision.</td><td>废除或使某事无效；撤销一项法律或决定。</td><td>Domstolen upphäver beslutet om att stänga skolan.</td></tr>
+<tr><td>erkänner</td><td>[ɛrˈɕɛnːɛr]</td><td>Att medge eller tillstå något, oftast något fel eller en handling.</td><td>To admit or acknowledge something, usually a mistake or an action.</td><td>承认或供认某事，通常是错误或行为。</td><td>Han erkände sitt misstag och bad om ursäkt.</td></tr>
+<tr><td>olovligen</td><td>[ˈuːˌlɔvːlɪɛn]</td><td>Att göra något utan tillstånd eller laglig rätt; olagligt.</td><td>Illegally; doing something without permission or legal right.</td><td>非法地；未经许可或法律权利做某事。</td><td>Han blev åtalad för att ha olovligen tagit sig in på området.</td></tr>
+<tr><td>förgiftas</td><td>[fœˈʝɪfːtas]</td><td>Att bli utsatt för eller påverkas av gift; att bli förorenad av giftiga ämnen.</td><td>To be poisoned or affected by toxic substances.</td><td>中毒或受到有毒物质影响。</td><td>Många djur förgiftas när de äter förorenad mat.</td></tr>
+<tr><td>kräkningar</td><td>[ˈkrɛːkˌnɪŋar]</td><td>Att spy eller kasta upp mat från magen genom munnen.</td><td>Vomiting; the act of ejecting food from the stomach through the mouth.</td><td>呕吐；通过口腔将胃中的食物排出。</td><td>Efter att ha ätit dålig mat fick hon kraftiga kräkningar.</td></tr>
+<tr><td>Åhörarläktaren</td><td>[ˈoːˌhøːrarˌlɛkːtarɛn]</td><td>En plats i en sal eller arena där publiken kan sitta och lyssna.</td><td>The seating area in a hall or arena where the audience can sit and listen.</td><td>听众席；观众可以坐下听的区域。</td><td>Åhörarläktaren var fullsatt under kvällens debatt.</td></tr>
+<tr><td>tvärtemot</td><td>[ˈtvæːrˌtɛmɔt]</td><td>I motsats till något eller någon; helt motsatt.</td><td>Contrary to something or someone; the complete opposite.</td><td>相反；与某事或某人完全相反。</td><td>Tvärtemot vad vi trodde, gick det riktigt bra på mötet.</td></tr>
+<tr><td>synnerligen</td><td>[ˈsʏnːɛrˌlɪɡɛn]</td><td>I högsta grad; väldigt mycket.</td><td>Extremely; to a very high degree.</td><td>极其；非常。</td><td>Han är en synnerligen begåvad musiker.</td></tr>
+<tr><td>inbördeskrig</td><td>[ˈɪnˌbœrːdɛsˌkriːg]</td><td>En konflikt eller ett krig mellan grupper inom samma land eller stat.</td><td>Civil war; a conflict or war between groups within the same country or state.</td><td>内战；同一国家或地区内部群体之间的冲突或战争。</td><td>Landet har lidit av ett långt och blodigt inbördeskrig.</td></tr>
+<tr><td>välgörenhet</td><td>[ˈvɛlˌjøːrɛnˌheːt]</td><td>Att hjälpa andra genom donationer eller välvilliga handlingar.</td><td>Charity; helping others through donations or benevolent actions.</td><td>慈善；通过捐赠或善意的行动帮助他人。</td><td>Företaget donerade pengar till välgörenhet för att stödja behövande.</td></tr>
+<tr><td>världsettan</td><td>[ˈvæːrldsˌɛtːan]</td><td>Den person eller det lag som är rankad som nummer ett i världen.</td><td>The person or team ranked as number one in the world.</td><td>世界排名第一的人或队伍。</td><td>Hon är nu världsettan i damtennis efter sin senaste seger.</td></tr>
+<tr><td>konfiskera</td><td>[kɔnˌfɪsˈkeːra]</td><td>Att ta något i beslag, ofta av myndigheter, som en åtgärd mot olaglig verksamhet.</td><td>To confiscate; to seize property.</td><td>没收；扣押。</td><td>Polisen konfiskerade de stulna varorna från misstänkta tjuvar.</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="aftonbladet-2024-11"><a class="header" href="#aftonbladet-2024-11">Aftonbladet 2024-11</a></h1>
+<p>Svensk från <a href="andra/www.aftonbladet.se">Aftonbladet</a>, november 2024.</p>
+<h2 id="ord-15"><a class="header" href="#ord-15">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>världsettan</td><td>[ˈvæːrldsˌɛtːan]</td><td>Den person eller det lag som är rankad som nummer ett i världen.</td><td>The person or team ranked as number one in the world.</td><td>世界排名第一的人或队伍。</td><td>Hon är nu världsettan i damtennis efter sin senaste seger.</td></tr>
+<tr><td>självförtroende</td><td>[ˈɧɛlvˌføːrˌtruːɛndɛ]</td><td>En persons tilltro till sin egen förmåga och sitt eget värde.</td><td>Self-confidence; a person's belief in their own abilities and worth.</td><td>自信；一个人对自己能力和价值的信念。</td><td>Hennes självförtroende hjälpte henne att lyckas i karriären.</td></tr>
+<tr><td>visserligen</td><td>[ˈvɪsːɛrˌliːɡɛn]</td><td>Ett ord som används för att medge något som är sant, men ofta följt av en invändning.</td><td>Certainly; a word used to concede a point, often followed by a contrasting statement.</td><td>诚然；用于承认某事，但通常后面跟有反驳。</td><td>Visserligen är det svårt, men det är inte omöjligt.</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="svenska-på-svt-2025"><a class="header" href="#svenska-på-svt-2025">Svenska på <a href="https://www.svt.se">SVT-2025</a></a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2025-01"><a class="header" href="#svt-2025-01">SVT 2025-01</a></h1>
+<p>Svensk språk från SVT, Jan 2025</p>
+<h2 id="ord-16"><a class="header" href="#ord-16">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk解释</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>överlägsen</td><td>[ˈøːvɛrˌlɛːɡsɛn]</td><td>Som är mycket bättre eller starkare än andra i en viss situation.</td><td>Superior; being much better or stronger than others in a certain situation.</td><td>优越的；在某种情况下比其他人更好或更强。</td><td>Han visade en överlägsen skicklighet i tävlingen.</td></tr>
+<tr><td>bemanna</td><td>[bɛˈmanːa]</td><td>Att utrusta en plats, enhet eller funktion med personal.</td><td>To staff; to equip a place, unit, or function with personnel.</td><td>配备人员；为某地、单位或功能配置人员。</td><td>Vi behöver bemanna receptionen inför evenemanget.</td></tr>
+<tr><td>trycksår</td><td>[ˈtrʏkˌsoːr]</td><td>Skada på huden och underliggande vävnad som orsakas av långvarigt tryck.</td><td>Pressure ulcer; damage to the skin and underlying tissue caused by prolonged pressure.</td><td>褥疮；由长时间压力引起的皮肤及下层组织损伤。</td><td>Patienten utvecklade ett trycksår efter att ha legat stilla för länge.</td></tr>
+<tr><td>takten</td><td>[ˈtakˌtɛn]</td><td>Hastigheten eller rytmen i något, exempelvis musik eller en utveckling.</td><td>The pace or rhythm of something, such as music or a development.</td><td>节奏；某事物的速度或节奏，例如音乐或发展。</td><td>Byggandet av nya bostäder har ökat takten det senaste året.</td></tr>
+<tr><td>sparkad</td><td>[ˈspɑːrˌkad]</td><td>Någon som har förlorat sitt arbete eller blivit avskedad.</td><td>Fired; someone who has lost their job or been dismissed.</td><td>被解雇；失去工作或被解雇的人。</td><td>Han blev sparkad från jobbet efter flera varningar.</td></tr>
+<tr><td>sakkunnig</td><td>[ˈsakˌkɵnːɪɡ]</td><td>En person som har expertkunskaper inom ett visst område.</td><td>Expert; a person with specialized knowledge in a specific field.</td><td>专家；在某个特定领域拥有专业知识的人。</td><td>Utredningen gjordes av en sakkunnig inom byggnadsteknik.</td></tr>
+<tr><td>långsiktigt</td><td>[ˈlɔŋˌsɪkːtɪkt]</td><td>Något som sträcker sig över en längre tidsperiod eller är planerat för framtiden.</td><td>Long-term; something that spans a longer period or is planned for the future.</td><td>长期的；涉及较长时间或为未来规划的事物。</td><td>Företaget investerar i projekt som är hållbara och långsiktiga.</td></tr>
+<tr><td>tillbringar</td><td>[ˈtɪlˌbrɪŋar]</td><td>Att använda tid på en viss plats eller i en viss aktivitet.</td><td>Spend; to use time in a certain place or activity.</td><td>度过；在某个地方或活动中花费时间。</td><td>Hon tillbringar sommaren vid havet varje år.</td></tr>
+<tr><td>huruvida</td><td>[ˈhʉːrʉˌvɪda]</td><td>Används för att uttrycka osäkerhet eller för att introducera en fråga om något.</td><td>Whether; used to express uncertainty or introduce a question about something.</td><td>是否；用于表达不确定性或引入对某事的疑问。</td><td>Hon undrade huruvida hon skulle acceptera erbjudandet.</td></tr>
+<tr><td>innefattar</td><td>[ˈɪnːɛˌfatːar]</td><td>Att innehålla eller inkludera något som en del av en helhet.</td><td>Includes; to contain or encompass something as part of a whole.</td><td>包括；包含或作为整体的一部分。</td><td>Kursen innefattar både teoretiska och praktiska moment.</td></tr>
+<tr><td>välmående</td><td>[ˈvɛːlˌmoːˌɛnːdɛ]</td><td>Ett tillstånd av hälsa, lycka och ekonomisk stabilitet.</td><td>Well-being; a state of health, happiness, and economic stability.</td><td>健康；一种健康、幸福和经济稳定的状态。</td><td>Samhällets välmående är beroende av både individens och kollektivets insatser.</td></tr>
+<tr><td>medvetet</td><td>[ˈmeːdˌveːtɛt]</td><td>Gjort med avsikt eller medvetenhet; inte av misstag.</td><td>Deliberately; done intentionally or with awareness, not by accident.</td><td>有意识地；有意图或有意识地进行，而非无意的。</td><td>Han valde medvetet att inte delta i diskussionen.</td></tr>
+<tr><td>magisteruppsats</td><td>[maˈjɪstɛrˌɵpːˌsatːs]</td><td>En akademisk uppsats som skrivs som en del av en magisterexamen.</td><td>Master's thesis; an academic paper written as part of a master's degree.</td><td>硕士论文；作为硕士学位的一部分撰写的学术论文。</td><td>Hon presenterade sin magisteruppsats vid universitetet i maj.</td></tr>
+<tr><td>föreslås</td><td>[ˈføːrɛsˌloːs]</td><td>Att ge ett förslag eller rekommendation om något.</td><td>Be proposed; to suggest or recommend something.</td><td>被提议；提出或推荐某事。</td><td>Det föreslås att vi möts tidigare för att hinna med allt.</td></tr>
+<tr><td>förvärva</td><td>[fœrˈværːva]</td><td>Att skaffa sig något, särskilt genom köp, arbete eller studier.</td><td>Acquire; to obtain something, especially through purchase, work, or study.</td><td>获得；通过购买、工作或学习得到某物。</td><td>Hon lyckades förvärva en unik samling antika böcker.</td></tr>
+<tr><td>medges</td><td>[ˈmeːdˌjɛs]</td><td>Att officiellt tillåta eller erkänna något som korrekt eller giltigt.</td><td>Be granted; to officially allow or acknowledge something as valid or correct.</td><td>被允许；正式承认或认可某事有效或正确。</td><td>Ansökan om förlängning medges om alla krav uppfylls.</td></tr>
+<tr><td>bantar</td><td>[ˈbanːtar]</td><td>Att försöka minska sin vikt, ofta genom att äta mindre eller ändra kosten.</td><td>Dieting; attempting to lose weight, often by eating less or changing one's diet.</td><td>节食；通过少吃或改变饮食习惯试图减轻体重。</td><td>Hon bantar inför sin semester för att komma i bättre form.</td></tr>
+<tr><td>sällsynt</td><td>[ˈsɛlˌsʏnt]</td><td>Något som är ovanligt eller händer mycket sällan.</td><td>Rare; something that is unusual or occurs very infrequently.</td><td>稀有的；不寻常的或极少发生的事物。</td><td>Denna art av fågel är mycket sällsynt i Sverige.</td></tr>
+<tr><td>skådespel</td><td>[ˈskɔːˌdɛːpˌɛl]</td><td>Ett offentligt framförande av drama, som teater eller film.</td><td>Performance; a public presentation of drama, such as theater or film.</td><td>表演；如戏剧或电影的公共表演。</td><td>Föreställningen var ett fantastiskt skådespel.</td></tr>
+<tr><td>framträder</td><td>[ˈframsˌtɾɛːdɛr]</td><td>Att synas eller bli uppenbar, ofta på ett sätt som drar uppmärksamhet.</td><td>Appears; to become visible or evident, often in a way that attracts attention.</td><td>显现；以引人注目的方式变得可见或显现。</td><td>Hans talang framträder tydligt i hans konstverk.</td></tr>
+<tr><td>destruerats</td><td>[dɛstrʉˈeːrats]</td><td>Har förstörts eller oskadliggjorts, ofta på ett kontrollerat sätt.</td><td>Destroyed; has been eliminated or neutralized, often in a controlled manner.</td><td>被销毁；通常以受控方式消除或处理。</td><td>De gamla dokumenten har destruerats av säkerhetsskäl.</td></tr>
+<tr><td>ödeläggelse</td><td>[ˈøːdɛˌlɛɡːɛlsɛ]</td><td>Stor förstörelse eller ruinering av något, ofta i samband med krig eller katastrofer.</td><td>Destruction; great devastation or ruin, often in connection with war or disasters.</td><td>毁灭；通常与战争或灾难相关的大规模破坏。</td><td>Orkanen lämnade en total ödeläggelse efter sig.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-15"><a class="header" href="#meningar-15">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>blir effekterna av</td><td>are the effects of</td></tr>
+<tr><td>ha blivit nedslängd av</td><td>have been thrown down by</td></tr>
+<tr><td>skötsamt levnadssätt</td><td>conscientious way of living</td></tr>
+<tr><td>att man inte har något behov av att utnyttja det ...</td><td>that one has no need to take advantage of ...</td></tr>
+<tr><td>befinner sig på platsen</td><td>is present at the location</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2025-02"><a class="header" href="#svt-2025-02">SVT 2025-02</a></h1>
+<p>Svensk språk från SVT, februari 2025</p>
+<h2 id="ord-17"><a class="header" href="#ord-17">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk解释</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>försvårat</td><td>[fœrˈsvoːrat]</td><td>Gjort något svårare eller mer komplicerat.</td><td>Complicated; made something more difficult or complex.</td><td>使困难；使某事变得更复杂或困难。</td><td>Dåligt väder har försvårat räddningsarbetet.</td></tr>
+<tr><td>utmattad</td><td>[ˈʉːtˌmatːad]</td><td>Att vara extremt trött, både fysiskt och mentalt.</td><td>Exhausted; being extremely tired, both physically and mentally.</td><td>筋疲力尽的；身心极度疲惫的。</td><td>Efter den långa arbetsdagen var han helt utmattad.</td></tr>
+<tr><td>inse</td><td>[ˈɪnˌseː]</td><td>Att förstå eller bli medveten om något.</td><td>Realize; to understand or become aware of something.</td><td>领悟；意识到某事。</td><td>Han började inse vikten av att planera i förväg.</td></tr>
+<tr><td>beskrivningar</td><td>[bɛˈskriːvɪŋar]</td><td>Förklaringar eller redogörelser av något i detalj.</td><td>Descriptions; explanations or accounts of something in detail.</td><td>描述；对某事的详细说明或解释。</td><td>Bokens beskrivningar av landskapet var mycket levande och detaljerade.</td></tr>
+<tr><td>aktualiserats</td><td>[ˌɑktʊɑlɪˈseːrats]</td><td>Något har blivit relevant eller tagits upp på nytt.</td><td>Has been brought up or become relevant again.</td><td>使变得相关；重新提出。</td><td>Frågan om dataskydd har aktualiserats efter den nya lagändringen.</td></tr>
+<tr><td>onödan</td><td>[ˈuːˌnøːdan]</td><td>När något görs utan att det behövs eller är meningsfullt.</td><td>Unnecessarily; without need or purpose.</td><td>不必要地；无意义地。</td><td>Han oroade sig i onödan eftersom allt gick bra till slut.</td></tr>
+<tr><td>utvinna</td><td>[ˈʉːtvɪna]</td><td>Ta fram eller extrahera något från en källa.</td><td>To extract or derive something from a source.</td><td>提取，提炼，获取。</td><td>Man kan utvinna olja ur oljesand.</td></tr>
+<tr><td>upprätta</td><td>[ˈɵ̂pːrɛta]</td><td>Skapa, etablera eller formellt fastställa något.</td><td>To establish, create, or formally set up.</td><td>建立，设立，制定。</td><td>Regeringen planerar att upprätta en ny lag.</td></tr>
+<tr><td>tillfälle</td><td>[ˈtɪlːˌfɛlːɛ]</td><td>Ett visst ögonblick eller en möjlighet att göra något.</td><td>A specific moment or an opportunity to do something.</td><td>时机，机会，时刻。</td><td>Jag tog tillfället i akt och presenterade min idé.</td></tr>
+<tr><td>ohövligt</td><td>[ˈuːhøːvlɪkt]</td><td>Som saknar artighet eller respekt; otrevligt.</td><td>Rude or lacking politeness/respect.</td><td>无礼的，不礼貌的。</td><td>Det är ohövligt att avbryta någon som talar.</td></tr>
+<tr><td>vaksamt</td><td>[ˈvɑːksamt]</td><td>Med stor uppmärksamhet och beredskap.</td><td>Vigilantly; with great attention and readiness.</td><td>警惕地，警觉地。</td><td>Han såg vaksamt omkring sig i den mörka gränden.</td></tr>
+<tr><td>vaksamt</td><td>[ˈvɑːksamt]</td><td>Med stor uppmärksamhet och beredskap.</td><td>Vigilantly; with great attention and readiness.</td><td>警惕地，警觉地。</td><td>Han såg vaksamt omkring sig i den mörka gränden.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-16"><a class="header" href="#meningar-16">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>lågor slår upp från</td><td>flames rise from</td></tr>
+<tr><td>mer ingående</td><td>more in-depth</td></tr>
+<tr><td>ge sig ut</td><td>venture out / set out</td></tr>
+<tr><td>står det dock inget om</td><td>there is, however, nothing about</td></tr>
+<tr><td>trillar in</td><td>roll in / come in (e.g., messages, money)</td></tr>
+<tr><td>gav sig inte utan ...</td><td>did not give up without ...</td></tr>
+<tr><td>Detta blev särskilt uppenbart ...</td><td>This became particularly obvious ...</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2025-03"><a class="header" href="#svt-2025-03">SVT 2025-03</a></h1>
+<p>Svensk språk från SVT, mars 2025</p>
+<h2 id="ord-18"><a class="header" href="#ord-18">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk解释</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>Rymdfarkosten</td><td>[ˈrʏmːdfarˌkɔstɛn]</td><td>Ett fordon som används för att resa i rymden.</td><td>A vehicle used for traveling in space.</td><td>太空飞船。</td><td>Rymdfarkosten skickades till Mars.</td></tr>
+<tr><td>besättningen</td><td>[bɛˈsɛtːnɪŋɛn]</td><td>Grupp av personer som arbetar tillsammans, särskilt på ett fartyg eller flygplan.</td><td>Crew; group of people working together, especially on a ship or aircraft.</td><td>机组人员，船员。</td><td>Besättningen på fartyget räddade de överlevande.</td></tr>
+<tr><td>tillbringat</td><td>[ˈtɪlːbrɪŋat]</td><td>Ha spenderat tid på en plats eller med en aktivitet.</td><td>Spent time in a place or on an activity.</td><td>度过，花费。</td><td>Jag har tillbringat hela dagen med att städa.</td></tr>
+<tr><td>riktar</td><td>[ˈrɪktar]</td><td>Att peka eller vända något i en viss riktning.</td><td>To point or aim something in a certain direction.</td><td>对准，指向。</td><td>Han riktar sin kamera mot solnedgången.</td></tr>
+<tr><td>siktade</td><td>[ˈsɪktadɛ]</td><td>Att titta på något genom ett sikte.</td><td>To look at something through a sight.</td><td>瞄准。</td><td>Han siktade på målet och sköt.</td></tr>
+<tr><td>utförde</td><td>[ˈʉːtfœːrdɛ]</td><td>Att slutföra eller genomföra en uppgift eller aktivitet.</td><td>To complete or carry out a task or activity.</td><td>执行，完成。</td><td>De utförde en undersökning av området.</td></tr>
+<tr><td>lågkonjunktur</td><td>[ˈloːɡkɔnˌjʉnktʉːr]</td><td>Period med låg ekonomisk aktivitet, hög arbetslöshet och låg tillväxt.</td><td>Economic downturn; period of low growth and high unemployment.</td><td>经济衰退；低迷时期。</td><td>Under lågkonjunkturen minskade företagens vinster drastiskt.</td></tr>
+<tr><td>utlovade</td><td>[ˈʉːtˌluːvadɛ]</td><td>Gav ett löfte om något; sa att något skulle ske.</td><td>Promised something; gave assurance it would happen.</td><td>承诺，允诺。</td><td>Han utlovade förbättringar inom vården.</td></tr>
+<tr><td>kontraproduktivt</td><td>[ˈkɔntraproˌdʉkːtɪvt]</td><td>Som får motsatt effekt mot vad som var avsett eller önskat.</td><td>Counterproductive; having the opposite effect of what was intended.</td><td>适得其反，产生反效果。</td><td>Att skrika på barnen kan vara kontraproduktivt i uppfostringen.</td></tr>
+<tr><td>gynna</td><td>[ˈjʏnːa]</td><td>Vara till fördel för någon eller något; främja.</td><td>To benefit, favor, or support someone/something.</td><td>有利于，促进，支持。</td><td>Reformerna syftar till att gynna småföretagare.</td></tr>
+<tr><td>tramsig</td><td>[ˈtramsɪɡ]</td><td>Barnslig, löjlig eller oseriös på ett irriterande sätt.</td><td>Silly, childish, or frivolous in an annoying way.</td><td>胡闹的，幼稚的，荒唐的。</td><td>Sluta vara så tramsig och ta det här på allvar!</td></tr>
+<tr><td>avvägningar</td><td>[ˈɑːvˌvɛːɡɪŋar]</td><td>Överväganden där man väger för- och nackdelar innan ett beslut.</td><td>Trade-offs or considerations of pros and cons.</td><td>权衡，取舍，考虑利弊。</td><td>Politiska beslut kräver ofta svåra avvägningar mellan olika intressen.</td></tr>
+<tr><td>åtgärder</td><td>[ˈoːtˌjæːrdɛr]</td><td>Handlingar som vidtas för att lösa ett problem eller förbättra en situation.</td><td>Measures or actions taken to solve a problem or improve a situation.</td><td>措施，行动，处理办法。</td><td>Regeringen presenterade nya åtgärder mot arbetslösheten.</td></tr>
+<tr><td>utvidgas</td><td>[ˈʉːtvɪdɡas]</td><td>Bli större till omfånget eller omfattningen; expandera.</td><td>To expand or become larger in scope or size.</td><td>扩展，扩大，扩张。</td><td>Verksamheten planeras att utvidgas till fler marknader nästa år.</td></tr>
+<tr><td>lynnigare</td><td>[ˈlʏnːɪɡarɛ]</td><td>Mer humörväxlande eller lättretlig; mer oberäknelig i sitt beteende.</td><td>More temperamental or moody; more unpredictable in behavior.</td><td>更易怒的，情绪化的，性情不定的。</td><td>Han har blivit lynnigare sedan han började på det nya jobbet.</td></tr>
+<tr><td>framförallt</td><td>[frɑmːfœrˈalt]</td><td>Viktigast av allt; i synnerhet; särskilt.</td><td>Above all; especially; in particular.</td><td>首先，尤其，特别是。</td><td>Jag gillar framförallt den avslappnade stämningen i staden.</td></tr>
+<tr><td>krympande</td><td>[ˈkrʏmpandɛ]</td><td>Som minskar i storlek, antal eller omfattning.</td><td>Shrinking; decreasing in size, number, or scope.</td><td>缩小的，减少的，萎缩的。</td><td>Företaget försöker anpassa sig till en krympande marknad.</td></tr>
+<tr><td>styrs</td><td>[styːrs]</td><td>Är under kontroll eller ledning av någon eller något.</td><td>Is governed or controlled by someone or something.</td><td>被控制，被引导，被支配。</td><td>Företaget styrs av en internationell koncern.</td></tr>
+<tr><td>styrs</td><td>[styːrs]</td><td>Är under kontroll eller ledning av någon eller något.</td><td>Is governed or controlled by someone or something.</td><td>被控制，被引导，被支配。</td><td>Företaget styrs av en internationell koncern.</td></tr>
+<tr><td>förskingring</td><td>[fœrˈɧɪŋːrɪŋ]</td><td>Olovlig användning eller förskjutning av pengar eller egendom man har ansvar för.</td><td>Embezzlement; unlawful use of funds one is responsible for.</td><td>挪用公款，侵吞财产。</td><td>Han åtalades för förskingring av företagets medel.</td></tr>
+<tr><td>vidhåller</td><td>[ˈvɪdˌhɔlːɛr]</td><td>Fortsätter att hävda eller stå fast vid en åsikt eller ett påstående.</td><td>To maintain or insist on a claim or opinion.</td><td>坚持（主张、观点），坚称。</td><td>Hon vidhåller att hon talade sanning under hela förhöret.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar-17"><a class="header" href="#meningar-17">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>komma tätare och tätare</td><td>come closer and closer</td></tr>
+<tr><td>med insyn</td><td>with insight / with transparency</td></tr>
+<tr><td>Går ...åt till ...</td><td>Is used up by / goes to ...</td></tr>
+<tr><td>Har man en politik som ...</td><td>If one has a policy that ...</td></tr>
+<tr><td>är nog lite för mycket att hoppas på</td><td>is probably a bit too much to hope for</td></tr>
+<tr><td>anländer till</td><td>arrives at / in</td></tr>
+</tbody></table>
+</div>
+<h3 id="-what-is-a-particle-verb"><a class="header" href="#-what-is-a-particle-verb">📌 What is a particle verb?</a></h3>
+<p>In Swedish (like in English), some verbs come with a small word — called a <strong>particle</strong> — that <strong>changes the meaning</strong> of the verb.</p>
+<p>For example:</p>
+<div class="table-wrapper"><table><thead><tr><th>Verb</th><th>+ Particle</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>gå (to go)</td><td><strong>åt</strong></td><td>go towards / be used up → <strong>gå åt</strong></td></tr>
+<tr><td>ta (to take)</td><td><strong>på</strong></td><td>to touch → <strong>ta på</strong></td></tr>
+<tr><td>komma (to come)</td><td><strong>förbi</strong></td><td>to drop by → <strong>komma förbi</strong></td></tr>
+</tbody></table>
+</div>
+<p>These particles <strong>look like prepositions</strong> (like "på", "åt", "förbi"), but <strong>they're not acting as prepositions here</strong> — they’re just part of the verb.</p>
+<h3 id="-but-can-åt-also-be-something-else"><a class="header" href="#-but-can-åt-also-be-something-else">🔸 But can "åt" also be something else?</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>"åt" usage</th><th>Type</th><th>Example</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>Jag <strong>åt</strong> lunch.</td><td>Verb (past of äta)</td><td>I ate lunch.</td><td>"ate"</td></tr>
+<tr><td>Jag köpte en present <strong>åt</strong> henne.</td><td>Preposition</td><td>I bought a gift <strong>for</strong> her.</td><td>"for"</td></tr>
+<tr><td>gå <strong>åt</strong></td><td>Particle in verb</td><td>Energin <strong>går åt</strong>.</td><td>Energy is used up.</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2025-04"><a class="header" href="#svt-2025-04">SVT 2025-04</a></h1>
+<p>Svensk språk från SVT, april 2025</p>
+<h2 id="ord-19"><a class="header" href="#ord-19">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk解释</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>riktlinjer</td><td>[ˈrɪkːˌlɪnjɛr]</td><td>Anvisningar eller principer som visar hur något bör göras eller hanteras.</td><td>Guidelines or directives on how to act or proceed.</td><td>指导方针，准则，指导原则。</td><td>Regeringen har infört nya riktlinjer för distansarbete.</td></tr>
+<tr><td>mångfald</td><td>[ˈmɔŋːfald]</td><td>Stor variation eller rikedom av olika typer, ofta av människor eller idéer.</td><td>Diversity; a wide variety, often of people or ideas.</td><td>多样性，多元化。</td><td>Företaget strävar efter ökad mångfald på arbetsplatsen.</td></tr>
+<tr><td>inkludering</td><td>[ɪnklʉˈdeːrɪŋ]</td><td>Att aktivt ta med och ge plats åt alla, oavsett bakgrund eller förutsättningar.</td><td>Inclusion; actively involving and giving space to everyone regardless of background or conditions.</td><td>包容，包容性，接纳。</td><td>Skolan arbetar för ökad inkludering av elever med olika behov.</td></tr>
+<tr><td>präglas</td><td>[ˈprɛːɡlas]</td><td>Att ha en tydlig karaktär eller påverkan från något; vara färgad av.</td><td>To be characterized or influenced strongly by something.</td><td>受…影响，具有…的特点。</td><td>Samhället präglas av snabb teknologisk utveckling.</td></tr>
+<tr><td>påtryckningar</td><td>[ˈpoːˌtrʏkːɪŋar]</td><td>Försök att påverka någon att agera på ett visst sätt, ofta genom makt eller hot.</td><td>Pressure or coercion to influence someone’s actions.</td><td>施压，压力，强制手段。</td><td>Regeringen utsattes för kraftiga påtryckningar från oppositionen.</td></tr>
+<tr><td>aprilskämt</td><td>[aˈprɪlːˌɧɛmːt]</td><td>Ett skämt som görs den 1 april för att lura någon på ett skojigt sätt.</td><td>April Fool's joke or prank.</td><td>愚人节玩笑，四月一日的恶作剧。</td><td>Nyhetsartikeln om flygande bilar visade sig vara ett aprilskämt.</td></tr>
+<tr><td>löper</td><td>[ˈløːpɛr]</td><td>Rör sig snabbt till fots; pågår under viss tid; riskerar något.</td><td>Runs; is ongoing; is at risk.</td><td>奔跑；持续；冒险承担（风险）。</td><td>Försäkringen löper ut vid årets slut. / Han löper varje morgon i parken.</td></tr>
+<tr><td>motsvarande</td><td>[ˈmuːtsˌvɑːrandɛ]</td><td>Som är likvärdig eller har samma funktion, betydelse eller värde.</td><td>Equivalent; corresponding in value or function.</td><td>相当的，对应的，等值的。</td><td>Hon fick en tjänst med motsvarande lön i det nya företaget.</td></tr>
+<tr><td>väsentligt</td><td>[ˈveːsɛn(t)slɪkt]</td><td>Något som är mycket viktigt eller betydelsefullt.</td><td>Essentially; significantly; something of great importance.</td><td>重要的，实质性的，本质上。</td><td>Det är väsentligt att följa säkerhetsföreskrifterna på arbetsplatsen.</td></tr>
+<tr><td>krympt</td><td>[krʏmpt]</td><td>Minskat i storlek eller omfattning; blivit mindre.</td><td>Shrunk; reduced in size or scope.</td><td>缩小了，缩水了，减少了。</td><td>Tröjan har krympt i tvätten.</td></tr>
+<tr><td>återförena</td><td>[ˈoːtɛrˌføːrena]</td><td>Att samla personer som varit åtskilda, ofta familjemedlemmar.</td><td>To reunite; to bring together again.</td><td>重聚，使团圆。</td><td>De lyckades återförena familjen efter flera års separation.</td></tr>
+<tr><td>förföljt</td><td>[fœrˈfœljt]</td><td>Utsatt någon för upprepad och ofta hotfull eller orättvis behandling.</td><td>Persecuted; harassed repeatedly and unfairly.</td><td>迫害，骚扰，跟踪。</td><td>Han har förföljt henne i flera månader trots kontaktförbudet.</td></tr>
+<tr><td>inneburit</td><td>[ˈɪnɛˌbʉrɪt]</td><td>Har haft som resultat eller betydelse; medfört något.</td><td>Meant; implied; resulted in something.</td><td>意味着，导致，带来了。</td><td>Förändringen har inneburit stora fördelar för företaget.</td></tr>
+<tr><td>fruktansvärt</td><td>[ˈfrɵkːtanˌsvæːrt]</td><td>Något mycket hemskt, obehagligt eller skrämmande.</td><td>Terrible; horrible; extremely unpleasant or frightening.</td><td>可怕的，极其糟糕的。</td><td>Det var en fruktansvärt olycka med många skadade.</td></tr>
+<tr><td>sjöjungfrun</td><td>[ˈɧøːˌjɵŋːfrʉn]</td><td>Ett mytologiskt väsen med överkropp som en kvinna och underkropp som en fisk.</td><td>The mermaid; a mythical creature with the upper body of a woman and the tail of a fish.</td><td>美人鱼；人鱼传说中的生物。</td><td>Barnen fascinerades av sagan om sjöjungfrun i havet.</td></tr>
+<tr><td>framför allt</td><td>[ˈframnˌfœr ˈalt]</td><td>Det som är viktigast eller mest betydelsefullt; särskilt.</td><td>Above all; most importantly; especially.</td><td>首先，最重要的是；尤其。</td><td>Framför allt måste vi tänka på säkerheten när vi bygger bron.</td></tr>
+<tr><td>otåliga</td><td>[ʊˈtoːlɪɡa]</td><td>Som har svårt att vänta; blir lätt irriterade när något dröjer.</td><td>Impatient; having difficulty waiting.</td><td>不耐烦的，急躁的。</td><td>Barnen blev otåliga när bussen var försenad.</td></tr>
+<tr><td>avrådde</td><td>[ˈɑːvˌrɔdːɛ]</td><td>Rekommenderade att inte göra något; avråda.</td><td>Dissuaded; advised against doing something.</td><td>劝阻，劝告不要做某事。</td><td>Läkaren avrådde honom från att träna för hårt efter operationen.</td></tr>
+<tr><td>livsstilen</td><td>[ˈlɪvˌstɪːlɛn]</td><td>Sättet att leva på; vanor och beteenden som formar ens liv.</td><td>Lifestyle; the way of living; habits and behaviors that shape one’s life.</td><td>生活方式，生活习惯。</td><td>Hennes livsstil har förändrats efter att hon började träna regelbundet.</td></tr>
+<tr><td>förordnande</td><td>[ˈfœːrˌɔrdnɛndɛ]</td><td>En officiell rekommendation eller beslut om något; en order or decree.</td><td>命令，法令，指示。</td><td>Läkaren gav ett förordnande om att ta medicinen varje dag.</td><td></td></tr>
+<tr><td>elbilstillverkaren</td><td>[ˈɛlˌbiːlstɪlˌvɛrkarɛn]</td><td>Företag som tillverkar elbilar; biltillverkare med fokus på eldrift.</td><td>Electric car manufacturer; a company that produces electric cars.</td><td>电动汽车制造商；专注于电动汽车的汽车制造商。</td><td>Elbilstillverkaren lanserade sin nya modell med stor pompa och ståt.</td></tr>
+<tr><td>uppskrivna</td><td>[ˈʊpˌskrɪvːna]</td><td>Något som har ökat i värde eller betydelse; något som har blivit mer värt.</td><td>Written up; something that has increased in value or significance.</td><td>上调，增加。</td><td>Aktierna har blivit uppskrivna efter den positiva utvecklingen på marknaden.</td></tr>
+<tr><td>dundrade</td><td>[ˈdʊnːdradɛ]</td><td>Att göra ett kraftigt ljud; att klaga eller protestera</td><td>loudly; to complain or protest.</td><td>隆隆作响，轰鸣。</td><td>Tåget dundrade fram genom tunneln med ett högt ljud.</td></tr>
+<tr><td>åderförkalkning</td><td>[ˈoːdɛrˌfœrˌkɑlknɪŋ]</td><td>En medicinsk term för avlagringar i blodkärlen som kan leda till åderförkalkning.</td><td>A medical term for deposits in blood vessels that can lead to arteriosclerosis.</td><td>动脉硬化，动脉粥样硬化。</td><td>Åderförkalkning kan orsaka hjärtproblem och cirkulationsstörningar.</td></tr>
+<tr><td>vejpande</td><td>[ˈveɪpˌande]</td><td>Att röka eller använda e-cigaretter</td><td>to smoke or use e-cigarettes.</td><td>吸电子烟，抽电子烟。</td><td>Många ungdomar har börjat vejpande istället för att röka traditionella cigaretter.</td></tr>
+<tr><td>befogenhet</td><td>[bɛˈfoːɡɛnˌhɛt]</td><td>Rätt eller makt att fatta beslut eller agera på authority; the right or power to make decisions or act.</td><td>权力，权威。</td><td>Läraren har befogenhet att ge disciplinära åtgärder till eleverna.</td><td></td></tr>
+<tr><td>mutbrott</td><td>[ˈmʉːtˌbrɔt]</td><td>En olaglig handling där någon tar emot eller ger a bribe; corruption.</td><td>贿赂，腐败。</td><td>Företagets ledning åtalades för mutbrott efter att ha betalat stora summor till politiker.</td><td></td></tr>
+<tr><td>utsetts</td><td>[ˈʉːtˌsɛts]</td><td>Att bli vald eller utsedd till en viss position</td><td>Appointed; to be chosen or selected for a certain position.</td><td>被任命，被选中。</td><td>Hon har utsetts till ny chef för avdelningen efter en lång rekryteringsprocess.</td></tr>
+<tr><td>farväl</td><td>[farˈvɛlː]</td><td>Avskedshälsning; att säga adjö vid en avskedssituation.</td><td>Farewell; saying goodbye at parting.</td><td>告别，告辞，分别。</td><td>Hon vinkade ett sista farväl innan tåget avgick.</td></tr>
+<tr><td>tystnadspliketen</td><td>[ˈtʏstˌnɑːdsˌplɪkɛtɛn]</td><td>En laglig skyldighet att inte avslöja viss information.</td><td>Confidentiality; a legal obligation not to disclose certain information.</td><td>保密义务，保密责任。</td><td>Läkaren har tystnadsplikt och får inte berätta om patientens hälsotillstånd.</td></tr>
+<tr><td>villkorlig</td><td>[ˈvɪlːˌkɔrːlɪɡ]</td><td>Villkorlig; med vissa begränsningar</td><td>conditions; a sentence or punishment that is conditional on certain terms.</td><td>有条件的，附带条件的。</td><td>Han fick en villkorlig dom efter att ha erkänt sitt brott.</td></tr>
+<tr><td>felaktig</td><td>[ˈfeːlˌaktɪɡ]</td><td>Något som är fel eller inte korrekt; inte sant.</td><td>Incorrect; something that is wrong or not accurate.</td><td>错误的，不正确的。</td><td>Det var en felaktig uppgift som ledde till missförståndet.</td></tr>
+<tr><td>sällsynta</td><td>[ˈsɛlːˌsynta]</td><td>Förekommer mycket sällan; ovanliga.</td><td>Rare; occurring very infrequently.</td><td>罕见的，稀有的。</td><td>Vissa sällsynta fågelarter kan bara ses på avlägsna öar.</td></tr>
+<tr><td>etiketter</td><td>[ɛtɪˈkɛtːɛr]</td><td>Små skyltar eller lappar som anger information om innehåll eller egenskaper.</td><td>Labels; tags that describe contents or properties.</td><td>标签，标识，标牌。</td><td>Etiketterna på produkterna visar tydligt ingredienserna och priset.</td></tr>
+</tbody></table>
+</div>
+<h2 id="frasermeningar"><a class="header" href="#frasermeningar">Fraser/Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>har åter aktualiserat frågan om</td><td>has once again raised the issue of</td></tr>
+<tr><td>emot införandet av</td><td>against the introduction of</td></tr>
+<tr><td>Går det att ...</td><td>Is it possible to ...</td></tr>
+<tr><td>bär på</td><td>carries / harbors</td></tr>
+<tr><td>Vad är det senaste?</td><td>What is the latest?</td></tr>
+<tr><td>ta nåt slags ansvar</td><td>take some kind of responsibility</td></tr>
+<tr><td>löper ut</td><td>expires</td></tr>
+<tr><td>förhandla om</td><td>negotiate about</td></tr>
+<tr><td>har brutit mot lagen</td><td>has broken the law</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="svt-2025-05"><a class="header" href="#svt-2025-05">SVT 2025-05</a></h1>
+<p>Svensk språk från SVT, maj 2025</p>
+<h2 id="ord-20"><a class="header" href="#ord-20">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk解释</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>gnager</td><td>[ˈɡnɑːɡɛr]</td><td>Tuggar eller nöter med tänderna, ofta om djur; bildligt: något som oroar ständigt.</td><td>Gnaws; bites or wears away with the teeth; figuratively: something that constantly worries.</td><td>啃咬；（比喻）折磨，困扰。</td><td>Oro för framtiden gnager i honom varje natt.</td></tr>
+<tr><td>inrymma</td><td>[ɪnˈrʏmːa]</td><td>Ha plats för eller ge utrymme åt något; också: tillåta eller omfatta.</td><td>To accommodate or contain; also: to permit or include.</td><td>容纳，包含；也指允许，接纳。</td><td>Lokalen kan inrymma upp till 500 personer.</td></tr>
+<tr><td>avvikande</td><td>[ˈɑːvˌviːkandɛ]</td><td>Som skiljer sig från det normala eller förväntade; annorlunda.</td><td>Deviating; different from the norm or expected.</td><td>异常的，偏离常规的，与众不同的。</td><td>Hans avvikande åsikter väckte starka reaktioner i gruppen.</td></tr>
+<tr><td>uppmärksam</td><td>[ˈɵpːmærksam]</td><td>Som visar koncentration, vaksamhet eller omtanke.</td><td>Attentive; observant or considerate.</td><td>留心的，注意的，体贴的。</td><td>Hon var mycket uppmärksam på barnens behov under utflykten.</td></tr>
+<tr><td>avvärjas</td><td>[ˈɑːvˌværjɑs]</td><td>Hindras från att inträffa; stoppas innan det blir ett problem.</td><td>Be averted or prevented; stopped before becoming a problem.</td><td>避免，被阻止，防止。</td><td>En större katastrof kunde avvärjas tack vare snabb insats från räddningstjänsten.</td></tr>
+<tr><td>enades</td><td>[ˈeːnadɛs]</td><td>Kom överens; nådde en gemensam ståndpunkt eller lösning.</td><td>Agreed; reached a mutual understanding or decision.</td><td>达成一致，统一意见。</td><td>Parterna enades om ett nytt avtal efter långa förhandlingar.</td></tr>
+<tr><td>väcktes</td><td>[ˈvɛkːtɛs]</td><td>Började; satte igång något, t.ex. ett intresse, en känsla eller en process.</td><td>Was awakened; was initiated or brought to life.</td><td>被唤起，被引发，被启动。</td><td>Hennes nyfikenhet väcktes av den spännande dokumentären.</td></tr>
+<tr><td>upptrappningen</td><td>[ˈɵpːˌtrapːnɪŋɛn]</td><td>En gradvis ökning i intensitet, särskilt i en konflikt eller aktivitet.</td><td>The escalation; a gradual increase in intensity, especially in conflict.</td><td>升级，加剧（尤指冲突或紧张局势）。</td><td>Upptrappningen av konflikten oroade hela regionen.</td></tr>
+<tr><td>slöt</td><td>[sløːt]</td><td>Ingick eller avslutade något formellt, t.ex. ett avtal.</td><td>Concluded or entered into (e.g., an agreement).</td><td>缔结，签订，达成。</td><td>Länderna slöt ett fredsavtal efter flera månaders förhandlingar.</td></tr>
+<tr><td>knapphändig</td><td>[ˈknapːˌhɛnːdɪɡ]</td><td>Som är otillräcklig eller mycket begränsad, särskilt om information.</td><td>Scanty; insufficient or sparse, especially regarding information.</td><td>匮乏的，不充分的。</td><td>Rapporten innehöll bara knapphändig information om händelsen.</td></tr>
+<tr><td>omfamna</td><td>[ˈʊmˌfɑːmna]</td><td>Att omhulda eller ta emot något med öppna armar; att acceptera.</td><td>To embrace; to welcome or accept something with open arms.</td><td>拥抱，接受。</td><td>Hon valde att omfamna förändringarna i sitt liv istället för att motstå dem.</td></tr>
+<tr><td>utökar</td><td>[ˈʉːtˌøːkar]</td><td>Gör något större eller mer omfattande; ökar omfånget av något.</td><td>Expands; increases the scope or size of something.</td><td>扩大，扩展，增加。</td><td>Företaget utökar sin verksamhet till nya marknader.</td></tr>
+<tr><td>förtida</td><td>[ˈføːʈɪda]</td><td>Som sker tidigare än planerat eller förväntat.</td><td>Premature; occurring earlier than expected.</td><td>提前的，过早的。</td><td>Han gick i förtida pension vid 61 års ålder.</td></tr>
+<tr><td>målsägande</td><td>[ˈmoːlsˌɛːɡandɛ]</td><td>Den person som blivit utsatt för ett brott och som har rätt att föra talan i rätten.</td><td>Injured party; the victim in a legal case who has the right to speak in court.</td><td>被害人，原告（刑事案件中）。</td><td>Målsäganden vittnade om vad som hade hänt under rånet.</td></tr>
+<tr><td>vidtagit</td><td>[ˈvɪdˌtɑːɡɪt]</td><td>Har utfört en åtgärd eller gjort något för att uppnå ett visst syfte.</td><td>Taken (measures); carried out an action to achieve something.</td><td>采取了（措施），执行了。</td><td>Myndigheten har vidtagit åtgärder för att förhindra smittspridning.</td></tr>
+<tr><td>påstådda</td><td>[ˈpoːˌstoːdːa]</td><td>Något som sägs ha hänt eller vara sant, men som inte är bevisat.</td><td>Alleged; claimed to be true but not proven.</td><td>所谓的，声称的（尚未证实的）。</td><td>Den påstådda gärningsmannen greps av polis under natten.</td></tr>
+<tr><td>hugga</td><td>[ˈhʉːɡa]</td><td>Att slå med ett vasst verktyg, ofta för att dela eller skära något.</td><td>To chop or cut with a sharp tool, often to split or slice something.</td><td>砍，劈，切。</td><td>Han började hugga ved för att förbereda sig inför vintern.</td></tr>
+<tr><td>fostrat</td><td>[ˈfɔsːtrat]</td><td>Uppfostrat eller vårdat någon, ofta barn eller djur, för att utvecklas.</td><td>Raised or nurtured someone, often children or animals, to develop.</td><td>抚养，培养。</td><td>Hon har fostrat sina barn med kärlek och disciplin.</td></tr>
+<tr><td>soptippen</td><td>[ˈsuːptɪpːɛn]</td><td>En plats där avfall och skräp samlas och lagras.</td><td>The dump; a place where waste and garbage are collected and stored.</td><td>垃圾场，废物堆放处。</td><td>De gamla möblerna slängdes på soptippen.</td></tr>
+<tr><td>förfärande</td><td>[fœːrˈfæːrande]</td><td>Mycket skrämmande eller chockerande; som väcker starka känslor.</td><td>Horrifying; very frightening or shocking; evokes strong emotions.</td><td>令人震惊的，令人恐惧的。</td><td>Nyheten om olyckan var förfärande för hela byn.</td></tr>
+<tr><td>äkta</td><td>[ˈɛkːta]</td><td>Som är genuin eller sann; inte falsk eller konstgjord.</td><td>Genuine; authentic; not false or artificial.</td><td>真实的，真正的。</td><td>Han hade en äkta oro för sina vänners välbefinnande.</td></tr>
+<tr><td>lärdomar</td><td>[ˈlœːrdɔmar]</td><td>Insikter eller kunskaper som erhållits genom erfarenhet eller studier.</td><td>Lessons; insights or knowledge gained through experience or study.</td><td>教训，经验教训。</td><td>De lärdomar vi drar från historien är viktiga för framtiden.</td></tr>
+<tr><td>stridsfråga</td><td>[ˈstrɪtsˌfrɔːɡa]</td><td>En fråga som orsakar konflikt eller oenighet mellan parter.</td><td>Point of contention; an issue that causes conflict or disagreement between parties.</td><td>争议问题，冲突焦点。</td><td>Klimatförändringar har blivit en stridsfråga i politiska debatter.</td></tr>
+<tr><td>formuleringar</td><td>[ˈfɔrmʊˌlɛrɪŋar]</td><td>Sättet att uttrycka något på; ordval och sammansättning av ord.</td><td>Phrasings; the way of expressing something; choice of words and composition.</td><td>表达方式，措辞。</td><td>Hans formuleringar i brevet var mycket välvalda och tydliga.</td></tr>
+<tr><td>halverades</td><td>[ˈhalvɛrˌadɛs]</td><td>Minskat till hälften; reducerat med 50%.</td><td>Halved; reduced by 50%.</td><td>减半，减少一半。</td><td>Antalet anställda halverades på grund av ekonomiska problem.</td></tr>
+<tr><td>förmåga</td><td>[fœːrˈmɔːɡa]</td><td>Att ha kapacitet eller möjlighet att göra något; att kunna utföra en viss uppgift.</td><td>Ability; the capacity or capability to do something; to be able to perform a certain task.</td><td>能力，才能。</td><td>Hennes förmåga att lösa problem ärimponerande.</td></tr>
+<tr><td>vållande</td><td>[ˈvɔlːandɛ]</td><td>Orsakande; som leder till eller bidrar till något, ofta negativt.</td><td>Causative; leading to or contributing to something, often negative.</td><td>导致，造成。</td><td>Hans vållande av olyckan ledde till rättsliga åtgärder.</td></tr>
+</tbody></table>
+</div>
+<h2 id="frasermeningar-1"><a class="header" href="#frasermeningar-1">Fraser/Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>alldeles nyss</td><td>just a moment ago</td></tr>
+<tr><td>var inte riktigt beredd på att</td><td>was not quite prepared for / to</td></tr>
+<tr><td>som någonsin mottagits av</td><td>ever received by</td></tr>
+<tr><td>ser framför sig</td><td>envisions / imagines</td></tr>
+<tr><td>knuffad av</td><td>pushed by / shoved by</td></tr>
+<tr><td>är uppe på</td><td>is up on / is on top of</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="svenska-på-dagens-nyheter"><a class="header" href="#svenska-på-dagens-nyheter">Svenska på <a href="https://www.dn.se/">Dagens Nyheter</a></a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dn-2025-01"><a class="header" href="#dn-2025-01">DN 2025-01</a></h1>
+<p>Svensk från Dagens Nyheter, Dec, 2025.</p>
+<h2 id="ord-21"><a class="header" href="#ord-21">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>främmande</td><td>[ˈfrɛmːanˌdɛ]</td><td>Något eller någon som är obekant eller inte bekant sedan tidigare.</td><td>Foreign/strange; something or someone unfamiliar or not previously known.</td><td>陌生的；不熟悉的或以前未曾认识的事物或人。</td><td>Hon kände sig obekväm i det främmande landet.</td></tr>
+<tr><td>intrång</td><td>[ˈɪnˌtrɔŋ]</td><td>Obehörig eller ovälkommen inblandning eller tillträde till något.</td><td>Intrusion; unauthorized or unwelcome interference or access to something.</td><td>入侵；未经授权或不受欢迎的干涉或进入。</td><td>Hackarens intrång i systemet upptäcktes snabbt.</td></tr>
+<tr><td>främlingar</td><td>[ˈfrɛmˌlɪŋar]</td><td>Personer som är okända eller obekanta för någon.</td><td>Strangers; people who are unknown or unfamiliar to someone.</td><td>陌生人；对某人来说不熟悉或未知的人。</td><td>Hon kände sig obekväm bland alla främlingar på festen.</td></tr>
+<tr><td>sårbarheter</td><td>[ˈsoːrˌbɑːrheˌtɛr]</td><td>Tillstånd eller egenskaper som gör något eller någon känslig för skada eller angrepp.</td><td>Vulnerabilities; conditions or characteristics that make something or someone susceptible to harm or attack.</td><td>漏洞；使某物或某人容易受到伤害或攻击的条件或特性。</td><td>Systemets sårbarheter måste åtgärdas för att undvika hackerattacker.</td></tr>
+<tr><td>obegriplig</td><td>[ˈuːbɛˌɡriːpˌlɪɡ]</td><td>Något som är svårt eller omöjligt att förstå.</td><td>Incomprehensible; something that is difficult or impossible to understand.</td><td>无法理解的；难以或不可能理解的事物。</td><td>Texten var så komplicerad att den blev helt obegriplig för läsaren.</td></tr>
+<tr><td>dessvärre</td><td>[dɛsˈvɛrːɛ]</td><td>Används för att uttrycka sorg eller beklagande över något som har inträffat.</td><td>Unfortunately; used to express regret or sorrow about something that has happened.</td><td>不幸地；用于表达对已发生事情的遗憾或哀叹。</td><td>Han ville delta i mötet, men dessvärre blev han sjuk.</td></tr>
+<tr><td>nöjeskvarter</td><td>[ˈnøːjɛsˌkvarˌteːr]</td><td>Ett område i en stad som är känt för sitt utbud av nöjen, som restauranger, barer och teatrar.</td><td>Entertainment district; an area in a city known for its attractions, such as restaurants, bars, and theaters.</td><td>娱乐区；城市中以餐馆、酒吧和剧院等娱乐设施闻名的地区。</td><td>Stockholm har flera nöjeskvarter som lockar både turister och lokalbor.</td></tr>
+<tr><td>pryder</td><td>[ˈpryːdɛr]</td><td>Att göra något vackrare genom dekoration eller utsmyckning.</td><td>Adorns; to make something more beautiful by decorating or embellishing.</td><td>装饰；通过装饰使某物更加美丽。</td><td>Konstverket pryder väggarna i stadshuset.</td></tr>
+<tr><td>bylsig</td><td>[ˈbylːsɪg]</td><td>Klumpig och otymplig i form, ofta på grund av för mycket kläder eller tyg.</td><td>Bulky; clumsy or awkward in shape, often due to excessive clothing or fabric.</td><td>笨重的；因过多衣物或织物显得笨拙或不方便的。</td><td>Han kände sig bylsig i den tjocka vinterjackan.</td></tr>
+<tr><td>erkännas</td><td>[ˈæːrˌɕɛnːas]</td><td>Att bli accepterad som sann eller korrekt; att bli officiellt godkänd.</td><td>Be acknowledged; to be accepted as true or correct; to be officially recognized.</td><td>被承认；被接受为真实或正确；被正式认可。</td><td>Det måste erkännas att hon gjorde ett fantastiskt arbete.</td></tr>
+<tr><td>försörja</td><td>[fœˈʂœrːja]</td><td>Att tillhandahålla det som krävs för att leva, som mat, pengar eller stöd.</td><td>Provide for; to supply what is needed to live, such as food, money, or support.</td><td>供养；提供生活所需，例如食物、金钱或支持。</td><td>Han arbetar hårt för att kunna försörja sin familj.</td></tr>
+<tr><td>lyckobeskedet</td><td>[ˈlʏkːɔbɛˌɧeːdɛt]</td><td>Ett meddelande som ger glädje och positiva nyheter.</td><td>Happy news; a message that brings joy and positive information.</td><td>喜讯；带来快乐和正面消息的通知。</td><td>Lyckobeskedet om hennes nya jobb spreds snabbt i familjen.</td></tr>
+<tr><td>inflytelserika</td><td>[ˈɪnˌflyːtɛlsɛˌriːka]</td><td>Beskriver personer eller grupper som har stor påverkan eller makt i samhället.</td><td>Influential; describing people or groups with significant impact or power in society.</td><td>有影响力的；描述在社会中有重大影响或权力的人或团体。</td><td>Politiker är ofta inflytelserika inom olika samhällsfrågor.</td></tr>
+<tr><td>vädjar</td><td>[ˈvɛːdˌjɑːr]</td><td>Att be om något på ett känslomässigt eller övertygande sätt.</td><td>Appeals; to plead or request something in an emotional or persuasive manner.</td><td>恳求；以情感或令人信服的方式请求某事。</td><td>Hon vädjar om hjälp för att rädda sitt företag.</td></tr>
+<tr><td>retoriskt</td><td>[reˈtoːrɪskt]</td><td>Något som har att göra med konsten att tala övertygande eller uttrycka sig väl.</td><td>Rhetorical; related to the art of persuasive or effective speaking.</td><td>修辞的；与说服性或有效表达的艺术有关。</td><td>Frågan ställdes retoriskt och krävde inget svar.</td></tr>
+<tr><td>överge</td><td>[ˈøːvɛrˌjeː]</td><td>Att lämna någon eller något utan att återvända, ofta i en svår situation.</td><td>Abandon; to leave someone or something without returning, often in a difficult situation.</td><td>抛弃；离开某人或某物且不再返回，通常是在困难情况下。</td><td>Han kunde aldrig överge sina principer, oavsett trycket.</td></tr>
+<tr><td>blomstrande</td><td>[ˈblɔmˌstrandɛ]</td><td>Något som utvecklas framgångsrikt eller är fullt av liv och energi.</td><td>Thriving; something that is developing successfully or full of life and energy.</td><td>繁荣的；发展成功或充满活力和能量的。</td><td>Företaget är inne i en blomstrande period med ökade vinster.</td></tr>
+</tbody></table>
+</div>
+<h2 id="fraser-och-meningar-5"><a class="header" href="#fraser-och-meningar-5">Fraser och Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>I slutändan</td><td>In the end</td></tr>
+<tr><td>Nu har åtal väckts</td><td>Now charges have been filed</td></tr>
+<tr><td>Till saken</td><td>To the point</td></tr>
+<tr><td>att ta reda</td><td>to find out</td></tr>
+<tr><td>på sikt</td><td>in the long run</td></tr>
+</tbody></table>
+</div>
+<h2 id="regler-3"><a class="header" href="#regler-3">Regler</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dn-2025-02"><a class="header" href="#dn-2025-02">DN 2025-02</a></h1>
+<p>Svensk från Dagens Nyheter, februari, 2025.</p>
+<h2 id="ord-22"><a class="header" href="#ord-22">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>avbröts</td><td>[ˈɑːvˌbrøːts]</td><td>Något stoppades plötsligt eller avbröts i förtid.</td><td>Was interrupted; something was suddenly stopped or ended prematurely.</td><td>被打断；某事突然停止或提前终止。</td><td>Mötesdiskussionen avbröts av ett oväntat telefonsamtal.</td></tr>
+<tr><td>sekretessbelagd</td><td>[sɛkrɛˈtɛsːbɛˌlaɡd]</td><td>Något som är hemligt och inte får delas med obehöriga.</td><td>Classified; something that is confidential and must not be shared with unauthorized persons.</td><td>机密的；不得与未经授权的人分享的信息。</td><td>Dokumentet är sekretessbelagt och får endast läsas av behöriga personer.</td></tr>
+<tr><td>omhändertagits</td><td>[ʊmˈhɛnːdɛrˌtɑːɡɪts]</td><td>Har blivit vårdad, skyddad eller hanterad på ett ansvarsfullt sätt.</td><td>Has been taken care of, protected, or handled responsibly.</td><td>被照顾；被妥善处理或保护。</td><td>De övergivna djuren har omhändertagits av en djurskyddsorganisation.</td></tr>
+<tr><td>avrådan</td><td>[ˈɑːvˌroːdan]</td><td>En varning eller rekommendation att inte göra något.</td><td>Advice against; a warning or recommendation not to do something.</td><td>劝阻；建议不要做某事。</td><td>Läkaren gav en stark avrådan från att fortsätta med den farliga behandlingen.</td></tr>
+<tr><td>förhållandet</td><td>[fœrˈhålːandɛt]</td><td>Samband mellan saker eller personer; situation eller tillstånd.</td><td>The relationship between things or people; a situation or condition.</td><td>关系；情况或状态。</td><td>Förhållandet mellan de två länderna har förbättrats avsevärt.</td></tr>
+<tr><td>fosterländska</td><td>[ˈfʊstɛrˌlɛndːska]</td><td>Som har med kärlek till sitt land att göra; patriotisk.</td><td>Related to love for one's country; patriotic.</td><td>爱国的，与祖国有关的。</td><td>Han sjöng fosterländska sånger med stolthet.</td></tr>
+<tr><td>alltjämt</td><td>[ˈalːtˌjɛmt]</td><td>Fortfarande, ännu; utan avbrott eller förändring.</td><td>Still, yet; continuously, unchanged.</td><td>仍然，依旧；持续不变。</td><td>Han bor alltjämt i sitt barndomshem.</td></tr>
+<tr><td>utplåna</td><td>[ˈʉːtploːna]</td><td>Förstöra fullständigt; få något att försvinna helt.</td><td>To destroy completely; to obliterate.</td><td>消灭，彻底毁灭，使消失。</td><td>Naturkatastrofen utplånade hela byn.</td></tr>
+<tr><td>förhärliga</td><td>[fœrˈhæːrlɪga]</td><td>Prisa eller framställa något som bättre än det är.</td><td>To glorify or exalt something.</td><td>美化，颂扬，使崇高。</td><td>Filmen förhärligade krigets hjältedåd.</td></tr>
+<tr><td>förinta</td><td>[fœˈrɪnta]</td><td>Fullständigt förstöra eller utplåna något.</td><td>To annihilate or completely destroy.</td><td>消灭，毁灭，彻底摧毁。</td><td>Målet var att förinta fiendens styrkor.</td></tr>
+<tr><td>utformades</td><td>[ˈʉːtfɔrmaːdɛs]</td><td>Blev designad eller skapad på ett visst sätt.</td><td>Was designed or formed in a certain way.</td><td>被设计，被制定。</td><td>Planen utformades för att maximera effektiviteten.</td></tr>
+<tr><td>återgå</td><td>[ˈoːtɛrɡoː]</td><td>Gå tillbaka till ett tidigare tillstånd eller plats.</td><td>To return to a previous state or place.</td><td>回归，恢复，返回。</td><td>Efter semestern var det dags att återgå till arbetet.</td></tr>
+</tbody></table>
+</div>
+<h2 id="fraser-och-meningar-6"><a class="header" href="#fraser-och-meningar-6">Fraser och Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>Bidragande skäl</td><td>Contributing reason</td></tr>
+</tbody></table>
+</div>
+<h2 id="regler-4"><a class="header" href="#regler-4">Regler</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dn-2025-03"><a class="header" href="#dn-2025-03">DN 2025-03</a></h1>
+<p>Svensk från Dagens Nyheter, mars, 2025.</p>
+<h2 id="ord-23"><a class="header" href="#ord-23">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>toppnotering</td><td>[ˈtɔpːnʊteːrɪŋ]</td><td>Högsta uppnådda nivå eller rekord.</td><td>Highest recorded level or record.</td><td>最高记录，顶峰值。</td><td>Börsen nådde en ny toppnotering i veckan.</td></tr>
+<tr><td>kvalitetssäkrade</td><td>[kvaliˈteːtˌsɛːkraːdɛ]</td><td>Som har genomgått en process för att säkerställa kvalitet</td><td>Quality-assured; having undergone a process to ensure quality.</td><td>经过质量保证的，质量检验合格的。</td><td>Produkterna är noggrant kvalitetssäkrade innan leverans.</td></tr>
+<tr><td>klagomål</td><td>[ˈklɑːɡʊmoːl]</td><td>Ett uttryck för missnöje eller kritik.</td><td>A complaint or expression of dissatisfaction.</td><td>投诉，抱怨，不满。</td><td>Företaget fick många klagomål om den dåliga servicen.</td></tr>
+<tr><td>krisande</td><td>[ˈkriːsandɛ]</td><td>Som befinner sig i en kris eller svår situation.</td><td>In crisis or experiencing difficulties.</td><td>处于危机中的，陷入困境的。</td><td>Det krisande företaget söker nya investerare.</td></tr>
+<tr><td>beviljas</td><td>[bɛˈvɪlːjas]</td><td>Få något godkänt eller tilldelat, ofta av en myndighet.</td><td>To be granted or approved, often by an authority.</td><td>被批准，被授予。</td><td>Lånet beviljas om alla krav är uppfyllda.</td></tr>
+<tr><td>oerhört</td><td>[ˈuːɛrˌhœrt]</td><td>Mycket, extremt eller otroligt.</td><td>Extremely, very, or incredibly.</td><td>极其，非常，难以置信。</td><td>Det var oerhört svårt att hitta en parkeringsplats.</td></tr>
+<tr><td>angränsande</td><td>[ˈaŋːrɛnsandɛ]</td><td>Som ligger intill eller gränsar till något annat.</td><td>Adjacent or bordering something else.</td><td>毗邻的，邻接的。</td><td>Det angränsande huset är till salu.</td></tr>
+<tr><td>avgick</td><td>[ˈavːɡɪk]</td><td>Lämnade en position eller ett ämbete.</td><td>Departed from a position or office.</td><td>离职，辞职。</td><td>Den avgående chefen höll ett avskedstal.</td></tr>
+<tr><td>regelbundet</td><td>[ˈreːɡɛlˌbʉndɛt]</td><td>Som sker med jämna mellanrum; återkommande och organiserat.</td><td>Regularly; occurring at consistent intervals.</td><td>定期地，有规律地，规律性地。</td><td>Hon tränar regelbundet tre gånger i veckan.</td></tr>
+<tr><td>kroniska</td><td>[ˈkruːnɪska]</td><td>Som varar under lång tid, ofta om sjukdomar som är svåra att bota.</td><td>Chronic; lasting a long time, often difficult to cure.</td><td>慢性的，长期的（常指疾病）。</td><td>Hon lider av kroniska ryggsmärtor.</td></tr>
+<tr><td>innefatta</td><td>[ˈɪnɛˌfatːa]</td><td>Att inkludera eller omfatta något som en del av en helhet.</td><td>To include or comprise as part of a whole.</td><td>包括，涵盖，包含。</td><td>Kursen kommer att innefatta både teori och praktik.</td></tr>
+<tr><td>försämrats</td><td>[fœˈʃɛmːrats]</td><td>Blivit sämre i kvalitet, tillstånd eller funktion.</td><td>Has deteriorated or become worse in condition or quality.</td><td>恶化，变差，退步。</td><td>Vädret har försämrats under veckan.</td></tr>
+<tr><td>betraktas</td><td>[bɛˈtrakːtas]</td><td>Ses som eller anses vara på ett visst sätt.</td><td>Is regarded or considered in a certain way.</td><td>被视为，被认为是。</td><td>Hon betraktas som en expert inom sitt område.</td></tr>
+<tr><td>överföringar</td><td>[ˈøːvɛrˌføːrɪŋar]</td><td>Processen att flytta något, t.ex. pengar eller data, från en plats till en annan.</td><td>Transfers; the act of moving something, like money or data, from one place to another.</td><td>转移，转账，传输。</td><td>Bankens digitala överföringar sker inom några sekunder.</td></tr>
+<tr><td>hänsynslös</td><td>[ˈhɛːnsʏnˌsløːs]</td><td>Som visar total brist på omtanke eller respekt för andra.</td><td>Ruthless; showing no regard or consideration for others.</td><td>毫无顾忌的，冷酷的。</td><td>Det var en hänsynslös attack mot civila.</td></tr>
+<tr><td>huruvida</td><td>[ˈhʉːrʉˌviːda]</td><td>Används för att uttrycka osäkerhet om något är fallet eller inte; om.</td><td>Whether; used to express uncertainty about something.</td><td>是否，用于表达不确定性。</td><td>Det är oklart huruvida mötet blir av i morgon.</td></tr>
+<tr><td>lydde</td><td>[ˈlʏdːɛ]</td><td>Följde order eller instruktioner; var lydig.</td><td>Obeyed; followed commands or instructions.</td><td>服从，听从，遵从。</td><td>Soldaten lydde utan att tveka sin befälhavares order.</td></tr>
+<tr><td>klantigt</td><td>[ˈklanːtɪɡt]</td><td>Klumpigt eller oskickligt gjort; fumligt.</td><td>Clumsy or awkwardly done; unskillful.</td><td>笨拙的，粗心的，草率的。</td><td>Det var riktigt klantigt av honom att tappa glaset.</td></tr>
+</tbody></table>
+</div>
+<h2 id="fraser-och-meningar-7"><a class="header" href="#fraser-och-meningar-7">Fraser och Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>mer än fördubblats de senaste tio åren</td><td>more than doubled in the past ten years</td></tr>
+<tr><td>...som misstänks vara orsakade av något annat än ...</td><td>...which are suspected to be caused by something other than ...</td></tr>
+<tr><td>...som misstänks vara orsakade av något annat än ...</td><td>...which are suspected to be caused by something other than ...</td></tr>
+<tr><td>med insyn</td><td>with insight / with transparency</td></tr>
+<tr><td>hälsosamt åldrande</td><td>healthy aging</td></tr>
+<tr><td>baljväxter och fettsnåla mejeriprodukter</td><td>legumes and low-fat dairy products</td></tr>
+<tr><td>att ta fram</td><td>to develop / to produce / to bring out</td></tr>
+<tr><td>Antalet disponibla vårdplatser</td><td>The number of available care beds</td></tr>
+<tr><td>vidtar rätt åtgärder</td><td>take the right measures</td></tr>
+<tr><td>befunnit sig</td><td>has/have been (located)</td></tr>
+</tbody></table>
+</div>
+<h2 id="regler-5"><a class="header" href="#regler-5">Regler</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dn-2025-04"><a class="header" href="#dn-2025-04">DN 2025-04</a></h1>
+<p>Svensk från Dagens Nyheter, april, 2025.</p>
+<h2 id="ord-24"><a class="header" href="#ord-24">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk förklaring</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>hyllade</td><td>[ˈhʏlːadɛ]</td><td>Visade stor uppskattning eller beundran för någon eller något.</td><td>Praised; celebrated; acclaimed.</td><td>赞扬的，称颂的，受到高度评价的。</td><td>Artisten hyllades av publiken efter konserten.</td></tr>
+<tr><td>utforskar</td><td>[ˈʉːtˌfɔrskar]</td><td>Undersöker något noggrant för att lära sig mer.</td><td>Explores; examines something in order to learn more.</td><td>探索，研究，调查。</td><td>Hon utforskar möjligheterna till ett nytt projekt.</td></tr>
+<tr><td>välfärdsstat</td><td>[ˈvɛlːfæːrdsˌstɑːt]</td><td>En stat som tar ansvar för invånarnas sociala och ekonomiska trygghet.</td><td>Welfare state; a state that provides social and economic support to its citizens.</td><td>福利国家，保障社会和经济安全的国家。</td><td>Sverige är känt som en välfärdsstat med gratis sjukvård och utbildning.</td></tr>
+<tr><td>klyftorna</td><td>[ˈkʏfːtɔrna]</td><td>Skillnader i inkomst eller levnadsstandard mellan olika grupper i samhället.</td><td>The gaps; differences in income or living standards between different groups in society.</td><td>差距，社会中不同群体之间的收入或生活水平差异。</td><td>Klyftorna mellan rika och fattiga har ökat de senaste åren.</td></tr>
+<tr><td>slutsatsen</td><td>[ˈslɵtˌsatsɛn]</td><td>Det man kommer fram till efter att ha analyserat eller resonerat.</td><td>The conclusion; what one arrives at after analysis or reasoning.</td><td>结论；推断的结果。</td><td>Efter utredningen drog de slutsatsen att branden var anlagd.</td></tr>
+<tr><td>bidragande</td><td>[ˈbɪːdrɑːɡandɛ]</td><td>Något som bidrar till en viss effekt eller resultat.</td><td>Contributing; something that contributes to a certain effect or result.</td><td>贡献的，导致某种效果或结果的。</td><td>Många faktorer var bidragande till den ekonomiska krisen.</td></tr>
+<tr><td>stillasittande</td><td>[ˈstɪlːaˌsɪtːandɛ]</td><td>Att sitta stilla under längre perioder utan att röra på sig.</td><td>Sedentary; sitting still for long periods without moving.</td><td>久坐的，长时间不动的。</td><td>Ett stillasittande livsstil kan leda till hälsoproblem.</td></tr>
+<tr><td>framhåller</td><td>[ˈframˌhɔlːɛr]</td><td>Betonar eller lyfter fram något som särskilt viktigt.</td><td>Emphasizes; highlights something as especially important.</td><td>强调，指出，提出。</td><td>Läraren framhöll vikten av att komma i tid till lektionerna.</td></tr>
+<tr><td>makthavare</td><td>[ˈmakːtˌhɑːvarɛ]</td><td>Person som innehar och utövar politisk eller annan form av makt.</td><td>Authority figure; person in power or authority.</td><td>掌权者，权力人士。</td><td>Makthavare måste ta ansvar för sina beslut inför folket.</td></tr>
+</tbody></table>
+</div>
+<h2 id="fraser-och-meningar-8"><a class="header" href="#fraser-och-meningar-8">Fraser och Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>åtminstone tills vidare</td><td>at least for the time being</td></tr>
+<tr><td>det lika gärna vara</td><td>it might as well be</td></tr>
+<tr><td>ge sken av</td><td>give the impression of</td></tr>
+</tbody></table>
+</div>
+<h2 id="regler-6"><a class="header" href="#regler-6">Regler</a></h2>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>2025-01 - Swedish Learning</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Swedish Learning</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="svt-2025-01"><a class="header" href="#svt-2025-01">SVT 2025-01</a></h1>
+<p>Svensk språk från SVT, Jan 2025</p>
+<h2 id="ord"><a class="header" href="#ord">Ord</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Ord</th><th>Uttal</th><th>Svensk Definition</th><th>Engelsk förklaring</th><th>Kinesisk解释</th><th>Exempel mening</th></tr></thead><tbody>
+<tr><td>överlägsen</td><td>[ˈøːvɛrˌlɛːɡsɛn]</td><td>Som är mycket bättre eller starkare än andra i en viss situation.</td><td>Superior; being much better or stronger than others in a certain situation.</td><td>优越的；在某种情况下比其他人更好或更强。</td><td>Han visade en överlägsen skicklighet i tävlingen.</td></tr>
+<tr><td>bemanna</td><td>[bɛˈmanːa]</td><td>Att utrusta en plats, enhet eller funktion med personal.</td><td>To staff; to equip a place, unit, or function with personnel.</td><td>配备人员；为某地、单位或功能配置人员。</td><td>Vi behöver bemanna receptionen inför evenemanget.</td></tr>
+<tr><td>trycksår</td><td>[ˈtrʏkˌsoːr]</td><td>Skada på huden och underliggande vävnad som orsakas av långvarigt tryck.</td><td>Pressure ulcer; damage to the skin and underlying tissue caused by prolonged pressure.</td><td>褥疮；由长时间压力引起的皮肤及下层组织损伤。</td><td>Patienten utvecklade ett trycksår efter att ha legat stilla för länge.</td></tr>
+<tr><td>takten</td><td>[ˈtakˌtɛn]</td><td>Hastigheten eller rytmen i något, exempelvis musik eller en utveckling.</td><td>The pace or rhythm of something, such as music or a development.</td><td>节奏；某事物的速度或节奏，例如音乐或发展。</td><td>Byggandet av nya bostäder har ökat takten det senaste året.</td></tr>
+<tr><td>sparkad</td><td>[ˈspɑːrˌkad]</td><td>Någon som har förlorat sitt arbete eller blivit avskedad.</td><td>Fired; someone who has lost their job or been dismissed.</td><td>被解雇；失去工作或被解雇的人。</td><td>Han blev sparkad från jobbet efter flera varningar.</td></tr>
+<tr><td>sakkunnig</td><td>[ˈsakˌkɵnːɪɡ]</td><td>En person som har expertkunskaper inom ett visst område.</td><td>Expert; a person with specialized knowledge in a specific field.</td><td>专家；在某个特定领域拥有专业知识的人。</td><td>Utredningen gjordes av en sakkunnig inom byggnadsteknik.</td></tr>
+<tr><td>långsiktigt</td><td>[ˈlɔŋˌsɪkːtɪkt]</td><td>Något som sträcker sig över en längre tidsperiod eller är planerat för framtiden.</td><td>Long-term; something that spans a longer period or is planned for the future.</td><td>长期的；涉及较长时间或为未来规划的事物。</td><td>Företaget investerar i projekt som är hållbara och långsiktiga.</td></tr>
+<tr><td>tillbringar</td><td>[ˈtɪlˌbrɪŋar]</td><td>Att använda tid på en viss plats eller i en viss aktivitet.</td><td>Spend; to use time in a certain place or activity.</td><td>度过；在某个地方或活动中花费时间。</td><td>Hon tillbringar sommaren vid havet varje år.</td></tr>
+<tr><td>huruvida</td><td>[ˈhʉːrʉˌvɪda]</td><td>Används för att uttrycka osäkerhet eller för att introducera en fråga om något.</td><td>Whether; used to express uncertainty or introduce a question about something.</td><td>是否；用于表达不确定性或引入对某事的疑问。</td><td>Hon undrade huruvida hon skulle acceptera erbjudandet.</td></tr>
+<tr><td>innefattar</td><td>[ˈɪnːɛˌfatːar]</td><td>Att innehålla eller inkludera något som en del av en helhet.</td><td>Includes; to contain or encompass something as part of a whole.</td><td>包括；包含或作为整体的一部分。</td><td>Kursen innefattar både teoretiska och praktiska moment.</td></tr>
+<tr><td>välmående</td><td>[ˈvɛːlˌmoːˌɛnːdɛ]</td><td>Ett tillstånd av hälsa, lycka och ekonomisk stabilitet.</td><td>Well-being; a state of health, happiness, and economic stability.</td><td>健康；一种健康、幸福和经济稳定的状态。</td><td>Samhällets välmående är beroende av både individens och kollektivets insatser.</td></tr>
+<tr><td>medvetet</td><td>[ˈmeːdˌveːtɛt]</td><td>Gjort med avsikt eller medvetenhet; inte av misstag.</td><td>Deliberately; done intentionally or with awareness, not by accident.</td><td>有意识地；有意图或有意识地进行，而非无意的。</td><td>Han valde medvetet att inte delta i diskussionen.</td></tr>
+<tr><td>magisteruppsats</td><td>[maˈjɪstɛrˌɵpːˌsatːs]</td><td>En akademisk uppsats som skrivs som en del av en magisterexamen.</td><td>Master's thesis; an academic paper written as part of a master's degree.</td><td>硕士论文；作为硕士学位的一部分撰写的学术论文。</td><td>Hon presenterade sin magisteruppsats vid universitetet i maj.</td></tr>
+<tr><td>föreslås</td><td>[ˈføːrɛsˌloːs]</td><td>Att ge ett förslag eller rekommendation om något.</td><td>Be proposed; to suggest or recommend something.</td><td>被提议；提出或推荐某事。</td><td>Det föreslås att vi möts tidigare för att hinna med allt.</td></tr>
+<tr><td>förvärva</td><td>[fœrˈværːva]</td><td>Att skaffa sig något, särskilt genom köp, arbete eller studier.</td><td>Acquire; to obtain something, especially through purchase, work, or study.</td><td>获得；通过购买、工作或学习得到某物。</td><td>Hon lyckades förvärva en unik samling antika böcker.</td></tr>
+<tr><td>medges</td><td>[ˈmeːdˌjɛs]</td><td>Att officiellt tillåta eller erkänna något som korrekt eller giltigt.</td><td>Be granted; to officially allow or acknowledge something as valid or correct.</td><td>被允许；正式承认或认可某事有效或正确。</td><td>Ansökan om förlängning medges om alla krav uppfylls.</td></tr>
+<tr><td>bantar</td><td>[ˈbanːtar]</td><td>Att försöka minska sin vikt, ofta genom att äta mindre eller ändra kosten.</td><td>Dieting; attempting to lose weight, often by eating less or changing one's diet.</td><td>节食；通过少吃或改变饮食习惯试图减轻体重。</td><td>Hon bantar inför sin semester för att komma i bättre form.</td></tr>
+<tr><td>sällsynt</td><td>[ˈsɛlˌsʏnt]</td><td>Något som är ovanligt eller händer mycket sällan.</td><td>Rare; something that is unusual or occurs very infrequently.</td><td>稀有的；不寻常的或极少发生的事物。</td><td>Denna art av fågel är mycket sällsynt i Sverige.</td></tr>
+<tr><td>skådespel</td><td>[ˈskɔːˌdɛːpˌɛl]</td><td>Ett offentligt framförande av drama, som teater eller film.</td><td>Performance; a public presentation of drama, such as theater or film.</td><td>表演；如戏剧或电影的公共表演。</td><td>Föreställningen var ett fantastiskt skådespel.</td></tr>
+<tr><td>framträder</td><td>[ˈframsˌtɾɛːdɛr]</td><td>Att synas eller bli uppenbar, ofta på ett sätt som drar uppmärksamhet.</td><td>Appears; to become visible or evident, often in a way that attracts attention.</td><td>显现；以引人注目的方式变得可见或显现。</td><td>Hans talang framträder tydligt i hans konstverk.</td></tr>
+<tr><td>destruerats</td><td>[dɛstrʉˈeːrats]</td><td>Har förstörts eller oskadliggjorts, ofta på ett kontrollerat sätt.</td><td>Destroyed; has been eliminated or neutralized, often in a controlled manner.</td><td>被销毁；通常以受控方式消除或处理。</td><td>De gamla dokumenten har destruerats av säkerhetsskäl.</td></tr>
+<tr><td>ödeläggelse</td><td>[ˈøːdɛˌlɛɡːɛlsɛ]</td><td>Stor förstörelse eller ruinering av något, ofta i samband med krig eller katastrofer.</td><td>Destruction; great devastation or ruin, often in connection with war or disasters.</td><td>毁灭；通常与战争或灾难相关的大规模破坏。</td><td>Orkanen lämnade en total ödeläggelse efter sig.</td></tr>
+</tbody></table>
+</div>
+<h2 id="meningar"><a class="header" href="#meningar">Meningar</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Swedish</th><th>English</th></tr></thead><tbody>
+<tr><td>blir effekterna av</td><td>are the effects of</td></tr>
+<tr><td>ha blivit nedslängd av</td><td>have been thrown down by</td></tr>
+<tr><td>skötsamt levnadssätt</td><td>conscientious way of living</td></tr>
+<tr><td>att man inte har något behov av att utnyttja det ...</td><td>that one has no need to take advantage of ...</td></tr>
+<tr><td>befinner sig på platsen</td><td>is present at the location</td></tr>
+</tbody></table>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../svt/2025/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../svt/2025/SVT_2025-02.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../svt/2025/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../svt/2025/SVT_2025-02.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
