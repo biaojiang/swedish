@@ -1,0 +1,160 @@
+{
+  "main": {
+    "id": "f18a141b0b36b596",
+    "type": "split",
+    "children": [
+      {
+        "id": "caaf51b7d8e17f47",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6edf3a2574b3181f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SVT_2024-07.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8c4f8ffda2c523d5",
+    "type": "split",
+    "children": [
+      {
+        "id": "feda22ffe2642df7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7cea4a9aec93d418",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "bd10de09dc1f8640",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c3336e1116ac1296",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4607ae30d112dbf1",
+    "type": "split",
+    "children": [
+      {
+        "id": "a9adcbc93a342468",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "816a19a847dcca4e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "SVT_2024-07.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e6fea06348ded219",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "SVT_2024-07.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "aaf8d4f233282abc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "76758fe91c2c9773",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "SVT_2024-07.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "6edf3a2574b3181f",
+  "lastOpenFiles": [
+    "SVT_2024-06.md",
+    "SVT_2024-07.md",
+    "SVT_2024-05.md",
+    "SVT_2024-04.md",
+    "SVT_2024-03.md",
+    "SVT_2024-02.md",
+    "andra_kallor.md",
+    "How to report elder fraud in San Diego _ cbs8.com.html"
+  ]
+}
