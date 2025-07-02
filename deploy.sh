@@ -13,10 +13,10 @@ mdbook build
 
 echo "🧼  Cleaning .DS_Store and .obsidian files..."
 # Clean .DS_Store files (faster)
-fd .DS_Store book/ -H -t f -X rm -f
+fd .DS_Store book/ -H -t f -I -X rm -f
 
 # Clean .obsidian directories (safer)
-fd .obsidian book/ -H -t d -x rm -rf {}
+fd .obsidian book/ -H -t d -I -x rm -rf {}
 
 echo "🌿  Setting up worktree at $WORKTREE_DIR..."
 git worktree remove "$WORKTREE_DIR" --force 2>/dev/null || true
@@ -27,8 +27,9 @@ rm -rf "$WORKTREE_DIR"/*
 cp -r "$BUILD_DIR"/* "$WORKTREE_DIR/"
 
 cd "$WORKTREE_DIR"
-fd .DS_Store -H -tf -X git rm --cached
-fd .obsidian -H -td -x git rm -r --cached {}
+echo "🧼  Untracking previously committed .DS_Store and .obsidian files..."
+git ls-files | grep -E '\.DS_Store|\.obsidian' | xargs git rm --cached --ignore-unmatch || true
+
 git add -A
 
 if git diff --cached --quiet; then
