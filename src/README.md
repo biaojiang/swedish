@@ -1,5 +1,8 @@
 This is a new Swedish learning online book compiled with [mdBook]: a utility to create modern online books from Markdown files with the modern high-performance language **Rust**. The [previous book][oldSphinxSwedish] made with Python [Sphinx][Sphinx] will be archived.
 
+Another more advanced book is available at
+[Avancerade svenska ord, fraser och grammatik](https://plotsignal.com/swedish-book/index.pdf).
+
 # Outline
 ## 2023 Version
 Exported from Dropbox Paper:
