@@ -41,6 +41,17 @@
         <script src="toc.js"></script>
     </head>
     <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
     <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
@@ -118,7 +129,7 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -156,6 +167,8 @@
                 <div id="content" class="content">
                     <main>
                         <p>This is a new Swedish learning online book compiled with <a href="https://github.com/rust-lang/mdBook">mdBook</a>: a utility to create modern online books from Markdown files with the modern high-performance language <strong>Rust</strong>. The <a href="https://plotsignal.com/vocab-sv">previous book</a> made with Python <a href="https://www.sphinx-doc.org/">Sphinx</a> will be archived.</p>
+<p>Another more advanced book is available at
+<a href="https://plotsignal.com/swedish-book/index.pdf">Avancerade svenska ord, fraser och grammatik</a>.</p>
 <h1 id="outline"><a class="header" href="#outline">Outline</a></h1>
 <h2 id="2023-version"><a class="header" href="#2023-version">2023 Version</a></h2>
 <p>Exported from Dropbox Paper:</p>
