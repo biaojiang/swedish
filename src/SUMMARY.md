@@ -1,6 +1,8 @@
 # Summary
 
 [Introduction](./README.md)
+- [Ordlista](glossary.md)
+- [Sakindex](index-terms.md)
 
 # 2023 Version
 
