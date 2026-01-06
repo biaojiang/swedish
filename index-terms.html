@@ -1,0 +1,992 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Sakindex - Swedish Learning</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-5a7b010e.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-b8d84120.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Swedish Learning</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="sakindex"><a class="header" href="#sakindex">Sakindex</a></h1>
+<p>Sakindexet listar begrepp och länkar till ordlistan.</p>
+<h2 id="a"><a class="header" href="#a">A</a></h2>
+<ul>
+<li><a href="glossary.html#abonnerats">abonnerats</a></li>
+<li><a href="glossary.html#agerande">agerande</a></li>
+<li><a href="glossary.html#aktualiserats">aktualiserats</a></li>
+<li><a href="glossary.html#alltjamt">alltjämt</a></li>
+<li><a href="glossary.html#andning">andning</a></li>
+<li><a href="glossary.html#angelaget">angeläget</a></li>
+<li><a href="glossary.html#angransande">angränsande</a></li>
+<li><a href="glossary.html#anlitats">anlitats</a></li>
+<li><a href="glossary.html#anmarkning">anmärkning</a></li>
+<li><a href="glossary.html#anmarkningsvard">anmärkningsvärd</a></li>
+<li><a href="glossary.html#anpassningar">anpassningar</a></li>
+<li><a href="glossary.html#ansags">ansågs</a></li>
+<li><a href="glossary.html#anskaffningen">anskaffningen</a></li>
+<li><a href="glossary.html#anslutning">anslutning</a></li>
+<li><a href="glossary.html#anstormning">anstormning</a></li>
+<li><a href="glossary.html#anstrangningar">ansträngningar</a></li>
+<li><a href="glossary.html#antyder">antyder</a></li>
+<li><a href="glossary.html#aprilskamt">aprilskämt</a></li>
+<li><a href="glossary.html#arv">arv</a></li>
+<li><a href="glossary.html#att-ticka-upp">att ticka upp</a></li>
+<li><a href="glossary.html#att-uppna">att uppnå</a></li>
+<li><a href="glossary.html#attityden">attityden</a></li>
+<li><a href="glossary.html#avbojer">avböjer</a></li>
+<li><a href="glossary.html#avbrots">avbröts</a></li>
+<li><a href="glossary.html#avdelningarna">avdelningarna</a></li>
+<li><a href="glossary.html#avgick">avgick</a></li>
+<li><a href="glossary.html#avgorande">avgörande</a></li>
+<li><a href="glossary.html#avradan">avrådan</a></li>
+<li><a href="glossary.html#avradde">avrådde</a></li>
+<li><a href="glossary.html#avrads">avråds</a></li>
+<li><a href="glossary.html#avsatter">avsätter</a></li>
+<li><a href="glossary.html#avsedda">avsedda</a></li>
+<li><a href="glossary.html#avsevart">avsevärt</a></li>
+<li><a href="glossary.html#avsiktligt">avsiktligt</a></li>
+<li><a href="glossary.html#avskaffar">avskaffar</a></li>
+<li><a href="glossary.html#avskrackning">avskräckning</a></li>
+<li><a href="glossary.html#avskyvard">avskyvärd</a></li>
+<li><a href="glossary.html#avvagningar">avvägningar</a></li>
+<li><a href="glossary.html#avvagningen">avvägningen</a></li>
+<li><a href="glossary.html#avvarjas">avvärjas</a></li>
+<li><a href="glossary.html#avvikande">avvikande</a></li>
+<li><a href="glossary.html#avviker">avviker</a></li>
+</ul>
+<h2 id="b"><a class="header" href="#b">B</a></h2>
+<ul>
+<li><a href="glossary.html#bakhall">bakhåll</a></li>
+<li><a href="glossary.html#bakomliggande">bakomliggande</a></li>
+<li><a href="glossary.html#banbrytande">banbrytande</a></li>
+<li><a href="glossary.html#bantar">bantar</a></li>
+<li><a href="glossary.html#barare">bärare</a></li>
+<li><a href="glossary.html#balverk">bålverk</a></li>
+<li><a href="glossary.html#bedomare">bedömare</a></li>
+<li><a href="glossary.html#bedomning">bedömning</a></li>
+<li><a href="glossary.html#bedomningen">bedömningen</a></li>
+<li><a href="glossary.html#bedoms-bedomer">bedöms (bedömer)</a></li>
+<li><a href="glossary.html#bedriver">bedriver</a></li>
+<li><a href="glossary.html#befal">befäl</a></li>
+<li><a href="glossary.html#befintliga">befintliga</a></li>
+<li><a href="glossary.html#befogenhet">befogenhet</a></li>
+<li><a href="glossary.html#beharskar">behärskar</a></li>
+<li><a href="glossary.html#bekymrad">bekymrad</a></li>
+<li><a href="glossary.html#belagen">belägen</a></li>
+<li><a href="glossary.html#bemanna">bemanna</a></li>
+<li><a href="glossary.html#bemanningen">bemanningen</a></li>
+<li><a href="glossary.html#bemotta">bemötta</a></li>
+<li><a href="glossary.html#beordras">beordras</a></li>
+<li><a href="glossary.html#beraknad">beräknad</a></li>
+<li><a href="glossary.html#beroendeframkallande">beroendeframkallande</a></li>
+<li><a href="glossary.html#beror">berör</a></li>
+<li><a href="glossary.html#berorda">berörda</a></li>
+<li><a href="glossary.html#berordes">berördes</a></li>
+<li><a href="glossary.html#berors">berörs</a></li>
+<li><a href="glossary.html#berusningssyfte">berusningssyfte</a></li>
+<li><a href="glossary.html#besattningen">besättningen</a></li>
+<li><a href="glossary.html#besked">besked</a></li>
+<li><a href="glossary.html#beskjutits">beskjutits</a></li>
+<li><a href="glossary.html#beskrivningar">beskrivningar</a></li>
+<li><a href="glossary.html#beskyllde">beskyllde</a></li>
+<li><a href="glossary.html#bestyckas">bestyckas</a></li>
+<li><a href="glossary.html#bestyckning">bestyckning</a></li>
+<li><a href="glossary.html#beteendeberoende">beteendeberoende</a></li>
+<li><a href="glossary.html#betraktas">betraktas</a></li>
+<li><a href="glossary.html#betydligt">betydligt</a></li>
+<li><a href="glossary.html#beviljas">beviljas</a></li>
+<li><a href="glossary.html#bevittnade">bevittnade</a></li>
+<li><a href="glossary.html#bidragande">bidragande</a></li>
+<li><a href="glossary.html#bil">Bil</a></li>
+<li><a href="glossary.html#bindande">bindande</a></li>
+<li><a href="glossary.html#biverkningar">biverkningar</a></li>
+<li><a href="glossary.html#blixtnedslag">blixtnedslag</a></li>
+<li><a href="glossary.html#blomstrande">blomstrande</a></li>
+<li><a href="glossary.html#borgensman">borgensman</a></li>
+<li><a href="glossary.html#bortkollrad">bortkollrad</a></li>
+<li><a href="glossary.html#bola">böla</a></li>
+<li><a href="glossary.html#boljan">böljan</a></li>
+<li><a href="glossary.html#bracklig">bräcklig</a></li>
+<li><a href="glossary.html#brattom">bråttom</a></li>
+<li><a href="glossary.html#brigad">BRIGAD</a></li>
+<li><a href="glossary.html#bristfalligt">bristfälligt</a></li>
+<li><a href="glossary.html#brottsforebyggande">brottsförebyggande</a></li>
+<li><a href="glossary.html#bylsig">bylsig</a></li>
+</ul>
+<h2 id="c"><a class="header" href="#c">C</a></h2>
+<ul>
+<li><a href="glossary.html#charlatan">charlatan</a></li>
+<li><a href="glossary.html#chimar">chimär</a></li>
+</ul>
+<h2 id="d"><a class="header" href="#d">D</a></h2>
+<ul>
+<li><a href="glossary.html#deltagande">deltagande</a></li>
+<li><a href="glossary.html#deltavling">Deltävling</a></li>
+<li><a href="glossary.html#deltog">deltog</a></li>
+<li><a href="glossary.html#dessvarre">dessvärre</a></li>
+<li><a href="glossary.html#destruerats">destruerats</a></li>
+<li><a href="glossary.html#diasporamedier">diasporamedier</a></li>
+<li><a href="glossary.html#ditresta">ditresta</a></li>
+<li><a href="glossary.html#draller">dräller</a></li>
+<li><a href="glossary.html#driftig">driftig</a></li>
+<li><a href="glossary.html#drygt">drygt</a></li>
+<li><a href="glossary.html#dundrade">dundrade</a></li>
+<li><a href="glossary.html#dystert">dystert</a></li>
+</ul>
+<h2 id="e"><a class="header" href="#e">E</a></h2>
+<ul>
+<li><a href="glossary.html#elbilstillverkaren">elbilstillverkaren</a></li>
+<li><a href="glossary.html#enades">enades</a></li>
+<li><a href="glossary.html#engagerad">engagerad</a></li>
+<li><a href="glossary.html#enig">enig</a></li>
+<li><a href="glossary.html#entourage">entourage</a></li>
+<li><a href="glossary.html#erkannas">erkännas</a></li>
+<li><a href="glossary.html#erkanner">erkänner</a></li>
+<li><a href="glossary.html#ertappades">ertappades</a></li>
+<li><a href="glossary.html#etiketter">etiketter</a></li>
+<li><a href="glossary.html#ett-fatal">ett fåtal</a></li>
+<li><a href="glossary.html#evighets-kemikalier">evighets-kemikalier</a></li>
+</ul>
+<h2 id="f"><a class="header" href="#f">F</a></h2>
+<ul>
+<li><a href="glossary.html#fantasifulla">fantasifulla</a></li>
+<li><a href="glossary.html#farval">farväl</a></li>
+<li><a href="glossary.html#felaktig">felaktig</a></li>
+<li><a href="glossary.html#flutit">flutit</a></li>
+<li><a href="glossary.html#formellt">formellt</a></li>
+<li><a href="glossary.html#formuleringar">formuleringar</a></li>
+<li><a href="glossary.html#fosterlandska">fosterländska</a></li>
+<li><a href="glossary.html#fostrat">fostrat</a></li>
+<li><a href="glossary.html#foranleder">föranleder</a></li>
+<li><a href="glossary.html#fordelaktig">fördelaktig</a></li>
+<li><a href="glossary.html#fordelar">fördelar</a></li>
+<li><a href="glossary.html#fordelarna">fördelarna</a></li>
+<li><a href="glossary.html#fordelningen">fördelningen</a></li>
+<li><a href="glossary.html#foregripa">föregripa</a></li>
+<li><a href="glossary.html#forekomsten">förekomsten</a></li>
+<li><a href="glossary.html#forenlig">förenlig</a></li>
+<li><a href="glossary.html#forenligt">förenligt</a></li>
+<li><a href="glossary.html#foreslas">föreslås</a></li>
+<li><a href="glossary.html#forestalla">föreställa</a></li>
+<li><a href="glossary.html#foretrader">företräder</a></li>
+<li><a href="glossary.html#forfarande">förfärande</a></li>
+<li><a href="glossary.html#forflyttas">förflyttas</a></li>
+<li><a href="glossary.html#forfoljt">förföljt</a></li>
+<li><a href="glossary.html#forgiftas">förgiftas</a></li>
+<li><a href="glossary.html#forhalar">förhalar</a></li>
+<li><a href="glossary.html#forhalningar">förhalningar</a></li>
+<li><a href="glossary.html#forharliga">förhärliga</a></li>
+<li><a href="glossary.html#forhallandet">förhållandet</a></li>
+<li><a href="glossary.html#forhoppningsvis">förhoppningsvis</a></li>
+<li><a href="glossary.html#forinta">förinta</a></li>
+<li><a href="glossary.html#formaga">förmåga</a></li>
+<li><a href="glossary.html#formas">förmås</a></li>
+<li><a href="glossary.html#formodligen">förmodligen</a></li>
+<li><a href="glossary.html#forordnande">förordnande</a></li>
+<li><a href="glossary.html#fororenade">förorenade</a></li>
+<li><a href="glossary.html#fororeningar">föroreningar</a></li>
+<li><a href="glossary.html#forodmjukande">förödmjukande</a></li>
+<li><a href="glossary.html#forsamrats">försämrats</a></li>
+<li><a href="glossary.html#forsamring">försämring</a></li>
+<li><a href="glossary.html#forsenar">försenar</a></li>
+<li><a href="glossary.html#forser">förser</a></li>
+<li><a href="glossary.html#forsiktighetsatgarder">försiktighetsåtgärder</a></li>
+<li><a href="glossary.html#forskansning">förskansning</a></li>
+<li><a href="glossary.html#forskingring">förskingring</a></li>
+<li><a href="glossary.html#forskjutits">förskjutits</a></li>
+<li><a href="glossary.html#forskracker">förskräcker</a></li>
+<li><a href="glossary.html#forskrackligt">förskräckligt</a></li>
+<li><a href="glossary.html#forsorja">försörja</a></li>
+<li><a href="glossary.html#forstorelse">förstörelse</a></li>
+<li><a href="glossary.html#forsvarat">försvårat</a></li>
+<li><a href="glossary.html#fortegen">förtegen</a></li>
+<li><a href="glossary.html#fortida">förtida</a></li>
+<li><a href="glossary.html#fortroendet">förtroendet</a></li>
+<li><a href="glossary.html#fortvivlad">förtvivlad</a></li>
+<li><a href="glossary.html#forundersokningen">förundersökningen</a></li>
+<li><a href="glossary.html#forutsagbar">förutsägbar</a></li>
+<li><a href="glossary.html#forutsatta">förutsätta</a></li>
+<li><a href="glossary.html#forvantas">förväntas</a></li>
+<li><a href="glossary.html#forvarva">förvärva</a></li>
+<li><a href="glossary.html#framatrorelse">framåtrörelse</a></li>
+<li><a href="glossary.html#framfor-allt">framför allt</a></li>
+<li><a href="glossary.html#framforallt">framförallt</a></li>
+<li><a href="glossary.html#framgick">framgick</a></li>
+<li><a href="glossary.html#framhaller">framhåller</a></li>
+<li><a href="glossary.html#framtrada">framträda</a></li>
+<li><a href="glossary.html#framtrader">framträder</a></li>
+<li><a href="glossary.html#framlingar">främlingar</a></li>
+<li><a href="glossary.html#frammande">främmande</a></li>
+<li><a href="glossary.html#fredliga">fredliga</a></li>
+<li><a href="glossary.html#frimodig">frimodig</a></li>
+<li><a href="glossary.html#frivillighet">frivillighet</a></li>
+<li><a href="glossary.html#frugala">frugala</a></li>
+<li><a href="glossary.html#fruktansvart">fruktansvärt</a></li>
+<li><a href="glossary.html#fullstandigt">fullständigt</a></li>
+</ul>
+<h2 id="g"><a class="header" href="#g">G</a></h2>
+<ul>
+<li><a href="glossary.html#gallande">gällande</a></li>
+<li><a href="glossary.html#gatfulla">gåtfulla</a></li>
+<li><a href="glossary.html#genomsnitt">genomsnitt</a></li>
+<li><a href="glossary.html#gnager">gnager</a></li>
+<li><a href="glossary.html#gradvis">gradvis</a></li>
+<li><a href="glossary.html#granskning">granskning</a></li>
+<li><a href="glossary.html#gransvardet">gränsvärdet</a></li>
+<li><a href="glossary.html#grundvattenmagasin">grundvattenmagasin</a></li>
+<li><a href="glossary.html#gynna">gynna</a></li>
+</ul>
+<h2 id="h"><a class="header" href="#h">H</a></h2>
+<ul>
+<li><a href="glossary.html#ha-knivhuggit">ha knivhuggit</a></li>
+<li><a href="glossary.html#hack">hack</a></li>
+<li><a href="glossary.html#halverades">halverades</a></li>
+<li><a href="glossary.html#har-bedrivit">har bedrivit</a></li>
+<li><a href="glossary.html#har-bedrivits">har bedrivits</a></li>
+<li><a href="glossary.html#har-hamnat">har hamnat</a></li>
+<li><a href="glossary.html#har-ombetts">har ombetts</a></li>
+<li><a href="glossary.html#haveriet">haveriet</a></li>
+<li><a href="glossary.html#haktade">häktade</a></li>
+<li><a href="glossary.html#handelseforloppet">händelseförloppet</a></li>
+<li><a href="glossary.html#hansynslos">hänsynslös</a></li>
+<li><a href="glossary.html#harligt">härligt</a></li>
+<li><a href="glossary.html#harror">härrör</a></li>
+<li><a href="glossary.html#harvan">härvan</a></li>
+<li><a href="glossary.html#havda">hävda</a></li>
+<li><a href="glossary.html#havdar">hävdar</a></li>
+<li><a href="glossary.html#havdat">hävdat</a></li>
+<li><a href="glossary.html#hallbara">hållbara</a></li>
+<li><a href="glossary.html#hanfullt">hånfullt</a></li>
+<li><a href="glossary.html#hemstallan">hemställan</a></li>
+<li><a href="glossary.html#hinner">hinner</a></li>
+<li><a href="glossary.html#hittills">hittills</a></li>
+<li><a href="glossary.html#hjartinfarkter">hjärtinfarkter</a></li>
+<li><a href="glossary.html#hovlig">hövlig</a></li>
+<li><a href="glossary.html#hugga">hugga</a></li>
+<li><a href="glossary.html#huruvida">huruvida</a></li>
+<li><a href="glossary.html#huruvida">Huruvida</a></li>
+<li><a href="glossary.html#hyllade">hyllade</a></li>
+</ul>
+<h2 id="i"><a class="header" href="#i">I</a></h2>
+<ul>
+<li><a href="glossary.html#icke-demokratiska">icke-demokratiska</a></li>
+<li><a href="glossary.html#ihardiga">ihärdiga</a></li>
+<li><a href="glossary.html#illegala">illegala</a></li>
+<li><a href="glossary.html#illusion">illusion</a></li>
+<li><a href="glossary.html#illvilja">illvilja</a></li>
+<li><a href="glossary.html#imponerande">imponerande</a></li>
+<li><a href="glossary.html#inblandning">inblandning</a></li>
+<li><a href="glossary.html#inblick">inblick</a></li>
+<li><a href="glossary.html#inbordeskrig">inbördeskrig</a></li>
+<li><a href="glossary.html#inflytelserika">inflytelserika</a></li>
+<li><a href="glossary.html#infora">införa</a></li>
+<li><a href="glossary.html#inhemska">inhemska</a></li>
+<li><a href="glossary.html#inifran">inifrån</a></li>
+<li><a href="glossary.html#inkludering">inkludering</a></li>
+<li><a href="glossary.html#inleddes">inleddes</a></li>
+<li><a href="glossary.html#inledningsvis">inledningsvis</a></li>
+<li><a href="glossary.html#innebara">innebära</a></li>
+<li><a href="glossary.html#inneburit">inneburit</a></li>
+<li><a href="glossary.html#innefatta">innefatta</a></li>
+<li><a href="glossary.html#innefattar">innefattar</a></li>
+<li><a href="glossary.html#innerligt">innerligt</a></li>
+<li><a href="glossary.html#inrattas">inrättas</a></li>
+<li><a href="glossary.html#inrikes">Inrikes</a></li>
+<li><a href="glossary.html#inrymma">inrymma</a></li>
+<li><a href="glossary.html#insats-till">insats till</a></li>
+<li><a href="glossary.html#insag">insåg</a></li>
+<li><a href="glossary.html#inse">inse</a></li>
+<li><a href="glossary.html#installning">inställning</a></li>
+<li><a href="glossary.html#installt">inställt</a></li>
+<li><a href="glossary.html#intakter">intäkter</a></li>
+<li><a href="glossary.html#intraffar">inträffar</a></li>
+<li><a href="glossary.html#intrang">intrång</a></li>
+<li><a href="glossary.html#intygande">intygande</a></li>
+<li><a href="glossary.html#inverkan">inverkan</a></li>
+<li><a href="glossary.html#invigdes">invigdes</a></li>
+</ul>
+<h2 id="j"><a class="header" href="#j">J</a></h2>
+<ul>
+<li><a href="glossary.html#jamnarig">jämnårig</a></li>
+<li><a href="glossary.html#jamstalldhet">jämställdhet</a></li>
+<li><a href="glossary.html#jordskalv">jordskalv</a></li>
+</ul>
+<h2 id="k"><a class="header" href="#k">K</a></h2>
+<ul>
+<li><a href="glossary.html#kallor">källor</a></li>
+<li><a href="glossary.html#kirurgi">kirurgi</a></li>
+<li><a href="glossary.html#klagomal">klagomål</a></li>
+<li><a href="glossary.html#klandervart">klandervärt</a></li>
+<li><a href="glossary.html#klantigt">klantigt</a></li>
+<li><a href="glossary.html#klarlagda">klarlagda</a></li>
+<li><a href="glossary.html#kloakvatten">kloakvatten</a></li>
+<li><a href="glossary.html#klyftorna">klyftorna</a></li>
+<li><a href="glossary.html#knappa">knappa</a></li>
+<li><a href="glossary.html#knapphandig">knapphändig</a></li>
+<li><a href="glossary.html#knapphandiga">knapphändiga</a></li>
+<li><a href="glossary.html#knappt">knäppt</a></li>
+<li><a href="glossary.html#kompletterande">kompletterande</a></li>
+<li><a href="glossary.html#kompromissat">kompromissat</a></li>
+<li><a href="glossary.html#koncern">koncern</a></li>
+<li><a href="glossary.html#konfiskera">konfiskera</a></li>
+<li><a href="glossary.html#konstnaren">konstnären</a></li>
+<li><a href="glossary.html#kontraproduktivt">kontraproduktivt</a></li>
+<li><a href="glossary.html#korrigeras">korrigeras</a></li>
+<li><a href="glossary.html#krakningar">kräkningar</a></li>
+<li><a href="glossary.html#krankningar">kränkningar</a></li>
+<li><a href="glossary.html#krigsforbrytelse">krigsförbrytelse</a></li>
+<li><a href="glossary.html#krisande">krisande</a></li>
+<li><a href="glossary.html#kroniska">kroniska</a></li>
+<li><a href="glossary.html#krympande">krympande</a></li>
+<li><a href="glossary.html#krympt">krympt</a></li>
+<li><a href="glossary.html#kryphalen">kryphålen</a></li>
+<li><a href="glossary.html#kvalitetssakrade">kvalitetssäkrade</a></li>
+<li><a href="glossary.html#kvantdatorer">kvantdatorer</a></li>
+<li><a href="glossary.html#kvarvarande">kvarvarande</a></li>
+<li><a href="glossary.html#kvada">kväda</a></li>
+</ul>
+<h2 id="l"><a class="header" href="#l">L</a></h2>
+<ul>
+<li><a href="glossary.html#lagstiftning">lagstiftning</a></li>
+<li><a href="glossary.html#lastat">lastat</a></li>
+<li><a href="glossary.html#lardomar">lärdomar</a></li>
+<li><a href="glossary.html#lagkonjunktur">lågkonjunktur</a></li>
+<li><a href="glossary.html#langsiktiga">långsiktiga</a></li>
+<li><a href="glossary.html#langsiktigt">långsiktigt</a></li>
+<li><a href="glossary.html#latsades">låtsades</a></li>
+<li><a href="glossary.html#latsas">låtsas</a></li>
+<li><a href="glossary.html#lindrigt">lindrigt</a></li>
+<li><a href="glossary.html#livsforhallanden">livsförhållanden</a></li>
+<li><a href="glossary.html#livsstilen">livsstilen</a></li>
+<li><a href="glossary.html#livvakter">livvakter</a></li>
+<li><a href="glossary.html#ljuvligt">ljuvligt</a></li>
+<li><a href="glossary.html#lockar">lockar</a></li>
+<li><a href="glossary.html#lovade">lovade</a></li>
+<li><a href="glossary.html#lonsamhetsomdomet">lönsamhetsomdömet</a></li>
+<li><a href="glossary.html#loper">löper</a></li>
+<li><a href="glossary.html#lyckobeskedet">lyckobeskedet</a></li>
+<li><a href="glossary.html#lydde">lydde</a></li>
+<li><a href="glossary.html#lydig">lydig</a></li>
+<li><a href="glossary.html#lynnigare">lynnigare</a></li>
+</ul>
+<h2 id="m"><a class="header" href="#m">M</a></h2>
+<ul>
+<li><a href="glossary.html#magisteruppsats">magisteruppsats</a></li>
+<li><a href="glossary.html#makthavare">makthavare</a></li>
+<li><a href="glossary.html#maskot">maskot</a></li>
+<li><a href="glossary.html#malmedvetenhet">målmedvetenhet</a></li>
+<li><a href="glossary.html#malsagande">målsägande</a></li>
+<li><a href="glossary.html#mangfald">mångfald</a></li>
+<li><a href="glossary.html#medges">medges</a></li>
+<li><a href="glossary.html#medverkan">medverkan</a></li>
+<li><a href="glossary.html#medverkar">medverkar</a></li>
+<li><a href="glossary.html#medvetet">medvetet</a></li>
+<li><a href="glossary.html#mejerivaror">mejerivaror</a></li>
+<li><a href="glossary.html#mestadels">mestadels</a></li>
+<li><a href="glossary.html#missforhallanden">missförhållanden</a></li>
+<li><a href="glossary.html#miste">miste</a></li>
+<li><a href="glossary.html#mistro">mistro</a></li>
+<li><a href="glossary.html#modig">modig</a></li>
+<li><a href="glossary.html#motgang">motgång</a></li>
+<li><a href="glossary.html#motstandare">motståndare</a></li>
+<li><a href="glossary.html#motsvarande">motsvarande</a></li>
+<li><a href="glossary.html#motvarande-nastan">motvarande nästan</a></li>
+<li><a href="glossary.html#motverka">motverka</a></li>
+<li><a href="glossary.html#mungipan">mungipan</a></li>
+<li><a href="glossary.html#mutbrott">mutbrott</a></li>
+</ul>
+<h2 id="n"><a class="header" href="#n">N</a></h2>
+<ul>
+<li><a href="glossary.html#naturligvis">naturligvis</a></li>
+<li><a href="glossary.html#naring">näring</a></li>
+<li><a href="glossary.html#nedblasta">nedblåsta</a></li>
+<li><a href="glossary.html#nedkomst">nedkomst</a></li>
+<li><a href="glossary.html#nedsatt">nedsatt</a></li>
+<li><a href="glossary.html#noggrannhet">noggrannhet</a></li>
+<li><a href="glossary.html#nojeskvarter">nöjeskvarter</a></li>
+<li><a href="glossary.html#nyanserande">nyanserande</a></li>
+</ul>
+<h2 id="o"><a class="header" href="#o">O</a></h2>
+<ul>
+<li><a href="glossary.html#obegriplig">obegriplig</a></li>
+<li><a href="glossary.html#obehagligt">obehagligt</a></li>
+<li><a href="glossary.html#obekvama">obekväma</a></li>
+<li><a href="glossary.html#obemanade">obemanade</a></li>
+<li><a href="glossary.html#obestridligen">obestridligen</a></li>
+<li><a href="glossary.html#oduglighet">oduglighet</a></li>
+<li><a href="glossary.html#oenigheten">oenigheten</a></li>
+<li><a href="glossary.html#oerfarna">oerfarna</a></li>
+<li><a href="glossary.html#oerhort">oerhört</a></li>
+<li><a href="glossary.html#ofattbart">ofattbart</a></li>
+<li><a href="glossary.html#oforutsagbar">oförutsägbar</a></li>
+<li><a href="glossary.html#ofredar">ofredar</a></li>
+<li><a href="glossary.html#ohovligt">ohövligt</a></li>
+<li><a href="glossary.html#olampligt">olämpligt</a></li>
+<li><a href="glossary.html#olovligen">olovligen</a></li>
+<li><a href="glossary.html#ombedd">ombedd</a></li>
+<li><a href="glossary.html#ombetts">ombetts</a></li>
+<li><a href="glossary.html#omfamna">omfamna</a></li>
+<li><a href="glossary.html#omfattande">omfattande</a></li>
+<li><a href="glossary.html#omfattas">omfattas</a></li>
+<li><a href="glossary.html#omger">omger</a></li>
+<li><a href="glossary.html#omhandertagits">omhändertagits</a></li>
+<li><a href="glossary.html#omhandertar">omhändertar</a></li>
+<li><a href="glossary.html#omhandertogs">omhändertogs</a></li>
+<li><a href="glossary.html#omorganisera">omorganisera</a></li>
+<li><a href="glossary.html#omplaceras">omplaceras</a></li>
+<li><a href="glossary.html#omtalade">omtalade</a></li>
+<li><a href="glossary.html#onekligen">onekligen</a></li>
+<li><a href="glossary.html#onodan">onödan</a></li>
+<li><a href="glossary.html#opartiskt">opartiskt</a></li>
+<li><a href="glossary.html#orad">oråd</a></li>
+<li><a href="glossary.html#ordforande">ordförande</a></li>
+<li><a href="glossary.html#ordforstaelse">ordförståelse</a></li>
+<li><a href="glossary.html#orkan">orkan</a></li>
+<li><a href="glossary.html#orosanmalde">orosanmälde</a></li>
+<li><a href="glossary.html#orovackande">oroväckande</a></li>
+<li><a href="glossary.html#orsaka">orsaka</a></li>
+<li><a href="glossary.html#osmos">osmos</a></li>
+<li><a href="glossary.html#otaliga">otaliga</a></li>
+<li><a href="glossary.html#otaliga">otåliga</a></li>
+<li><a href="glossary.html#outgrundlig">outgrundlig</a></li>
+<li><a href="glossary.html#ovisshet">ovisshet</a></li>
+</ul>
+<h2 id="p"><a class="header" href="#p">P</a></h2>
+<ul>
+<li><a href="glossary.html#paskynda">påskynda</a></li>
+<li><a href="glossary.html#pastadda">påstådda</a></li>
+<li><a href="glossary.html#pastar">påstår</a></li>
+<li><a href="glossary.html#pastod">påstod</a></li>
+<li><a href="glossary.html#pastridig">påstridig</a></li>
+<li><a href="glossary.html#patagligt">påtagligt</a></li>
+<li><a href="glossary.html#patryckningar">påtryckningar</a></li>
+<li><a href="glossary.html#pellets">pellets</a></li>
+<li><a href="glossary.html#perrongerna">perrongerna</a></li>
+<li><a href="glossary.html#planbesked">planbesked</a></li>
+<li><a href="glossary.html#plingade">plingade</a></li>
+<li><a href="glossary.html#plundring">plundring</a></li>
+<li><a href="glossary.html#praglas">präglas</a></li>
+<li><a href="glossary.html#produktionsverksamheten">produktionsverksamheten</a></li>
+<li><a href="glossary.html#pryder">pryder</a></li>
+</ul>
+<h2 id="r"><a class="header" href="#r">R</a></h2>
+<ul>
+<li><a href="glossary.html#raseri">raseri</a></li>
+<li><a href="glossary.html#rattfylleri">rattfylleri</a></li>
+<li><a href="glossary.html#rackvidd">räckvidd</a></li>
+<li><a href="glossary.html#radsla">rädsla</a></li>
+<li><a href="glossary.html#radgivning">rådgivning</a></li>
+<li><a href="glossary.html#redovisar">redovisar</a></li>
+<li><a href="glossary.html#regelbundet">regelbundet</a></li>
+<li><a href="glossary.html#resonemang">resonemang</a></li>
+<li><a href="glossary.html#respektlost">respektlöst</a></li>
+<li><a href="glossary.html#retoriskt">retoriskt</a></li>
+<li><a href="glossary.html#riktar">riktar</a></li>
+<li><a href="glossary.html#riktlinjer">riktlinjer</a></li>
+<li><a href="glossary.html#riktvardet">riktvärdet</a></li>
+<li><a href="glossary.html#rojs">röjs</a></li>
+<li><a href="glossary.html#rusta-upp">rusta upp</a></li>
+<li><a href="glossary.html#rycker-ut">rycker ut</a></li>
+<li><a href="glossary.html#rykte">rykte</a></li>
+<li><a href="glossary.html#rymdfarkosten">Rymdfarkosten</a></li>
+</ul>
+<h2 id="s"><a class="header" href="#s">S</a></h2>
+<ul>
+<li><a href="glossary.html#sakkunnig">sakkunnig</a></li>
+<li><a href="glossary.html#samforstand">samförstånd</a></li>
+<li><a href="glossary.html#sammandrabbningar">sammandrabbningar</a></li>
+<li><a href="glossary.html#sammanfattar">sammanfattar</a></li>
+<li><a href="glossary.html#sammanfattningsvis">Sammanfattningsvis</a></li>
+<li><a href="glossary.html#sammanlagt">sammanlagt</a></li>
+<li><a href="glossary.html#satsning">satsning</a></li>
+<li><a href="glossary.html#sakerligen">säkerligen</a></li>
+<li><a href="glossary.html#sallsynt">sällsynt</a></li>
+<li><a href="glossary.html#sallsynta">sällsynta</a></li>
+<li><a href="glossary.html#sarbarheter">sårbarheter</a></li>
+<li><a href="glossary.html#seklet">seklet</a></li>
+<li><a href="glossary.html#sekretess">sekretess</a></li>
+<li><a href="glossary.html#sekretessbelagd">sekretessbelagd</a></li>
+<li><a href="glossary.html#siffermassigt">siffermässigt</a></li>
+<li><a href="glossary.html#siktade">siktade</a></li>
+<li><a href="glossary.html#sinsemellan">sinsemellan</a></li>
+<li><a href="glossary.html#sjalvfortroende">självförtroende</a></li>
+<li><a href="glossary.html#sjatte">sjätte</a></li>
+<li><a href="glossary.html#sjojungfrun">sjöjungfrun</a></li>
+<li><a href="glossary.html#skalig">skälig</a></li>
+<li><a href="glossary.html#skaligen">skäligen</a></li>
+<li><a href="glossary.html#skams">skäms</a></li>
+<li><a href="glossary.html#skamt">skämt</a></li>
+<li><a href="glossary.html#skadespel">skådespel</a></li>
+<li><a href="glossary.html#skenprocess">skenprocess</a></li>
+<li><a href="glossary.html#skingrades">skingrades</a></li>
+<li><a href="glossary.html#skisser">skisser</a></li>
+<li><a href="glossary.html#skolkar">skolkar</a></li>
+<li><a href="glossary.html#skolvasendet">skolväsendet</a></li>
+<li><a href="glossary.html#skotsam">skötsam</a></li>
+<li><a href="glossary.html#skraj">skraj</a></li>
+<li><a href="glossary.html#skrackfylld">skräckfylld</a></li>
+<li><a href="glossary.html#skramma">skrämma</a></li>
+<li><a href="glossary.html#skrammande">skrämmande</a></li>
+<li><a href="glossary.html#skredet">Skredet</a></li>
+<li><a href="glossary.html#skymfa">skymfa</a></li>
+<li><a href="glossary.html#slant">slänt</a></li>
+<li><a href="glossary.html#slapas-bort">släpas bort</a></li>
+<li><a href="glossary.html#slapet">Släpet</a></li>
+<li><a href="glossary.html#sletssliter-att-slita-slet-har-slitit-ar-sliten-slit">slets(sliter, att slita, slet, har slitit, är sliten, slit!)</a></li>
+<li><a href="glossary.html#slipper">slipper</a></li>
+<li><a href="glossary.html#sliter">sliter</a></li>
+<li><a href="glossary.html#slot">slöt</a></li>
+<li><a href="glossary.html#slukar">slukar</a></li>
+<li><a href="glossary.html#slumpmassigt">slumpmässigt</a></li>
+<li><a href="glossary.html#slutandan">slutändan</a></li>
+<li><a href="glossary.html#slutgiltig">slutgiltig</a></li>
+<li><a href="glossary.html#slutligen">slutligen</a></li>
+<li><a href="glossary.html#slutsatsen">slutsatsen</a></li>
+<li><a href="glossary.html#smada">smäda</a></li>
+<li><a href="glossary.html#smaningom">småningom</a></li>
+<li><a href="glossary.html#smidigheten">smidigheten</a></li>
+<li><a href="glossary.html#snattaren">snattaren</a></li>
+<li><a href="glossary.html#sniskan">sniskan</a></li>
+<li><a href="glossary.html#soptippen">soptippen</a></li>
+<li><a href="glossary.html#somnlos">sömnlös</a></li>
+<li><a href="glossary.html#sparkad">sparkad</a></li>
+<li><a href="glossary.html#sprickan">sprickan</a></li>
+<li><a href="glossary.html#stampar">stampar</a></li>
+<li><a href="glossary.html#stamning">stämning</a></li>
+<li><a href="glossary.html#stamt">stämt</a></li>
+<li><a href="glossary.html#stillasittande">stillasittande</a></li>
+<li><a href="glossary.html#stokar">stökar</a></li>
+<li><a href="glossary.html#stoldvag">stöldvåg</a></li>
+<li><a href="glossary.html#stor">stör</a></li>
+<li><a href="glossary.html#stortar-ner">störtar ner</a></li>
+<li><a href="glossary.html#stortdok">störtdök</a></li>
+<li><a href="glossary.html#strax">strax</a></li>
+<li><a href="glossary.html#stridsfraga">stridsfråga</a></li>
+<li><a href="glossary.html#stroppy">stroppy</a></li>
+<li><a href="glossary.html#strom">ström</a></li>
+<li><a href="glossary.html#struntar">struntar</a></li>
+<li><a href="glossary.html#styrs">styrs</a></li>
+<li><a href="glossary.html#svajig">svajig</a></li>
+<li><a href="glossary.html#svalka">svalka</a></li>
+<li><a href="glossary.html#svalter">svälter</a></li>
+<li><a href="glossary.html#svarigheter">svårigheter</a></li>
+<li><a href="glossary.html#svunnen">svunnen</a></li>
+<li><a href="glossary.html#synnerligen">synnerligen</a></li>
+<li><a href="glossary.html#synpunkt">synpunkt</a></li>
+</ul>
+<h2 id="t"><a class="header" href="#t">T</a></h2>
+<ul>
+<li><a href="glossary.html#takt">takt</a></li>
+<li><a href="glossary.html#takten">takten</a></li>
+<li><a href="glossary.html#tackning">täckning</a></li>
+<li><a href="glossary.html#talamod">tålamod</a></li>
+<li><a href="glossary.html#talamodet">tålamodet</a></li>
+<li><a href="glossary.html#tidsatgangen">tidsåtgången</a></li>
+<li><a href="glossary.html#tillatit">tillåtit</a></li>
+<li><a href="glossary.html#tillatna">tillåtna</a></li>
+<li><a href="glossary.html#tillbakavisas">tillbakavisas</a></li>
+<li><a href="glossary.html#tillbringar">tillbringar</a></li>
+<li><a href="glossary.html#tillbringat">tillbringat</a></li>
+<li><a href="glossary.html#tillfalle">tillfälle</a></li>
+<li><a href="glossary.html#tillfallen">tillfällen</a></li>
+<li><a href="glossary.html#tillfallena">tillfällena</a></li>
+<li><a href="glossary.html#tillforlitlig">tillförlitlig</a></li>
+<li><a href="glossary.html#tillgodose">tillgodose</a></li>
+<li><a href="glossary.html#tillskott">tillskott</a></li>
+<li><a href="glossary.html#tillvarata">tillvarata</a></li>
+<li><a href="glossary.html#toppnotering">toppnotering</a></li>
+<li><a href="glossary.html#tornet">tornet</a></li>
+<li><a href="glossary.html#tortyrliknande">tortyrliknande</a></li>
+<li><a href="glossary.html#trakasserier">trakasserier</a></li>
+<li><a href="glossary.html#tramsig">tramsig</a></li>
+<li><a href="glossary.html#tredubbling">tredubbling</a></li>
+<li><a href="glossary.html#trevande">trevande</a></li>
+<li><a href="glossary.html#trilskas">trilskas</a></li>
+<li><a href="glossary.html#tristess">tristess</a></li>
+<li><a href="glossary.html#trivdes">trivdes</a></li>
+<li><a href="glossary.html#troligtvis">troligtvis</a></li>
+<li><a href="glossary.html#troloshet">trolöshet</a></li>
+<li><a href="glossary.html#trycksar">trycksår</a></li>
+<li><a href="glossary.html#tufft">tufft</a></li>
+<li><a href="glossary.html#tumult">tumult</a></li>
+<li><a href="glossary.html#tvartemot">tvärtemot</a></li>
+<li><a href="glossary.html#tvartom">tvärtom</a></li>
+<li><a href="glossary.html#tvangsinloser">tvångsinlöser</a></li>
+<li><a href="glossary.html#tvistemal">tvistemål</a></li>
+<li><a href="glossary.html#tyder">tyder</a></li>
+<li><a href="glossary.html#tystnadspliketen">tystnadspliketen</a></li>
+</ul>
+<h2 id="u"><a class="header" href="#u">U</a></h2>
+<ul>
+<li><a href="glossary.html#ultimatum">ultimatum</a></li>
+<li><a href="glossary.html#undantagen">undantagen</a></li>
+<li><a href="glossary.html#undantagstillstand">undantagstillstånd</a></li>
+<li><a href="glossary.html#undantas">undantas</a></li>
+<li><a href="glossary.html#undantrangningseffekterna">undanträngningseffekterna</a></li>
+<li><a href="glossary.html#underkanner">underkänner</a></li>
+<li><a href="glossary.html#underrattade">underrättade</a></li>
+<li><a href="glossary.html#underrattar">underrättar</a></li>
+<li><a href="glossary.html#underrattats">underrättats</a></li>
+<li><a href="glossary.html#undvikas">undvikas</a></li>
+<li><a href="glossary.html#uppblossade">uppblossade</a></li>
+<li><a href="glossary.html#uppfylla">uppfylla</a></li>
+<li><a href="glossary.html#uppgorelse">uppgörelse</a></li>
+<li><a href="glossary.html#upphaver">upphäver</a></li>
+<li><a href="glossary.html#upplagg">upplägg</a></li>
+<li><a href="glossary.html#uppmarksam">uppmärksam</a></li>
+<li><a href="glossary.html#uppmarksamhet">uppmärksamhet</a></li>
+<li><a href="glossary.html#uppmarksamma">uppmärksamma</a></li>
+<li><a href="glossary.html#uppmarksammade">uppmärksammade</a></li>
+<li><a href="glossary.html#uppmatts">uppmätts</a></li>
+<li><a href="glossary.html#uppmuntrar">uppmuntrar</a></li>
+<li><a href="glossary.html#uppmuntras">uppmuntras</a></li>
+<li><a href="glossary.html#uppna">uppnå</a></li>
+<li><a href="glossary.html#uppratta">upprätta</a></li>
+<li><a href="glossary.html#uppringarna">uppringarna</a></li>
+<li><a href="glossary.html#uppskrivna">uppskrivna</a></li>
+<li><a href="glossary.html#uppslitande">uppslitande</a></li>
+<li><a href="glossary.html#uppstar">uppstår</a></li>
+<li><a href="glossary.html#upptagen">upptagen</a></li>
+<li><a href="glossary.html#upptrappningen">upptrappningen</a></li>
+<li><a href="glossary.html#ursprungligen">ursprungligen</a></li>
+<li><a href="glossary.html#utarbetas">utarbetas</a></li>
+<li><a href="glossary.html#utatagerande">utåtagerande</a></li>
+<li><a href="glossary.html#utesluten">utesluten</a></li>
+<li><a href="glossary.html#utfardades">utfärdades</a></li>
+<li><a href="glossary.html#utformades">utformades</a></li>
+<li><a href="glossary.html#utforskar">utforskar</a></li>
+<li><a href="glossary.html#utforde">utförde</a></li>
+<li><a href="glossary.html#utlovade">utlovade</a></li>
+<li><a href="glossary.html#utlyser">utlyser</a></li>
+<li><a href="glossary.html#utmaning">utmaning</a></li>
+<li><a href="glossary.html#utmattad">utmattad</a></li>
+<li><a href="glossary.html#utmata">utmäta</a></li>
+<li><a href="glossary.html#utnyttjar">utnyttjar</a></li>
+<li><a href="glossary.html#utnyttjat">utnyttjat</a></li>
+<li><a href="glossary.html#utokade">utökade</a></li>
+<li><a href="glossary.html#utokar">utökar</a></li>
+<li><a href="glossary.html#utokas">utökas</a></li>
+<li><a href="glossary.html#utover">Utöver</a></li>
+<li><a href="glossary.html#utplana">utplåna</a></li>
+<li><a href="glossary.html#utrotas">utrotas</a></li>
+<li><a href="glossary.html#utrotningshotad">utrotningshotad</a></li>
+<li><a href="glossary.html#utrymts">utrymts</a></li>
+<li><a href="glossary.html#utsaga">utsaga</a></li>
+<li><a href="glossary.html#utsetts">utsetts</a></li>
+<li><a href="glossary.html#utspelet">utspelet</a></li>
+<li><a href="glossary.html#utstrackning">utsträckning</a></li>
+<li><a href="glossary.html#uttala">uttala</a></li>
+<li><a href="glossary.html#uttrakad">uttråkad</a></li>
+<li><a href="glossary.html#utvardera">utvärdera</a></li>
+<li><a href="glossary.html#utvarderingen">utvärderingen</a></li>
+<li><a href="glossary.html#utvidgade">utvidgade</a></li>
+<li><a href="glossary.html#utvidgas">utvidgas</a></li>
+<li><a href="glossary.html#utvinna">utvinna</a></li>
+</ul>
+<h2 id="v"><a class="header" href="#v">V</a></h2>
+<ul>
+<li><a href="glossary.html#vaksamt">vaksamt</a></li>
+<li><a href="glossary.html#varelse">varelse</a></li>
+<li><a href="glossary.html#varierande">varierande</a></li>
+<li><a href="glossary.html#varsla">varsla</a></li>
+<li><a href="glossary.html#varslar">varslar</a></li>
+<li><a href="glossary.html#vattentat">vattentät</a></li>
+<li><a href="glossary.html#vacktes">väcktes</a></li>
+<li><a href="glossary.html#vadjar">vädjar</a></li>
+<li><a href="glossary.html#valfardsstat">välfärdsstat</a></li>
+<li><a href="glossary.html#valgorenhet">välgörenhet</a></li>
+<li><a href="glossary.html#valmaende">välmående</a></li>
+<li><a href="glossary.html#varldsettan">världsettan</a></li>
+<li><a href="glossary.html#varnplikten">värnplikten</a></li>
+<li><a href="glossary.html#varnpliktiga">värnpliktiga</a></li>
+<li><a href="glossary.html#varvade">värvade</a></li>
+<li><a href="glossary.html#vasentligt">väsentligt</a></li>
+<li><a href="glossary.html#vaxelvis">växelvis</a></li>
+<li><a href="glossary.html#vaxtspurt">växtspurt</a></li>
+<li><a href="glossary.html#vallande">vållande</a></li>
+<li><a href="glossary.html#vardsloshet">vårdslöshet</a></li>
+<li><a href="glossary.html#vejpande">vejpande</a></li>
+<li><a href="glossary.html#verkar">verkar</a></li>
+<li><a href="glossary.html#verktyg">verktyg</a></li>
+<li><a href="glossary.html#vernissage">vernissage</a></li>
+<li><a href="glossary.html#vidhaller">vidhåller</a></li>
+<li><a href="glossary.html#vidrig">vidrig</a></li>
+<li><a href="glossary.html#vidtagit">vidtagit</a></li>
+<li><a href="glossary.html#villkorat">villkorat</a></li>
+<li><a href="glossary.html#villkorlig">villkorlig</a></li>
+<li><a href="glossary.html#vindbyar">vindbyar</a></li>
+<li><a href="glossary.html#visserligen">visserligen</a></li>
+<li><a href="glossary.html#vraket">vraket</a></li>
+<li><a href="glossary.html#vrakning">vräkning</a></li>
+<li><a href="glossary.html#vulkanutbrott">vulkanutbrott</a></li>
+</ul>
+<h2 id="y"><a class="header" href="#y">Y</a></h2>
+<ul>
+<li><a href="glossary.html#yttrande">yttrande</a></li>
+</ul>
+<h2 id="å"><a class="header" href="#å">Å</a></h2>
+<ul>
+<li><a href="glossary.html#aderforkalkning">åderförkalkning</a></li>
+<li><a href="glossary.html#ahorarlaktaren">Åhörarläktaren</a></li>
+<li><a href="glossary.html#alaggs">åläggs</a></li>
+<li><a href="glossary.html#angest">ångest</a></li>
+<li><a href="glossary.html#arsskiftet">årsskiftet</a></li>
+<li><a href="glossary.html#atal">åtal</a></li>
+<li><a href="glossary.html#atalsanmala">åtalsanmäla</a></li>
+<li><a href="glossary.html#aterforena">återförena</a></li>
+<li><a href="glossary.html#aterga">återgå</a></li>
+<li><a href="glossary.html#aterstar">återstår</a></li>
+<li><a href="glossary.html#atgarda">åtgärda</a></li>
+<li><a href="glossary.html#atgarder">åtgärder</a></li>
+<li><a href="glossary.html#atminstone">åtminstone</a></li>
+</ul>
+<h2 id="ä"><a class="header" href="#ä">Ä</a></h2>
+<ul>
+<li><a href="glossary.html#agnar">ägnar</a></li>
+<li><a href="glossary.html#agnas-at">ägnas åt</a></li>
+<li><a href="glossary.html#akligt">äkligt</a></li>
+<li><a href="glossary.html#akta">äkta</a></li>
+<li><a href="glossary.html#arade">ärade</a></li>
+<li><a href="glossary.html#arekrank">ärekränk</a></li>
+<li><a href="glossary.html#aventyrades">äventyrades</a></li>
+</ul>
+<h2 id="ö"><a class="header" href="#ö">Ö</a></h2>
+<ul>
+<li><a href="glossary.html#odelaggelse">ödeläggelse</a></li>
+<li><a href="glossary.html#onskelista">önskelista</a></li>
+<li><a href="glossary.html#oser">öser</a></li>
+<li><a href="glossary.html#overbelastningsattacker">överbelastningsattacker</a></li>
+<li><a href="glossary.html#overforingar">överföringar</a></li>
+<li><a href="glossary.html#overge">överge</a></li>
+<li><a href="glossary.html#overlagsen">överlägsen</a></li>
+<li><a href="glossary.html#overlata">överlåta</a></li>
+<li><a href="glossary.html#overskoljer">översköljer</a></li>
+<li><a href="glossary.html#overskrider">överskrider</a></li>
+<li><a href="glossary.html#overtygande">övertygande</a></li>
+<li><a href="glossary.html#overvager">överväger</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="glossary.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="dropbox/SVT.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="glossary.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="dropbox/SVT.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

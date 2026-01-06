@@ -1,0 +1,1732 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Ordlista - Swedish Learning</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-5a7b010e.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-b8d84120.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Swedish Learning</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="ordlista"><a class="header" href="#ordlista">Ordlista</a></h1>
+<p>Ordlistan bygger på orden i SVT- och DN-listorna.</p>
+<h2 id="a"><a class="header" href="#a">A</a></h2>
+<h3 id="abonnerats"><a class="header" href="#abonnerats"><a href="svt/2025/SVT_2025-06.html#ord">abonnerats</a></a></h3>
+<p>Perfekt particip av “abonnera”, dvs. att något har prenumererats på</p>
+<h3 id="agerande"><a class="header" href="#agerande"><a href="svt/2024/SVT_2024-03.html#ord">agerande</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="aktualiserats"><a class="header" href="#aktualiserats"><a href="svt/2025/SVT_2025-02.html#ord">aktualiserats</a></a></h3>
+<p>Något har blivit relevant eller tagits upp på nytt.</p>
+<h3 id="alltjämt"><a class="header" href="#alltjämt"><a href="dn/2025/dn-2025-02.html#ord">alltjämt</a></a></h3>
+<p>Fortfarande, ännu; utan avbrott eller förändring.</p>
+<h3 id="andning"><a class="header" href="#andning"><a href="andra/dn-2024-12.html#ord">andning</a></a></h3>
+<p>Processen att ta in luft i lungorna och släppa ut den igen för att få syre.</p>
+<h3 id="angeläget"><a class="header" href="#angeläget"><a href="andra/dn-2024-09.html#ord">angeläget</a></a></h3>
+<p>Något som är viktigt och brådskande</p>
+<h3 id="angränsande"><a class="header" href="#angränsande"><a href="dn/2025/dn-2025-03.html#ord">angränsande</a></a></h3>
+<p>Som ligger intill eller gränsar till något annat.</p>
+<h3 id="anlitats"><a class="header" href="#anlitats"><a href="andra/dagens_nyheter.html#ord">anlitats</a></a></h3>
+<p>Har blivit anställd eller engagerad för en tjänst eller uppgift</p>
+<h3 id="anmärkning"><a class="header" href="#anmärkning"><a href="netflix/bonus_family.html#ord">anmärkning</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="anmärkningsvärd"><a class="header" href="#anmärkningsvärd"><a href="svt/2024/SVT_2024-03.html#ord">anmärkningsvärd</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="anpassningar"><a class="header" href="#anpassningar"><a href="svt/2024/SVT_2024-02.html#ord">anpassningar</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="ansågs"><a class="header" href="#ansågs"><a href="svt/2024/SVT_2024-03.html#ord">ansågs</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="anskaffningen"><a class="header" href="#anskaffningen"><a href="svt/2025/svt-2025-08.html#ord">anskaffningen</a></a></h3>
+<p>Processen att skaffa eller köpa in något, ofta för ett specifikt syfte</p>
+<h3 id="anslutning"><a class="header" href="#anslutning"><a href="svt/2024/SVT_2024-02.html#ord">anslutning</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="anstormning"><a class="header" href="#anstormning"><a href="svt/2024/svt_2024-01.html#ord">anstormning</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="ansträngningar"><a class="header" href="#ansträngningar"><a href="dn/2025/dn-2025-07.html#ord">ansträngningar</a></a></h3>
+<p>Insatser eller hårt arbete för att uppnå något</p>
+<h3 id="antyder"><a class="header" href="#antyder"><a href="svt/2025/SVT_2025-06.html#ord">antyder</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-06.html#ord">svt/2025/SVT_2025-06.md#ord</a>: Att säga något på ett indirekt sätt; ge en vink</li>
+<li><a href="svt/2024/SVT_2024-04.html#ord">svt/2024/SVT_2024-04.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="aprilskämt"><a class="header" href="#aprilskämt"><a href="svt/2025/SVT_2025-04.html#ord">aprilskämt</a></a></h3>
+<p>Ett skämt som görs den 1 april för att lura någon på ett skojigt sätt.</p>
+<h3 id="arv"><a class="header" href="#arv"><a href="svt/2024/SVT_2024-02.html#ord">arv</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="att-ticka-upp"><a class="header" href="#att-ticka-upp"><a href="svt/2024/SVT_2024-02.html#ord">att ticka upp</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="att-uppnå"><a class="header" href="#att-uppnå"><a href="svt/2024/SVT_2024-03.html#ord">att uppnå</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="attityden"><a class="header" href="#attityden"><a href="netflix/bonus_family.html#ord">attityden</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="avböjer"><a class="header" href="#avböjer"><a href="dropbox/SVT.html#ord">avböjer</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="avbröts"><a class="header" href="#avbröts"><a href="dn/2025/dn-2025-02.html#ord">avbröts</a></a></h3>
+<p>Något stoppades plötsligt eller avbröts i förtid.</p>
+<h3 id="avdelningarna"><a class="header" href="#avdelningarna"><a href="svt/2024/SVT_2024-02.html#ord">avdelningarna</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="avgick"><a class="header" href="#avgick"><a href="dn/2025/dn-2025-03.html#ord">avgick</a></a></h3>
+<p>Lämnade en position eller ett ämbete.</p>
+<h3 id="avgörande"><a class="header" href="#avgörande"><a href="svt/2024/svt_2024-01.html#ord">avgörande</a></a></h3>
+<ul>
+<li><a href="svt/2024/svt_2024-01.html#ord">svt/2024/svt_2024-01.md#ord</a>: Definition saknas.</li>
+<li><a href="svt/2024/SVT_2024-02.html#ord">svt/2024/SVT_2024-02.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="avrådan"><a class="header" href="#avrådan"><a href="dn/2025/dn-2025-02.html#ord">avrådan</a></a></h3>
+<p>En varning eller rekommendation att inte göra något.</p>
+<h3 id="avrådde"><a class="header" href="#avrådde"><a href="svt/2025/SVT_2025-04.html#ord">avrådde</a></a></h3>
+<p>Rekommenderade att inte göra något; avråda.</p>
+<h3 id="avråds"><a class="header" href="#avråds"><a href="dn/2025/dn-2025-07.html#ord">avråds</a></a></h3>
+<p>Passiv form av “avråda”; när någon rekommenderas att inte göra något</p>
+<h3 id="avsätter"><a class="header" href="#avsätter"><a href="andra/dn-2024-09.html#ord">avsätter</a></a></h3>
+<p>Att reservera eller ta bort någon från en position</p>
+<h3 id="avsedda"><a class="header" href="#avsedda"><a href="svt/2025/svt-2025-08.html#ord">avsedda</a></a></h3>
+<p>Något som är planerat eller ämnat för ett visst syfte</p>
+<h3 id="avsevärt"><a class="header" href="#avsevärt"><a href="svt/2024/SVT_2024-06.html#ord">avsevärt</a></a></h3>
+<p>Betydligt; i stor utsträckning</p>
+<h3 id="avsiktligt"><a class="header" href="#avsiktligt"><a href="svt/2025/SVT_2025-07.html#ord">avsiktligt</a></a></h3>
+<p>Något som görs med avsikt, medvetet och planerat</p>
+<h3 id="avskaffar"><a class="header" href="#avskaffar"><a href="svt/2025/SVT_2025-06.html#ord">avskaffar</a></a></h3>
+<p>Tar bort något formellt, särskilt en lag eller regel</p>
+<h3 id="avskräckning"><a class="header" href="#avskräckning"><a href="svt/2024/SVT_2024-06.html#ord">avskräckning</a></a></h3>
+<p>Åtgärder eller strategier som syftar till att avskräcka någon från att utföra en oönskad handling</p>
+<h3 id="avskyvärd"><a class="header" href="#avskyvärd"><a href="andra/dagens_nyheter.html#ord">avskyvärd</a></a></h3>
+<p>Mycket obehaglig och motbjudande</p>
+<h3 id="avvägningar"><a class="header" href="#avvägningar"><a href="svt/2025/SVT_2025-03.html#ord">avvägningar</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-03.html#ord">svt/2025/SVT_2025-03.md#ord</a>: Överväganden där man väger för- och nackdelar innan ett beslut.</li>
+<li><a href="svt/2024/svt_2024-01.html#ord">svt/2024/svt_2024-01.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="avvägningen"><a class="header" href="#avvägningen"><a href="svt/2025/SVT_2025-06.html#ord">avvägningen</a></a></h3>
+<p>En bedömning där man försöker hitta en balans mellan olika intressen</p>
+<h3 id="avvärjas"><a class="header" href="#avvärjas"><a href="svt/2025/SVT_2025-05.html#ord">avvärjas</a></a></h3>
+<p>Hindras från att inträffa; stoppas innan det blir ett problem.</p>
+<h3 id="avvikande"><a class="header" href="#avvikande"><a href="svt/2025/SVT_2025-05.html#ord">avvikande</a></a></h3>
+<p>Som skiljer sig från det normala eller förväntade; annorlunda.</p>
+<h3 id="avviker"><a class="header" href="#avviker"><a href="svt/2024/SVT_2024-02.html#ord">avviker</a></a></h3>
+<p>Definition saknas.</p>
+<h2 id="b"><a class="header" href="#b">B</a></h2>
+<h3 id="bakhåll"><a class="header" href="#bakhåll"><a href="andra/dn-2024-08.html#ord">bakhåll</a></a></h3>
+<p>En plötslig attack från ett gömställe, vanligtvis i krig</p>
+<h3 id="bakomliggande"><a class="header" href="#bakomliggande"><a href="svt/2024/SVT_2024-03.html#ord">bakomliggande</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="banbrytande"><a class="header" href="#banbrytande"><a href="svt/2024/SVT_2024-02.html#ord">banbrytande</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="bantar"><a class="header" href="#bantar"><a href="svt/2025/SVT_2025-01.html#ord">bantar</a></a></h3>
+<p>Att försöka minska sin vikt, ofta genom att äta mindre eller ändra kosten.</p>
+<h3 id="bärare"><a class="header" href="#bärare"><a href="andra/dn-2024-12.html#ord">bärare</a></a></h3>
+<p>En person eller sak som transporterar eller håller upp något.</p>
+<h3 id="bålverk"><a class="header" href="#bålverk"><a href="andra/dagens_nyheter.html#ord">bålverk</a></a></h3>
+<p>En stark försvarsanläggning eller befästning; en skyddande barriär</p>
+<h3 id="bedömare"><a class="header" href="#bedömare"><a href="svt/2024/SVT_2024-02.html#ord">bedömare</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="bedömning"><a class="header" href="#bedömning"><a href="svt/2024/svt_2024-01.html#ord">bedömning</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="bedömningen"><a class="header" href="#bedömningen"><a href="svt/2024/SVT_2024-04.html#ord">bedömningen</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="bedöms-bedömer"><a class="header" href="#bedöms-bedömer"><a href="dropbox/SVT.html#ord">bedöms (bedömer)</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="bedriver"><a class="header" href="#bedriver"><a href="dropbox/SVT.html#ord">bedriver</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="befäl"><a class="header" href="#befäl"><a href="svt/2024/svt_2024-01.html#ord">befäl</a></a></h3>
+<ul>
+<li><a href="svt/2024/svt_2024-01.html#ord">svt/2024/svt_2024-01.md#ord</a>: Definition saknas.</li>
+<li><a href="dropbox/SVT.html#ord">dropbox/SVT.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="befintliga"><a class="header" href="#befintliga"><a href="svt/2025/SVT_2025-06.html#ord">befintliga</a></a></h3>
+<p>Något som redan existerar eller finns tillgängligt</p>
+<h3 id="befogenhet"><a class="header" href="#befogenhet"><a href="svt/2025/SVT_2025-04.html#ord">befogenhet</a></a></h3>
+<p>Rätt eller makt att fatta beslut eller agera på authority; the right or power to make decisions or act.</p>
+<h3 id="behärskar"><a class="header" href="#behärskar"><a href="andra/dn-2024-09.html#ord">behärskar</a></a></h3>
+<p>Att ha kontroll över något, att vara skicklig på något</p>
+<h3 id="bekymrad"><a class="header" href="#bekymrad"><a href="andra/dagens_nyheter.html#ord">bekymrad</a></a></h3>
+<p>Känna oro eller ängslan över något</p>
+<h3 id="belägen"><a class="header" href="#belägen"><a href="svt/2024/SVT_2024-06.html#ord">belägen</a></a></h3>
+<ul>
+<li><a href="svt/2024/SVT_2024-06.html#ord">svt/2024/SVT_2024-06.md#ord</a>: Som ligger på en viss plats eller befinner sig någonstans</li>
+<li><a href="andra/dn-2024-09.html#ord">andra/dn-2024-09.md#ord</a>: Som ligger på en viss plats, lokaliserad</li>
+</ul>
+<h3 id="bemanna"><a class="header" href="#bemanna"><a href="svt/2025/SVT_2025-01.html#ord">bemanna</a></a></h3>
+<p>Att utrusta en plats, enhet eller funktion med personal.</p>
+<h3 id="bemanningen"><a class="header" href="#bemanningen"><a href="svt/2025/SVT_2025-06.html#ord">bemanningen</a></a></h3>
+<p>De personer som är anställda eller tilldelade en viss arbetsplats</p>
+<h3 id="bemötta"><a class="header" href="#bemötta"><a href="svt/2025/SVT_2025-06.html#ord">bemötta</a></a></h3>
+<p>Hur någon har blivit behandlad av andra, särskilt i ett visst sammanhang.</p>
+<h3 id="beordras"><a class="header" href="#beordras"><a href="svt/2025/SVT_2025-06.html#ord">beordras</a></a></h3>
+<p>Att få en direkt order om att göra något, ofta från en överordnad</p>
+<h3 id="beräknad"><a class="header" href="#beräknad"><a href="netflix/bonus_family.html#ord">beräknad</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="beroendeframkallande"><a class="header" href="#beroendeframkallande"><a href="svt/2024/SVT_2024-06.html#ord">beroendeframkallande</a></a></h3>
+<p>Något som orsakar ett starkt behov eller begär efter upprepad användning eller konsumtion</p>
+<h3 id="berör"><a class="header" href="#berör"><a href="andra/dn-2024-10.html#ord">berör</a></a></h3>
+<p>Att vidröra eller påverka något, både fysiskt och känslomässigt.</p>
+<h3 id="berörda"><a class="header" href="#berörda"><a href="svt/2025/SVT_2025-06.html#ord">berörda</a></a></h3>
+<p>De personer eller parter som påverkas av en viss situation eller beslut</p>
+<h3 id="berördes"><a class="header" href="#berördes"><a href="svt/2025/SVT_2025-06.html#ord">berördes</a></a></h3>
+<p>Påverkades av något; blev föremål för diskussion eller åtgärd.</p>
+<h3 id="berörs"><a class="header" href="#berörs"><a href="svt/2024/SVT_2024-02.html#ord">berörs</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="berusningssyfte"><a class="header" href="#berusningssyfte"><a href="svt/2025/SVT_2025-06.html#ord">berusningssyfte</a></a></h3>
+<p>Avsikt att använda ett ämne (ofta alkohol eller narkotika) för att bli berusad.</p>
+<h3 id="besättningen"><a class="header" href="#besättningen"><a href="svt/2025/SVT_2025-03.html#ord">besättningen</a></a></h3>
+<p>Grupp av personer som arbetar tillsammans, särskilt på ett fartyg eller flygplan.</p>
+<h3 id="besked"><a class="header" href="#besked"><a href="svt/2024/svt_2024-01.html#ord">besked</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="beskjutits"><a class="header" href="#beskjutits"><a href="svt/2025/SVT_2025-06.html#ord">beskjutits</a></a></h3>
+<p>Perfekt particip av “beskjuta”; att ha blivit beskjuten med vapen</p>
+<h3 id="beskrivningar"><a class="header" href="#beskrivningar"><a href="svt/2025/SVT_2025-02.html#ord">beskrivningar</a></a></h3>
+<p>Förklaringar eller redogörelser av något i detalj.</p>
+<h3 id="beskyllde"><a class="header" href="#beskyllde"><a href="andra/dn-2024-10.html#ord">beskyllde</a></a></h3>
+<p>Att anklaga eller tilldela skuld för något; att påstå att någon är skyldig till något.</p>
+<h3 id="bestyckas"><a class="header" href="#bestyckas"><a href="svt/2024/SVT_2024-06.html#ord">bestyckas</a></a></h3>
+<p>Att utrusta med vapen eller annan militär utrustning</p>
+<h3 id="bestyckning"><a class="header" href="#bestyckning"><a href="svt/2024/SVT_2024-05.html#ord">bestyckning</a></a></h3>
+<p>Processen eller resultatet av att utrusta eller tillhandahålla något med vapen eller ammunition</p>
+<h3 id="beteendeberoende"><a class="header" href="#beteendeberoende"><a href="andra/dn-2024-10.html#ord">beteendeberoende</a></a></h3>
+<p>Ett beroende av specifika beteenden som spel, shopping eller sociala medier.</p>
+<h3 id="betraktas"><a class="header" href="#betraktas"><a href="dn/2025/dn-2025-03.html#ord">betraktas</a></a></h3>
+<p>Ses som eller anses vara på ett visst sätt.</p>
+<h3 id="betydligt"><a class="header" href="#betydligt"><a href="svt/2025/SVT_2025-06.html#ord">betydligt</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-06.html#ord">svt/2025/SVT_2025-06.md#ord</a>: I hög grad; mycket mer än något annat.</li>
+<li><a href="svt/2024/SVT_2024-04.html#ord">svt/2024/SVT_2024-04.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="beviljas"><a class="header" href="#beviljas"><a href="dn/2025/dn-2025-03.html#ord">beviljas</a></a></h3>
+<p>Få något godkänt eller tilldelat, ofta av en myndighet.</p>
+<h3 id="bevittnade"><a class="header" href="#bevittnade"><a href="svt/2024/SVT_2024-03.html#ord">bevittnade</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="bidragande"><a class="header" href="#bidragande"><a href="dn/2025/dn-2025-04.html#ord">bidragande</a></a></h3>
+<p>Något som bidrar till en viss effekt eller resultat.</p>
+<h3 id="bil"><a class="header" href="#bil"><a href="svt/2024/SVT_2024-05.html#ord">Bil</a></a></h3>
+<p>Ett fordon med fyra hjul som vanligtvis drivs av en förbränningsmotor</p>
+<h3 id="bindande"><a class="header" href="#bindande"><a href="svt/2025/SVT_2025-06.html#ord">bindande</a></a></h3>
+<p>Som måste följas; juridiskt eller moraliskt förpliktande.</p>
+<h3 id="biverkningar"><a class="header" href="#biverkningar"><a href="dropbox/SVT.html#ord">biverkningar</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="blixtnedslag"><a class="header" href="#blixtnedslag"><a href="dropbox/SVT.html#ord">blixtnedslag</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="blomstrande"><a class="header" href="#blomstrande"><a href="dn/2025/dn-2025-01.html#ord">blomstrande</a></a></h3>
+<p>Något som utvecklas framgångsrikt eller är fullt av liv och energi.</p>
+<h3 id="borgensman"><a class="header" href="#borgensman"><a href="netflix/bonus_family.html#ord">borgensman</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="bortkollrad"><a class="header" href="#bortkollrad"><a href="andra/dagens_nyheter.html#ord">bortkollrad</a></a></h3>
+<p>Förvirrad, lurad eller vilseledd</p>
+<h3 id="böla"><a class="header" href="#böla"><a href="andra/dagens_nyheter.html#ord">böla</a></a></h3>
+<p>Att gråta högljutt och oavbrutet, särskilt med klagande eller jämmerliga ljud</p>
+<h3 id="böljan"><a class="header" href="#böljan"><a href="svt/2025/svt-2025-08.html#ord">böljan</a></a></h3>
+<p>Våg, särskilt på havet eller i ett vattendrag</p>
+<h3 id="bräcklig"><a class="header" href="#bräcklig"><a href="svt/2025/SVT_2025-06.html#ord">bräcklig</a></a></h3>
+<p>Lätt att gå sönder; svag eller instabil, både fysiskt och bildligt.</p>
+<h3 id="bråttom"><a class="header" href="#bråttom"><a href="svt/2024/svt_2024-01.html#ord">bråttom</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="brigad"><a class="header" href="#brigad"><a href="svt/2024/SVT_2024-02.html#ord">BRIGAD</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="bristfälligt"><a class="header" href="#bristfälligt"><a href="svt/2025/SVT_2025-06.html#ord">bristfälligt</a></a></h3>
+<p>Något som är otillräckligt, har brister eller inte uppfyller kraven</p>
+<h3 id="brottsförebyggande"><a class="header" href="#brottsförebyggande"><a href="svt/2024/svt_2024-01.html#ord">brottsförebyggande</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="bylsig"><a class="header" href="#bylsig"><a href="dn/2025/dn-2025-01.html#ord">bylsig</a></a></h3>
+<p>Klumpig och otymplig i form, ofta på grund av för mycket kläder eller tyg.</p>
+<h2 id="c"><a class="header" href="#c">C</a></h2>
+<h3 id="charlatan"><a class="header" href="#charlatan"><a href="andra/dagens_nyheter.html#ord">charlatan</a></a></h3>
+<p>En person som falskeligen påstår sig ha vissa kunskaper eller förmågor; bedragare</p>
+<h3 id="chimär"><a class="header" href="#chimär"><a href="andra/dagens_nyheter.html#ord">chimär</a></a></h3>
+<p>En illusionär eller orealistisk idé eller koncept; något som är svårt att förverkliga eller förstå</p>
+<h2 id="d"><a class="header" href="#d">D</a></h2>
+<h3 id="deltagande"><a class="header" href="#deltagande"><a href="svt/2024/SVT_2024-04.html#ord">deltagande</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="deltävling"><a class="header" href="#deltävling"><a href="svt/2024/SVT_2024-02.html#ord">Deltävling</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="deltog"><a class="header" href="#deltog"><a href="andra/dagens_nyheter.html#ord">deltog</a></a></h3>
+<p>Var med i en aktivitet eller ett evenemang</p>
+<h3 id="dessvärre"><a class="header" href="#dessvärre"><a href="dn/2025/dn-2025-01.html#ord">dessvärre</a></a></h3>
+<p>Används för att uttrycka sorg eller beklagande över något som har inträffat.</p>
+<h3 id="destruerats"><a class="header" href="#destruerats"><a href="svt/2025/SVT_2025-01.html#ord">destruerats</a></a></h3>
+<p>Har förstörts eller oskadliggjorts, ofta på ett kontrollerat sätt.</p>
+<h3 id="diasporamedier"><a class="header" href="#diasporamedier"><a href="svt/2024/SVT_2024-04.html#ord">diasporamedier</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="ditresta"><a class="header" href="#ditresta"><a href="svt/2025/SVT_2025-06.html#ord">ditresta</a></a></h3>
+<p>Personer som har rest till en viss plats</p>
+<h3 id="dräller"><a class="header" href="#dräller"><a href="dropbox/SVT.html#ord">dräller</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="driftig"><a class="header" href="#driftig"><a href="andra/dn-2024-10.html#ord">driftig</a></a></h3>
+<p>Handlingskraftig och initiativrik; någon som är duktig på att få saker gjorda.</p>
+<h3 id="drygt"><a class="header" href="#drygt"><a href="svt/2024/SVT_2024-03.html#ord">drygt</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="dundrade"><a class="header" href="#dundrade"><a href="svt/2025/SVT_2025-04.html#ord">dundrade</a></a></h3>
+<p>Att göra ett kraftigt ljud; att klaga eller protestera</p>
+<h3 id="dystert"><a class="header" href="#dystert"><a href="svt/2025/SVT_2025-07.html#ord">dystert</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-07.html#ord">svt/2025/SVT_2025-07.md#ord</a>: Som ger en känsla av sorg, hopplöshet eller mörker; nedslående</li>
+<li><a href="svt/2024/svt_2024-01.html#ord">svt/2024/svt_2024-01.md#ord</a>: Definition saknas.</li>
+</ul>
+<h2 id="e"><a class="header" href="#e">E</a></h2>
+<h3 id="elbilstillverkaren"><a class="header" href="#elbilstillverkaren"><a href="svt/2025/SVT_2025-04.html#ord">elbilstillverkaren</a></a></h3>
+<p>Företag som tillverkar elbilar; biltillverkare med fokus på eldrift.</p>
+<h3 id="enades"><a class="header" href="#enades"><a href="svt/2025/SVT_2025-05.html#ord">enades</a></a></h3>
+<p>Kom överens; nådde en gemensam ståndpunkt eller lösning.</p>
+<h3 id="engagerad"><a class="header" href="#engagerad"><a href="svt/2025/svt-2025-08.html#ord">engagerad</a></a></h3>
+<p>Aktivt intresserad och delaktig; visar stort engagemang och intresse</p>
+<h3 id="enig"><a class="header" href="#enig"><a href="svt/2025/svt-2025-08.html#ord">enig</a></a></h3>
+<p>När alla tycker likadant eller är överens</p>
+<h3 id="entourage"><a class="header" href="#entourage"><a href="andra/dn-2024-10.html#ord">entourage</a></a></h3>
+<p>En grupp av personer som följer och stödjer en viktig person.</p>
+<h3 id="erkännas"><a class="header" href="#erkännas"><a href="dn/2025/dn-2025-01.html#ord">erkännas</a></a></h3>
+<p>Att bli accepterad som sann eller korrekt; att bli officiellt godkänd.</p>
+<h3 id="erkänner"><a class="header" href="#erkänner"><a href="andra/tv4_and_others.html#ord">erkänner</a></a></h3>
+<p>Att medge eller tillstå något, oftast något fel eller en handling.</p>
+<h3 id="ertappades"><a class="header" href="#ertappades"><a href="andra/dn-2024-08.html#ord">ertappades</a></a></h3>
+<p>Bli tagen på bar gärning när man gör något fel</p>
+<h3 id="etiketter"><a class="header" href="#etiketter"><a href="svt/2025/SVT_2025-04.html#ord">etiketter</a></a></h3>
+<p>Små skyltar eller lappar som anger information om innehåll eller egenskaper.</p>
+<h3 id="ett-fåtal"><a class="header" href="#ett-fåtal"><a href="svt/2024/svt_2024-01.html#ord">ett fåtal</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="evighets-kemikalier"><a class="header" href="#evighets-kemikalier"><a href="svt/2025/SVT_2025-07.html#ord">evighets-kemikalier</a></a></h3>
+<p>Kemikalier som är mycket svårnedbrytbara och stannar kvar i miljön under lång tid</p>
+<h2 id="f"><a class="header" href="#f">F</a></h2>
+<h3 id="fantasifulla"><a class="header" href="#fantasifulla"><a href="svt/2024/svt_2024-01.html#ord">fantasifulla</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="farväl"><a class="header" href="#farväl"><a href="svt/2025/SVT_2025-04.html#ord">farväl</a></a></h3>
+<p>Avskedshälsning; att säga adjö vid en avskedssituation.</p>
+<h3 id="felaktig"><a class="header" href="#felaktig"><a href="svt/2025/SVT_2025-04.html#ord">felaktig</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-04.html#ord">svt/2025/SVT_2025-04.md#ord</a>: Något som är fel eller inte korrekt; inte sant.</li>
+<li><a href="svt/2024/SVT_2024-02.html#ord">svt/2024/SVT_2024-02.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="flutit"><a class="header" href="#flutit"><a href="andra/dn-2024-12.html#ord">flutit</a></a></h3>
+<p>Dåtid av “flyta”, att ha rört sig på eller i vätska utan att sjunka.</p>
+<h3 id="formellt"><a class="header" href="#formellt"><a href="svt/2024/SVT_2024-02.html#ord">formellt</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="formuleringar"><a class="header" href="#formuleringar"><a href="svt/2025/SVT_2025-05.html#ord">formuleringar</a></a></h3>
+<p>Sättet att uttrycka något på; ordval och sammansättning av ord.</p>
+<h3 id="fosterländska"><a class="header" href="#fosterländska"><a href="dn/2025/dn-2025-02.html#ord">fosterländska</a></a></h3>
+<p>Som har med kärlek till sitt land att göra; patriotisk.</p>
+<h3 id="fostrat"><a class="header" href="#fostrat"><a href="svt/2025/SVT_2025-05.html#ord">fostrat</a></a></h3>
+<p>Uppfostrat eller vårdat någon, ofta barn eller djur, för att utvecklas.</p>
+<h3 id="föranleder"><a class="header" href="#föranleder"><a href="svt/2024/SVT_2024-03.html#ord">föranleder</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="fördelaktig"><a class="header" href="#fördelaktig"><a href="svt/2025/SVT_2025-06.html#ord">fördelaktig</a></a></h3>
+<p>Som ger fördel eller är gynnsam i en viss situation</p>
+<h3 id="fördelar"><a class="header" href="#fördelar"><a href="svt/2024/SVT_2024-02.html#ord">fördelar</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="fördelarna"><a class="header" href="#fördelarna"><a href="svt/2024/SVT_2024-03.html#ord">fördelarna</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="fördelningen"><a class="header" href="#fördelningen"><a href="dn/2025/dn-2025-07.html#ord">fördelningen</a></a></h3>
+<p>Hur något delas upp mellan olika parter eller områden</p>
+<h3 id="föregripa"><a class="header" href="#föregripa"><a href="svt/2025/SVT_2025-06.html#ord">föregripa</a></a></h3>
+<p>Att ta upp eller agera på något innan det egentligen är dags.</p>
+<h3 id="förekomsten"><a class="header" href="#förekomsten"><a href="svt/2024/svt_2024-01.html#ord">förekomsten</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="förenlig"><a class="header" href="#förenlig"><a href="svt/2025/SVT_2025-06.html#ord">förenlig</a></a></h3>
+<p>Som kan samexistera utan konflikt; som passar ihop med något annat.</p>
+<h3 id="förenligt"><a class="header" href="#förenligt"><a href="andra/tv4_and_others.html#ord">förenligt</a></a></h3>
+<p>Något som är kompatibelt eller i överensstämmelse med något annat</p>
+<h3 id="föreslås"><a class="header" href="#föreslås"><a href="svt/2025/SVT_2025-01.html#ord">föreslås</a></a></h3>
+<p>Att ge ett förslag eller rekommendation om något.</p>
+<h3 id="föreställa"><a class="header" href="#föreställa"><a href="andra/dagens_nyheter.html#ord">föreställa</a></a></h3>
+<p>Att avbilda eller ge en bild av något; att föreställa sig något mentalt</p>
+<h3 id="företräder"><a class="header" href="#företräder"><a href="svt/2024/svt_2024-01.html#ord">företräder</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="förfärande"><a class="header" href="#förfärande"><a href="svt/2025/SVT_2025-05.html#ord">förfärande</a></a></h3>
+<p>Mycket skrämmande eller chockerande; som väcker starka känslor.</p>
+<h3 id="förflyttas"><a class="header" href="#förflyttas"><a href="svt/2025/svt-2025-08.html#ord">förflyttas</a></a></h3>
+<p>Att ändra plats, ofta i passiv form, dvs. bli flyttad</p>
+<h3 id="förföljt"><a class="header" href="#förföljt"><a href="svt/2025/SVT_2025-04.html#ord">förföljt</a></a></h3>
+<p>Utsatt någon för upprepad och ofta hotfull eller orättvis behandling.</p>
+<h3 id="förgiftas"><a class="header" href="#förgiftas"><a href="andra/tv4_and_others.html#ord">förgiftas</a></a></h3>
+<p>Att bli utsatt för eller påverkas av gift; att bli förorenad av giftiga ämnen.</p>
+<h3 id="förhalar"><a class="header" href="#förhalar"><a href="dn/2025/dn-2025-07.html#ord">förhalar</a></a></h3>
+<p>Medvetet dröjer med att genomföra något; skjuter upp med avsikt</p>
+<h3 id="förhalningar"><a class="header" href="#förhalningar"><a href="svt/2024/SVT_2024-05.html#ord">förhalningar</a></a></h3>
+<p>Handlingar eller beteenden som försenar eller fördröjer något</p>
+<h3 id="förhärliga"><a class="header" href="#förhärliga"><a href="dn/2025/dn-2025-02.html#ord">förhärliga</a></a></h3>
+<p>Prisa eller framställa något som bättre än det är.</p>
+<h3 id="förhållandet"><a class="header" href="#förhållandet"><a href="dn/2025/dn-2025-02.html#ord">förhållandet</a></a></h3>
+<p>Samband mellan saker eller personer; situation eller tillstånd.</p>
+<h3 id="förhoppningsvis"><a class="header" href="#förhoppningsvis"><a href="dropbox/SVT.html#ord">förhoppningsvis</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="förinta"><a class="header" href="#förinta"><a href="dn/2025/dn-2025-02.html#ord">förinta</a></a></h3>
+<p>Fullständigt förstöra eller utplåna något.</p>
+<h3 id="förmåga"><a class="header" href="#förmåga"><a href="svt/2025/SVT_2025-05.html#ord">förmåga</a></a></h3>
+<p>Att ha kapacitet eller möjlighet att göra något; att kunna utföra en viss uppgift.</p>
+<h3 id="förmås"><a class="header" href="#förmås"><a href="svt/2024/SVT_2024-03.html#ord">förmås</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="förmodligen"><a class="header" href="#förmodligen"><a href="svt/2024/svt_2024-01.html#ord">förmodligen</a></a></h3>
+<ul>
+<li><a href="svt/2024/svt_2024-01.html#ord">svt/2024/svt_2024-01.md#ord</a>: Definition saknas.</li>
+<li><a href="svt/2024/SVT_2024-02.html#ord">svt/2024/SVT_2024-02.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="förordnande"><a class="header" href="#förordnande"><a href="svt/2025/SVT_2025-04.html#ord">förordnande</a></a></h3>
+<p>En officiell rekommendation eller beslut om något; en order or decree.</p>
+<h3 id="förorenade"><a class="header" href="#förorenade"><a href="svt/2024/SVT_2024-05.html#ord">förorenade</a></a></h3>
+<p>Som har blivit smutsad eller förorenad</p>
+<h3 id="föroreningar"><a class="header" href="#föroreningar"><a href="svt/2024/SVT_2024-03.html#ord">föroreningar</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="förödmjukande"><a class="header" href="#förödmjukande"><a href="svt/2025/svt-2025-08.html#ord">förödmjukande</a></a></h3>
+<p>Som får någon att känna sig skamsen, förnedrad eller utan värdighet</p>
+<h3 id="försämrats"><a class="header" href="#försämrats"><a href="dn/2025/dn-2025-03.html#ord">försämrats</a></a></h3>
+<p>Blivit sämre i kvalitet, tillstånd eller funktion.</p>
+<h3 id="försämring"><a class="header" href="#försämring"><a href="dropbox/SVT.html#ord">försämring</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="försenar"><a class="header" href="#försenar"><a href="dropbox/SVT.html#ord">försenar</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="förser"><a class="header" href="#förser"><a href="svt/2024/SVT_2024-05.html#ord">förser</a></a></h3>
+<p>Att ge eller tillhandahålla något, vanligtvis för att möta behov eller krav</p>
+<h3 id="försiktighetsåtgärder"><a class="header" href="#försiktighetsåtgärder"><a href="svt/2024/SVT_2024-04.html#ord">försiktighetsåtgärder</a></a></h3>
+<ul>
+<li><a href="svt/2024/SVT_2024-04.html#ord">svt/2024/SVT_2024-04.md#ord</a>: Definition saknas.</li>
+<li><a href="svt/2024/SVT_2024-06.html#ord">svt/2024/SVT_2024-06.md#ord</a>: Åtgärder som vidtas för att förhindra olyckor eller skador; säkerhetsåtgärder</li>
+</ul>
+<h3 id="förskansning"><a class="header" href="#förskansning"><a href="andra/dagens_nyheter.html#ord">förskansning</a></a></h3>
+<p>En försvarsanordning eller befästning, ofta med vall eller mur</p>
+<h3 id="förskingring"><a class="header" href="#förskingring"><a href="svt/2025/SVT_2025-03.html#ord">förskingring</a></a></h3>
+<p>Olovlig användning eller förskjutning av pengar eller egendom man har ansvar för.</p>
+<h3 id="förskjutits"><a class="header" href="#förskjutits"><a href="svt/2024/SVT_2024-05.html#ord">förskjutits</a></a></h3>
+<p>När något har blivit flyttat eller förflyttat från dess tidigare position</p>
+<h3 id="förskräcker"><a class="header" href="#förskräcker"><a href="andra/dn-2024-12.html#ord">förskräcker</a></a></h3>
+<p>Skrämmer eller chockerar någon starkt.</p>
+<h3 id="förskräckligt"><a class="header" href="#förskräckligt"><a href="svt/2024/SVT_2024-05.html#ord">förskräckligt</a></a></h3>
+<p>Mycket obehagligt eller skrämmande</p>
+<h3 id="försörja"><a class="header" href="#försörja"><a href="dn/2025/dn-2025-01.html#ord">försörja</a></a></h3>
+<p>Att tillhandahålla det som krävs för att leva, som mat, pengar eller stöd.</p>
+<h3 id="förstörelse"><a class="header" href="#förstörelse"><a href="svt/2024/SVT_2024-04.html#ord">förstörelse</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="försvårat"><a class="header" href="#försvårat"><a href="svt/2025/SVT_2025-02.html#ord">försvårat</a></a></h3>
+<p>Gjort något svårare eller mer komplicerat.</p>
+<h3 id="förtegen"><a class="header" href="#förtegen"><a href="svt/2024/SVT_2024-05.html#ord">förtegen</a></a></h3>
+<ul>
+<li><a href="svt/2024/SVT_2024-05.html#ord">svt/2024/SVT_2024-05.md#ord</a>: Att vara tyst eller återhållsam när det gäller att dela information eller känslor</li>
+<li><a href="svt/2024/SVT_2024-02.html#ord">svt/2024/SVT_2024-02.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="förtida"><a class="header" href="#förtida"><a href="svt/2025/SVT_2025-05.html#ord">förtida</a></a></h3>
+<p>Som sker tidigare än planerat eller förväntat.</p>
+<h3 id="förtroendet"><a class="header" href="#förtroendet"><a href="svt/2024/SVT_2024-02.html#ord">förtroendet</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="förtvivlad"><a class="header" href="#förtvivlad"><a href="svt/2025/SVT_2025-06.html#ord">förtvivlad</a></a></h3>
+<p>Känner mycket stor sorg, hopplöshet eller desperation</p>
+<h3 id="förundersökningen"><a class="header" href="#förundersökningen"><a href="dropbox/SVT.html#ord">förundersökningen</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="förutsägbar"><a class="header" href="#förutsägbar"><a href="svt/2024/SVT_2024-05.html#ord">förutsägbar</a></a></h3>
+<p>Som kan förutsägas eller förutses, inte överraskande</p>
+<h3 id="förutsätta"><a class="header" href="#förutsätta"><a href="andra/dn-2024-12.html#ord">förutsätta</a></a></h3>
+<p>Att anta något som givet eller nödvändigt för att något annat ska gälla.</p>
+<h3 id="förväntas"><a class="header" href="#förväntas"><a href="svt/2024/SVT_2024-02.html#ord">förväntas</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="förvärva"><a class="header" href="#förvärva"><a href="svt/2025/SVT_2025-01.html#ord">förvärva</a></a></h3>
+<p>Att skaffa sig något, särskilt genom köp, arbete eller studier.</p>
+<h3 id="framåtrörelse"><a class="header" href="#framåtrörelse"><a href="svt/2024/svt_2024-01.html#ord">framåtrörelse</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="framför-allt"><a class="header" href="#framför-allt"><a href="svt/2025/SVT_2025-04.html#ord">framför allt</a></a></h3>
+<p>Det som är viktigast eller mest betydelsefullt; särskilt.</p>
+<h3 id="framförallt"><a class="header" href="#framförallt"><a href="svt/2025/SVT_2025-03.html#ord">framförallt</a></a></h3>
+<p>Viktigast av allt; i synnerhet; särskilt.</p>
+<h3 id="framgick"><a class="header" href="#framgick"><a href="andra/dn-2024-12.html#ord">framgick</a></a></h3>
+<p>Blev tydligt eller klart från något, som en text, ett uttalande eller en händelse.</p>
+<h3 id="framhåller"><a class="header" href="#framhåller"><a href="dn/2025/dn-2025-04.html#ord">framhåller</a></a></h3>
+<p>Betonar eller lyfter fram något som särskilt viktigt.</p>
+<h3 id="framträda"><a class="header" href="#framträda"><a href="andra/dn-2024-10.html#ord">framträda</a></a></h3>
+<p>Att synas eller visa sig offentligt, ofta i en uppträdande roll.</p>
+<h3 id="framträder"><a class="header" href="#framträder"><a href="svt/2025/SVT_2025-01.html#ord">framträder</a></a></h3>
+<p>Att synas eller bli uppenbar, ofta på ett sätt som drar uppmärksamhet.</p>
+<h3 id="främlingar"><a class="header" href="#främlingar"><a href="dn/2025/dn-2025-01.html#ord">främlingar</a></a></h3>
+<p>Personer som är okända eller obekanta för någon.</p>
+<h3 id="främmande"><a class="header" href="#främmande"><a href="dn/2025/dn-2025-01.html#ord">främmande</a></a></h3>
+<p>Något eller någon som är obekant eller inte bekant sedan tidigare.</p>
+<h3 id="fredliga"><a class="header" href="#fredliga"><a href="svt/2024/SVT_2024-04.html#ord">fredliga</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="frimodig"><a class="header" href="#frimodig"><a href="andra/dagens_nyheter.html#ord">frimodig</a></a></h3>
+<p>Orädd och öppen i sitt sätt att tala och agera</p>
+<h3 id="frivillighet"><a class="header" href="#frivillighet"><a href="svt/2024/SVT_2024-03.html#ord">frivillighet</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="frugala"><a class="header" href="#frugala"><a href="andra/dn-2024-08.html#ord">frugala</a></a></h3>
+<p>Sparsam och ekonomisk, som inte slösar med resurser</p>
+<h3 id="fruktansvärt"><a class="header" href="#fruktansvärt"><a href="svt/2025/SVT_2025-04.html#ord">fruktansvärt</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-04.html#ord">svt/2025/SVT_2025-04.md#ord</a>: Något mycket hemskt, obehagligt eller skrämmande.</li>
+<li><a href="andra/dagens_nyheter.html#ord">andra/dagens_nyheter.md#ord</a>: Mycket dåligt eller hemskt; extremt obehagligt</li>
+</ul>
+<h3 id="fullständigt"><a class="header" href="#fullständigt"><a href="svt/2024/svt_2024-01.html#ord">fullständigt</a></a></h3>
+<p>Definition saknas.</p>
+<h2 id="g"><a class="header" href="#g">G</a></h2>
+<h3 id="gällande"><a class="header" href="#gällande"><a href="svt/2024/svt_2024-01.html#ord">gällande</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="gåtfulla"><a class="header" href="#gåtfulla"><a href="dropbox/SVT.html#ord">gåtfulla</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="genomsnitt"><a class="header" href="#genomsnitt"><a href="svt/2024/SVT_2024-02.html#ord">genomsnitt</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="gnager"><a class="header" href="#gnager"><a href="svt/2025/SVT_2025-05.html#ord">gnager</a></a></h3>
+<p>Tuggar eller nöter med tänderna, ofta om djur; bildligt: något som oroar ständigt.</p>
+<h3 id="gradvis"><a class="header" href="#gradvis"><a href="andra/dn-2024-12.html#ord">gradvis</a></a></h3>
+<p>Som sker eller utvecklas steg för steg, successivt över tid.</p>
+<h3 id="granskning"><a class="header" href="#granskning"><a href="svt/2024/SVT_2024-06.html#ord">granskning</a></a></h3>
+<p>Noggrann undersökning eller genomgång av något för att bedöma dess korrekthet eller kvalitet</p>
+<h3 id="gränsvärdet"><a class="header" href="#gränsvärdet"><a href="svt/2024/svt_2024-01.html#ord">gränsvärdet</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="grundvattenmagasin"><a class="header" href="#grundvattenmagasin"><a href="dropbox/SVT.html#ord">grundvattenmagasin</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="gynna"><a class="header" href="#gynna"><a href="svt/2025/SVT_2025-03.html#ord">gynna</a></a></h3>
+<p>Vara till fördel för någon eller något; främja.</p>
+<h2 id="h"><a class="header" href="#h">H</a></h2>
+<h3 id="ha-knivhuggit"><a class="header" href="#ha-knivhuggit"><a href="svt/2024/SVT_2024-04.html#ord">ha knivhuggit</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="hack"><a class="header" href="#hack"><a href="svt/2024/svt_2024-01.html#ord">hack</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="halverades"><a class="header" href="#halverades"><a href="svt/2025/SVT_2025-05.html#ord">halverades</a></a></h3>
+<p>Minskat till hälften; reducerat med 50%.</p>
+<h3 id="har-bedrivit"><a class="header" href="#har-bedrivit"><a href="svt/2024/SVT_2024-04.html#ord">har bedrivit</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="har-bedrivits"><a class="header" href="#har-bedrivits"><a href="svt/2024/SVT_2024-03.html#ord">har bedrivits</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="har-hamnat"><a class="header" href="#har-hamnat"><a href="svt/2024/SVT_2024-02.html#ord">har hamnat</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="har-ombetts"><a class="header" href="#har-ombetts"><a href="svt/2024/SVT_2024-03.html#ord">har ombetts</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="haveriet"><a class="header" href="#haveriet"><a href="svt/2024/SVT_2024-03.html#ord">haveriet</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="häktade"><a class="header" href="#häktade"><a href="svt/2024/SVT_2024-03.html#ord">häktade</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="händelseförloppet"><a class="header" href="#händelseförloppet"><a href="andra/dn-2024-12.html#ord">händelseförloppet</a></a></h3>
+<p>Sekvensen av händelser som utspelar sig under en viss tidsperiod eller situation.</p>
+<h3 id="hänsynslös"><a class="header" href="#hänsynslös"><a href="dn/2025/dn-2025-03.html#ord">hänsynslös</a></a></h3>
+<p>Som visar total brist på omtanke eller respekt för andra.</p>
+<h3 id="härligt"><a class="header" href="#härligt"><a href="netflix/bonus_family.html#ord">härligt</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="härrör"><a class="header" href="#härrör"><a href="svt/2025/SVT_2025-06.html#ord">härrör</a></a></h3>
+<p>Har sitt ursprung i eller kommer från något.</p>
+<h3 id="härvan"><a class="header" href="#härvan"><a href="svt/2024/SVT_2024-05.html#ord">härvan</a></a></h3>
+<p>En röra eller komplicerad situation, ofta med många inblandade faktorer eller människor</p>
+<h3 id="hävda"><a class="header" href="#hävda"><a href="andra/dn-2024-10.html#ord">hävda</a></a></h3>
+<p>Att påstå något bestämt eller försvara en rättighet.</p>
+<h3 id="hävdar"><a class="header" href="#hävdar"><a href="andra/dagens_nyheter.html#ord">hävdar</a></a></h3>
+<p>Att påstå eller insistera på något som sant eller giltigt</p>
+<h3 id="hävdat"><a class="header" href="#hävdat"><a href="svt/2024/SVT_2024-06.html#ord">hävdat</a></a></h3>
+<p>Påstått eller framfört med bestämdhet</p>
+<h3 id="hållbara"><a class="header" href="#hållbara"><a href="svt/2024/SVT_2024-05.html#ord">hållbara</a></a></h3>
+<p>Som kan upprätthållas över tid utan att skada miljön eller samhället; varaktiga och stabila</p>
+<h3 id="hånfullt"><a class="header" href="#hånfullt"><a href="andra/dagens_nyheter.html#ord">hånfullt</a></a></h3>
+<p>Som uttrycker förakt eller spydighet</p>
+<h3 id="hemställan"><a class="header" href="#hemställan"><a href="andra/dagens_nyheter.html#ord">hemställan</a></a></h3>
+<p>Formell begäran eller förslag</p>
+<h3 id="hinner"><a class="header" href="#hinner"><a href="netflix/bonus_family.html#ord">hinner</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="hittills"><a class="header" href="#hittills"><a href="svt/2024/SVT_2024-03.html#ord">hittills</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="hjärtinfarkter"><a class="header" href="#hjärtinfarkter"><a href="svt/2024/svt_2024-01.html#ord">hjärtinfarkter</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="hövlig"><a class="header" href="#hövlig"><a href="andra/dn-2024-08.html#ord">hövlig</a></a></h3>
+<p>Artig och respektfull i sitt uppträdande</p>
+<h3 id="hugga"><a class="header" href="#hugga"><a href="svt/2025/SVT_2025-05.html#ord">hugga</a></a></h3>
+<p>Att slå med ett vasst verktyg, ofta för att dela eller skära något.</p>
+<h3 id="huruvida"><a class="header" href="#huruvida"><a href="svt/2025/SVT_2025-01.html#ord">huruvida</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-01.html#ord">svt/2025/SVT_2025-01.md#ord</a>: Används för att uttrycka osäkerhet eller för att introducera en fråga om något.</li>
+<li><a href="dn/2025/dn-2025-03.html#ord">dn/2025/dn-2025-03.md#ord</a>: Används för att uttrycka osäkerhet om något är fallet eller inte; om.</li>
+</ul>
+<h3 id="huruvida-1"><a class="header" href="#huruvida-1"><a href="dropbox/SVT.html#ord">Huruvida</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="hyllade"><a class="header" href="#hyllade"><a href="dn/2025/dn-2025-04.html#ord">hyllade</a></a></h3>
+<p>Visade stor uppskattning eller beundran för någon eller något.</p>
+<h2 id="i"><a class="header" href="#i">I</a></h2>
+<h3 id="icke-demokratiska"><a class="header" href="#icke-demokratiska"><a href="svt/2024/svt_2024-01.html#ord">icke-demokratiska</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="ihärdiga"><a class="header" href="#ihärdiga"><a href="andra/dn-2024-08.html#ord">ihärdiga</a></a></h3>
+<p>Någon som är envis och inte ger upp lätt</p>
+<h3 id="illegala"><a class="header" href="#illegala"><a href="svt/2025/SVT_2025-06.html#ord">illegala</a></a></h3>
+<p>Något som är förbjudet enligt lag, olagligt</p>
+<h3 id="illusion"><a class="header" href="#illusion"><a href="andra/dagens_nyheter.html#ord">illusion</a></a></h3>
+<p>En falsk uppfattning eller felaktig bild av verkligheten; något som verkar vara verkligt men inte är det</p>
+<h3 id="illvilja"><a class="header" href="#illvilja"><a href="andra/dn-2024-10.html#ord">illvilja</a></a></h3>
+<p>En känsla av fientlighet eller ondska mot någon.</p>
+<h3 id="imponerande"><a class="header" href="#imponerande"><a href="svt/2024/SVT_2024-05.html#ord">imponerande</a></a></h3>
+<p>Som väcker beundran eller respekt på grund av sin imponerande karaktär eller prestation</p>
+<h3 id="inblandning"><a class="header" href="#inblandning"><a href="svt/2024/SVT_2024-05.html#ord">inblandning</a></a></h3>
+<p>Handling av att involvera sig i något eller påverka en situation</p>
+<h3 id="inblick"><a class="header" href="#inblick"><a href="andra/dn-2024-09.html#ord">inblick</a></a></h3>
+<p>Förståelse eller insikt i något</p>
+<h3 id="inbördeskrig"><a class="header" href="#inbördeskrig"><a href="andra/tv4_and_others.html#ord">inbördeskrig</a></a></h3>
+<p>En konflikt eller ett krig mellan grupper inom samma land eller stat.</p>
+<h3 id="inflytelserika"><a class="header" href="#inflytelserika"><a href="dn/2025/dn-2025-01.html#ord">inflytelserika</a></a></h3>
+<p>Beskriver personer eller grupper som har stor påverkan eller makt i samhället.</p>
+<h3 id="införa"><a class="header" href="#införa"><a href="svt/2025/SVT_2025-07.html#ord">införa</a></a></h3>
+<p>Att börja använda något nytt, t.ex. en regel, lag eller metod</p>
+<h3 id="inhemska"><a class="header" href="#inhemska"><a href="svt/2025/SVT_2025-06.html#ord">inhemska</a></a></h3>
+<p>Som hör till eller kommer från det egna landet.</p>
+<h3 id="inifrån"><a class="header" href="#inifrån"><a href="svt/2024/SVT_2024-03.html#ord">inifrån</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="inkludering"><a class="header" href="#inkludering"><a href="svt/2025/SVT_2025-04.html#ord">inkludering</a></a></h3>
+<p>Att aktivt ta med och ge plats åt alla, oavsett bakgrund eller förutsättningar.</p>
+<h3 id="inleddes"><a class="header" href="#inleddes"><a href="svt/2024/SVT_2024-03.html#ord">inleddes</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="inledningsvis"><a class="header" href="#inledningsvis"><a href="svt/2024/SVT_2024-02.html#ord">inledningsvis</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="innebära"><a class="header" href="#innebära"><a href="andra/dn-2024-09.html#ord">innebära</a></a></h3>
+<p>Att betyda eller leda till något</p>
+<h3 id="inneburit"><a class="header" href="#inneburit"><a href="svt/2025/SVT_2025-04.html#ord">inneburit</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-04.html#ord">svt/2025/SVT_2025-04.md#ord</a>: Har haft som resultat eller betydelse; medfört något.</li>
+<li><a href="andra/dn-2024-10.html#ord">andra/dn-2024-10.md#ord</a>: Att ha resulterat i något eller fört med sig en viss konsekvens.</li>
+</ul>
+<h3 id="innefatta"><a class="header" href="#innefatta"><a href="dn/2025/dn-2025-03.html#ord">innefatta</a></a></h3>
+<p>Att inkludera eller omfatta något som en del av en helhet.</p>
+<h3 id="innefattar"><a class="header" href="#innefattar"><a href="svt/2025/SVT_2025-01.html#ord">innefattar</a></a></h3>
+<p>Att innehålla eller inkludera något som en del av en helhet.</p>
+<h3 id="innerligt"><a class="header" href="#innerligt"><a href="andra/dn-2024-08.html#ord">innerligt</a></a></h3>
+<p>Med djup känsla och uppriktighet</p>
+<h3 id="inrättas"><a class="header" href="#inrättas"><a href="svt/2024/SVT_2024-06.html#ord">inrättas</a></a></h3>
+<p>Att etablera eller skapa något, särskilt en organisation eller system</p>
+<h3 id="inrikes"><a class="header" href="#inrikes"><a href="svt/2024/svt_2024-01.html#ord">Inrikes</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="inrymma"><a class="header" href="#inrymma"><a href="svt/2025/SVT_2025-05.html#ord">inrymma</a></a></h3>
+<p>Ha plats för eller ge utrymme åt något; också: tillåta eller omfatta.</p>
+<h3 id="insats-till"><a class="header" href="#insats-till"><a href="svt/2024/SVT_2024-02.html#ord">insats till</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="insåg"><a class="header" href="#insåg"><a href="andra/dn-2024-08.html#ord">insåg</a></a></h3>
+<p>Att förstå eller bli medveten om något</p>
+<h3 id="inse"><a class="header" href="#inse"><a href="svt/2025/SVT_2025-02.html#ord">inse</a></a></h3>
+<p>Att förstå eller bli medveten om något.</p>
+<h3 id="inställning"><a class="header" href="#inställning"><a href="svt/2024/svt_2024-01.html#ord">inställning</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="inställt"><a class="header" href="#inställt"><a href="svt/2024/svt_2024-01.html#ord">inställt</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="intäkter"><a class="header" href="#intäkter"><a href="andra/dn-2024-09.html#ord">intäkter</a></a></h3>
+<p>Pengar som ett företag eller en person tjänar</p>
+<h3 id="inträffar"><a class="header" href="#inträffar"><a href="svt/2024/SVT_2024-02.html#ord">inträffar</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="intrång"><a class="header" href="#intrång"><a href="dn/2025/dn-2025-01.html#ord">intrång</a></a></h3>
+<p>Obehörig eller ovälkommen inblandning eller tillträde till något.</p>
+<h3 id="intygande"><a class="header" href="#intygande"><a href="andra/dn-2024-10.html#ord">intygande</a></a></h3>
+<p>Som bekräftar eller ger intyg om något; ett officiellt uttalande.</p>
+<h3 id="inverkan"><a class="header" href="#inverkan"><a href="svt/2025/SVT_2025-06.html#ord">inverkan</a></a></h3>
+<p>Effekt eller påverkan på något</p>
+<h3 id="invigdes"><a class="header" href="#invigdes"><a href="andra/dn-2024-11.html#ord">invigdes</a></a></h3>
+<p>Att formellt öppnas eller tas i bruk, ofta med en ceremoni.</p>
+<h2 id="j"><a class="header" href="#j">J</a></h2>
+<h3 id="jämnårig"><a class="header" href="#jämnårig"><a href="svt/2024/SVT_2024-03.html#ord">jämnårig</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="jämställdhet"><a class="header" href="#jämställdhet"><a href="andra/dn-2024-12.html#ord">jämställdhet</a></a></h3>
+<p>Tillstånd där människor har lika rättigheter, möjligheter och skyldigheter oavsett kön.</p>
+<h3 id="jordskalv"><a class="header" href="#jordskalv"><a href="svt/2024/SVT_2024-04.html#ord">jordskalv</a></a></h3>
+<p>Definition saknas.</p>
+<h2 id="k"><a class="header" href="#k">K</a></h2>
+<h3 id="källor"><a class="header" href="#källor"><a href="svt/2024/SVT_2024-02.html#ord">källor</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="kirurgi"><a class="header" href="#kirurgi"><a href="svt/2024/SVT_2024-05.html#ord">kirurgi</a></a></h3>
+<p>Medicinsk behandling som innebär operationer för att behandla sjukdomar eller skador</p>
+<h3 id="klagomål"><a class="header" href="#klagomål"><a href="dn/2025/dn-2025-03.html#ord">klagomål</a></a></h3>
+<p>Ett uttryck för missnöje eller kritik.</p>
+<h3 id="klandervärt"><a class="header" href="#klandervärt"><a href="svt/2024/SVT_2024-05.html#ord">klandervärt</a></a></h3>
+<p>Något som är förkastligt eller moraliskt fel och förtjänar kritik</p>
+<h3 id="klantigt"><a class="header" href="#klantigt"><a href="dn/2025/dn-2025-03.html#ord">klantigt</a></a></h3>
+<p>Klumpigt eller oskickligt gjort; fumligt.</p>
+<h3 id="klarlagda"><a class="header" href="#klarlagda"><a href="svt/2025/svt-2025-08.html#ord">klarlagda</a></a></h3>
+<p>Något som har blivit utrett, förklarat eller fastställt</p>
+<h3 id="kloakvatten"><a class="header" href="#kloakvatten"><a href="dropbox/SVT.html#ord">kloakvatten</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="klyftorna"><a class="header" href="#klyftorna"><a href="dn/2025/dn-2025-04.html#ord">klyftorna</a></a></h3>
+<p>Skillnader i inkomst eller levnadsstandard mellan olika grupper i samhället.</p>
+<h3 id="knappa"><a class="header" href="#knappa"><a href="dropbox/SVT.html#ord">knappa</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="knapphändig"><a class="header" href="#knapphändig"><a href="svt/2025/SVT_2025-05.html#ord">knapphändig</a></a></h3>
+<p>Som är otillräcklig eller mycket begränsad, särskilt om information.</p>
+<h3 id="knapphändiga"><a class="header" href="#knapphändiga"><a href="svt/2025/SVT_2025-07.html#ord">knapphändiga</a></a></h3>
+<p>Som är mycket begränsade eller otillräckliga i mängd eller detalj</p>
+<h3 id="knäppt"><a class="header" href="#knäppt"><a href="netflix/bonus_family.html#ord">knäppt</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="kompletterande"><a class="header" href="#kompletterande"><a href="svt/2025/svt-2025-08.html#ord">kompletterande</a></a></h3>
+<p>Något som läggs till för att göra något helt eller fullständigt</p>
+<h3 id="kompromissat"><a class="header" href="#kompromissat"><a href="svt/2025/SVT_2025-06.html#ord">kompromissat</a></a></h3>
+<p>Har gett upp något för att nå en överenskommelse; nått en mellannivå i en konflikt.</p>
+<h3 id="koncern"><a class="header" href="#koncern"><a href="andra/dn-2024-09.html#ord">koncern</a></a></h3>
+<p>En grupp företag som fungerar som en enhet</p>
+<h3 id="konfiskera"><a class="header" href="#konfiskera"><a href="andra/tv4_and_others.html#ord">konfiskera</a></a></h3>
+<p>Att ta något i beslag, ofta av myndigheter, som en åtgärd mot olaglig verksamhet.</p>
+<h3 id="konstnären"><a class="header" href="#konstnären"><a href="svt/2024/SVT_2024-04.html#ord">konstnären</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="kontraproduktivt"><a class="header" href="#kontraproduktivt"><a href="svt/2025/SVT_2025-03.html#ord">kontraproduktivt</a></a></h3>
+<p>Som får motsatt effekt mot vad som var avsett eller önskat.</p>
+<h3 id="korrigeras"><a class="header" href="#korrigeras"><a href="svt/2024/SVT_2024-04.html#ord">korrigeras</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="kräkningar"><a class="header" href="#kräkningar"><a href="andra/tv4_and_others.html#ord">kräkningar</a></a></h3>
+<p>Att spy eller kasta upp mat från magen genom munnen.</p>
+<h3 id="kränkningar"><a class="header" href="#kränkningar"><a href="svt/2025/svt-2025-08.html#ord">kränkningar</a></a></h3>
+<p>Handlingar som skadar någons värdighet, rättigheter eller integritet</p>
+<h3 id="krigsförbrytelse"><a class="header" href="#krigsförbrytelse"><a href="svt/2024/SVT_2024-03.html#ord">krigsförbrytelse</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="krisande"><a class="header" href="#krisande"><a href="dn/2025/dn-2025-03.html#ord">krisande</a></a></h3>
+<p>Som befinner sig i en kris eller svår situation.</p>
+<h3 id="kroniska"><a class="header" href="#kroniska"><a href="dn/2025/dn-2025-03.html#ord">kroniska</a></a></h3>
+<p>Som varar under lång tid, ofta om sjukdomar som är svåra att bota.</p>
+<h3 id="krympande"><a class="header" href="#krympande"><a href="svt/2025/SVT_2025-03.html#ord">krympande</a></a></h3>
+<p>Som minskar i storlek, antal eller omfattning.</p>
+<h3 id="krympt"><a class="header" href="#krympt"><a href="svt/2025/SVT_2025-04.html#ord">krympt</a></a></h3>
+<p>Minskat i storlek eller omfattning; blivit mindre.</p>
+<h3 id="kryphålen"><a class="header" href="#kryphålen"><a href="svt/2024/svt_2024-01.html#ord">kryphålen</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="kvalitetssäkrade"><a class="header" href="#kvalitetssäkrade"><a href="dn/2025/dn-2025-03.html#ord">kvalitetssäkrade</a></a></h3>
+<p>Som har genomgått en process för att säkerställa kvalitet</p>
+<h3 id="kvantdatorer"><a class="header" href="#kvantdatorer"><a href="svt/2024/SVT_2024-04.html#ord">kvantdatorer</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="kvarvarande"><a class="header" href="#kvarvarande"><a href="svt/2024/svt_2024-01.html#ord">kvarvarande</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="kväda"><a class="header" href="#kväda"><a href="andra/dagens_nyheter.html#ord">kväda</a></a></h3>
+<p>Att recitera eller sjunga poesi eller sånger</p>
+<h2 id="l"><a class="header" href="#l">L</a></h2>
+<h3 id="lagstiftning"><a class="header" href="#lagstiftning"><a href="dropbox/SVT.html#ord">lagstiftning</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="lastat"><a class="header" href="#lastat"><a href="svt/2025/svt-2025-08.html#ord">lastat</a></a></h3>
+<p>Perfekt particip av “lasta”; att ha placerat gods eller varor på ett fordon</p>
+<h3 id="lärdomar"><a class="header" href="#lärdomar"><a href="svt/2025/SVT_2025-05.html#ord">lärdomar</a></a></h3>
+<p>Insikter eller kunskaper som erhållits genom erfarenhet eller studier.</p>
+<h3 id="lågkonjunktur"><a class="header" href="#lågkonjunktur"><a href="svt/2025/SVT_2025-03.html#ord">lågkonjunktur</a></a></h3>
+<p>Period med låg ekonomisk aktivitet, hög arbetslöshet och låg tillväxt.</p>
+<h3 id="långsiktiga"><a class="header" href="#långsiktiga"><a href="svt/2024/SVT_2024-02.html#ord">långsiktiga</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="långsiktigt"><a class="header" href="#långsiktigt"><a href="svt/2025/SVT_2025-01.html#ord">långsiktigt</a></a></h3>
+<p>Något som sträcker sig över en längre tidsperiod eller är planerat för framtiden.</p>
+<h3 id="låtsades"><a class="header" href="#låtsades"><a href="andra/dn-2024-08.html#ord">låtsades</a></a></h3>
+<ul>
+<li><a href="andra/dn-2024-08.html#ord">andra/dn-2024-08.md#ord</a>: Att ge sken av något som inte är sant; att låtsas</li>
+<li><a href="netflix/bonus_family.html#ord">netflix/bonus_family.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="låtsas"><a class="header" href="#låtsas"><a href="svt/2025/SVT_2025-07.html#ord">låtsas</a></a></h3>
+<p>Att agera som om något vore sant, trots att det inte är det</p>
+<h3 id="lindrigt"><a class="header" href="#lindrigt"><a href="svt/2024/SVT_2024-02.html#ord">lindrigt</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="livsförhållanden"><a class="header" href="#livsförhållanden"><a href="svt/2024/SVT_2024-03.html#ord">livsförhållanden</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="livsstilen"><a class="header" href="#livsstilen"><a href="svt/2025/SVT_2025-04.html#ord">livsstilen</a></a></h3>
+<p>Sättet att leva på; vanor och beteenden som formar ens liv.</p>
+<h3 id="livvakter"><a class="header" href="#livvakter"><a href="svt/2025/SVT_2025-07.html#ord">livvakter</a></a></h3>
+<p>Personer som skyddar en annan person, ofta en offentlig figur</p>
+<h3 id="ljuvligt"><a class="header" href="#ljuvligt"><a href="andra/dn-2024-12.html#ord">ljuvligt</a></a></h3>
+<p>Något som är mycket behagligt, njutbart eller vackert.</p>
+<h3 id="lockar"><a class="header" href="#lockar"><a href="svt/2025/SVT_2025-07.html#ord">lockar</a></a></h3>
+<p>Får någon att vilja komma, delta eller göra något; attraherar</p>
+<h3 id="lovade"><a class="header" href="#lovade"><a href="netflix/bonus_family.html#ord">lovade</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="lönsamhetsomdömet"><a class="header" href="#lönsamhetsomdömet"><a href="andra/dn-2024-10.html#ord">lönsamhetsomdömet</a></a></h3>
+<p>En bedömning av hur lönsamt något är, ofta i affärsmässiga sammanhang.</p>
+<h3 id="löper"><a class="header" href="#löper"><a href="svt/2025/SVT_2025-04.html#ord">löper</a></a></h3>
+<p>Rör sig snabbt till fots; pågår under viss tid; riskerar något.</p>
+<h3 id="lyckobeskedet"><a class="header" href="#lyckobeskedet"><a href="dn/2025/dn-2025-01.html#ord">lyckobeskedet</a></a></h3>
+<p>Ett meddelande som ger glädje och positiva nyheter.</p>
+<h3 id="lydde"><a class="header" href="#lydde"><a href="dn/2025/dn-2025-03.html#ord">lydde</a></a></h3>
+<p>Följde order eller instruktioner; var lydig.</p>
+<h3 id="lydig"><a class="header" href="#lydig"><a href="andra/dn-2024-12.html#ord">lydig</a></a></h3>
+<p>Som följer regler, instruktioner eller någon annans vilja utan att protestera.</p>
+<h3 id="lynnigare"><a class="header" href="#lynnigare"><a href="svt/2025/SVT_2025-03.html#ord">lynnigare</a></a></h3>
+<p>Mer humörväxlande eller lättretlig; mer oberäknelig i sitt beteende.</p>
+<h2 id="m"><a class="header" href="#m">M</a></h2>
+<h3 id="magisteruppsats"><a class="header" href="#magisteruppsats"><a href="svt/2025/SVT_2025-01.html#ord">magisteruppsats</a></a></h3>
+<p>En akademisk uppsats som skrivs som en del av en magisterexamen.</p>
+<h3 id="makthavare"><a class="header" href="#makthavare"><a href="dn/2025/dn-2025-04.html#ord">makthavare</a></a></h3>
+<p>Person som innehar och utövar politisk eller annan form av makt.</p>
+<h3 id="maskot"><a class="header" href="#maskot"><a href="andra/dn-2024-12.html#ord">maskot</a></a></h3>
+<p>En figur, person eller sak som används som symbol för tur eller identitet.</p>
+<h3 id="målmedvetenhet"><a class="header" href="#målmedvetenhet"><a href="svt/2024/SVT_2024-05.html#ord">målmedvetenhet</a></a></h3>
+<p>Att ha starka avsikter eller bestämmelse för att uppnå ett mål</p>
+<h3 id="målsägande"><a class="header" href="#målsägande"><a href="svt/2025/SVT_2025-05.html#ord">målsägande</a></a></h3>
+<p>Den person som blivit utsatt för ett brott och som har rätt att föra talan i rätten.</p>
+<h3 id="mångfald"><a class="header" href="#mångfald"><a href="svt/2025/SVT_2025-04.html#ord">mångfald</a></a></h3>
+<p>Stor variation eller rikedom av olika typer, ofta av människor eller idéer.</p>
+<h3 id="medges"><a class="header" href="#medges"><a href="svt/2025/SVT_2025-01.html#ord">medges</a></a></h3>
+<p>Att officiellt tillåta eller erkänna något som korrekt eller giltigt.</p>
+<h3 id="medverkan"><a class="header" href="#medverkan"><a href="svt/2025/svt-2025-08.html#ord">medverkan</a></a></h3>
+<p>Deltagande eller engagemang i en aktivitet, händelse eller sammanhang</p>
+<h3 id="medverkar"><a class="header" href="#medverkar"><a href="andra/dn-2024-11.html#ord">medverkar</a></a></h3>
+<p>Att delta eller bidra i en aktivitet eller ett sammanhang.</p>
+<h3 id="medvetet"><a class="header" href="#medvetet"><a href="svt/2025/SVT_2025-01.html#ord">medvetet</a></a></h3>
+<p>Gjort med avsikt eller medvetenhet; inte av misstag.</p>
+<h3 id="mejerivaror"><a class="header" href="#mejerivaror"><a href="andra/dn-2024-08.html#ord">mejerivaror</a></a></h3>
+<p>Livsmedel som är tillverkade av mjölk</p>
+<h3 id="mestadels"><a class="header" href="#mestadels"><a href="svt/2025/SVT_2025-06.html#ord">mestadels</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-06.html#ord">svt/2025/SVT_2025-06.md#ord</a>: För det mesta; huvudsakligen; till största delen.</li>
+<li><a href="svt/2025/SVT_2025-06.html#ord">svt/2025/SVT_2025-06.md#ord</a>: För det mesta; huvudsakligen; till största delen.</li>
+</ul>
+<h3 id="missförhållanden"><a class="header" href="#missförhållanden"><a href="andra/dn-2024-10.html#ord">missförhållanden</a></a></h3>
+<p>Förhållanden som är dåliga, olämpliga eller problematiska.</p>
+<h3 id="miste"><a class="header" href="#miste"><a href="andra/dn-2024-12.html#ord">miste</a></a></h3>
+<p>Förlorade något, ofta på grund av en olycka eller sorglig händelse.</p>
+<h3 id="mistro"><a class="header" href="#mistro"><a href="svt/2024/svt_2024-01.html#ord">mistro</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="modig"><a class="header" href="#modig"><a href="dropbox/SVT.html#ord">modig</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="motgång"><a class="header" href="#motgång"><a href="andra/dn-2024-12.html#ord">motgång</a></a></h3>
+<p>En svårighet eller problem som hindrar framgång eller utveckling.</p>
+<h3 id="motståndare"><a class="header" href="#motståndare"><a href="svt/2024/SVT_2024-02.html#ord">motståndare</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="motsvarande"><a class="header" href="#motsvarande"><a href="svt/2025/SVT_2025-04.html#ord">motsvarande</a></a></h3>
+<p>Som är likvärdig eller har samma funktion, betydelse eller värde.</p>
+<h3 id="motvarande-nästan"><a class="header" href="#motvarande-nästan"><a href="svt/2024/svt_2024-01.html#ord">motvarande nästan</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="motverka"><a class="header" href="#motverka"><a href="svt/2024/svt_2024-01.html#ord">motverka</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="mungipan"><a class="header" href="#mungipan"><a href="andra/dn-2024-12.html#ord">mungipan</a></a></h3>
+<p>Yttersta hörnet av munnen.</p>
+<h3 id="mutbrott"><a class="header" href="#mutbrott"><a href="svt/2025/SVT_2025-04.html#ord">mutbrott</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-04.html#ord">svt/2025/SVT_2025-04.md#ord</a>: En olaglig handling där någon tar emot eller ger a bribe; corruption.</li>
+<li><a href="svt/2024/SVT_2024-05.html#ord">svt/2024/SVT_2024-05.md#ord</a>: Att ge eller ta emot mutor, ofta i utbyte mot tjänster, förmåner eller fördelar</li>
+</ul>
+<h2 id="n"><a class="header" href="#n">N</a></h2>
+<h3 id="naturligvis"><a class="header" href="#naturligvis"><a href="svt/2024/svt_2024-01.html#ord">naturligvis</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="näring"><a class="header" href="#näring"><a href="andra/dn-2024-09.html#ord">näring</a></a></h3>
+<p>Ämnen som behövs för att kroppen ska fungera och växa</p>
+<h3 id="nedblåsta"><a class="header" href="#nedblåsta"><a href="dropbox/SVT.html#ord">nedblåsta</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="nedkomst"><a class="header" href="#nedkomst"><a href="netflix/bonus_family.html#ord">nedkomst</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="nedsatt"><a class="header" href="#nedsatt"><a href="andra/dn-2024-11.html#ord">nedsatt</a></a></h3>
+<p>Minskad i omfattning, funktion eller kapacitet.</p>
+<h3 id="noggrannhet"><a class="header" href="#noggrannhet"><a href="svt/2024/SVT_2024-03.html#ord">noggrannhet</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="nöjeskvarter"><a class="header" href="#nöjeskvarter"><a href="dn/2025/dn-2025-01.html#ord">nöjeskvarter</a></a></h3>
+<p>Ett område i en stad som är känt för sitt utbud av nöjen, som restauranger, barer och teatrar.</p>
+<h3 id="nyanserande"><a class="header" href="#nyanserande"><a href="svt/2025/SVT_2025-06.html#ord">nyanserande</a></a></h3>
+<p>Som förtydligar genom att tillföra detaljer eller olika aspekter.</p>
+<h2 id="o"><a class="header" href="#o">O</a></h2>
+<h3 id="obegriplig"><a class="header" href="#obegriplig"><a href="dn/2025/dn-2025-01.html#ord">obegriplig</a></a></h3>
+<p>Något som är svårt eller omöjligt att förstå.</p>
+<h3 id="obehagligt"><a class="header" href="#obehagligt"><a href="svt/2025/svt-2025-08.html#ord">obehagligt</a></a></h3>
+<p>Något som väcker olust, oro eller starkt obehag</p>
+<h3 id="obekväma"><a class="header" href="#obekväma"><a href="dropbox/SVT.html#ord">obekväma</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="obemanade"><a class="header" href="#obemanade"><a href="svt/2025/svt-2025-08.html#ord">obemanade</a></a></h3>
+<p>Utan personal eller besättning; som inte har några människor ombord eller på plats</p>
+<h3 id="obestridligen"><a class="header" href="#obestridligen"><a href="andra/dagens_nyheter.html#ord">obestridligen</a></a></h3>
+<p>Utan tvivel; som inte kan ifrågasättas eller motsägas</p>
+<h3 id="oduglighet"><a class="header" href="#oduglighet"><a href="dropbox/SVT.html#ord">oduglighet</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="oenigheten"><a class="header" href="#oenigheten"><a href="svt/2024/SVT_2024-06.html#ord">oenigheten</a></a></h3>
+<p>Tillståndet av att inte vara överens; konflikt eller tvist</p>
+<h3 id="oerfarna"><a class="header" href="#oerfarna"><a href="svt/2024/svt_2024-01.html#ord">oerfarna</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="oerhört"><a class="header" href="#oerhört"><a href="dn/2025/dn-2025-03.html#ord">oerhört</a></a></h3>
+<p>Mycket, extremt eller otroligt.</p>
+<h3 id="ofattbart"><a class="header" href="#ofattbart"><a href="svt/2024/SVT_2024-06.html#ord">ofattbart</a></a></h3>
+<p>Något som är mycket svårt att förstå eller greppa</p>
+<h3 id="oförutsägbar"><a class="header" href="#oförutsägbar"><a href="svt/2025/svt-2025-08.html#ord">oförutsägbar</a></a></h3>
+<p>Som inte går att förutse eller planera för</p>
+<h3 id="ofredar"><a class="header" href="#ofredar"><a href="dropbox/SVT.html#ord">ofredar</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="ohövligt"><a class="header" href="#ohövligt"><a href="svt/2025/SVT_2025-02.html#ord">ohövligt</a></a></h3>
+<p>Som saknar artighet eller respekt; otrevligt.</p>
+<h3 id="olämpligt"><a class="header" href="#olämpligt"><a href="svt/2024/SVT_2024-05.html#ord">olämpligt</a></a></h3>
+<p>Inte lämpligt eller passande</p>
+<h3 id="olovligen"><a class="header" href="#olovligen"><a href="andra/tv4_and_others.html#ord">olovligen</a></a></h3>
+<p>Att göra något utan tillstånd eller laglig rätt; olagligt.</p>
+<h3 id="ombedd"><a class="header" href="#ombedd"><a href="andra/dagens_nyheter.html#ord">ombedd</a></a></h3>
+<p>Att ha blivit tillfrågad eller uppmanad att göra något</p>
+<h3 id="ombetts"><a class="header" href="#ombetts"><a href="andra/dn-2024-09.html#ord">ombetts</a></a></h3>
+<p>Att ha blivit ombedd att göra något, tillfrågad om hjälp</p>
+<h3 id="omfamna"><a class="header" href="#omfamna"><a href="svt/2025/SVT_2025-05.html#ord">omfamna</a></a></h3>
+<p>Att omhulda eller ta emot något med öppna armar; att acceptera.</p>
+<h3 id="omfattande"><a class="header" href="#omfattande"><a href="svt/2024/svt_2024-01.html#ord">omfattande</a></a></h3>
+<ul>
+<li><a href="svt/2024/svt_2024-01.html#ord">svt/2024/svt_2024-01.md#ord</a>: Definition saknas.</li>
+<li><a href="svt/2024/SVT_2024-02.html#ord">svt/2024/SVT_2024-02.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="omfattas"><a class="header" href="#omfattas"><a href="andra/dn-2024-08.html#ord">omfattas</a></a></h3>
+<p>Att inkluderas eller täckas av något</p>
+<h3 id="omger"><a class="header" href="#omger"><a href="andra/dagens_nyheter.html#ord">omger</a></a></h3>
+<p>Att befinna sig runt omkring något eller någon</p>
+<h3 id="omhändertagits"><a class="header" href="#omhändertagits"><a href="dn/2025/dn-2025-02.html#ord">omhändertagits</a></a></h3>
+<p>Har blivit vårdad, skyddad eller hanterad på ett ansvarsfullt sätt.</p>
+<h3 id="omhändertar"><a class="header" href="#omhändertar"><a href="andra/dn-2024-10.html#ord">omhändertar</a></a></h3>
+<p>Att ta hand om eller ta ansvar för något; att vårda eller skydda.</p>
+<h3 id="omhändertogs"><a class="header" href="#omhändertogs"><a href="svt/2024/SVT_2024-04.html#ord">omhändertogs</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="omorganisera"><a class="header" href="#omorganisera"><a href="svt/2024/SVT_2024-02.html#ord">omorganisera</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="omplaceras"><a class="header" href="#omplaceras"><a href="svt/2025/SVT_2025-06.html#ord">omplaceras</a></a></h3>
+<p>Flyttas till en annan plats eller annan arbetsuppgift.</p>
+<h3 id="omtalade"><a class="header" href="#omtalade"><a href="svt/2025/SVT_2025-06.html#ord">omtalade</a></a></h3>
+<p>Något eller någon som det pratas mycket om, ofta i medier eller offentligt</p>
+<h3 id="onekligen"><a class="header" href="#onekligen"><a href="andra/dagens_nyheter.html#ord">onekligen</a></a></h3>
+<p>Utan tvivel; används för att uttrycka överensstämmelse</p>
+<h3 id="onödan"><a class="header" href="#onödan"><a href="svt/2025/SVT_2025-02.html#ord">onödan</a></a></h3>
+<p>När något görs utan att det behövs eller är meningsfullt.</p>
+<h3 id="opartiskt"><a class="header" href="#opartiskt"><a href="andra/dn-2024-10.html#ord">opartiskt</a></a></h3>
+<p>Att agera eller bedöma utan att vara partisk; neutralt och rättvist.</p>
+<h3 id="oråd"><a class="header" href="#oråd"><a href="andra/dn-2024-08.html#ord">oråd</a></a></h3>
+<p>Något skumt eller misstänkt, en föraning om att något är fel</p>
+<h3 id="ordförande"><a class="header" href="#ordförande"><a href="svt/2024/SVT_2024-04.html#ord">ordförande</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="ordförståelse"><a class="header" href="#ordförståelse"><a href="svt/2024/SVT_2024-04.html#ord">ordförståelse</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="orkan"><a class="header" href="#orkan"><a href="svt/2024/SVT_2024-02.html#ord">orkan</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="orosanmälde"><a class="header" href="#orosanmälde"><a href="svt/2025/SVT_2025-06.html#ord">orosanmälde</a></a></h3>
+<p>Gjorde en formell anmälan till socialtjänsten på grund av misstanke om att någon far illa.</p>
+<h3 id="oroväckande"><a class="header" href="#oroväckande"><a href="svt/2024/SVT_2024-04.html#ord">oroväckande</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="orsaka"><a class="header" href="#orsaka"><a href="dropbox/SVT.html#ord">orsaka</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="osmos"><a class="header" href="#osmos"><a href="svt/2024/SVT_2024-06.html#ord">osmos</a></a></h3>
+<p>Process där lösningsmedel passerar genom ett semipermeabelt membran från en mindre koncentrerad lösning till en mer koncentrerad lösning</p>
+<h3 id="otaliga"><a class="header" href="#otaliga"><a href="svt/2025/svt-2025-08.html#ord">otaliga</a></a></h3>
+<ul>
+<li><a href="svt/2025/svt-2025-08.html#ord">svt/2025/svt-2025-08.md#ord</a>: Mycket många, så många att de inte kan räknas</li>
+<li><a href="svt/2024/SVT_2024-06.html#ord">svt/2024/SVT_2024-06.md#ord</a>: Så många att de inte kan räknas; mycket stora mängder</li>
+</ul>
+<h3 id="otåliga"><a class="header" href="#otåliga"><a href="svt/2025/SVT_2025-04.html#ord">otåliga</a></a></h3>
+<p>Som har svårt att vänta; blir lätt irriterade när något dröjer.</p>
+<h3 id="outgrundlig"><a class="header" href="#outgrundlig"><a href="svt/2024/SVT_2024-06.html#ord">outgrundlig</a></a></h3>
+<p>Som inte kan förstås eller förklaras; mystisk</p>
+<h3 id="ovisshet"><a class="header" href="#ovisshet"><a href="svt/2025/svt-2025-08.html#ord">ovisshet</a></a></h3>
+<p>Tillstånd av osäkerhet; när man inte vet hur något kommer att bli</p>
+<h2 id="p"><a class="header" href="#p">P</a></h2>
+<h3 id="påskynda"><a class="header" href="#påskynda"><a href="svt/2024/SVT_2024-05.html#ord">påskynda</a></a></h3>
+<p>Att göra något snabbare eller accelerera processen</p>
+<h3 id="påstådda"><a class="header" href="#påstådda"><a href="svt/2025/SVT_2025-05.html#ord">påstådda</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-05.html#ord">svt/2025/SVT_2025-05.md#ord</a>: Något som sägs ha hänt eller vara sant, men som inte är bevisat.</li>
+<li><a href="andra/dagens_nyheter.html#ord">andra/dagens_nyheter.md#ord</a>: Som någon har sagt eller hävdat, ofta utan bevis</li>
+</ul>
+<h3 id="påstår"><a class="header" href="#påstår"><a href="svt/2025/SVT_2025-06.html#ord">påstår</a></a></h3>
+<p>Säger eller hävdar att något är sant, ofta utan att bevisa det direkt.</p>
+<h3 id="påstod"><a class="header" href="#påstod"><a href="andra/dn-2024-09.html#ord">påstod</a></a></h3>
+<p>Att hävda eller säga något som kanske inte är sant</p>
+<h3 id="påstridig"><a class="header" href="#påstridig"><a href="andra/dn-2024-08.html#ord">påstridig</a></a></h3>
+<p>Någon som envist insisterar på sin åsikt eller vilja</p>
+<h3 id="påtagligt"><a class="header" href="#påtagligt"><a href="andra/dn-2024-11.html#ord">påtagligt</a></a></h3>
+<p>Något som är tydligt märkbart eller uppenbart.</p>
+<h3 id="påtryckningar"><a class="header" href="#påtryckningar"><a href="svt/2025/SVT_2025-04.html#ord">påtryckningar</a></a></h3>
+<p>Försök att påverka någon att agera på ett visst sätt, ofta genom makt eller hot.</p>
+<h3 id="pellets"><a class="header" href="#pellets"><a href="svt/2024/svt_2024-01.html#ord">pellets</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="perrongerna"><a class="header" href="#perrongerna"><a href="svt/2024/SVT_2024-02.html#ord">perrongerna</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="planbesked"><a class="header" href="#planbesked"><a href="andra/dagens_nyheter.html#ord">planbesked</a></a></h3>
+<p>Officiellt meddelande om framtida planering eller utveckling</p>
+<h3 id="plingade"><a class="header" href="#plingade"><a href="andra/dn-2024-08.html#ord">plingade</a></a></h3>
+<p>Att ge ifrån sig ett litet, klingande ljud, ofta från en klocka</p>
+<h3 id="plundring"><a class="header" href="#plundring"><a href="svt/2025/SVT_2025-06.html#ord">plundring</a></a></h3>
+<p>Våldsam stöld, ofta i samband med krig eller upplopp</p>
+<h3 id="präglas"><a class="header" href="#präglas"><a href="svt/2025/SVT_2025-04.html#ord">präglas</a></a></h3>
+<p>Att ha en tydlig karaktär eller påverkan från något; vara färgad av.</p>
+<h3 id="produktionsverksamheten"><a class="header" href="#produktionsverksamheten"><a href="svt/2024/SVT_2024-02.html#ord">produktionsverksamheten</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="pryder"><a class="header" href="#pryder"><a href="dn/2025/dn-2025-01.html#ord">pryder</a></a></h3>
+<p>Att göra något vackrare genom dekoration eller utsmyckning.</p>
+<h2 id="r"><a class="header" href="#r">R</a></h2>
+<h3 id="raseri"><a class="header" href="#raseri"><a href="svt/2024/SVT_2024-04.html#ord">raseri</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="rattfylleri"><a class="header" href="#rattfylleri"><a href="svt/2025/SVT_2025-06.html#ord">rattfylleri</a></a></h3>
+<p>Att köra ett motordrivet fordon under påverkan av alkohol eller droger.</p>
+<h3 id="räckvidd"><a class="header" href="#räckvidd"><a href="svt/2025/svt-2025-08.html#ord">räckvidd</a></a></h3>
+<p>Avstånd eller område som något kan nå eller täcka</p>
+<h3 id="rädsla"><a class="header" href="#rädsla"><a href="svt/2024/SVT_2024-04.html#ord">rädsla</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="rådgivning"><a class="header" href="#rådgivning"><a href="andra/dn-2024-11.html#ord">rådgivning</a></a></h3>
+<p>Professionell vägledning och hjälp i form av råd.</p>
+<h3 id="redovisar"><a class="header" href="#redovisar"><a href="svt/2024/SVT_2024-02.html#ord">redovisar</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="regelbundet"><a class="header" href="#regelbundet"><a href="dn/2025/dn-2025-03.html#ord">regelbundet</a></a></h3>
+<p>Som sker med jämna mellanrum; återkommande och organiserat.</p>
+<h3 id="resonemang"><a class="header" href="#resonemang"><a href="svt/2024/SVT_2024-04.html#ord">resonemang</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="respektlöst"><a class="header" href="#respektlöst"><a href="svt/2024/SVT_2024-04.html#ord">respektlöst</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="retoriskt"><a class="header" href="#retoriskt"><a href="dn/2025/dn-2025-01.html#ord">retoriskt</a></a></h3>
+<p>Något som har att göra med konsten att tala övertygande eller uttrycka sig väl.</p>
+<h3 id="riktar"><a class="header" href="#riktar"><a href="svt/2025/SVT_2025-03.html#ord">riktar</a></a></h3>
+<p>Att peka eller vända något i en viss riktning.</p>
+<h3 id="riktlinjer"><a class="header" href="#riktlinjer"><a href="svt/2025/SVT_2025-04.html#ord">riktlinjer</a></a></h3>
+<p>Anvisningar eller principer som visar hur något bör göras eller hanteras.</p>
+<h3 id="riktvärdet"><a class="header" href="#riktvärdet"><a href="svt/2024/SVT_2024-06.html#ord">riktvärdet</a></a></h3>
+<p>Ett rekommenderat värde som bör användas som referenspunkt</p>
+<h3 id="röjs"><a class="header" href="#röjs"><a href="svt/2025/svt-2025-08.html#ord">röjs</a></a></h3>
+<p>Passiv form av “röja”; att något avslöjas, tas bort eller görs synligt</p>
+<h3 id="rusta-upp"><a class="header" href="#rusta-upp"><a href="svt/2024/svt_2024-01.html#ord">rusta upp</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="rycker-ut"><a class="header" href="#rycker-ut"><a href="svt/2024/SVT_2024-05.html#ord">rycker ut</a></a></h3>
+<p>Att snabbt svara på ett akut behov eller en nödsituation, särskilt inom räddningstjänsten eller militären</p>
+<h3 id="rykte"><a class="header" href="#rykte"><a href="svt/2024/svt_2024-01.html#ord">rykte</a></a></h3>
+<ul>
+<li><a href="svt/2024/svt_2024-01.html#ord">svt/2024/svt_2024-01.md#ord</a>: Definition saknas.</li>
+<li><a href="andra/dn-2024-10.html#ord">andra/dn-2024-10.md#ord</a>: Allmän uppfattning eller spridning av information om någon eller något, ofta utan bekräftelse.</li>
+</ul>
+<h3 id="rymdfarkosten"><a class="header" href="#rymdfarkosten"><a href="svt/2025/SVT_2025-03.html#ord">Rymdfarkosten</a></a></h3>
+<p>Ett fordon som används för att resa i rymden.</p>
+<h2 id="s"><a class="header" href="#s">S</a></h2>
+<h3 id="sakkunnig"><a class="header" href="#sakkunnig"><a href="svt/2025/SVT_2025-01.html#ord">sakkunnig</a></a></h3>
+<p>En person som har expertkunskaper inom ett visst område.</p>
+<h3 id="samförstånd"><a class="header" href="#samförstånd"><a href="svt/2024/SVT_2024-03.html#ord">samförstånd</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="sammandrabbningar"><a class="header" href="#sammandrabbningar"><a href="svt/2025/SVT_2025-07.html#ord">sammandrabbningar</a></a></h3>
+<p>Våldsamma eller fysiska konfrontationer mellan grupper, ofta i konflikter</p>
+<h3 id="sammanfattar"><a class="header" href="#sammanfattar"><a href="svt/2024/SVT_2024-06.html#ord">sammanfattar</a></a></h3>
+<p>Att kortfattat beskriva huvudpunkterna eller kärnan i något</p>
+<h3 id="sammanfattningsvis"><a class="header" href="#sammanfattningsvis"><a href="svt/2024/SVT_2024-03.html#ord">Sammanfattningsvis</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="sammanlagt"><a class="header" href="#sammanlagt"><a href="andra/dn-2024-09.html#ord">sammanlagt</a></a></h3>
+<p>Totalt eller i sin helhet</p>
+<h3 id="satsning"><a class="header" href="#satsning"><a href="svt/2024/SVT_2024-02.html#ord">satsning</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="säkerligen"><a class="header" href="#säkerligen"><a href="svt/2024/SVT_2024-04.html#ord">säkerligen</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="sällsynt"><a class="header" href="#sällsynt"><a href="svt/2025/SVT_2025-01.html#ord">sällsynt</a></a></h3>
+<p>Något som är ovanligt eller händer mycket sällan.</p>
+<h3 id="sällsynta"><a class="header" href="#sällsynta"><a href="svt/2025/SVT_2025-04.html#ord">sällsynta</a></a></h3>
+<p>Förekommer mycket sällan; ovanliga.</p>
+<h3 id="sårbarheter"><a class="header" href="#sårbarheter"><a href="svt/2024/SVT_2024-05.html#ord">sårbarheter</a></a></h3>
+<ul>
+<li><a href="svt/2024/SVT_2024-05.html#ord">svt/2024/SVT_2024-05.md#ord</a>: Tillstånd eller egenskaper som gör något känsligt för skada, skada eller attack</li>
+<li><a href="dn/2025/dn-2025-01.html#ord">dn/2025/dn-2025-01.md#ord</a>: Tillstånd eller egenskaper som gör något eller någon känslig för skada eller angrepp.</li>
+</ul>
+<h3 id="seklet"><a class="header" href="#seklet"><a href="svt/2024/SVT_2024-02.html#ord">seklet</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="sekretess"><a class="header" href="#sekretess"><a href="svt/2024/svt_2024-01.html#ord">sekretess</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="sekretessbelagd"><a class="header" href="#sekretessbelagd"><a href="dn/2025/dn-2025-02.html#ord">sekretessbelagd</a></a></h3>
+<p>Något som är hemligt och inte får delas med obehöriga.</p>
+<h3 id="siffermässigt"><a class="header" href="#siffermässigt"><a href="svt/2025/SVT_2025-07.html#ord">siffermässigt</a></a></h3>
+<p>Som rör siffror eller kan uttryckas i tal</p>
+<h3 id="siktade"><a class="header" href="#siktade"><a href="svt/2025/SVT_2025-03.html#ord">siktade</a></a></h3>
+<p>Att titta på något genom ett sikte.</p>
+<h3 id="sinsemellan"><a class="header" href="#sinsemellan"><a href="andra/dn-2024-12.html#ord">sinsemellan</a></a></h3>
+<p>Mellan varandra; används för att beskriva relationer eller interaktioner inom en grupp.</p>
+<h3 id="självförtroende"><a class="header" href="#självförtroende"><a href="andra/aftonbladet_2024-11.html#ord">självförtroende</a></a></h3>
+<p>En persons tilltro till sin egen förmåga och sitt eget värde.</p>
+<h3 id="sjätte"><a class="header" href="#sjätte"><a href="svt/2024/svt_2024-01.html#ord">sjätte</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="sjöjungfrun"><a class="header" href="#sjöjungfrun"><a href="svt/2025/SVT_2025-04.html#ord">sjöjungfrun</a></a></h3>
+<p>Ett mytologiskt väsen med överkropp som en kvinna och underkropp som en fisk.</p>
+<h3 id="skälig"><a class="header" href="#skälig"><a href="svt/2024/SVT_2024-03.html#ord">skälig</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="skäligen"><a class="header" href="#skäligen"><a href="andra/dn-2024-10.html#ord">skäligen</a></a></h3>
+<p>På ett rimligt eller rättvist sätt; baserat på goda grunder.</p>
+<h3 id="skäms"><a class="header" href="#skäms"><a href="andra/dn-2024-11.html#ord">skäms</a></a></h3>
+<p>Att känna sig generad eller skyldig över något man gjort eller inte gjort.</p>
+<h3 id="skämt"><a class="header" href="#skämt"><a href="dropbox/SVT.html#ord">skämt</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="skådespel"><a class="header" href="#skådespel"><a href="svt/2025/SVT_2025-01.html#ord">skådespel</a></a></h3>
+<p>Ett offentligt framförande av drama, som teater eller film.</p>
+<h3 id="skenprocess"><a class="header" href="#skenprocess"><a href="dropbox/SVT.html#ord">skenprocess</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="skingrades"><a class="header" href="#skingrades"><a href="andra/dagens_nyheter.html#ord">skingrades</a></a></h3>
+<p>Att spridas eller försvinna i olika riktningar</p>
+<h3 id="skisser"><a class="header" href="#skisser"><a href="andra/dagens_nyheter.html#ord">skisser</a></a></h3>
+<p>En enkel eller preliminär teckning eller ritning</p>
+<h3 id="skolkar"><a class="header" href="#skolkar"><a href="dropbox/SVT.html#ord">skolkar</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="skolväsendet"><a class="header" href="#skolväsendet"><a href="svt/2024/SVT_2024-04.html#ord">skolväsendet</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="skötsam"><a class="header" href="#skötsam"><a href="svt/2025/SVT_2025-07.html#ord">skötsam</a></a></h3>
+<p>Som uppför sig väl, tar ansvar och följer regler</p>
+<h3 id="skraj"><a class="header" href="#skraj"><a href="andra/dagens_nyheter.html#ord">skraj</a></a></h3>
+<p>Mycket rädd eller nervös; i stor rädsla eller ångest</p>
+<h3 id="skräckfylld"><a class="header" href="#skräckfylld"><a href="svt/2025/SVT_2025-06.html#ord">skräckfylld</a></a></h3>
+<p>Full av skräck eller intensiv rädsla</p>
+<h3 id="skrämma"><a class="header" href="#skrämma"><a href="svt/2025/SVT_2025-07.html#ord">skrämma</a></a></h3>
+<p>Att få någon att känna rädsla eller obehag</p>
+<h3 id="skrämmande"><a class="header" href="#skrämmande"><a href="dropbox/SVT.html#ord">skrämmande</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="skredet"><a class="header" href="#skredet"><a href="svt/2024/SVT_2024-02.html#ord">Skredet</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="skymfa"><a class="header" href="#skymfa"><a href="andra/dagens_nyheter.html#ord">skymfa</a></a></h3>
+<p>Att förolämpa eller förödmjuka någon</p>
+<h3 id="slänt"><a class="header" href="#slänt"><a href="svt/2024/SVT_2024-02.html#ord">slänt</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="släpas-bort"><a class="header" href="#släpas-bort"><a href="svt/2024/SVT_2024-03.html#ord">släpas bort</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="släpet"><a class="header" href="#släpet"><a href="svt/2024/SVT_2024-04.html#ord">Släpet</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="sletssliter-att-slita-slet-har-slitit-är-sliten-slit"><a class="header" href="#sletssliter-att-slita-slet-har-slitit-är-sliten-slit"><a href="dropbox/SVT.html#ord">slets(sliter, att slita, slet, har slitit, är sliten, slit!)</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="slipper"><a class="header" href="#slipper"><a href="svt/2025/SVT_2025-06.html#ord">slipper</a></a></h3>
+<p>Undgår något obehagligt eller oönskat; behöver inte göra något.</p>
+<h3 id="sliter"><a class="header" href="#sliter"><a href="svt/2025/svt-2025-08.html#ord">sliter</a></a></h3>
+<ul>
+<li><a href="svt/2025/svt-2025-08.html#ord">svt/2025/svt-2025-08.md#ord</a>: 1. Arbetar mycket hårt / 2. Drar eller river något med kraft</li>
+<li><a href="svt/2024/SVT_2024-04.html#ord">svt/2024/SVT_2024-04.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="slöt"><a class="header" href="#slöt"><a href="svt/2025/SVT_2025-05.html#ord">slöt</a></a></h3>
+<p>Ingick eller avslutade något formellt, t.ex. ett avtal.</p>
+<h3 id="slukar"><a class="header" href="#slukar"><a href="svt/2024/SVT_2024-06.html#ord">slukar</a></a></h3>
+<p>Att svälja något snabbt och girigt; att ta in stora mängder av något, till exempel information</p>
+<h3 id="slumpmässigt"><a class="header" href="#slumpmässigt"><a href="svt/2024/SVT_2024-06.html#ord">slumpmässigt</a></a></h3>
+<p>Något som sker utan någon specifik ordning eller plan; av en händelse</p>
+<h3 id="slutändan"><a class="header" href="#slutändan"><a href="svt/2024/SVT_2024-03.html#ord">slutändan</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="slutgiltig"><a class="header" href="#slutgiltig"><a href="svt/2024/svt_2024-01.html#ord">slutgiltig</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="slutligen"><a class="header" href="#slutligen"><a href="svt/2024/SVT_2024-03.html#ord">slutligen</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="slutsatsen"><a class="header" href="#slutsatsen"><a href="dn/2025/dn-2025-04.html#ord">slutsatsen</a></a></h3>
+<p>Det man kommer fram till efter att ha analyserat eller resonerat.</p>
+<h3 id="smäda"><a class="header" href="#smäda"><a href="andra/dagens_nyheter.html#ord">smäda</a></a></h3>
+<p>Att tala illa om eller förlöjliga någon; att förolämpa</p>
+<h3 id="småningom"><a class="header" href="#småningom"><a href="svt/2025/SVT_2025-06.html#ord">småningom</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-06.html#ord">svt/2025/SVT_2025-06.md#ord</a>: Efter en viss tid, gradvis eller till slut</li>
+<li><a href="andra/dn-2024-10.html#ord">andra/dn-2024-10.md#ord</a>: Gradvis; över tid, något som händer långsamt eller successivt.</li>
+</ul>
+<h3 id="smidigheten"><a class="header" href="#smidigheten"><a href="svt/2024/svt_2024-01.html#ord">smidigheten</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="snattaren"><a class="header" href="#snattaren"><a href="svt/2024/SVT_2024-04.html#ord">snattaren</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="sniskan"><a class="header" href="#sniskan"><a href="svt/2024/SVT_2024-04.html#ord">sniskan</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="soptippen"><a class="header" href="#soptippen"><a href="svt/2025/SVT_2025-05.html#ord">soptippen</a></a></h3>
+<p>En plats där avfall och skräp samlas och lagras.</p>
+<h3 id="sömnlös"><a class="header" href="#sömnlös"><a href="svt/2025/SVT_2025-06.html#ord">sömnlös</a></a></h3>
+<p>Oförmögen att sova; lider av sömnbrist</p>
+<h3 id="sparkad"><a class="header" href="#sparkad"><a href="svt/2025/SVT_2025-01.html#ord">sparkad</a></a></h3>
+<p>Någon som har förlorat sitt arbete eller blivit avskedad.</p>
+<h3 id="sprickan"><a class="header" href="#sprickan"><a href="svt/2025/svt-2025-08.html#ord">sprickan</a></a></h3>
+<p>En reva eller öppning i något hårt material; även bildligt för konflikt</p>
+<h3 id="stampar"><a class="header" href="#stampar"><a href="svt/2025/SVT_2025-06.html#ord">stampar</a></a></h3>
+<p>Trycker foten hårt mot marken, ofta i frustration eller rytm</p>
+<h3 id="stämning"><a class="header" href="#stämning"><a href="dropbox/SVT.html#ord">stämning</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="stämt"><a class="header" href="#stämt"><a href="andra/tv4_and_others.html#ord">stämt</a></a></h3>
+<p>Att ha väckt talan i domstol mot någon</p>
+<h3 id="stillasittande"><a class="header" href="#stillasittande"><a href="dn/2025/dn-2025-04.html#ord">stillasittande</a></a></h3>
+<p>Att sitta stilla under längre perioder utan att röra på sig.</p>
+<h3 id="stökar"><a class="header" href="#stökar"><a href="andra/dn-2024-09.html#ord">stökar</a></a></h3>
+<p>Att skapa oordning eller att röja</p>
+<h3 id="stöldvåg"><a class="header" href="#stöldvåg"><a href="svt/2024/svt_2024-01.html#ord">stöldvåg</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="stör"><a class="header" href="#stör"><a href="svt/2024/SVT_2024-06.html#ord">stör</a></a></h3>
+<p>Att avbryta eller orsaka problem för någon eller något</p>
+<h3 id="störtar-ner"><a class="header" href="#störtar-ner"><a href="svt/2024/SVT_2024-03.html#ord">störtar ner</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="störtdök"><a class="header" href="#störtdök"><a href="andra/dn-2024-08.html#ord">störtdök</a></a></h3>
+<p>Att falla eller sjunka snabbt och kraftigt</p>
+<h3 id="strax"><a class="header" href="#strax"><a href="svt/2025/SVT_2025-07.html#ord">strax</a></a></h3>
+<p>Inom kort tid; mycket snart</p>
+<h3 id="stridsfråga"><a class="header" href="#stridsfråga"><a href="svt/2025/SVT_2025-05.html#ord">stridsfråga</a></a></h3>
+<p>En fråga som orsakar konflikt eller oenighet mellan parter.</p>
+<h3 id="stroppy"><a class="header" href="#stroppy"><a href="andra/dagens_nyheter.html#ord">stroppy</a></a></h3>
+<p>Som är irriterad, lättretad eller bråkig</p>
+<h3 id="ström"><a class="header" href="#ström"><a href="svt/2024/SVT_2024-03.html#ord">ström</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="struntar"><a class="header" href="#struntar"><a href="netflix/bonus_family.html#ord">struntar</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="styrs"><a class="header" href="#styrs"><a href="svt/2025/SVT_2025-03.html#ord">styrs</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-03.html#ord">svt/2025/SVT_2025-03.md#ord</a>: Är under kontroll eller ledning av någon eller något.</li>
+<li><a href="svt/2025/SVT_2025-03.html#ord">svt/2025/SVT_2025-03.md#ord</a>: Är under kontroll eller ledning av någon eller något.</li>
+</ul>
+<h3 id="svajig"><a class="header" href="#svajig"><a href="andra/dn-2024-09.html#ord">svajig</a></a></h3>
+<p>Något som är osäkert eller vacklar</p>
+<h3 id="svalka"><a class="header" href="#svalka"><a href="svt/2024/SVT_2024-06.html#ord">svalka</a></a></h3>
+<p>En känsla av kyla eller friskhet, särskilt under varma förhållanden</p>
+<h3 id="svälter"><a class="header" href="#svälter"><a href="svt/2025/SVT_2025-07.html#ord">svälter</a></a></h3>
+<p>Lider av extrem hunger; får inte tillräckligt med mat</p>
+<h3 id="svårigheter"><a class="header" href="#svårigheter"><a href="andra/dn-2024-09.html#ord">svårigheter</a></a></h3>
+<p>Problem eller hinder som gör något svårt</p>
+<h3 id="svunnen"><a class="header" href="#svunnen"><a href="dropbox/SVT.html#ord">svunnen</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="synnerligen"><a class="header" href="#synnerligen"><a href="andra/tv4_and_others.html#ord">synnerligen</a></a></h3>
+<ul>
+<li><a href="andra/tv4_and_others.html#ord">andra/tv4_and_others.md#ord</a>: I högsta grad; väldigt mycket.</li>
+<li><a href="andra/dn-2024-10.html#ord">andra/dn-2024-10.md#ord</a>: I hög grad; särskilt eller mycket; används för att betona något.</li>
+</ul>
+<h3 id="synpunkt"><a class="header" href="#synpunkt"><a href="svt/2024/SVT_2024-03.html#ord">synpunkt</a></a></h3>
+<p>Definition saknas.</p>
+<h2 id="t"><a class="header" href="#t">T</a></h2>
+<h3 id="takt"><a class="header" href="#takt"><a href="svt/2024/svt_2024-01.html#ord">takt</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="takten"><a class="header" href="#takten"><a href="svt/2025/SVT_2025-01.html#ord">takten</a></a></h3>
+<p>Hastigheten eller rytmen i något, exempelvis musik eller en utveckling.</p>
+<h3 id="täckning"><a class="header" href="#täckning"><a href="svt/2025/svt-2025-08.html#ord">täckning</a></a></h3>
+<ol>
+<li>Skydd eller något som täcker / 2. Område där nätverk eller försäkring gäller</li>
+</ol>
+<h3 id="tålamod"><a class="header" href="#tålamod"><a href="svt/2024/SVT_2024-05.html#ord">tålamod</a></a></h3>
+<p>Förmågan att vara lugn och uthållig i väntan eller under svåra omständigheter</p>
+<h3 id="tålamodet"><a class="header" href="#tålamodet"><a href="svt/2024/SVT_2024-05.html#ord">tålamodet</a></a></h3>
+<p>Förmågan att vara lugn och uthållig i väntan eller under svåra omständigheter</p>
+<h3 id="tidsåtgången"><a class="header" href="#tidsåtgången"><a href="andra/dagens_nyheter.html#ord">tidsåtgången</a></a></h3>
+<p>Den tid som behövs för att slutföra en uppgift eller aktivitet</p>
+<h3 id="tillåtit"><a class="header" href="#tillåtit"><a href="andra/dn-2024-11.html#ord">tillåtit</a></a></h3>
+<p>Har givit tillstånd eller accepterat något.</p>
+<h3 id="tillåtna"><a class="header" href="#tillåtna"><a href="svt/2024/svt_2024-01.html#ord">tillåtna</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="tillbakavisas"><a class="header" href="#tillbakavisas"><a href="svt/2025/svt-2025-08.html#ord">tillbakavisas</a></a></h3>
+<p>När ett påstående eller en anklagelse avfärdas som felaktig eller oriktig</p>
+<h3 id="tillbringar"><a class="header" href="#tillbringar"><a href="svt/2025/SVT_2025-01.html#ord">tillbringar</a></a></h3>
+<p>Att använda tid på en viss plats eller i en viss aktivitet.</p>
+<h3 id="tillbringat"><a class="header" href="#tillbringat"><a href="svt/2025/SVT_2025-03.html#ord">tillbringat</a></a></h3>
+<p>Ha spenderat tid på en plats eller med en aktivitet.</p>
+<h3 id="tillfälle"><a class="header" href="#tillfälle"><a href="svt/2025/SVT_2025-02.html#ord">tillfälle</a></a></h3>
+<p>Ett visst ögonblick eller en möjlighet att göra något.</p>
+<h3 id="tillfällen"><a class="header" href="#tillfällen"><a href="svt/2025/SVT_2025-06.html#ord">tillfällen</a></a></h3>
+<p>Specifika tidpunkter eller möjligheter då något kan hända eller göras.</p>
+<h3 id="tillfällena"><a class="header" href="#tillfällena"><a href="svt/2024/svt_2024-01.html#ord">tillfällena</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="tillförlitlig"><a class="header" href="#tillförlitlig"><a href="svt/2024/SVT_2024-04.html#ord">tillförlitlig</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="tillgodose"><a class="header" href="#tillgodose"><a href="andra/dagens_nyheter.html#ord">tillgodose</a></a></h3>
+<ul>
+<li><a href="andra/dagens_nyheter.html#ord">andra/dagens_nyheter.md#ord</a>: Att uppfylla eller tillfredsställa någons behov eller önskemål</li>
+<li><a href="andra/dn-2024-10.html#ord">andra/dn-2024-10.md#ord</a>: Att tillfredsställa eller uppfylla behov; att möta krav eller önskemål.</li>
+</ul>
+<h3 id="tillskott"><a class="header" href="#tillskott"><a href="andra/dn-2024-11.html#ord">tillskott</a></a></h3>
+<p>Något som läggs till för att förstärka eller komplettera något annat.</p>
+<h3 id="tillvarata"><a class="header" href="#tillvarata"><a href="andra/dn-2024-09.html#ord">tillvarata</a></a></h3>
+<p>Att ta hand om något eller någon, skydda och vårda</p>
+<h3 id="toppnotering"><a class="header" href="#toppnotering"><a href="dn/2025/dn-2025-03.html#ord">toppnotering</a></a></h3>
+<p>Högsta uppnådda nivå eller rekord.</p>
+<h3 id="tornet"><a class="header" href="#tornet"><a href="svt/2024/SVT_2024-03.html#ord">tornet</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="tortyrliknande"><a class="header" href="#tortyrliknande"><a href="svt/2025/SVT_2025-07.html#ord">tortyrliknande</a></a></h3>
+<p>Som liknar eller påminner om tortyr; mycket plågsam</p>
+<h3 id="trakasserier"><a class="header" href="#trakasserier"><a href="svt/2025/svt-2025-08.html#ord">trakasserier</a></a></h3>
+<ul>
+<li><a href="svt/2025/svt-2025-08.html#ord">svt/2025/svt-2025-08.md#ord</a>: Upprepade handlingar som stör, kränker eller förföljer någon</li>
+<li><a href="svt/2024/svt_2024-01.html#ord">svt/2024/svt_2024-01.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="tramsig"><a class="header" href="#tramsig"><a href="svt/2025/SVT_2025-03.html#ord">tramsig</a></a></h3>
+<p>Barnslig, löjlig eller oseriös på ett irriterande sätt.</p>
+<h3 id="tredubbling"><a class="header" href="#tredubbling"><a href="svt/2025/svt-2025-08.html#ord">tredubbling</a></a></h3>
+<p>Att något ökar till tre gånger så mycket som tidigare</p>
+<h3 id="trevande"><a class="header" href="#trevande"><a href="andra/dn-2024-10.html#ord">trevande</a></a></h3>
+<p>Osäkert eller tveksamt; när något sker långsamt och försiktigt.</p>
+<h3 id="trilskas"><a class="header" href="#trilskas"><a href="andra/dn-2024-10.html#ord">trilskas</a></a></h3>
+<p>Att vara envis eller motsträvig, ofta på ett irriterande sätt.</p>
+<h3 id="tristess"><a class="header" href="#tristess"><a href="netflix/bonus_family.html#ord">tristess</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="trivdes"><a class="header" href="#trivdes"><a href="andra/dagens_nyheter.html#ord">trivdes</a></a></h3>
+<p>Kände sig väl till mods och nöjd i en viss miljö eller situation</p>
+<h3 id="troligtvis"><a class="header" href="#troligtvis"><a href="svt/2024/SVT_2024-05.html#ord">troligtvis</a></a></h3>
+<ul>
+<li><a href="svt/2024/SVT_2024-05.html#ord">svt/2024/SVT_2024-05.md#ord</a>: Med stor sannolikhet, förmodligen</li>
+<li><a href="svt/2024/SVT_2024-03.html#ord">svt/2024/SVT_2024-03.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="trolöshet"><a class="header" href="#trolöshet"><a href="svt/2024/SVT_2024-05.html#ord">trolöshet</a></a></h3>
+<p>Att agera på ett oärligt eller bedrägligt sätt, särskilt genom att bryta löften eller förtroenden</p>
+<h3 id="trycksår"><a class="header" href="#trycksår"><a href="svt/2025/SVT_2025-01.html#ord">trycksår</a></a></h3>
+<p>Skada på huden och underliggande vävnad som orsakas av långvarigt tryck.</p>
+<h3 id="tufft"><a class="header" href="#tufft"><a href="svt/2024/svt_2024-01.html#ord">tufft</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="tumult"><a class="header" href="#tumult"><a href="svt/2024/SVT_2024-04.html#ord">tumult</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="tvärtemot"><a class="header" href="#tvärtemot"><a href="andra/tv4_and_others.html#ord">tvärtemot</a></a></h3>
+<p>I motsats till något eller någon; helt motsatt.</p>
+<h3 id="tvärtom"><a class="header" href="#tvärtom"><a href="andra/dn-2024-11.html#ord">tvärtom</a></a></h3>
+<p>Att vara motsatsen eller på ett helt annat sätt än något annat.</p>
+<h3 id="tvångsinlöser"><a class="header" href="#tvångsinlöser"><a href="andra/dagens_nyheter.html#ord">tvångsinlöser</a></a></h3>
+<p>Tar över egendom genom tvång, ofta genom statlig intervention</p>
+<h3 id="tvistemål"><a class="header" href="#tvistemål"><a href="dn/2025/dn-2025-07.html#ord">tvistemål</a></a></h3>
+<p>Rättslig process i domstol mellan två parter om en civilrättslig fråga</p>
+<h3 id="tyder"><a class="header" href="#tyder"><a href="andra/dn-2024-11.html#ord">tyder</a></a></h3>
+<p>Att tolka eller ge en möjlig förklaring till något.</p>
+<h3 id="tystnadspliketen"><a class="header" href="#tystnadspliketen"><a href="svt/2025/SVT_2025-04.html#ord">tystnadspliketen</a></a></h3>
+<p>En laglig skyldighet att inte avslöja viss information.</p>
+<h2 id="u"><a class="header" href="#u">U</a></h2>
+<h3 id="ultimatum"><a class="header" href="#ultimatum"><a href="svt/2024/SVT_2024-04.html#ord">ultimatum</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="undantagen"><a class="header" href="#undantagen"><a href="svt/2025/SVT_2025-07.html#ord">undantagen</a></a></h3>
+<p>Någon eller något som inte omfattas av en regel eller generell tillämpning</p>
+<h3 id="undantagstillstånd"><a class="header" href="#undantagstillstånd"><a href="svt/2025/SVT_2025-06.html#ord">undantagstillstånd</a></a></h3>
+<p>Ett tillstånd där normala lagar tillfälligt sätts ur spel vid kris eller fara</p>
+<h3 id="undantas"><a class="header" href="#undantas"><a href="andra/dn-2024-09.html#ord">undantas</a></a></h3>
+<p>Att inte inkluderas i något, att vara undantagen</p>
+<h3 id="undanträngningseffekterna"><a class="header" href="#undanträngningseffekterna"><a href="svt/2024/svt_2024-01.html#ord">undanträngningseffekterna</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="underkänner"><a class="header" href="#underkänner"><a href="andra/dn-2024-09.html#ord">underkänner</a></a></h3>
+<p>Att inte godkänna något, att förkasta</p>
+<h3 id="underrättade"><a class="header" href="#underrättade"><a href="svt/2025/svt-2025-08.html#ord">underrättade</a></a></h3>
+<p>Preteritum av “underrätta”; informerade någon om något</p>
+<h3 id="underrättar"><a class="header" href="#underrättar"><a href="dropbox/SVT.html#ord">underrättar</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="underrättats"><a class="header" href="#underrättats"><a href="svt/2025/svt-2025-08.html#ord">underrättats</a></a></h3>
+<p>Perfekt particip av “underrätta”; att ha blivit informerad om något</p>
+<h3 id="undvikas"><a class="header" href="#undvikas"><a href="svt/2024/SVT_2024-03.html#ord">undvikas</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="uppblossade"><a class="header" href="#uppblossade"><a href="svt/2025/SVT_2025-07.html#ord">uppblossade</a></a></h3>
+<p>Något (t.ex. en konflikt eller känsla) som plötsligt började eller ökade kraftigt</p>
+<h3 id="uppfylla"><a class="header" href="#uppfylla"><a href="dn/2025/dn-2025-07.html#ord">uppfylla</a></a></h3>
+<p>Att leva upp till krav, förväntningar eller villkor</p>
+<h3 id="uppgörelse"><a class="header" href="#uppgörelse"><a href="svt/2024/svt_2024-01.html#ord">uppgörelse</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="upphäver"><a class="header" href="#upphäver"><a href="andra/tv4_and_others.html#ord">upphäver</a></a></h3>
+<p>Att annullera eller göra något ogiltigt; att avskaffa en lag eller ett beslut.</p>
+<h3 id="upplägg"><a class="header" href="#upplägg"><a href="andra/dagens_nyheter.html#ord">upplägg</a></a></h3>
+<p>Plan eller struktur för hur något ska genomföras</p>
+<h3 id="uppmärksam"><a class="header" href="#uppmärksam"><a href="svt/2025/SVT_2025-05.html#ord">uppmärksam</a></a></h3>
+<p>Som visar koncentration, vaksamhet eller omtanke.</p>
+<h3 id="uppmärksamhet"><a class="header" href="#uppmärksamhet"><a href="svt/2025/SVT_2025-06.html#ord">uppmärksamhet</a></a></h3>
+<p>Att rikta sin koncentration mot något; att bli sedd eller hörd.</p>
+<h3 id="uppmärksamma"><a class="header" href="#uppmärksamma"><a href="svt/2024/svt_2024-01.html#ord">uppmärksamma</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="uppmärksammade"><a class="header" href="#uppmärksammade"><a href="svt/2025/SVT_2025-06.html#ord">uppmärksammade</a></a></h3>
+<p>Lade märke till något; noterade eller gjorde andra medvetna om något.</p>
+<h3 id="uppmätts"><a class="header" href="#uppmätts"><a href="svt/2025/SVT_2025-07.html#ord">uppmätts</a></a></h3>
+<p>Perfekt particip av “uppmäta”; något som har blivit mätt eller registrerat</p>
+<h3 id="uppmuntrar"><a class="header" href="#uppmuntrar"><a href="svt/2025/SVT_2025-07.html#ord">uppmuntrar</a></a></h3>
+<p>Att ge någon stöd, motivation eller inspiration att göra något</p>
+<h3 id="uppmuntras"><a class="header" href="#uppmuntras"><a href="svt/2024/SVT_2024-03.html#ord">uppmuntras</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="uppnå"><a class="header" href="#uppnå"><a href="andra/dagens_nyheter.html#ord">uppnå</a></a></h3>
+<p>Att nå eller komma fram till ett mål eller resultat</p>
+<h3 id="upprätta"><a class="header" href="#upprätta"><a href="svt/2025/SVT_2025-02.html#ord">upprätta</a></a></h3>
+<p>Skapa, etablera eller formellt fastställa något.</p>
+<h3 id="uppringarna"><a class="header" href="#uppringarna"><a href="svt/2025/SVT_2025-07.html#ord">uppringarna</a></a></h3>
+<p>Personerna som ringer upp någon, ofta via telefon</p>
+<h3 id="uppskrivna"><a class="header" href="#uppskrivna"><a href="svt/2025/SVT_2025-04.html#ord">uppskrivna</a></a></h3>
+<p>Något som har ökat i värde eller betydelse; något som har blivit mer värt.</p>
+<h3 id="uppslitande"><a class="header" href="#uppslitande"><a href="svt/2025/SVT_2025-06.html#ord">uppslitande</a></a></h3>
+<p>Känslomässigt mycket smärtsam eller plågsam.</p>
+<h3 id="uppstår"><a class="header" href="#uppstår"><a href="dropbox/SVT.html#ord">uppstår</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="upptagen"><a class="header" href="#upptagen"><a href="dropbox/SVT.html#ord">upptagen</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="upptrappningen"><a class="header" href="#upptrappningen"><a href="svt/2025/SVT_2025-05.html#ord">upptrappningen</a></a></h3>
+<p>En gradvis ökning i intensitet, särskilt i en konflikt eller aktivitet.</p>
+<h3 id="ursprungligen"><a class="header" href="#ursprungligen"><a href="svt/2024/SVT_2024-05.html#ord">ursprungligen</a></a></h3>
+<p>Från början eller från det första</p>
+<h3 id="utarbetas"><a class="header" href="#utarbetas"><a href="svt/2025/svt-2025-08.html#ord">utarbetas</a></a></h3>
+<p>Passiv form av “utarbeta”; när något planeras, konstrueras eller tas fram</p>
+<h3 id="utåtagerande"><a class="header" href="#utåtagerande"><a href="andra/dagens_nyheter.html#ord">utåtagerande</a></a></h3>
+<p>Som visar sina känslor eller sitt missnöje på ett aggressivt sätt</p>
+<h3 id="utesluten"><a class="header" href="#utesluten"><a href="svt/2025/svt-2025-08.html#ord">utesluten</a></a></h3>
+<p>Någon eller något som inte får vara med eller är borttagen från sammanhang</p>
+<h3 id="utfärdades"><a class="header" href="#utfärdades"><a href="svt/2024/SVT_2024-04.html#ord">utfärdades</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="utformades"><a class="header" href="#utformades"><a href="dn/2025/dn-2025-02.html#ord">utformades</a></a></h3>
+<p>Blev designad eller skapad på ett visst sätt.</p>
+<h3 id="utforskar"><a class="header" href="#utforskar"><a href="dn/2025/dn-2025-04.html#ord">utforskar</a></a></h3>
+<p>Undersöker något noggrant för att lära sig mer.</p>
+<h3 id="utförde"><a class="header" href="#utförde"><a href="svt/2025/SVT_2025-03.html#ord">utförde</a></a></h3>
+<p>Att slutföra eller genomföra en uppgift eller aktivitet.</p>
+<h3 id="utlovade"><a class="header" href="#utlovade"><a href="svt/2025/SVT_2025-03.html#ord">utlovade</a></a></h3>
+<p>Gav ett löfte om något; sa att något skulle ske.</p>
+<h3 id="utlyser"><a class="header" href="#utlyser"><a href="svt/2025/SVT_2025-07.html#ord">utlyser</a></a></h3>
+<p>Offentligt meddela att något (t.ex. en tjänst eller ett val) ska ske</p>
+<h3 id="utmaning"><a class="header" href="#utmaning"><a href="svt/2024/SVT_2024-06.html#ord">utmaning</a></a></h3>
+<p>En svårighet eller något som kräver ansträngning och skicklighet</p>
+<h3 id="utmattad"><a class="header" href="#utmattad"><a href="svt/2025/SVT_2025-02.html#ord">utmattad</a></a></h3>
+<p>Att vara extremt trött, både fysiskt och mentalt.</p>
+<h3 id="utmäta"><a class="header" href="#utmäta"><a href="andra/dn-2024-09.html#ord">utmäta</a></a></h3>
+<p>Att beslagta egendom genom rättslig åtgärd</p>
+<h3 id="utnyttjar"><a class="header" href="#utnyttjar"><a href="andra/dn-2024-11.html#ord">utnyttjar</a></a></h3>
+<p>Att använda något eller någon för ett visst syfte, ofta effektivt eller ibland själviskt.</p>
+<h3 id="utnyttjat"><a class="header" href="#utnyttjat"><a href="andra/dn-2024-10.html#ord">utnyttjat</a></a></h3>
+<p>Att ha använt något till sin fördel, ibland på ett negativt sätt.</p>
+<h3 id="utökade"><a class="header" href="#utökade"><a href="svt/2025/SVT_2025-06.html#ord">utökade</a></a></h3>
+<p>Gjorde något större eller mer omfattande än tidigare</p>
+<h3 id="utökar"><a class="header" href="#utökar"><a href="svt/2025/SVT_2025-05.html#ord">utökar</a></a></h3>
+<p>Gör något större eller mer omfattande; ökar omfånget av något.</p>
+<h3 id="utökas"><a class="header" href="#utökas"><a href="svt/2024/SVT_2024-02.html#ord">utökas</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="utöver"><a class="header" href="#utöver"><a href="svt/2024/SVT_2024-02.html#ord">Utöver</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="utplåna"><a class="header" href="#utplåna"><a href="dn/2025/dn-2025-02.html#ord">utplåna</a></a></h3>
+<p>Förstöra fullständigt; få något att försvinna helt.</p>
+<h3 id="utrotas"><a class="header" href="#utrotas"><a href="dropbox/SVT.html#ord">utrotas</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="utrotningshotad"><a class="header" href="#utrotningshotad"><a href="dropbox/SVT.html#ord">utrotningshotad</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="utrymts"><a class="header" href="#utrymts"><a href="svt/2025/SVT_2025-07.html#ord">utrymts</a></a></h3>
+<p>Perfekt particip av “utrymma”; att människor har evakuerats från en plats</p>
+<h3 id="utsaga"><a class="header" href="#utsaga"><a href="andra/dagens_nyheter.html#ord">utsaga</a></a></h3>
+<p>Ett uttryck av tankar, åsikter eller information; en officiell eller formell deklaration</p>
+<h3 id="utsetts"><a class="header" href="#utsetts"><a href="svt/2025/SVT_2025-04.html#ord">utsetts</a></a></h3>
+<p>Att bli vald eller utsedd till en viss position</p>
+<h3 id="utspelet"><a class="header" href="#utspelet"><a href="svt/2025/svt-2025-08.html#ord">utspelet</a></a></h3>
+<p>Ett plötsligt eller strategiskt uttalande eller agerande, ofta i politiskt syfte</p>
+<h3 id="utsträckning"><a class="header" href="#utsträckning"><a href="svt/2024/svt_2024-01.html#ord">utsträckning</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="uttala"><a class="header" href="#uttala"><a href="svt/2024/SVT_2024-04.html#ord">uttala</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="uttråkad"><a class="header" href="#uttråkad"><a href="svt/2024/SVT_2024-06.html#ord">uttråkad</a></a></h3>
+<p>Känna sig trött och ointresserad på grund av brist på stimulans eller variation</p>
+<h3 id="utvärdera"><a class="header" href="#utvärdera"><a href="dropbox/SVT.html#ord">utvärdera</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="utvärderingen"><a class="header" href="#utvärderingen"><a href="andra/dn-2024-12.html#ord">utvärderingen</a></a></h3>
+<p>Processen att bedöma eller analysera något för att avgöra dess kvalitet eller resultat.</p>
+<h3 id="utvidgade"><a class="header" href="#utvidgade"><a href="svt/2025/SVT_2025-06.html#ord">utvidgade</a></a></h3>
+<p>Gjorde något större till omfång eller omfattning; breddade</p>
+<h3 id="utvidgas"><a class="header" href="#utvidgas"><a href="svt/2025/SVT_2025-03.html#ord">utvidgas</a></a></h3>
+<p>Bli större till omfånget eller omfattningen; expandera.</p>
+<h3 id="utvinna"><a class="header" href="#utvinna"><a href="svt/2025/SVT_2025-02.html#ord">utvinna</a></a></h3>
+<p>Ta fram eller extrahera något från en källa.</p>
+<h2 id="v"><a class="header" href="#v">V</a></h2>
+<h3 id="vaksamt"><a class="header" href="#vaksamt"><a href="svt/2025/SVT_2025-02.html#ord">vaksamt</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-02.html#ord">svt/2025/SVT_2025-02.md#ord</a>: Med stor uppmärksamhet och beredskap.</li>
+<li><a href="svt/2025/SVT_2025-02.html#ord">svt/2025/SVT_2025-02.md#ord</a>: Med stor uppmärksamhet och beredskap.</li>
+</ul>
+<h3 id="varelse"><a class="header" href="#varelse"><a href="dropbox/SVT.html#ord">varelse</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="varierande"><a class="header" href="#varierande"><a href="svt/2024/SVT_2024-03.html#ord">varierande</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="varsla"><a class="header" href="#varsla"><a href="svt/2024/SVT_2024-03.html#ord">varsla</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="varslar"><a class="header" href="#varslar"><a href="andra/dn-2024-10.html#ord">varslar</a></a></h3>
+<p>Att informera eller ge en varning om något; att meddela om en förestående händelse.</p>
+<h3 id="vattentät"><a class="header" href="#vattentät"><a href="svt/2024/SVT_2024-03.html#ord">vattentät</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="väcktes"><a class="header" href="#väcktes"><a href="svt/2025/SVT_2025-05.html#ord">väcktes</a></a></h3>
+<p>Började; satte igång något, t.ex. ett intresse, en känsla eller en process.</p>
+<h3 id="vädjar"><a class="header" href="#vädjar"><a href="dn/2025/dn-2025-01.html#ord">vädjar</a></a></h3>
+<p>Att be om något på ett känslomässigt eller övertygande sätt.</p>
+<h3 id="välfärdsstat"><a class="header" href="#välfärdsstat"><a href="dn/2025/dn-2025-04.html#ord">välfärdsstat</a></a></h3>
+<p>En stat som tar ansvar för invånarnas sociala och ekonomiska trygghet.</p>
+<h3 id="välgörenhet"><a class="header" href="#välgörenhet"><a href="andra/tv4_and_others.html#ord">välgörenhet</a></a></h3>
+<p>Att hjälpa andra genom donationer eller välvilliga handlingar.</p>
+<h3 id="välmående"><a class="header" href="#välmående"><a href="svt/2025/SVT_2025-01.html#ord">välmående</a></a></h3>
+<p>Ett tillstånd av hälsa, lycka och ekonomisk stabilitet.</p>
+<h3 id="världsettan"><a class="header" href="#världsettan"><a href="andra/tv4_and_others.html#ord">världsettan</a></a></h3>
+<ul>
+<li><a href="andra/tv4_and_others.html#ord">andra/tv4_and_others.md#ord</a>: Den person eller det lag som är rankad som nummer ett i världen.</li>
+<li><a href="andra/aftonbladet_2024-11.html#ord">andra/aftonbladet_2024-11.md#ord</a>: Den person eller det lag som är rankad som nummer ett i världen.</li>
+</ul>
+<h3 id="värnplikten"><a class="header" href="#värnplikten"><a href="svt/2025/SVT_2025-07.html#ord">värnplikten</a></a></h3>
+<p>Lagstadgad skyldighet att tjänstgöra i försvaret under en viss tid</p>
+<h3 id="värnpliktiga"><a class="header" href="#värnpliktiga"><a href="svt/2024/SVT_2024-04.html#ord">värnpliktiga</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="värvade"><a class="header" href="#värvade"><a href="svt/2025/svt-2025-08.html#ord">värvade</a></a></h3>
+<p>Rekryterade eller fick någon att gå med i en organisation eller grupp</p>
+<h3 id="väsentligt"><a class="header" href="#väsentligt"><a href="svt/2025/SVT_2025-04.html#ord">väsentligt</a></a></h3>
+<p>Något som är mycket viktigt eller betydelsefullt.</p>
+<h3 id="växelvis"><a class="header" href="#växelvis"><a href="svt/2024/svt_2024-01.html#ord">växelvis</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="växtspurt"><a class="header" href="#växtspurt"><a href="svt/2024/SVT_2024-02.html#ord">växtspurt</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="vållande"><a class="header" href="#vållande"><a href="svt/2025/SVT_2025-05.html#ord">vållande</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-05.html#ord">svt/2025/SVT_2025-05.md#ord</a>: Orsakande; som leder till eller bidrar till något, ofta negativt.</li>
+<li><a href="svt/2025/svt-2025-08.html#ord">svt/2025/svt-2025-08.md#ord</a>: Att vara orsak till att något (ofta negativt) händer</li>
+<li><a href="svt/2024/svt_2024-01.html#ord">svt/2024/svt_2024-01.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="vårdslöshet"><a class="header" href="#vårdslöshet"><a href="svt/2025/svt-2025-08.html#ord">vårdslöshet</a></a></h3>
+<p>Brist på omsorg eller försiktighet; oaktsamhet</p>
+<h3 id="vejpande"><a class="header" href="#vejpande"><a href="svt/2025/SVT_2025-04.html#ord">vejpande</a></a></h3>
+<p>Att röka eller använda e-cigaretter</p>
+<h3 id="verkar"><a class="header" href="#verkar"><a href="svt/2024/SVT_2024-05.html#ord">verkar</a></a></h3>
+<p>Att ge intryck av att vara på ett visst sätt; att fungera eller ha en effekt</p>
+<h3 id="verktyg"><a class="header" href="#verktyg"><a href="dropbox/SVT.html#ord">verktyg</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="vernissage"><a class="header" href="#vernissage"><a href="netflix/bonus_family.html#ord">vernissage</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="vidhåller"><a class="header" href="#vidhåller"><a href="svt/2025/SVT_2025-03.html#ord">vidhåller</a></a></h3>
+<p>Fortsätter att hävda eller stå fast vid en åsikt eller ett påstående.</p>
+<h3 id="vidrig"><a class="header" href="#vidrig"><a href="andra/dagens_nyheter.html#ord">vidrig</a></a></h3>
+<p>Extremt obehaglig eller motbjudande</p>
+<h3 id="vidtagit"><a class="header" href="#vidtagit"><a href="svt/2025/SVT_2025-05.html#ord">vidtagit</a></a></h3>
+<p>Har utfört en åtgärd eller gjort något för att uppnå ett visst syfte.</p>
+<h3 id="villkorat"><a class="header" href="#villkorat"><a href="svt/2024/svt_2024-01.html#ord">villkorat</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="villkorlig"><a class="header" href="#villkorlig"><a href="svt/2025/SVT_2025-04.html#ord">villkorlig</a></a></h3>
+<p>Villkorlig; med vissa begränsningar</p>
+<h3 id="vindbyar"><a class="header" href="#vindbyar"><a href="svt/2024/SVT_2024-02.html#ord">vindbyar</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="visserligen"><a class="header" href="#visserligen"><a href="andra/aftonbladet_2024-11.html#ord">visserligen</a></a></h3>
+<p>Ett ord som används för att medge något som är sant, men ofta följt av en invändning.</p>
+<h3 id="vraket"><a class="header" href="#vraket"><a href="svt/2024/SVT_2024-02.html#ord">vraket</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="vräkning"><a class="header" href="#vräkning"><a href="svt/2024/svt_2024-01.html#ord">vräkning</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="vulkanutbrott"><a class="header" href="#vulkanutbrott"><a href="svt/2024/SVT_2024-03.html#ord">vulkanutbrott</a></a></h3>
+<p>Definition saknas.</p>
+<h2 id="y"><a class="header" href="#y">Y</a></h2>
+<h3 id="yttrande"><a class="header" href="#yttrande"><a href="andra/dagens_nyheter.html#ord">yttrande</a></a></h3>
+<p>En formell eller informell uttryckning av tankar, åsikter eller känslor; en kommentar eller åsikt</p>
+<h2 id="å"><a class="header" href="#å">Å</a></h2>
+<h3 id="åderförkalkning"><a class="header" href="#åderförkalkning"><a href="svt/2025/SVT_2025-04.html#ord">åderförkalkning</a></a></h3>
+<p>En medicinsk term för avlagringar i blodkärlen som kan leda till åderförkalkning.</p>
+<h3 id="åhörarläktaren"><a class="header" href="#åhörarläktaren"><a href="andra/tv4_and_others.html#ord">Åhörarläktaren</a></a></h3>
+<p>En plats i en sal eller arena där publiken kan sitta och lyssna.</p>
+<h3 id="åläggs"><a class="header" href="#åläggs"><a href="svt/2025/svt-2025-08.html#ord">åläggs</a></a></h3>
+<p>Passiv form av “ålägga”; att få en skyldighet att göra något</p>
+<h3 id="ångest"><a class="header" href="#ångest"><a href="andra/dn-2024-11.html#ord">ångest</a></a></h3>
+<p>En stark känsla av oro, rädsla eller obehag.</p>
+<h3 id="årsskiftet"><a class="header" href="#årsskiftet"><a href="andra/tv4_and_others.html#ord">årsskiftet</a></a></h3>
+<p>Tidpunkten då ett kalenderår slutar och ett nytt börjar</p>
+<h3 id="åtal"><a class="header" href="#åtal"><a href="svt/2024/SVT_2024-03.html#ord">åtal</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="åtalsanmäla"><a class="header" href="#åtalsanmäla"><a href="svt/2025/SVT_2025-06.html#ord">åtalsanmäla</a></a></h3>
+<p>Att formellt anmäla någon till åklagare för att pröva om åtal ska väckas</p>
+<h3 id="återförena"><a class="header" href="#återförena"><a href="svt/2025/SVT_2025-04.html#ord">återförena</a></a></h3>
+<p>Att samla personer som varit åtskilda, ofta familjemedlemmar.</p>
+<h3 id="återgå"><a class="header" href="#återgå"><a href="dn/2025/dn-2025-02.html#ord">återgå</a></a></h3>
+<p>Gå tillbaka till ett tidigare tillstånd eller plats.</p>
+<h3 id="återstår"><a class="header" href="#återstår"><a href="svt/2024/SVT_2024-06.html#ord">återstår</a></a></h3>
+<p>Fortsätter att finnas eller vara kvar</p>
+<h3 id="åtgärda"><a class="header" href="#åtgärda"><a href="svt/2024/SVT_2024-06.html#ord">åtgärda</a></a></h3>
+<p>Att vidta åtgärder för att rätta till ett problem eller förbättra en situation</p>
+<h3 id="åtgärder"><a class="header" href="#åtgärder"><a href="svt/2025/SVT_2025-03.html#ord">åtgärder</a></a></h3>
+<p>Handlingar som vidtas för att lösa ett problem eller förbättra en situation.</p>
+<h3 id="åtminstone"><a class="header" href="#åtminstone"><a href="svt/2024/svt_2024-01.html#ord">åtminstone</a></a></h3>
+<p>Definition saknas.</p>
+<h2 id="ä"><a class="header" href="#ä">Ä</a></h2>
+<h3 id="ägnar"><a class="header" href="#ägnar"><a href="svt/2025/svt-2025-08.html#ord">ägnar</a></a></h3>
+<p>Att använda tid eller energi på något; att syssla med något</p>
+<h3 id="ägnas-åt"><a class="header" href="#ägnas-åt"><a href="dropbox/SVT.html#ord">ägnas åt</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="äkligt"><a class="header" href="#äkligt"><a href="netflix/bonus_family.html#ord">äkligt</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="äkta"><a class="header" href="#äkta"><a href="svt/2025/SVT_2025-05.html#ord">äkta</a></a></h3>
+<p>Som är genuin eller sann; inte falsk eller konstgjord.</p>
+<h3 id="ärade"><a class="header" href="#ärade"><a href="svt/2025/svt-2025-08.html#ord">ärade</a></a></h3>
+<p>Hedrad eller visad respekt; används ofta som artigt tilltal i formella sammanhang</p>
+<h3 id="ärekränk"><a class="header" href="#ärekränk"><a href="andra/dn-2024-10.html#ord">ärekränk</a></a></h3>
+<p>Att kränka eller skada någons ära eller anseende genom förtal eller nedsättande uttalanden.</p>
+<h3 id="äventyrades"><a class="header" href="#äventyrades"><a href="andra/dagens_nyheter.html#ord">äventyrades</a></a></h3>
+<p>Att något utsattes för risk eller fara</p>
+<h2 id="ö"><a class="header" href="#ö">Ö</a></h2>
+<h3 id="ödeläggelse"><a class="header" href="#ödeläggelse"><a href="svt/2025/SVT_2025-01.html#ord">ödeläggelse</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-01.html#ord">svt/2025/SVT_2025-01.md#ord</a>: Stor förstörelse eller ruinering av något, ofta i samband med krig eller katastrofer.</li>
+<li><a href="svt/2025/svt-2025-08.html#ord">svt/2025/svt-2025-08.md#ord</a>: Fullständig förstöring av något, ofta i stor skala</li>
+<li><a href="svt/2024/svt_2024-01.html#ord">svt/2024/svt_2024-01.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="önskelista"><a class="header" href="#önskelista"><a href="netflix/bonus_family.html#ord">önskelista</a></a></h3>
+<p>Definition saknas.</p>
+<h3 id="öser"><a class="header" href="#öser"><a href="andra/dn-2024-09.html#ord">öser</a></a></h3>
+<p>Att hälla något i stora mängder</p>
+<h3 id="överbelastningsattacker"><a class="header" href="#överbelastningsattacker"><a href="svt/2025/SVT_2025-06.html#ord">överbelastningsattacker</a></a></h3>
+<p>Avsiktliga attacker som överbelastar ett system, oftast en server eller nätverk</p>
+<h3 id="överföringar"><a class="header" href="#överföringar"><a href="dn/2025/dn-2025-03.html#ord">överföringar</a></a></h3>
+<p>Processen att flytta något, t.ex. pengar eller data, från en plats till en annan.</p>
+<h3 id="överge"><a class="header" href="#överge"><a href="svt/2025/svt-2025-08.html#ord">överge</a></a></h3>
+<ul>
+<li><a href="svt/2025/svt-2025-08.html#ord">svt/2025/svt-2025-08.md#ord</a>: Att lämna någon eller något helt och hållet, ofta i en svår situation</li>
+<li><a href="dn/2025/dn-2025-01.html#ord">dn/2025/dn-2025-01.md#ord</a>: Att lämna någon eller något utan att återvända, ofta i en svår situation.</li>
+</ul>
+<h3 id="överlägsen"><a class="header" href="#överlägsen"><a href="svt/2025/SVT_2025-01.html#ord">överlägsen</a></a></h3>
+<ul>
+<li><a href="svt/2025/SVT_2025-01.html#ord">svt/2025/SVT_2025-01.md#ord</a>: Som är mycket bättre eller starkare än andra i en viss situation.</li>
+<li><a href="svt/2024/svt_2024-01.html#ord">svt/2024/svt_2024-01.md#ord</a>: Definition saknas.</li>
+</ul>
+<h3 id="överlåta"><a class="header" href="#överlåta"><a href="svt/2025/svt-2025-08.html#ord">överlåta</a></a></h3>
+<p>Att ge eller sälja rätten till något till någon annan</p>
+<h3 id="översköljer"><a class="header" href="#översköljer"><a href="svt/2024/SVT_2024-06.html#ord">översköljer</a></a></h3>
+<p>Att täcka eller överväldiga något eller någon med en stor mängd av något</p>
+<h3 id="överskrider"><a class="header" href="#överskrider"><a href="svt/2024/SVT_2024-06.html#ord">överskrider</a></a></h3>
+<p>Att gå utöver en gräns eller nivå; att överträffa något</p>
+<h3 id="övertygande"><a class="header" href="#övertygande"><a href="svt/2025/svt-2025-08.html#ord">övertygande</a></a></h3>
+<p>Som framstår som trovärdig och får andra att tro eller hålla med</p>
+<h3 id="överväger"><a class="header" href="#överväger"><a href="svt/2024/SVT_2024-06.html#ord">överväger</a></a></h3>
+<p>Att noggrant tänka igenom något innan man fattar ett beslut</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="index-terms.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="index-terms.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
