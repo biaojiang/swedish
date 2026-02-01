@@ -60,6 +60,10 @@ Processen att skaffa eller köpa in något, ofta för ett specifikt syfte
 
 Definition saknas.
 
+### [anstiftat](svt/2026/svt-2026-01.md#ord)
+
+Har uppmuntrat, förmått eller organiserat någon att begå ett brott
+
 ### [anstormning](svt/2024/svt_2024-01.md#ord)
 
 Definition saknas.
@@ -70,6 +74,7 @@ Insatser eller hårt arbete för att uppnå något
 
 ### [antyder](svt/2025/SVT_2025-06.md#ord)
 
+- [svt/2026/svt-2026-01.md#ord](svt/2026/svt-2026-01.md#ord): Att indirekt ge intryck av eller peka på något utan att säga det rakt ut.
 - [svt/2025/SVT_2025-06.md#ord](svt/2025/SVT_2025-06.md#ord): Att säga något på ett indirekt sätt; ge en vink
 - [svt/2024/SVT_2024-04.md#ord](svt/2024/SVT_2024-04.md#ord): Definition saknas.
 
@@ -311,6 +316,10 @@ Förklaringar eller redogörelser av något i detalj.
 ### [beskyllde](andra/dn-2024-10.md#ord)
 
 Att anklaga eller tilldela skuld för något; att påstå att någon är skyldig till något.
+
+### [bestraffning](svt/2026/svt-2026-01.md#ord)
+
+Åtgärd för att straffa någon för ett brott eller felaktigt beteende
 
 ### [bestyckas](svt/2024/SVT_2024-06.md#ord)
 
@@ -668,6 +677,10 @@ Definition saknas.
 
 Som får någon att känna sig skamsen, förnedrad eller utan värdighet
 
+### [förövare](dn/2026/dn-2026-01.md#ord)
+
+Person som begår ett brott eller en skadlig handling
+
 ### [försämrats](dn/2025/dn-2025-03.md#ord)
 
 Blivit sämre i kvalitet, tillstånd eller funktion.
@@ -802,6 +815,10 @@ Definition saknas.
 
 Orädd och öppen i sitt sätt att tala och agera
 
+### [frihetsinskränkning](svt/2026/svt-2026-01.md#ord)
+
+Åtgärd som begränsar en persons frihet, ofta genom lag eller myndighetsbeslut
+
 ### [frivillighet](svt/2024/SVT_2024-03.md#ord)
 
 Definition saknas.
@@ -929,6 +946,10 @@ Att påstå eller insistera på något som sant eller giltigt
 
 Påstått eller framfört med bestämdhet
 
+### [hävstång](dn/2026/dn-2026-01.md#ord)
+
+Redskap eller princip som används för att förstärka kraft; även bildligt som medel för att öka effekt eller inflytande
+
 ### [hållbara](svt/2024/SVT_2024-05.md#ord)
 
 Som kan upprätthållas över tid utan att skada miljön eller samhället; varaktiga och stabila
@@ -952,6 +973,10 @@ Definition saknas.
 ### [hjärtinfarkter](svt/2024/svt_2024-01.md#ord)
 
 Definition saknas.
+
+### [högutbildad](dn/2026/dn-2026-01.md#ord)
+
+Som har genomgått lång eller avancerad utbildning, ofta på högskolenivå
 
 ### [hövlig](andra/dn-2024-08.md#ord)
 
@@ -1016,6 +1041,10 @@ En konflikt eller ett krig mellan grupper inom samma land eller stat.
 ### [inflytelserika](dn/2025/dn-2025-01.md#ord)
 
 Beskriver personer eller grupper som har stor påverkan eller makt i samhället.
+
+### [inflytandet](svt/2026/svt-2026-01.md#ord)
+
+Den makt eller påverkan som någon eller något har över beslut eller skeenden
 
 ### [införa](svt/2025/SVT_2025-07.md#ord)
 
@@ -1527,6 +1556,10 @@ Något som är mycket svårt att förstå eller greppa
 
 Som inte går att förutse eller planera för
 
+### [oförutsägbart](svt/2026/svt-2026-01.md#ord)
+
+Som inte går att förutse eller förvänta sig
+
 ### [ofredar](dropbox/SVT.md#ord)
 
 Definition saknas.
@@ -1776,6 +1809,10 @@ Ett rekommenderat värde som bör användas som referenspunkt
 
 Passiv form av "röja"; att något avslöjas, tas bort eller görs synligt
 
+### [röjt](svt/2026/svt-2026-01.md#ord)
+
+Har avslöjat, undanröjt eller gjort något tydligt; även städat bort
+
 ### [rusta upp](svt/2024/svt_2024-01.md#ord)
 
 Definition saknas.
@@ -1944,6 +1981,10 @@ Definition saknas.
 ### [skymfa](andra/dagens_nyheter.md#ord)
 
 Att förolämpa eller förödmjuka någon
+
+### [slarv](dn/2026/dn-2026-01.md#ord)
+
+Brist på noggrannhet eller omsorg; vårdslöst eller oordentligt arbete
 
 ### [slänt](svt/2024/SVT_2024-02.md#ord)
 
@@ -2140,6 +2181,10 @@ Hastigheten eller rytmen i något, exempelvis musik eller en utveckling.
 
 1. Skydd eller något som täcker / 2. Område där nätverk eller försäkring gäller
 
+### [tärande](dn/2026/dn-2026-01.md#ord)
+
+Som långsamt försvagar eller bryter ner, fysiskt eller psykiskt
+
 ### [tålamod](svt/2024/SVT_2024-05.md#ord)
 
 Förmågan att vara lugn och uthållig i väntan eller under svåra omständigheter
@@ -2199,7 +2244,8 @@ Något som läggs till för att förstärka eller komplettera något annat.
 
 ### [tillvarata](andra/dn-2024-09.md#ord)
 
-Att ta hand om något eller någon, skydda och vårda
+- [andra/dn-2024-09.md#ord](andra/dn-2024-09.md#ord): Att ta hand om något eller någon, skydda och vårda
+- [dn/2026/dn-2026-01.md#ord](dn/2026/dn-2026-01.md#ord): Att ta hand om, skydda eller använda något på bästa möjliga sätt
 
 ### [toppnotering](dn/2025/dn-2025-03.md#ord)
 
@@ -2441,6 +2487,10 @@ Undersöker något noggrant för att lära sig mer.
 ### [utförde](svt/2025/SVT_2025-03.md#ord)
 
 Att slutföra eller genomföra en uppgift eller aktivitet.
+
+### [utgångspunkt](svt/2026/svt-2026-01.md#ord)
+
+Grund eller startpunkt som något bygger på eller tar sin början i
 
 ### [utlovade](svt/2025/SVT_2025-03.md#ord)
 
