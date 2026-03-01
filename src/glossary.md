@@ -2886,3 +2886,105 @@ Som framstår som trovärdig och får andra att tro eller hålla med
 ### [överväger](svt/2024/SVT_2024-06.md#ord)
 
 Att noggrant tänka igenom något innan man fattar ett beslut
+
+## 2026-02
+
+### [samordning](svt/2026/svt-2026-02.md#ord)
+
+Planering och anpassning av olika delar så att de fungerar tillsammans.
+
+### [motorik](svt/2026/svt-2026-02.md#ord)
+
+Förmåga att styra och samordna kroppens rörelser.
+
+### [gruskorn](svt/2026/svt-2026-02.md#ord)
+
+Ett mycket litet stycke grus; liten stenpartikel.
+
+### [riskfylld](svt/2026/svt-2026-02.md#ord)
+
+Som innebär fara eller hög risk.
+
+### [trubbigt](svt/2026/svt-2026-02.md#ord)
+
+Inte vasst eller skarpt; även bildligt om något som saknar precision.
+
+### [utomjordingar](svt/2026/svt-2026-02.md#ord)
+
+Varelser som antas komma från andra planeter eller från rymden.
+
+### [erkände](svt/2026/svt-2026-02.md#ord)
+
+Medgav eller bekräftade att något är sant, ofta efter förnekelse.
+
+### [åstadkommit](svt/2026/svt-2026-02.md#ord)
+
+Har lyckats skapa, orsaka eller genomföra något.
+
+### [likgiltigheten](dn/2026/dn-2026-02.md#ord)
+
+Tillstånd av ointresse eller brist på engagemang.
+
+### [överseende](dn/2026/dn-2026-02.md#ord)
+
+Villighet att ha tålamod eller att förlåta mindre fel eller brister.
+
+### [flagranta](dn/2026/dn-2026-02.md#ord)
+
+Mycket tydliga och grova; uppenbara på ett chockerande eller oacceptabelt sätt.
+
+### [skild](dn/2026/dn-2026-02.md#ord)
+
+Åtskild eller separat från något annat; också beskriven eller återgiven.
+
+### [förtrolig](dn/2026/dn-2026-02.md#ord)
+
+Som man har nära förtroende för; också något som är privat eller konfidentiellt.
+
+### [tycks](dn/2026/dn-2026-02.md#ord)
+
+Verkar eller förefaller vara på ett visst sätt.
+
+### [återgälda](dn/2026/dn-2026-02.md#ord)
+
+Att betala tillbaka eller besvara något, gott eller ont.
+
+### [ömhetsbetygelserna](dn/2026/dn-2026-02.md#ord)
+
+Uttryck för ömhet, kärlek eller tillgivenhet, till exempel ord, gester eller handlingar.
+
+### [ägodelar](dn/2026/dn-2026-02.md#ord)
+
+Saker som någon äger; personliga tillhörigheter.
+
+### [införskaffats](dn/2026/dn-2026-02.md#ord)
+
+Har köpts eller på annat sätt skaffats.
+
+### [påvisa](dn/2026/dn-2026-02.md#ord)
+
+Att visa, bevisa eller tydligt framhålla något med fakta eller bevis.
+
+### [medger](dn/2026/dn-2026-02.md#ord)
+
+Erkänner eller tillåter något; godkänner eller bekräftar.
+
+### [skräddarsytt](dn/2026/dn-2026-02.md#ord)
+
+Anpassat exakt efter en persons eller situations behov.
+
+### [inrutade](dn/2026/dn-2026-02.md#ord)
+
+Strikt organiserade eller uppdelade i fasta mönster eller scheman.
+
+### [omisskännliga](dn/2026/dn-2026-02.md#ord)
+
+Så tydliga att de inte kan misstas för något annat.
+
+### [krydda](dn/2026/dn-2026-02.md#ord)
+
+Ämne som tillsätts i mat för att ge smak; även bildligt om att försköna en berättelse.
+
+### [bedriva](dn/2026/dn-2026-02.md#ord)
+
+Att aktivt utföra eller ägna sig åt en verksamhet.
