@@ -32,6 +32,10 @@ Något som är viktigt och brådskande
 
 Som ligger intill eller gränsar till något annat.
 
+### [anknytningen](dn/2026/dn-2026-03.md#ord)
+
+Förbindelse eller koppling mellan personer, platser eller saker.
+
 ### [anlitats](andra/dagens_nyheter.md#ord)
 
 Har blivit anställd eller engagerad för en tjänst eller uppgift
@@ -97,6 +101,10 @@ Definition saknas.
 ### [attityden](netflix/bonus_family.md#ord)
 
 Definition saknas.
+
+### [avslag](svt/2026/svt-2026-03.md#ord)
+
+Beslut att inte godkänna en ansökan, begäran eller ett förslag.
 
 ### [avböjer](dropbox/SVT.md#ord)
 
@@ -222,6 +230,10 @@ Definition saknas.
 ### [bedöms (bedömer)](dropbox/SVT.md#ord)
 
 Definition saknas.
+
+### [bedrivit](dn/2026/dn-2026-03.md#ord)
+
+Har aktivt utfört eller ägnat sig åt en verksamhet.
 
 ### [bedriver](dropbox/SVT.md#ord)
 
@@ -527,6 +539,10 @@ Kemikalier som är mycket svårnedbrytbara och stannar kvar i miljön under lån
 
 ## F
 
+### [följderna](dn/2026/dn-2026-03.md#ord)
+
+Resultat eller konsekvenser som uppstår efter en händelse.
+
 ### [fantasifulla](svt/2024/svt_2024-01.md#ord)
 
 Definition saknas.
@@ -543,6 +559,10 @@ Avskedshälsning; att säga adjö vid en avskedssituation.
 ### [flutit](andra/dn-2024-12.md#ord)
 
 Dåtid av "flyta", att ha rört sig på eller i vätska utan att sjunka.
+
+### [formidabla](dn/2026/dn-2026-03.md#ord)
+
+Mycket imponerande eller mycket svåra att hantera.
 
 ### [formellt](svt/2024/SVT_2024-02.md#ord)
 
@@ -1193,6 +1213,10 @@ Något som har blivit utrett, förklarat eller fastställt
 
 Definition saknas.
 
+### [klyftor](dn/2026/dn-2026-03.md#ord)
+
+Skillnader eller avstånd mellan grupper, ofta socialt eller ekonomiskt; även delar som delats upp.
+
 ### [klyftorna](dn/2025/dn-2025-04.md#ord)
 
 Skillnader i inkomst eller levnadsstandard mellan olika grupper i samhället.
@@ -1281,6 +1305,10 @@ Som har genomgått en process för att säkerställa kvalitet
 
 Definition saknas.
 
+### [kvarstår](svt/2026/svt-2026-03.md#ord)
+
+Fortsätter att finnas eller vara giltigt.
+
 ### [kvarvarande](svt/2024/svt_2024-01.md#ord)
 
 Definition saknas.
@@ -1340,6 +1368,10 @@ Sättet att leva på; vanor och beteenden som formar ens liv.
 ### [livvakter](svt/2025/SVT_2025-07.md#ord)
 
 Personer som skyddar en annan person, ofta en offentlig figur
+
+### [lättar](svt/2026/svt-2026-03.md#ord)
+
+Blir mindre tungt, svårt eller intensivt; börjar kännas bättre.
 
 ### [ljuvligt](andra/dn-2024-12.md#ord)
 
@@ -1532,6 +1564,10 @@ Utan personal eller besättning; som inte har några människor ombord eller på
 
 Utan tvivel; som inte kan ifrågasättas eller motsägas
 
+### [obeväpnade](svt/2026/svt-2026-03.md#ord)
+
+Som inte bär eller har några vapen.
+
 ### [oduglighet](dropbox/SVT.md#ord)
 
 Definition saknas.
@@ -1579,6 +1615,10 @@ Att göra något utan tillstånd eller laglig rätt; olagligt.
 ### [ombedd](andra/dagens_nyheter.md#ord)
 
 Att ha blivit tillfrågad eller uppmanad att göra något
+
+### [ombedda](dn/2026/dn-2026-03.md#ord)
+
+Som har blivit ombedda eller uppmanade att göra något.
 
 ### [ombetts](andra/dn-2024-09.md#ord)
 
@@ -1686,6 +1726,10 @@ Som inte kan förstås eller förklaras; mystisk
 
 Tillstånd av osäkerhet; när man inte vet hur något kommer att bli
 
+### [ovissheten](svt/2026/svt-2026-03.md#ord)
+
+Tillstånd av osäkerhet eller brist på klarhet.
+
 
 ## P
 
@@ -1784,6 +1828,10 @@ Som sker med jämna mellanrum; återkommande och organiserat.
 ### [resonemang](svt/2024/SVT_2024-04.md#ord)
 
 Definition saknas.
+
+### [retorik](dn/2026/dn-2026-03.md#ord)
+
+Konsten att tala och skriva övertygande; sättet man använder språk för att påverka.
 
 ### [respektlöst](svt/2024/SVT_2024-04.md#ord)
 
@@ -2056,6 +2104,10 @@ Definition saknas.
 
 Definition saknas.
 
+### [snåla](svt/2026/svt-2026-03.md#ord)
+
+Vara ovillig att dela med sig eller använda pengar eller resurser.
+
 ### [sniskan](svt/2024/SVT_2024-04.md#ord)
 
 Definition saknas.
@@ -2229,6 +2281,10 @@ Specifika tidpunkter eller möjligheter då något kan hända eller göras.
 
 Definition saknas.
 
+### [tillfälligt](svt/2026/svt-2026-03.md#ord)
+
+Som bara gäller under en begränsad tid.
+
 ### [tillförlitlig](svt/2024/SVT_2024-04.md#ord)
 
 Definition saknas.
@@ -2287,6 +2343,10 @@ Definition saknas.
 ### [trivdes](andra/dagens_nyheter.md#ord)
 
 Kände sig väl till mods och nöjd i en viss miljö eller situation
+
+### [trotsig](dn/2026/dn-2026-03.md#ord)
+
+Som vägrar lyda eller ge efter; som visar motstånd eller envishet.
 
 ### [troligtvis](svt/2024/SVT_2024-05.md#ord)
 
@@ -2710,6 +2770,10 @@ Extremt obehaglig eller motbjudande
 ### [vidtagit](svt/2025/SVT_2025-05.md#ord)
 
 Har utfört en åtgärd eller gjort något för att uppnå ett visst syfte.
+
+### [villebråd](svt/2026/svt-2026-03.md#ord)
+
+Djur som jagas; även bildligt någon som är måltavla för attack eller kritik.
 
 ### [villkorat](svt/2024/svt_2024-01.md#ord)
 
