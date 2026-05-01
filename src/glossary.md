@@ -24,6 +24,10 @@ Fortfarande, ännu; utan avbrott eller förändring.
 
 Processen att ta in luft i lungorna och släppa ut den igen för att få syre.
 
+### [anar](svt/2026/svt-2026-04.md#ord)
+
+Misstänker eller känner på sig att något är sant utan att veta säkert.
+
 ### [angeläget](andra/dn-2024-09.md#ord)
 
 Något som är viktigt och brådskande
@@ -90,6 +94,10 @@ Ett skämt som görs den 1 april för att lura någon på ett skojigt sätt.
 
 Definition saknas.
 
+### [arvsskiftet](dn/2026/dn-2026-04.md#ord)
+
+Den juridiska fördelningen av en avliden persons egendom mellan arvingarna.
+
 ### [att ticka upp](svt/2024/SVT_2024-02.md#ord)
 
 Definition saknas.
@@ -126,6 +134,10 @@ Lämnade en position eller ett ämbete.
 
 - [svt/2024/svt_2024-01.md#ord](svt/2024/svt_2024-01.md#ord): Definition saknas.
 - [svt/2024/SVT_2024-02.md#ord](svt/2024/SVT_2024-02.md#ord): Definition saknas.
+
+### [avlägsen](dn/2026/dn-2026-04.md#ord)
+
+Som ligger långt bort i rum eller tid; även bildligt om något fjärran.
 
 ### [avrådan](dn/2025/dn-2025-02.md#ord)
 
@@ -309,9 +321,17 @@ Definition saknas.
 
 Avsikt att använda ett ämne (ofta alkohol eller narkotika) för att bli berusad.
 
+### [beskattas](dn/2026/dn-2026-04.md#ord)
+
+Att bli föremål för skatt; att en inkomst eller tillgång får skatt tas ut.
+
 ### [besättningen](svt/2025/SVT_2025-03.md#ord)
 
 Grupp av personer som arbetar tillsammans, särskilt på ett fartyg eller flygplan.
+
+### [besättningsmän](dn/2026/dn-2026-04.md#ord)
+
+Personer som ingår i besättningen på ett fartyg, flygplan eller liknande.
 
 ### [besked](svt/2024/svt_2024-01.md#ord)
 
@@ -464,6 +484,10 @@ Har förstörts eller oskadliggjorts, ofta på ett kontrollerat sätt.
 
 Definition saknas.
 
+### [djärva](dn/2026/dn-2026-04.md#ord)
+
+Modiga och vågade; som tar risker eller handlar utan rädsla.
+
 ### [ditresta](svt/2025/SVT_2025-06.md#ord)
 
 Personer som har rest till en viss plats
@@ -476,9 +500,17 @@ Definition saknas.
 
 Handlingskraftig och initiativrik; någon som är duktig på att få saker gjorda.
 
+### [dröjer](dn/2026/dn-2026-04.md#ord)
+
+Tar tid eller låter vänta på sig; kommer inte direkt.
+
 ### [drygt](svt/2024/SVT_2024-03.md#ord)
 
 Definition saknas.
+
+### [dugga](dn/2026/dn-2026-04.md#ord)
+
+Kortare skriftligt prov eller test, ofta under en kurs.
 
 ### [dundrade](svt/2025/SVT_2025-04.md#ord)
 
@@ -612,9 +644,9 @@ Definition saknas.
 
 Som kan samexistera utan konflikt; som passar ihop med något annat.
 
-### [förenligt](andra/tv4_and_others.md#ord)
+### [förenligt](dn/2026/dn-2026-04.md#ord)
 
-Något som är kompatibelt eller i överensstämmelse med något annat
+Som stämmer överens med något eller går att kombinera med det.
 
 ### [föreslås](svt/2025/SVT_2025-01.md#ord)
 
@@ -750,6 +782,10 @@ Att tillhandahålla det som krävs för att leva, som mat, pengar eller stöd.
 
 Definition saknas.
 
+### [försvårade](dn/2026/dn-2026-04.md#ord)
+
+Gjorde något svårare eller mer komplicerat.
+
 ### [försvårat](svt/2025/SVT_2025-02.md#ord)
 
 Gjort något svårare eller mer komplicerat.
@@ -782,6 +818,10 @@ Som kan förutsägas eller förutses, inte överraskande
 ### [förutsätta](andra/dn-2024-12.md#ord)
 
 Att anta något som givet eller nödvändigt för att något annat ska gälla.
+
+### [förvirring](dn/2026/dn-2026-04.md#ord)
+
+Oklart eller rörigt tillstånd där det är svårt att förstå vad som händer.
 
 ### [förväntas](svt/2024/SVT_2024-02.md#ord)
 
@@ -1568,6 +1608,10 @@ Utan tvivel; som inte kan ifrågasättas eller motsägas
 
 Som inte bär eller har några vapen.
 
+### [obrukbara](dn/2026/dn-2026-04.md#ord)
+
+Som inte går att använda eller inte fungerar.
+
 ### [oduglighet](dropbox/SVT.md#ord)
 
 Definition saknas.
@@ -1611,6 +1655,10 @@ Inte lämpligt eller passande
 ### [olovligen](andra/tv4_and_others.md#ord)
 
 Att göra något utan tillstånd eller laglig rätt; olagligt.
+
+### [olustig](dn/2026/dn-2026-04.md#ord)
+
+Obehaglig eller som väcker oro och dålig känsla.
 
 ### [ombedd](andra/dagens_nyheter.md#ord)
 
@@ -1660,6 +1708,10 @@ Definition saknas.
 ### [omplaceras](svt/2025/SVT_2025-06.md#ord)
 
 Flyttas till en annan plats eller annan arbetsuppgift.
+
+### [omringas](dn/2026/dn-2026-04.md#ord)
+
+Att bli omgiven från alla håll, ofta av människor, fordon eller hinder.
 
 ### [omtalade](svt/2025/SVT_2025-06.md#ord)
 
@@ -1761,6 +1813,10 @@ Något som är tydligt märkbart eller uppenbart.
 ### [påtryckningar](svt/2025/SVT_2025-04.md#ord)
 
 Försök att påverka någon att agera på ett visst sätt, ofta genom makt eller hot.
+
+### [påvisat](dn/2026/dn-2026-04.md#ord)
+
+Har visat eller bevisat något tydligt med fakta eller bevis.
 
 ### [pellets](svt/2024/svt_2024-01.md#ord)
 
@@ -1946,6 +2002,10 @@ Som rör siffror eller kan uttryckas i tal
 
 Att titta på något genom ett sikte.
 
+### [siktar](svt/2026/svt-2026-04.md#ord)
+
+Riktar in sig mot ett mål eller planerar att uppnå något.
+
 ### [sinsemellan](andra/dn-2024-12.md#ord)
 
 Mellan varandra; används för att beskriva relationer eller interaktioner inom en grupp.
@@ -2029,6 +2089,10 @@ Definition saknas.
 ### [skymfa](andra/dagens_nyheter.md#ord)
 
 Att förolämpa eller förödmjuka någon
+
+### [skyller](dn/2026/dn-2026-04.md#ord)
+
+Lägger skulden på någon eller något.
 
 ### [slarv](dn/2026/dn-2026-01.md#ord)
 
@@ -2124,6 +2188,14 @@ Oförmögen att sova; lider av sömnbrist
 
 Någon som har förlorat sitt arbete eller blivit avskedad.
 
+### [spetskompetens](dn/2026/dn-2026-04.md#ord)
+
+Mycket hög och specialiserad kunskap eller färdighet inom ett område.
+
+### [sporadisk](dn/2026/dn-2026-04.md#ord)
+
+Som sker då och då, oregelbundet och inte hela tiden.
+
 ### [sprickan](svt/2025/svt-2025-08.md#ord)
 
 En reva eller öppning i något hårt material; även bildligt för konflikt
@@ -2139,6 +2211,10 @@ Definition saknas.
 ### [stämt](andra/tv4_and_others.md#ord)
 
 Att ha väckt talan i domstol mot någon
+
+### [stenhårt](svt/2026/svt-2026-04.md#ord)
+
+Mycket hårt, strängt eller intensivt.
 
 ### [stillasittande](dn/2025/dn-2025-04.md#ord)
 
@@ -2516,6 +2592,10 @@ Definition saknas.
 
 En gradvis ökning i intensitet, särskilt i en konflikt eller aktivitet.
 
+### [urholka](dn/2026/dn-2026-04.md#ord)
+
+Att gradvis försvaga eller minska något, ofta över tid.
+
 ### [ursprungligen](svt/2024/SVT_2024-05.md#ord)
 
 Från början eller från det första
@@ -2691,6 +2771,10 @@ Började; satte igång något, t.ex. ett intresse, en känsla eller en process.
 ### [vädjar](dn/2025/dn-2025-01.md#ord)
 
 Att be om något på ett känslomässigt eller övertygande sätt.
+
+### [vägledning](dn/2026/dn-2026-04.md#ord)
+
+Råd, stöd eller instruktioner som hjälper någon att hitta rätt.
 
 ### [välfärdsstat](dn/2025/dn-2025-04.md#ord)
 
@@ -2883,6 +2967,10 @@ Definition saknas.
 ### [äkta](svt/2025/SVT_2025-05.md#ord)
 
 Som är genuin eller sann; inte falsk eller konstgjord.
+
+### [äktenskap](dn/2026/dn-2026-04.md#ord)
+
+Formellt eller juridiskt erkänt förhållande mellan två personer.
 
 ### [ärade](svt/2025/svt-2025-08.md#ord)
 
