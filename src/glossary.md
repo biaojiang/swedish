@@ -90,9 +90,14 @@ Insatser eller hårt arbete för att uppnå något
 
 Ett skämt som görs den 1 april för att lura någon på ett skojigt sätt.
 
+### [arbetstillfällen](svt/2026/svt-2026-05.md#ord)
+
+Jobb eller möjligheter till arbete.
+
 ### [arv](svt/2024/SVT_2024-02.md#ord)
 
-Definition saknas.
+- [svt/2026/svt-2026-05.md#ord](svt/2026/svt-2026-05.md#ord): Något som ärvs från tidigare generationer, till exempel egendom, kultur eller ansvar.
+- [svt/2024/SVT_2024-02.md#ord](svt/2024/SVT_2024-02.md#ord): Definition saknas.
 
 ### [arvsskiftet](dn/2026/dn-2026-04.md#ord)
 
@@ -135,6 +140,10 @@ Lämnade en position eller ett ämbete.
 - [svt/2024/svt_2024-01.md#ord](svt/2024/svt_2024-01.md#ord): Definition saknas.
 - [svt/2024/SVT_2024-02.md#ord](svt/2024/SVT_2024-02.md#ord): Definition saknas.
 
+### [avkastning](svt/2026/svt-2026-05.md#ord)
+
+Vinst eller resultat från en investering, verksamhet eller insats.
+
 ### [avlägsen](dn/2026/dn-2026-04.md#ord)
 
 Som ligger långt bort i rum eller tid; även bildligt om något fjärran.
@@ -170,6 +179,10 @@ Något som görs med avsikt, medvetet och planerat
 ### [avskaffar](svt/2025/SVT_2025-06.md#ord)
 
 Tar bort något formellt, särskilt en lag eller regel
+
+### [avskilt](svt/2026/svt-2026-05.md#ord)
+
+Separat eller undangömt från andra; isolerat.
 
 ### [avskräckning](svt/2024/SVT_2024-06.md#ord)
 
@@ -374,6 +387,10 @@ Ses som eller anses vara på ett visst sätt.
 - [svt/2025/SVT_2025-06.md#ord](svt/2025/SVT_2025-06.md#ord): I hög grad; mycket mer än något annat.
 - [svt/2024/SVT_2024-04.md#ord](svt/2024/SVT_2024-04.md#ord): Definition saknas.
 
+### [beundrare](svt/2026/svt-2026-05.md#ord)
+
+Personer som uppskattar eller ser upp till någon eller något.
+
 ### [beviljas](dn/2025/dn-2025-03.md#ord)
 
 Få något godkänt eller tilldelat, ofta av en myndighet.
@@ -532,6 +549,10 @@ Företag som tillverkar elbilar; biltillverkare med fokus på eldrift.
 
 Kom överens; nådde en gemensam ståndpunkt eller lösning.
 
+### [energiförsörjningen](svt/2026/svt-2026-05.md#ord)
+
+Tillgången till och leveransen av energi som behövs för ett samhälle, område eller system.
+
 ### [engagerad](svt/2025/svt-2025-08.md#ord)
 
 Aktivt intresserad och delaktig; visar stort engagemang och intresse
@@ -582,6 +603,10 @@ Definition saknas.
 ### [farväl](svt/2025/SVT_2025-04.md#ord)
 
 Avskedshälsning; att säga adjö vid en avskedssituation.
+
+### [fastställa](dn/2026/dn-2026-05.md#ord)
+
+Bestämma, slå fast eller bekräfta något.
 
 ### [felaktig](svt/2025/SVT_2025-04.md#ord)
 
@@ -694,7 +719,8 @@ Samband mellan saker eller personer; situation eller tillstånd.
 
 ### [förhoppningsvis](dropbox/SVT.md#ord)
 
-Definition saknas.
+- [svt/2026/svt-2026-05.md#ord](svt/2026/svt-2026-05.md#ord): Om allt går som man hoppas; förhoppningsfullt sett.
+- [dropbox/SVT.md#ord](dropbox/SVT.md#ord): Definition saknas.
 
 ### [förinta](dn/2025/dn-2025-02.md#ord)
 
@@ -778,6 +804,10 @@ Mycket obehagligt eller skrämmande
 
 Att tillhandahålla det som krävs för att leva, som mat, pengar eller stöd.
 
+### [försörjning](dn/2026/dn-2026-05.md#ord)
+
+Det som behövs för att någon eller något ska klara sig, till exempel mat, pengar eller resurser.
+
 ### [förstörelse](svt/2024/SVT_2024-04.md#ord)
 
 Definition saknas.
@@ -826,6 +856,10 @@ Oklart eller rörigt tillstånd där det är svårt att förstå vad som händer
 ### [förväntas](svt/2024/SVT_2024-02.md#ord)
 
 Definition saknas.
+
+### [förvärras](svt/2026/svt-2026-05.md#ord)
+
+Bli sämre eller allvarligare.
 
 ### [förvärva](svt/2025/SVT_2025-01.md#ord)
 
@@ -1021,6 +1055,10 @@ Som uttrycker förakt eller spydighet
 ### [hemställan](andra/dagens_nyheter.md#ord)
 
 Formell begäran eller förslag
+
+### [hemlighålla](dn/2026/dn-2026-05.md#ord)
+
+Hålla något hemligt och inte berätta det för andra.
 
 ### [hinner](netflix/bonus_family.md#ord)
 
@@ -1304,6 +1342,10 @@ Som får motsatt effekt mot vad som var avsett eller önskat.
 ### [korrigeras](svt/2024/SVT_2024-04.md#ord)
 
 Definition saknas.
+
+### [kostnadskalkyl](svt/2026/svt-2026-05.md#ord)
+
+Beräkning av hur mycket något väntas kosta.
 
 ### [kräkningar](andra/tv4_and_others.md#ord)
 
@@ -1741,6 +1783,10 @@ Definition saknas.
 
 Definition saknas.
 
+### [oregelbundenheter](dn/2026/dn-2026-05.md#ord)
+
+Avvikelser från det normala eller väntade; saker som inte följer ett regelbundet mönster.
+
 ### [orkan](svt/2024/SVT_2024-02.md#ord)
 
 Definition saknas.
@@ -1760,6 +1806,10 @@ Definition saknas.
 ### [osmos](svt/2024/SVT_2024-06.md#ord)
 
 Process där lösningsmedel passerar genom ett semipermeabelt membran från en mindre koncentrerad lösning till en mer koncentrerad lösning
+
+### [osårbart](dn/2026/dn-2026-05.md#ord)
+
+Som inte kan skadas eller påverkas negativt.
 
 ### [otaliga](svt/2025/svt-2025-08.md#ord)
 
@@ -2196,6 +2246,10 @@ Mycket hög och specialiserad kunskap eller färdighet inom ett område.
 
 Som sker då och då, oregelbundet och inte hela tiden.
 
+### [sporadiskt](dn/2026/dn-2026-05.md#ord)
+
+På ett oregelbundet sätt; då och då men inte hela tiden.
+
 ### [sprickan](svt/2025/svt-2025-08.md#ord)
 
 En reva eller öppning i något hårt material; även bildligt för konflikt
@@ -2259,6 +2313,10 @@ Definition saknas.
 ### [struntar](netflix/bonus_family.md#ord)
 
 Definition saknas.
+
+### [stundande](dn/2026/dn-2026-05.md#ord)
+
+Som snart ska hända eller inträffa.
 
 ### [styrs](svt/2025/SVT_2025-03.md#ord)
 
@@ -2700,6 +2758,10 @@ Ett uttryck av tankar, åsikter eller information; en officiell eller formell de
 
 Att bli vald eller utsedd till en viss position
 
+### [utspel](svt/2026/svt-2026-05.md#ord)
+
+Ett offentligt uttalande eller initiativ, ofta i politiskt syfte.
+
 ### [utspelet](svt/2025/svt-2025-08.md#ord)
 
 Ett plötsligt eller strategiskt uttalande eller agerande, ofta i politiskt syfte
@@ -2873,7 +2935,8 @@ Definition saknas.
 
 ### [visserligen](andra/aftonbladet_2024-11.md#ord)
 
-Ett ord som används för att medge något som är sant, men ofta följt av en invändning.
+- [dn/2026/dn-2026-05.md#ord](dn/2026/dn-2026-05.md#ord): Används för att medge något som är sant, ofta följt av en invändning.
+- [andra/aftonbladet_2024-11.md#ord](andra/aftonbladet_2024-11.md#ord): Ett ord som används för att medge något som är sant, men ofta följt av en invändning.
 
 ### [vraket](svt/2024/SVT_2024-02.md#ord)
 
