@@ -9,7 +9,7 @@ BUILD_DIR="book"
 COMMIT_MSG="Deploy site on $(date +%F)"
 
 echo "🛠  Building the book..."
-mdbook build
+# mdbook build
 
 echo "🧼  Cleaning .DS_Store and .obsidian files..."
 # Clean .DS_Store files (faster)

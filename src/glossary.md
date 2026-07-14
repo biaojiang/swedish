@@ -604,6 +604,10 @@ Definition saknas.
 
 Avskedshälsning; att säga adjö vid en avskedssituation.
 
+### [fångades](svt/2026/svt-2026-06.md#ord)
+
+Blev fångad eller tillfångatagen; passiv form av "fånga".
+
 ### [fastställa](dn/2026/dn-2026-05.md#ord)
 
 Bestämma, slå fast eller bekräfta något.
@@ -949,6 +953,10 @@ Definition saknas.
 
 Tuggar eller nöter med tänderna, ofta om djur; bildligt: något som oroar ständigt.
 
+### [gosa](svt/2026/svt-2026-06.md#ord)
+
+Att kramas, smeka eller vara kärleksfull och mysig med någon.
+
 ### [gradvis](andra/dn-2024-12.md#ord)
 
 Som sker eller utvecklas steg för steg, successivt över tid.
@@ -1039,6 +1047,10 @@ Att påstå eller insistera på något som sant eller giltigt
 ### [hävdat](svt/2024/SVT_2024-06.md#ord)
 
 Påstått eller framfört med bestämdhet
+
+### [hävde](svt/2026/svt-2026-06.md#ord)
+
+Upphävde, avskaffade eller avslutade något som gällde tidigare, till exempel ett beslut, avtal eller förbud.
 
 ### [hävstång](dn/2026/dn-2026-01.md#ord)
 
@@ -1896,6 +1908,10 @@ Att ha en tydlig karaktär eller påverkan från något; vara färgad av.
 
 Definition saknas.
 
+### [prunkar](svt/2026/svt-2026-06.md#ord)
+
+Växer frodigt och rikligt, särskilt om blommor, växter eller trädgårdar.
+
 ### [pryder](dn/2025/dn-2025-01.md#ord)
 
 Att göra något vackrare genom dekoration eller utsmyckning.
@@ -2428,6 +2444,10 @@ Definition saknas.
 - [andra/dagens_nyheter.md#ord](andra/dagens_nyheter.md#ord): Att uppfylla eller tillfredsställa någons behov eller önskemål
 - [andra/dn-2024-10.md#ord](andra/dn-2024-10.md#ord): Att tillfredsställa eller uppfylla behov; att möta krav eller önskemål.
 
+### [tillhåll](svt/2026/svt-2026-06.md#ord)
+
+En plats där någon brukar vistas eller hålla till, ibland med negativ betydelse.
+
 ### [tillskott](andra/dn-2024-11.md#ord)
 
 Något som läggs till för att förstärka eller komplettera något annat.
@@ -2737,6 +2757,10 @@ Definition saknas.
 ### [utplåna](dn/2025/dn-2025-02.md#ord)
 
 Förstöra fullständigt; få något att försvinna helt.
+
+### [utritad](svt/2026/svt-2026-06.md#ord)
+
+Något som har ritats ut eller markerats tydligt på en karta, plan eller ritning.
 
 ### [utrotas](dropbox/SVT.md#ord)
 
