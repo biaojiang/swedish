@@ -118,6 +118,7 @@ Sakindexet listar begrepp och länkar till ordlistan.
 - [BRIGAD](glossary.md#brigad)
 - [bristfälligt](glossary.md#bristfalligt)
 - [brottsförebyggande](glossary.md#brottsforebyggande)
+- [budskapet](glossary.md#budskapet)
 - [bylsig](glossary.md#bylsig)
 
 ## C
@@ -269,6 +270,7 @@ Sakindexet listar begrepp och länkar till ordlistan.
 - [har ombetts](glossary.md#har-ombetts)
 - [haveriet](glossary.md#haveriet)
 - [häktade](glossary.md#haktade)
+- [hälsofördelarna](glossary.md#halsofordelarna)
 - [händelseförloppet](glossary.md#handelseforloppet)
 - [hänsynslös](glossary.md#hansynslos)
 - [härligt](glossary.md#harligt)
@@ -341,6 +343,7 @@ Sakindexet listar begrepp och länkar till ordlistan.
 ## K
 
 - [källor](glossary.md#kallor)
+- [kärl](glossary.md#karl)
 - [kirurgi](glossary.md#kirurgi)
 - [klagomål](glossary.md#klagomal)
 - [klandervärt](glossary.md#klandervart)
@@ -415,6 +418,7 @@ Sakindexet listar begrepp och länkar till ordlistan.
 - [mejerivaror](glossary.md#mejerivaror)
 - [mestadels](glossary.md#mestadels)
 - [missförhållanden](glossary.md#missforhallanden)
+- [missvisande](glossary.md#missvisande)
 - [miste](glossary.md#miste)
 - [mistro](glossary.md#mistro)
 - [modig](glossary.md#modig)
@@ -529,6 +533,7 @@ Sakindexet listar begrepp och länkar till ordlistan.
 - [riktvärdet](glossary.md#riktvardet)
 - [röjs](glossary.md#rojs)
 - [röjt](glossary.md#rojt)
+- [rörligheten](glossary.md#rorligheten)
 - [rusta upp](glossary.md#rusta-upp)
 - [rycker ut](glossary.md#rycker-ut)
 - [rykte](glossary.md#rykte)
@@ -618,6 +623,7 @@ Sakindexet listar begrepp och länkar till ordlistan.
 - [ström](glossary.md#strom)
 - [struntar](glossary.md#struntar)
 - [stundande](glossary.md#stundande)
+- [styrka](glossary.md#styrka)
 - [styrs](glossary.md#styrs)
 - [svajig](glossary.md#svajig)
 - [svalka](glossary.md#svalka)
@@ -636,6 +642,7 @@ Sakindexet listar begrepp och länkar till ordlistan.
 - [tålamod](glossary.md#talamod)
 - [tålamodet](glossary.md#talamodet)
 - [tidsåtgången](glossary.md#tidsatgangen)
+- [tillämpad](glossary.md#tillampad)
 - [tillåtit](glossary.md#tillatit)
 - [tillåtna](glossary.md#tillatna)
 - [tillbakavisas](glossary.md#tillbakavisas)
@@ -709,6 +716,7 @@ Sakindexet listar begrepp och länkar till ordlistan.
 - [ursprungligen](glossary.md#ursprungligen)
 - [utarbetas](glossary.md#utarbetas)
 - [utåtagerande](glossary.md#utatagerande)
+- [utelämnar](glossary.md#utelamnar)
 - [utesluten](glossary.md#utesluten)
 - [utfärdades](glossary.md#utfardades)
 - [utformades](glossary.md#utformades)

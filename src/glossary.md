@@ -459,6 +459,10 @@ Något som är otillräckligt, har brister eller inte uppfyller kraven
 
 Definition saknas.
 
+### [budskapet](svt/2026/svt-2026-07.md#ord)
+
+Det innehåll eller den idé som någon vill förmedla.
+
 ### [bylsig](dn/2025/dn-2025-01.md#ord)
 
 Klumpig och otymplig i form, ofta på grund av för mycket kläder eller tyg.
@@ -1016,6 +1020,10 @@ Definition saknas.
 
 Definition saknas.
 
+### [hälsofördelarna](dn/2026/dn-2026-07.md#ord)
+
+De positiva effekterna eller vinsterna för hälsan.
+
 ### [händelseförloppet](andra/dn-2024-12.md#ord)
 
 Sekvensen av händelser som utspelar sig under en viss tidsperiod eller situation.
@@ -1278,6 +1286,10 @@ Definition saknas.
 ### [källor](svt/2024/SVT_2024-02.md#ord)
 
 Definition saknas.
+
+### [kärl](dn/2026/dn-2026-07.md#ord)
+
+Behållare för vätskor eller andra ämnen; inom medicin ett rör som transporterar blod eller andra kroppsvätskor.
 
 ### [kirurgi](svt/2024/SVT_2024-05.md#ord)
 
@@ -1558,6 +1570,10 @@ Livsmedel som är tillverkade av mjölk
 ### [missförhållanden](andra/dn-2024-10.md#ord)
 
 Förhållanden som är dåliga, olämpliga eller problematiska.
+
+### [missvisande](svt/2026/svt-2026-07.md#ord)
+
+Som ger en felaktig eller vilseledande bild av något.
 
 ### [miste](andra/dn-2024-12.md#ord)
 
@@ -1983,6 +1999,10 @@ Passiv form av "röja"; att något avslöjas, tas bort eller görs synligt
 
 Har avslöjat, undanröjt eller gjort något tydligt; även städat bort
 
+### [rörligheten](svt/2026/svt-2026-07.md#ord)
+
+Förmågan att röra sig eller att kunna flyttas; även graden av flexibilitet.
+
 ### [rusta upp](svt/2024/svt_2024-01.md#ord)
 
 Definition saknas.
@@ -2334,6 +2354,10 @@ Definition saknas.
 
 Som snart ska hända eller inträffa.
 
+### [styrka](dn/2026/dn-2026-07.md#ord)
+
+Kraft eller förmåga; även en särskild fördel eller kompetens.
+
 ### [styrs](svt/2025/SVT_2025-03.md#ord)
 
 - [svt/2025/SVT_2025-03.md#ord](svt/2025/SVT_2025-03.md#ord): Är under kontroll eller ledning av någon eller något.
@@ -2398,6 +2422,10 @@ Förmågan att vara lugn och uthållig i väntan eller under svåra omständighe
 ### [tidsåtgången](andra/dagens_nyheter.md#ord)
 
 Den tid som behövs för att slutföra en uppgift eller aktivitet
+
+### [tillämpad](dn/2026/dn-2026-07.md#ord)
+
+Som används i praktiken eller omsätts i verkliga situationer.
 
 ### [tillåtit](andra/dn-2024-11.md#ord)
 
@@ -2685,6 +2713,10 @@ Passiv form av "utarbeta"; när något planeras, konstrueras eller tas fram
 ### [utåtagerande](andra/dagens_nyheter.md#ord)
 
 Som visar sina känslor eller sitt missnöje på ett aggressivt sätt
+
+### [utelämnar](svt/2026/svt-2026-07.md#ord)
+
+Att medvetet eller omedvetet lämna bort något.
 
 ### [utesluten](svt/2025/svt-2025-08.md#ord)
 
